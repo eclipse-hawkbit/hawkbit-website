@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+  <!--Head section for CSS/Javascript  -->
+
+<head>
+  <meta charset="utf-8">
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <meta name="description" content="IoT Software Update">
+  <meta name="author" content="">
+  <!--base to have relative path for offline navigation -->
+
+
+
+
+
+ 
+  <title>Eclipse hawkBit - IoT Software Update</title>
+
+  <!--Stylesheets-->
+  <!-- Bootstrap 3.3.1 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="../../css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+  <!-- Custom CSS -->
+  <link href="../../css/hawkbit.css" rel="stylesheet">
+
+  <!--Javascript-->
+  <!-- JQuery 2.1.1-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.1 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../../js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+               $(document).ready(function(){
+                 $("a[rel^='prettyPhoto']").prettyPhoto();
+               });
+             </script>
+</head>
+
+  <body>
+    <!--Header section Site navigation -->
+
+<!--base to have relative path for offline navigation -->
+
+
+
+
+
+ 
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+				<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="../../index.html">Eclipse hawkBit™</a>
+				</div>
+				<div class="collapse navbar-collapse wow fadeIn" id="navbar-collapse" data-wow-delay="0.2s">
+						<ul class="nav navbar-nav pull-right">
+							
+								<li >
+									
+										<a href="../../news/index.html">News</a>
+
+									
+								</li>
+							
+								<li >
+									
+										<a href="../../blog/index.html">Blog</a>
+
+									
+								</li>
+							
+								<li >
+									
+										<a href="../../documentation/overview/introduction.html">Documentation</a>
+
+									
+								</li>
+							
+						</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+		</div>
+		<style>#forkongithub a{background:#8d0c0c;color:#fff;text-decoration:none;font-family:Arial, Helvetica, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:12px;line-height:3rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:fixed;display:block;top:0;right:0;width:50px;overflow:visible;height:200px;z-index:9999;}#forkongithub a{width:260px;position:absolute;top:40px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);}}</style><span id="forkongithub"><a href="https://github.com/eclipse/hawkbit">Fork me on GitHub</a></span>
+		<!-- /.container -->
+</nav>
+
+    <div id="header_wrapper" class="container">
+      <div class="nav-bar col-md-3">
+        <nav class="navmenu navmenu-default"  role="navigation">
+          <ul class="nav navmenu-nav">
+            <!--base to have relative path for offline navigation -->
+
+
+
+
+
+ 
+
+  
+    <li>
+      Introduction
+      <ul class="nav navmenu-nav">
+        <!-- 2nd level -->
+        <!--base to have relative path for offline navigation -->
+
+
+
+
+
+ 
+
+  
+    <li  >
+      
+        <a href="../../documentation/overview/introduction.html">Overview</a>
+      
+
+    </li>
+  
+
+  
+    <li  >
+      
+        <a href="../../documentation/overview/features.html">Features</a>
+      
+
+    </li>
+  
+
+  
+    <li  >
+      
+        <a href="../../documentation/overview/getting-started.html">Getting Started</a>
+      
+
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li>
+      Concepts
+      <ul class="nav navmenu-nav">
+        <!-- 2nd level -->
+        <!--base to have relative path for offline navigation -->
+
+
+
+
+
+ 
+
+  
+    <li  >
+      
+        <a href="../../documentation/architecture/architecture.html">Architecture</a>
+      
+
+    </li>
+  
+
+  
+    <li  >
+      
+        <a href="../../documentation/architecture/datamodel.html">Data model</a>
+      
+
+    </li>
+  
+
+  
+    <li  >
+      
+        <a href="../../documentation/architecture/targetstate.html">Target States</a>
+      
+
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li>
+      Interfaces
+      <ul class="nav navmenu-nav">
+        <!-- 2nd level -->
+        <!--base to have relative path for offline navigation -->
+
+
+
+
+
+ 
+
+  
+    <li  >
+      
+        <a href="../../documentation/interfaces/interfaces.html">Overview</a>
+      
+
+    </li>
+  
+
+  
+    <li  >
+      
+        <a href="../../documentation/interfaces/management-ui.html">Management UI</a>
+      
+
+    </li>
+  
+
+  
+    <li  >
+      
+        <a href="../../documentation/interfaces/management-api.html">Management API</a>
+      
+
+    </li>
+  
+
+  
+    <li  >
+      
+        <a href="../../documentation/interfaces/ddi-api.html">DDI API</a>
+      
+
+    </li>
+  
+
+  
+    <li  >
+      
+        <a href="../../documentation/interfaces/dmf-api.html">DMF API</a>
+      
+
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li>
+      Security
+      <ul class="nav navmenu-nav">
+        <!-- 2nd level -->
+        <!--base to have relative path for offline navigation -->
+
+
+
+
+
+ 
+
+  
+    <li  >
+      
+        <a href="../../documentation/security/security.html">Overview</a>
+      
+
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li>
+      Guides
+      <ul class="nav navmenu-nav">
+        <!-- 2nd level -->
+        <!--base to have relative path for offline navigation -->
+
+
+
+
+
+ 
+
+  
+    <li  >
+      
+        <a href="../../documentation/guide/runhawkbit.html">Build and Run hawkBit</a>
+      
+
+    </li>
+  
+
+  
+    <li  >
+      
+        <a href="../../documentation/guide/clustering.html">Clustering</a>
+      
+
+    </li>
+  
+
+  
+    <li  >
+      
+        <a href="../../documentation/guide/customtheme.html">Theme Customization</a>
+      
+
+    </li>
+  
+
+  
+    <li  >
+      
+        <a href="../../documentation/guide/feignclient.html">Create Feign Client</a>
+      
+
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+          </ul>
+      </nav>
+    </div>
+
+
+    <div id="page" class="col-md-9">
+    	<div class="inner">
+        <div id="maincontainer">
+          <section id="top" class="documentation-section">
+            <div class="row">
+					     <div class="span8 offset3">
+                 <!--base to have relative path for offline navigation -->
+
+<p>This API is based on HTTP standards and based on a polling mechanism.</p>
+
+<p>The <em>hawkbit</em> <a href="https://github.com/eclipse/hawkbit">update server</a> provides REST resources which are consumed by the device to retrieve software update tasks.</p>
+
+<p>Note: in DDI the target is identified using a  <strong>controllerId</strong>. Controller is used as a term for the actual service/client on the device. That allows users to have in some cases even multiple clients on the same target for different tasks, e.g. Firmware update and App management.</p>
+
+<h1 id="state-machine-mapping">State Machine Mapping</h1>
+<p>For historical reasons the DDI has a different state machine and status messages than the <a href="https://github.com/eclipse/hawkbit/wiki/Target-State-Machine">Target State Machine</a> of the <em>hawkBit</em> update server.</p>
+
+<p>This is kept in order to ensure that <em>DDI</em> stays compatible for devices out there in the field. A future version “2” of <em>DDI</em> might change that. <em>DDI</em> also defines more states than the update server, e.g. multiple DDI states are currently mapped by the <em>DDI</em> implementation to <em>RUNNING</em> state. It is possible that in the future <em>hawkBit</em> will fully leverage these additional states.</p>
+
+<p>The <em>DDI</em> API allows the device to provide the following feedback messages:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>DDI <code>status.execution</code> type</th>
+      <th>handling by update server</th>
+      <th>Mapped ActionStatus type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CANCELED</td>
+      <td>This is send by the target as confirmation of a cancelation request by the update server.</td>
+      <td>CANCELED</td>
+    </tr>
+    <tr>
+      <td>REJECTED</td>
+      <td>This is send by the target in case an update of a cancelation is rejected, i.e. cannot be fulfilled at this point in time. Note: the target should send a CLOSED-&gt;ERROR if it believes it will not be able to proceed the action at all.</td>
+      <td>WARNING</td>
+    </tr>
+    <tr>
+      <td>CLOSED</td>
+      <td>Target completes the action either with <code>status.result.finished</code> SUCCESS or FAILURE as result. Note: DDI defines also a status NONE which will not be interpreted by the update server and handled like SUCCESS.</td>
+      <td>ERROR (DDI FAILURE) or FINISHED (DDI SUCCESS or NONE)</td>
+    </tr>
+    <tr>
+      <td>PROCEEDING</td>
+      <td>This can be used by the target to inform that it is working on the action.</td>
+      <td>RUNNING</td>
+    </tr>
+    <tr>
+      <td>SCHEDULED</td>
+      <td>This can be used by the target to inform that it scheduled on the action.</td>
+      <td>RUNNING</td>
+    </tr>
+    <tr>
+      <td>RESUMED</td>
+      <td>This can be used by the target to inform that it continued to work on the action.</td>
+      <td>RUNNING</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="resource-overview">Resource Overview</h1>
+<p>The following chapters provide basic examples for the most important resources but we provide also a <a href="https://docs.bosch-iot-rollouts.com/documentation/rest-api/rootcontroller-api-guide.html">detailed resource documentation</a>.</p>
+
+<h2 id="base-poll-resource">Base Poll Resource</h2>
+
+<pre><code>GET /{tenant}/controller/v1/{controllerId}
+</code></pre>
+
+<p>In the answer to the baseUrl polling the backend can send action links. A possible action is a deploy command. The client makes a GET request on the given link:</p>
+
+<p><em>Example Response</em></p>
+
+<pre><code>{
+    "config": {
+        "polling": {
+            "sleep": "00:05:00"
+        }
+    },
+    "_links": {
+        "deploymentBase": {
+            "href": "http://localhost:8080/default/controller/v1/example/deploymentBase/1?c=644088541"
+        },
+        "configData": {
+            "href": "http://localhost:8080/default/controller/v1/example/configData"
+        }
+    }
+}
+</code></pre>
+
+<h2 id="deployment-base-resource">Deployment Base Resource</h2>
+
+<pre><code>GET /{tenant}/controller/v1/{controllerId}/deploymentBase/{id}
+</code></pre>
+
+<p><em>Example Response</em></p>
+
+<pre><code>{
+    "deployment": {
+        "download": "forced",
+        "update": "forced",
+        "chunks": [
+            {
+                "part": "os",
+                "version": "1.0.0",
+                "name": "Linux",
+                "artifacts": [
+                    {
+                        "filename": "linux.zip",
+                        "hashes": {
+                            "sha1": "46fc56de883ec027759d8513458fe1010aa7e793",
+                            "md5": "5813e9655bd6871d0c25b8d510fd8605"
+                        },
+                        "size": 52167,
+                        "_links": {
+                            "download": {
+                                "href": "http://localhost:8080/default/controller/v1/example/softwaremodules/1/artifacts/linux.zip"
+                            },
+                            "md5sum": {
+                                "href": "http://localhost:8080/default/controller/v1/example/softwaremodules/1/artifacts/linux.zip.MD5SUM"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "id": "1"
+}
+</code></pre>
+
+<h2 id="deployment-feedback-resource">Deployment Feedback Resource</h2>
+<p>To every deployment the client can post feedback back to the update-server about the deployment status.</p>
+
+<pre><code>POST /{tenant}/controller/v1/{controllerId}/deploymentBase/{id}/feedback
+Content-Type: application/json
+</code></pre>
+
+<p><em>Example Body Deployment Success</em></p>
+
+<pre><code>{
+    "id": 1,
+    "time": "20140511T121314",
+    "status": {
+        "execution": "closed",
+        "result": {
+            "finished": "success",
+            "progress": {}
+        }
+    }
+}
+</code></pre>
+
+<p><em>Example Body Deployment Proceeding</em></p>
+
+<pre><code>{
+    "id": "1",
+    "time": "20140511T121314",
+    "status": {
+        "execution": "proceeding",
+        "result": {
+            "finished": "none",
+            "progress": {
+                "cnt": 2,
+                "of": 5
+            }
+        },
+        "details": [
+            "checking hash sums"
+        ]
+    }
+}
+</code></pre>
+
+<p><em>Example Body Deployment Error</em></p>
+
+<pre><code>{
+    "id": 1,
+    "time": "20140511T121314",
+    "status": {
+        "execution": "rejected",
+        "result": {
+            "finished": "failure",
+            "progress": {}
+        },
+        "details": [
+            "something bad happend"
+        ]
+    }
+}
+</code></pre>
+
+                </div>
+             </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Footer -->
+<footer>
+   <div class="container">
+   <div class="row">
+         <div class="col-md-4">
+           <h3 class="footer-links-header">Quick Links</h3>
+           <ul class="footer-links clearfix">
+             <li><a href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a></li>
+             <li><a href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
+             <li><a href="http://www.eclipse.org/legal/copyright.php">Copyright Agent</a></li>
+             <li><a href="http://www.eclipse.org/legal/">Legal</a></li>
+           </ul>
+           <ul class="footer-links clearfix">
+             <li><a href="http://www.eclipse.org">Eclipse Home</a></li>
+             <li><a href="http://marketplace.eclipse.org/">Market Place</a></li>
+             <li><a href="http://live.eclipse.org/">Eclipse Live</a></li>
+             <li><a href="http://www.planeteclipse.org/">Eclipse Planet</a></li>
+           </ul>
+           </div>
+         <div class="col-md-2">
+          
+   </div>
+</footer>
+
+<!--/.Footer-->
+
+  </body>
+
+</html>
