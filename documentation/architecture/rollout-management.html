@@ -353,55 +353,47 @@
 					     <div class="span8 offset3">
                  <!--base to have relative path for offline navigation -->
 
-<h1 id="custom-theme">Custom Theme</h1>
+<p>Software update operations in large scale IoT scenarios with hundreds of thousands of devices require special handling.</p>
 
-<p>This guide provides details about using and creating themes that control the visual look of Eclipse <em>hawkBit</em> Management UI. Theme customization is done using Sass, which is an extension of CSS (Cascading Style Sheets).</p>
+<p>That includes:
+- <em>Technical Scalability</em> by means of horizontal scale of the <em>Rollouts</em> server cluster in the cloud.
+- <em>Global</em> artifact <em>content delivery</em> capacities.
+- <em>Functional Scalability</em> by means of:
+  - Secure handling of large volumes of devices at rollout creation time.
+  - Monitoring of the rollout progress.
+  - Emergency rollout shutdown in case of problems on to many devices.</p>
 
-<p>The mechanism described below is the rather simple case by customizing the theme by means of configuring a set of variables as defined by the <em>hawkBit</em> default theme. A full customization be means of copying the <em>hawkBit</em> theme and customize it completely is not described here but of course possible.</p>
-
-<h1 id="example-app">Example App</h1>
-
-<p>An example application with customized theme can be found <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-custom-theme-example">here</a>.</p>
-
-<h1 id="overview">Overview</h1>
-<p>Vaadin separates the appearance of the user interface from its logic using themes. Themes can include Sass or CSS style sheets, custom HTML layouts, and any necessary graphics.</p>
-
-<p>Theme resources can also be accessed from application code as ThemeResource objects. Custom themes are placed under the src/main/resources/VAADIN/themes/ folder of the application.</p>
-
-<p>This location is fixed – the VAADIN folder contains static resources that are served by the Vaadin servlet. The servlet augments the files stored in the folder by resources found from corresponding VAADIN folders contained in JARs in the class path.The base theme and all the corresponding custom themes are placed under the above mentioned folder.</p>
-
-<p>If a new custom theme has to be created, it should always be placed under the src/main/resources/VAADIN/themes/ folder.</p>
-
-<p>Every custom theme should always refer the base theme and customization can be done by the use of variables mentioned in the XXXXvariable.scss. For details of the creation of the custom theme please refer the next section.</p>
-
-<h1 id="procedure-to-create-a-theme">Procedure to create a theme</h1>
 <ul>
-  <li>Create a new folder <strong>“XXXtheme”</strong> (significant to the new theme) under src/main/resources/VAADIN/themes/ folder.</li>
-  <li>Create a folder named as <strong>“customstyles”</strong>.</li>
-  <li>Create a <strong>XXXvariables.scss</strong> file under <strong>customstyles</strong> folder, putting all the variables inside the same file. For more details about the variables we recommend to take a look at the <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-ui/src/main/resources/VAADIN/themes/hawkbit/customstyles/hawkbitvariables.scss">hawkBit defaults</a>.</li>
-  <li>Create <strong>styles.scss</strong> file under the <strong>“XXXtheme”</strong> folder.</li>
-  <li>Any images should be placed under the sub folder <strong>“images”</strong> folder.</li>
-  <li>
-    <p>Within the <strong><em>styles.scss</em></strong> file, import <strong>XXXvariables.scss</strong> and the base theme (hawkbit theme as mentioned in previous chapter <strong>Overview</strong> . Please find below the syntax:</p>
-
-    <pre><code>@import "../hawkbit/customstyles/hawkbitvariables";
-@import "customstyles/examplevariables";
-@import "../hawkbit/hawkbittheme";
-@import "addons";
-
-.exampletheme {
-  @include addons;
-  @include hawkbittheme;
-}
-</code></pre>
-  </li>
-  <li>Finally the structure should be as in the <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-custom-theme-example/src/main/resources/VAADIN">example app</a>.</li>
+  <li>Reporting capabilities for a complete understanding of the rollout progress at each point in time.</li>
 </ul>
 
-<h1 id="procedure-to-add-a-custom-footer">Procedure to add a custom footer</h1>
+<p>Eclipse <em>hawkBit</em> sees these capabilities under the term Rollout Management.</p>
+
+<p>The following capabilities are currently supported by the <em>Rollout Management</em>:
+- Create, update and start of rollouts.
+  - Selection of targets as input for the rollout based on <em>target filter</em> functionality.
+  - Selection of a <em>DistributionSet</em>.
+  - Auto-splitting of the input target list into a defined number deployment groups.</p>
+
 <ul>
-  <li>Any footer can be added by creating  “footer.html” in <strong>src/main/resources –&gt; VAADIN – themes –&gt; {XXXtheme} –&gt; layouts</strong> folder. An example can be found <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-ui/src/main/resources/VAADIN/themes/hawkbit/layouts/footer.html">here</a>.</li>
+  <li>Cascading start of the deployment groups based on installation status of the previous group.</li>
+  <li>Emergency shutdown of the rollout in case a group exceeds the defined error threshold.</li>
+  <li>Rollout progress monitoring for the entire rollout and the individual groups.</li>
 </ul>
+
+<h2 id="cascading-deployment-group-execution">Cascading Deployment Group Execution</h2>
+<p>The cascading execution of the deployment groups is based on two thresholds that can be defined by the rollout creator.
+- success condition by means of percentage of successfully installed targets in the current groups triggers.
+- error condition by means of absolute or percentage of failed installations which triggers an emergency shutdown of the entire rollout.</p>
+
+<p>[[images/DeploymentGroups.png]]</p>
+
+<h2 id="rollout-state-machine">Rollout state machine</h2>
+<p>### State Machine on Rollout
+<img src="../images/rolloutstatediagram.png" alt="" width="100%" class="image-center" /></p>
+
+<h3 id="state-machine-on-rollout-deployment-group">State Machine on Rollout Deployment Group</h3>
+<p><img src="../images/rolloutgroupstatediagram.png" alt="" width="100%" class="image-center" /></p>
 
                 </div>
              </div>

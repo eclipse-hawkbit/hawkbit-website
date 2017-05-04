@@ -13,7 +13,6 @@
 
 
 
- 
   <title>Eclipse hawkBit - IoT Software Update</title>
 
   <!--Stylesheets-->
@@ -47,7 +46,6 @@
 
 
 
- 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
@@ -66,6 +64,13 @@
 								<li >
 									
 										<a href="../../news/index.html">News</a>
+
+									
+								</li>
+							
+								<li >
+									
+										<a href="../../blog/index.html">Blog</a>
 
 									
 								</li>
@@ -95,7 +100,6 @@
 
 
 
- 
 
   
     <li>
@@ -108,7 +112,6 @@
 
 
 
- 
 
   
     <li  >
@@ -153,7 +156,6 @@
 
 
 
- 
 
   
     <li  >
@@ -182,6 +184,15 @@
     </li>
   
 
+  
+    <li  >
+      
+        <a href="../../documentation/architecture/rollout-management.html">Rollout Management</a>
+      
+
+    </li>
+  
+
 
       </ul>
     </li>
@@ -198,7 +209,6 @@
 
 
 
- 
 
   
     <li  >
@@ -261,7 +271,6 @@
 
 
 
- 
 
   
     <li  >
@@ -288,7 +297,6 @@
 
 
 
- 
 
   
     <li  >
@@ -352,7 +360,7 @@
 <p>Note: in DDI the target is identified using a  <strong>controllerId</strong>. Controller is used as a term for the actual service/client on the device. That allows users to have in some cases even multiple clients on the same target for different tasks, e.g. Firmware update and App management.</p>
 
 <h1 id="state-machine-mapping">State Machine Mapping</h1>
-<p>For historical reasons the DDI has a different state machine and status messages than the <a href="https://github.com/eclipse/hawkbit/wiki/Target-State-Machine">Target State Machine</a> of the <em>hawkBit</em> update server.</p>
+<p>For historical reasons the DDI has a different state machine and status messages than the <a href="../architecture/targetstate.html">Target State Machine</a> of the <em>hawkBit</em> update server.</p>
 
 <p>This is kept in order to ensure that <em>DDI</em> stays compatible for devices out there in the field. A future version “2” of <em>DDI</em> might change that. <em>DDI</em> also defines more states than the update server, e.g. multiple DDI states are currently mapped by the <em>DDI</em> implementation to <em>RUNNING</em> state. It is possible that in the future <em>hawkBit</em> will fully leverage these additional states.</p>
 

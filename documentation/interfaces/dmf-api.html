@@ -13,7 +13,6 @@
 
 
 
- 
   <title>Eclipse hawkBit - IoT Software Update</title>
 
   <!--Stylesheets-->
@@ -47,7 +46,6 @@
 
 
 
- 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
@@ -66,6 +64,13 @@
 								<li >
 									
 										<a href="../../news/index.html">News</a>
+
+									
+								</li>
+							
+								<li >
+									
+										<a href="../../blog/index.html">Blog</a>
 
 									
 								</li>
@@ -95,7 +100,6 @@
 
 
 
- 
 
   
     <li>
@@ -108,7 +112,6 @@
 
 
 
- 
 
   
     <li  >
@@ -153,7 +156,6 @@
 
 
 
- 
 
   
     <li  >
@@ -182,6 +184,15 @@
     </li>
   
 
+  
+    <li  >
+      
+        <a href="../../documentation/architecture/rollout-management.html">Rollout Management</a>
+      
+
+    </li>
+  
+
 
       </ul>
     </li>
@@ -198,7 +209,6 @@
 
 
 
- 
 
   
     <li  >
@@ -261,7 +271,6 @@
 
 
 
- 
 
   
     <li  >
@@ -288,7 +297,6 @@
 
 
 
- 
 
   
     <li  >
@@ -457,6 +465,91 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
     </tr>
   </tbody>
 </table>
+
+<h3 id="message-to-update-target-attributes">Message to update target attributes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message Header</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Mandatory</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td>Type of the message</td>
+      <td>Fixed string “EVENT”</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>topic</td>
+      <td>Topic to handle events different</td>
+      <td>Fixed string “UPDATE_ATTRIBUTES”</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>thingId</td>
+      <td>The ID of the registered thing</td>
+      <td>String</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>tenant</td>
+      <td>The tenant this thing belongs to</td>
+      <td>String</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message Properties</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Mandatory</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>content_type</td>
+      <td>The content type of the payload</td>
+      <td>String</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example Header and Payload</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Headers</th>
+      <th>MessageProperties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=UPDATE_ATTRIBUTES</td>
+      <td>content_type=application/json <br /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Payload Template</p>
+
+<pre><code class="language-json">{
+	"attributes": {
+		"exampleKey1" : "exampleValue1",
+		"exampleKey2" : "exampleValue2"
+	}
+}
+</code></pre>
 
 <h3 id="message-to-send-an-action-status-event-to-hawkbit">Message to send an action status event to <em>hawkBit</em></h3>
 

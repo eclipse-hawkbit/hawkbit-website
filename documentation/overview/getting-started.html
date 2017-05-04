@@ -13,7 +13,6 @@
 
 
 
- 
   <title>Eclipse hawkBit - IoT Software Update</title>
 
   <!--Stylesheets-->
@@ -47,7 +46,6 @@
 
 
 
- 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
@@ -66,6 +64,13 @@
 								<li >
 									
 										<a href="../../news/index.html">News</a>
+
+									
+								</li>
+							
+								<li >
+									
+										<a href="../../blog/index.html">Blog</a>
 
 									
 								</li>
@@ -95,7 +100,6 @@
 
 
 
- 
 
   
     <li>
@@ -108,7 +112,6 @@
 
 
 
- 
 
   
     <li  >
@@ -153,7 +156,6 @@
 
 
 
- 
 
   
     <li  >
@@ -182,6 +184,15 @@
     </li>
   
 
+  
+    <li  >
+      
+        <a href="../../documentation/architecture/rollout-management.html">Rollout Management</a>
+      
+
+    </li>
+  
+
 
       </ul>
     </li>
@@ -198,7 +209,6 @@
 
 
 
- 
 
   
     <li  >
@@ -261,7 +271,6 @@
 
 
 
- 
 
   
     <li  >
@@ -288,7 +297,6 @@
 
 
 
- 
 
   
     <li  >
@@ -353,18 +361,22 @@
 
 <h1 id="compile-run-and-getting-started">Compile, Run and Getting Started</h1>
 
-<p>We are not providing an off the shelf installation ready hawkBit update server. However, we recommend to check out the <a href="examples/hawkbit-example-app">Example Application</a> for a runtime ready Spring Boot based update server that is empowered by hawkBit. In addition we have <a href="https://github.com/eclipse/hawkbit/wiki/Run-hawkBit">guide</a> for setting up a complete landscape.</p>
-
 <h4 id="clone-and-build-hawkbit">Clone and build hawkBit</h4>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git clone https://github.com/eclipse/hawkbit.git
 <span class="gp">$ </span><span class="nb">cd </span>hawkbit
 <span class="gp">$ </span>mvn clean install</code></pre></figure>
 
-<h4 id="start-hawkbit-example-app">Start hawkBit example app</h4>
+<h4 id="start-hawkbit-update-server">Start hawkBit update server</h4>
 <p><a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-app">Example Application</a></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>java -jar ./examples/hawkbit-example-app/target/hawkbit-example-app-#version#.jar</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>java -jar ./hawkbit-runtime/hawkbit-update-server/target/hawkbit-update-server-#version#-SNAPSHOT.jar</code></pre></figure>
+
+<h4 id="build-hawkbit-examples">Build hawkBit examples</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git clone https://github.com/eclipse/hawkbit.git
+<span class="gp">$ </span><span class="nb">cd </span>hawkbit/examples
+<span class="gp">$ </span>mvn clean install</code></pre></figure>
 
 <h4 id="start-hawkbit-device-simulator">Start hawkBit device simulator</h4>
 <p><a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-device-simulator">Device Simulator</a></p>
@@ -375,6 +387,7 @@
 <p><a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-mgmt-simulator">Example Management API Client</a></p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>java -jar ./examples/hawkbit-example-mgmt-simulator/target/hawkbit-example-mgmt-simulator-#version#.jar</code></pre></figure>
+
 
                 </div>
              </div>

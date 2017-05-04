@@ -13,7 +13,6 @@
 
 
 
- 
   <title>Eclipse hawkBit - IoT Software Update</title>
 
   <!--Stylesheets-->
@@ -47,7 +46,6 @@
 
 
 
- 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
@@ -66,6 +64,13 @@
 								<li >
 									
 										<a href="../../news/index.html">News</a>
+
+									
+								</li>
+							
+								<li >
+									
+										<a href="../../blog/index.html">Blog</a>
 
 									
 								</li>
@@ -95,7 +100,6 @@
 
 
 
- 
 
   
     <li>
@@ -108,7 +112,6 @@
 
 
 
- 
 
   
     <li  >
@@ -153,7 +156,6 @@
 
 
 
- 
 
   
     <li  >
@@ -182,6 +184,15 @@
     </li>
   
 
+  
+    <li  >
+      
+        <a href="../../documentation/architecture/rollout-management.html">Rollout Management</a>
+      
+
+    </li>
+  
+
 
       </ul>
     </li>
@@ -198,7 +209,6 @@
 
 
 
- 
 
   
     <li  >
@@ -261,7 +271,6 @@
 
 
 
- 
 
   
     <li  >
@@ -288,7 +297,6 @@
 
 
 
- 
 
   
     <li  >
@@ -347,9 +355,9 @@
 
 <h1 id="run-hawkbit">Run hawkBit</h1>
 
-<p>In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is based on the <em>hawkBit</em> example modules. We call these <em>examples</em> as we expect that developers who intend to create a <em>hawkBit</em> based IoT application on their own will create a custom <a href="http://projects.spring.io/spring-boot/">Spring Boot</a> app based on <em>hawkBit</em> as demonstrated with the <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-app">hawkBit example app</a>.</p>
+<p>In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is based on the <em>hawkBit</em> example modules and update server.</p>
 
-<p>Note: the example app can in fact be run <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-app">stand alone</a>. However, only with an embedded H2, no <a href="https://github.com/eclipse/hawkbit/wiki/Device-Management-Federation-API">Device Management Federation API</a> and no artifact storage.</p>
+<p>Note: the update server can in fact be run <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">stand alone</a>. However, only with an embedded H2, no <a href="../interfaces/dmf-api.html">Device Management Federation API</a> and no artifact storage.</p>
 
 <p>This guide will focus on a complete setup that includes all <em>hawkBit</em> features.</p>
 
@@ -357,9 +365,8 @@
 <p>This guide describes a target architecture that is more like one that you will expect in a production system.</p>
 
 <ul>
-  <li>hawkBit Update Server <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-app">example app</a>.</li>
+  <li>hawkBit <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">Update Server</a>.</li>
   <li><a href="https://mariadb.org">MariaDB</a> for the repository.</li>
-  <li><a href="https://www.mongodb.org">MongoDB</a> for artifact storage.</li>
   <li><a href="https://www.rabbitmq.com">RabbitMQ</a> for DMF communication.</li>
   <li>For testing and demonstration purposes we will also use:</li>
   <li><a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-device-simulator">hawkBit Device Simulator</a>.</li>
@@ -367,10 +374,9 @@
 </ul>
 
 <h1 id="prerequisites">Prerequisites</h1>
-
 <ul>
-  <li>You have a MongoDB (&gt;= 3.0), RabbitMQ and MariaDB/MySQL installed and running in your environment.</li>
-  <li>You have a working <a href="https://github.com/eclipse/hawkbit">hawkBit build</a>.</li>
+  <li>You have a working <a href="https://github.com/eclipse/hawkbit">hawkBit core build</a>.</li>
+  <li>You have a working <a href="https://github.com/eclipse/hawkbit/examples">hawkBit examples build</a>.</li>
 </ul>
 
 <h1 id="steps">Steps</h1>
@@ -379,7 +385,7 @@
 
 <p>As mentioned you can create your own application with <em>hawkBit</em> inside or adapt the existing example app. The second option will be shown here.</p>
 
-<h3 id="set-mariadb-dependency-to-compile-in-the-example-app-pomhttpsgithubcomeclipsehawkbitblobmasterexampleshawkbit-example-apppomxml">Set MariaDB dependency to compile in the <a href="https://github.com/eclipse/hawkbit/blob/master/examples/hawkbit-example-app/pom.xml">example App POM</a></h3>
+<h3 id="set-mariadb-dependency-to-compile-in-the-update-server-pomhttpsgithubcomeclipsehawkbitblobmasterhawkbit-runtimehawkbit-update-serverpomxml">Set MariaDB dependency to compile in the <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/pom.xml">update server POM</a></h3>
 
 <figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">&lt;dependency&gt;
   &lt;groupId&gt;org.mariadb.jdbc&lt;/groupId&gt;
@@ -387,7 +393,7 @@
   &lt;scope&gt;compile&lt;/scope&gt;
 &lt;/dependency&gt;</code></pre></figure>
 
-<h3 id="configure-mariadbmysql-and-mongodb-connection-settings">Configure MariaDB/MySQL and MongoDB connection settings.</h3>
+<h3 id="configure-mariadbmysql-connection-settings">Configure MariaDB/MySQL connection settings.</h3>
 
 <p>For this you can either edit the existing <em>application.properties</em> or create a <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config-profile-specific-properties">new profile</a>.</p>
 
@@ -395,8 +401,7 @@
 spring.datasource.url=jdbc:mysql://localhost:3306/YOUR_SCHEMA
 spring.datasource.username=YOUR_USER
 spring.datasource.password=YOUR_PWD
-spring.datasource.driverClassName=org.mariadb.jdbc.Driver
-spring.data.mongodb.uri=mongodb://localhost/hawkbitArtifactRepository</code></pre></figure>
+spring.datasource.driverClassName=org.mariadb.jdbc.Driver</code></pre></figure>
 
 <h3 id="configure-rabbitmq-connection-settings-for-update-server-and-device-simulator-optional">Configure RabbitMQ connection settings for update server and device simulator (optional).</h3>
 
@@ -424,7 +429,7 @@ spring.rabbitmq.port=5672</code></pre></figure>
 
 <h3 id="compile--run-your-production-ready-app">Compile &amp; Run your <em>“production ready”</em> app.</h3>
 
-<p>see <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-app">example app</a></p>
+<p>see <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">update server</a></p>
 
 <h3 id="compile--run-example-scenario-creation-scripthttpsgithubcomeclipsehawkbittreemasterexampleshawkbit-mgmt-api-client-optional">Compile &amp; Run example scenario <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-mgmt-api-client">creation script</a> (optional).</h3>
 
@@ -436,7 +441,7 @@ spring.rabbitmq.port=5672</code></pre></figure>
 
 <p>see <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-device-simulator">device simulator</a></p>
 
-<h2 id="enjoy-hawkbit-with-a-real-database-artifact-storage-and-all-interfaceshttpsgithubcomeclipsehawkbitwikiinterfaces-available">Enjoy hawkBit with a real database, artifact storage and all <a href="https://github.com/eclipse/hawkbit/wiki/Interfaces">interfaces</a> available.</h2>
+<h2 id="enjoy-hawkbit-with-a-real-database-artifact-storage-and-all-interfacesinterfacesinterfaceshtml-available">Enjoy hawkBit with a real database, artifact storage and all <a href="../interfaces/interfaces.html">interfaces</a> available.</h2>
 
 <p><img src="../images/gettingStartedResult.png" alt="" width="100%" /></p>
 
