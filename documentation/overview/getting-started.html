@@ -63,20 +63,6 @@
 							
 								<li >
 									
-										<a href="../../news/index.html">News</a>
-
-									
-								</li>
-							
-								<li >
-									
-										<a href="../../blog/index.html">Blog</a>
-
-									
-								</li>
-							
-								<li >
-									
 										<a href="../../documentation/overview/introduction.html">Documentation</a>
 
 									
@@ -367,26 +353,25 @@
 <span class="gp">$ </span><span class="nb">cd </span>hawkbit
 <span class="gp">$ </span>mvn clean install</code></pre></figure>
 
-<h4 id="start-hawkbit-update-server">Start hawkBit update server</h4>
-<p><a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-app">Example Application</a></p>
+<h4 id="start-hawkbit-update-serverhttpsgithubcomeclipsehawkbittreemasterhawkbit-runtimehawkbit-update-server">Start hawkBit <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">update server</a></h4>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>java -jar ./hawkbit-runtime/hawkbit-update-server/target/hawkbit-update-server-#version#-SNAPSHOT.jar</code></pre></figure>
 
 <h4 id="build-hawkbit-examples">Build hawkBit examples</h4>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git clone https://github.com/eclipse/hawkbit.git
-<span class="gp">$ </span><span class="nb">cd </span>hawkbit/examples
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git clone https://github.com/eclipse/hawkbit-examples.git
+<span class="gp">$ </span><span class="nb">cd </span>hawkbit-examples
 <span class="gp">$ </span>mvn clean install</code></pre></figure>
 
 <h4 id="start-hawkbit-device-simulator">Start hawkBit device simulator</h4>
-<p><a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-device-simulator">Device Simulator</a></p>
+<p><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-device-simulator">Device Simulator</a></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>java -jar ./examples/hawkbit-device-simulator/target/hawkbit-device-simulator-#version#.jar</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>java -jar ./hawkbit-device-simulator/target/hawkbit-device-simulator-#version#.jar</code></pre></figure>
 
 <h4 id="generate-getting-started-data">Generate Getting Started data</h4>
-<p><a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-mgmt-simulator">Example Management API Client</a></p>
+<p><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">Example Management API Client</a></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>java -jar ./examples/hawkbit-example-mgmt-simulator/target/hawkbit-example-mgmt-simulator-#version#.jar</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>java -jar ./hawkbit-example-mgmt-simulator/target/hawkbit-example-mgmt-simulator-#version#.jar</code></pre></figure>
 
 
                 </div>

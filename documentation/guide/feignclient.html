@@ -63,20 +63,6 @@
 							
 								<li >
 									
-										<a href="../../news/index.html">News</a>
-
-									
-								</li>
-							
-								<li >
-									
-										<a href="../../blog/index.html">Blog</a>
-
-									
-								</li>
-							
-								<li >
-									
 										<a href="../../documentation/overview/introduction.html">Documentation</a>
 
 									
@@ -354,12 +340,10 @@
                  <!--base to have relative path for offline navigation -->
 
 <h1 id="create-feign-rest-client">Create Feign REST Client</h1>
-<p>In this guide we describe how to create a <a href="https://github.com/Netflix/feign">Feign</a> Rest Client based on a  <a href="http://projects.spring.io/spring-boot/">Spring Boot</a> Application. <a href="https://projects.eclipse.org/projects/iot.hawkbit">hawkBit</a> provides REST interfaces for <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-ddi-api">Management API</a> and [DDI API] (https://github.com/eclipse/hawkbit/tree/master/hawkbit-ddi-api). Using this interfaces you can create a feign client with the help of the [feign inheritance support] (http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign-inheritance).
-Our <a href="https://github.com/eclipse/hawkbit/tree/master/examples">example</a> modules demonstrate how to create <a href="https://github.com/Netflix/feign">Feign</a> client resources. Here you can find the <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-mgmt-feign-client">Management API client resources</a> and the <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-ddi-feign-client">DDI client resources</a>.
-A small <a href="https://github.com/eclipse/hawkbit/blob/master/examples/hawkbit-example-mgmt-simulator/src/main/java/org/eclipse/hawkbit/mgmt/client/Application.java">simulator application</a> demonstrates how you can interact with the <a href="https://projects.eclipse.org/projects/iot.hawkbit">hawkBit</a> via the <a href="http://www.eclipse.org/hawkbit/documentation/interfaces/management-api.html">Management API
+<p>In this guide we describe how to create a <a href="https://github.com/Netflix/feign">Feign</a> Rest Client based on a  <a href="http://projects.spring.io/spring-boot/">Spring Boot</a> Application. hawkBit provides REST interfaces for <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-ddi-api">Management API</a> and [DDI API] (https://github.com/eclipse/hawkbit/tree/master/hawkbit-ddi-api). Using this interfaces you can create a feign client with the help of the [feign inheritance support] (http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign-inheritance).
+Our <a href="https://github.com/eclipse/hawkbit-examples">example</a> modules demonstrate how to create <a href="https://github.com/Netflix/feign">Feign</a> client resources. Here you can find the <a href="hhttps://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-feign-client">Management API client resources</a> and the <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-ddi-feign-client">DDI client resources</a>.
+A small <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">simulator application</a> demonstrates how you can interact with the hawkBit via the <a href="http://www.eclipse.org/hawkbit/documentation/interfaces/management-api.html">Management API
 </a>. </p>
-
-<p>Note: A hawkbit application have to be run. Therefore, you can use our <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-app">example application</a></p>
 
 <h3 id="example-managment-api-simulator">Example Managment API simulator</h3>
 
@@ -386,7 +370,7 @@ public interface MgmtTargetClientResource extends MgmtTargetRestApi {
 
 </code></pre>
 
-<p>At <a href="https://github.com/eclipse/hawkbit/tree/master/examples/hawkbit-example-core-feign-client">hawkbit-example-core-feign-client</a> is a spring configuration to auto configure some beans, which can be reused for a own feign client.</p>
+<p>At <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-core-feign-client">hawkbit-example-core-feign-client</a> is a spring configuration to auto configure some beans, which can be reused for a own feign client.</p>
 
 <pre><code>@Configuration
 @ConditionalOnClass(Feign.class)

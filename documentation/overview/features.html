@@ -63,20 +63,6 @@
 							
 								<li >
 									
-										<a href="../../news/index.html">News</a>
-
-									
-								</li>
-							
-								<li >
-									
-										<a href="../../blog/index.html">Blog</a>
-
-									
-								</li>
-							
-								<li >
-									
 										<a href="../../documentation/overview/introduction.html">Documentation</a>
 
 									
@@ -352,6 +338,81 @@
             <div class="row">
 					     <div class="span8 offset3">
                  <!--base to have relative path for offline navigation -->
+
+<h1 id="feature-overview">Feature overview</h1>
+
+<h3 id="device-and-software-repository">Device and software repository</h3>
+<ul>
+  <li>Repository that holds the provisioning targets and assignable software distributions.</li>
+  <li>That includes a full software update history for every device.</li>
+  <li>Support for pre-commission devices in the repository and plug and play, i.e. device is created if it is authenticated for the first time.</li>
+</ul>
+
+<h3 id="update-management">Update Management</h3>
+<ul>
+  <li>Directly deploy a defined software distribution to a device (by Management UI or API).</li>
+  <li>Update handling is independent of the device type, integration approach or connectivity.</li>
+</ul>
+
+<h3 id="management-uiconsole">Management UI/Console</h3>
+<ul>
+  <li>Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software).</li>
+  <li>Manage and monitor software update operations.</li>
+  <li>Optimized for professional users, e.g. administrators, developers and 2nd/3rd level support staff.</li>
+  <li>Ease of use drag-and-drop paradigm.</li>
+  <li>Flexible grouping of data.</li>
+  <li>Flexible filters for data browsing.</li>
+  <li>Responsive to resolution.</li>
+  <li>Lazy loading of data.</li>
+  <li>All information on one page.</li>
+  <li>Optional integration with Bosch IoT Permissions service for full multi user support with fine granular permission based authorization.</li>
+</ul>
+
+<h3 id="artifact-content-delivery">Artifact Content Delivery</h3>
+<ul>
+  <li>Partial downloads supported.</li>
+  <li>Download resume supported (RFC7233).</li>
+  <li>Content management by RESTful API and UI (see above).</li>
+  <li>Authorization based on software assignment, i.e. a device can only download what has been assigned to it in the first place.</li>
+  <li>Delta artifact hosting supported.</li>
+  <li>Artifact signature hosting supported.</li>
+</ul>
+
+<h3 id="rolloutcampaign-management">Rollout/Campaign Management</h3>
+<ul>
+  <li>Secure handling of large volumes of devices at rollout creation time.</li>
+  <li>Flexible deployment group definition as part of a rollout.</li>
+  <li>Monitoring of the rollout progress.</li>
+  <li>Emergency rollout shutdown in case of update failures.</li>
+</ul>
+
+<h2 id="interfaces">Interfaces</h2>
+<p>### Management API
+- RESTful API
+- Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software).
+- Manage and monitor software update operations.
+- Online API documentation.
+- JSON payload with Hypermedia support.
+- Supports filtering, sorting and paging.</p>
+
+<h3 id="direct-device-integration-api">Direct Device Integration API</h3>
+<ul>
+  <li>RESTful HTTP based API for direct device integration
+    <ul>
+      <li>JSON payload.</li>
+      <li>Traffic optimized (content based Etag generation, not modified).</li>
+    </ul>
+  </li>
+  <li>Feedback channel from device.</li>
+  <li>TLS encryption.</li>
+</ul>
+
+<h3 id="device-management-federation-api">Device Management Federation API</h3>
+<ul>
+  <li>Indirect device integration through a device management service or application into hawkBit.</li>
+  <li>Optimized for high service to service throughput with <a href="https://www.rabbitmq.com/amqp-0-9-1-reference.html">AMQP</a> messaging interface.</li>
+  <li>Separate AMQP vHost per tenant for maximum security.</li>
+</ul>
 
 
                 </div>
