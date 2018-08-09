@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Device Management Federation API - Eclipse hawkBit</title>
+    <meta name="generator" content="Hugo 0.46" />
+
+    
+    <meta name="description" content="IoT. Update. Device.">
+    
+    <link rel="canonical" href="https://www.eclipse.org/hawkbit/apis/dmf_api/">
+    
+    <meta name="author" content="The Eclipse hawkBit Project">
+    
+
+    <meta property="og:url" content="https://www.eclipse.org/hawkbit/apis/dmf_api/">
+    <meta property="og:title" content="Eclipse hawkBit">
+    <meta property="og:image" content="https://www.eclipse.org/hawkbit/images/hawkbit_icon.png">
+    <meta name="apple-mobile-web-app-title" content="Eclipse hawkBit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.eclipse.org/hawkbit/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://www.eclipse.org/hawkbit/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('https://www.eclipse.org/hawkbit/fonts/icon.eot');
+        src: url('https://www.eclipse.org/hawkbit/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('https://www.eclipse.org/hawkbit/fonts/icon.woff')
+               format('woff'),
+             url('https://www.eclipse.org/hawkbit/fonts/icon.ttf')
+               format('truetype'),
+             url('https://www.eclipse.org/hawkbit/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://www.eclipse.org/hawkbit/stylesheets/application.css">
+    <link rel="stylesheet" href="https://www.eclipse.org/hawkbit/stylesheets/temporary.css">
+    <link rel="stylesheet" href="https://www.eclipse.org/hawkbit/stylesheets/palettes.css">
+    <link rel="stylesheet" href="https://www.eclipse.org/hawkbit/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <link rel="stylesheet" href="https://www.eclipse.org/hawkbit/css/hawkbit.css">
+    
+    <link rel="stylesheet" href="//www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+    
+    <script src="https://www.eclipse.org/hawkbit/javascripts/modernizr.js"></script>
+    <script src="//www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  </head>
+  <body class="palette-primary-deep-purple palette-accent-light-green">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Device Management Federation API
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/eclipse/hawkbit" title="@eclipse/hawkbit on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+
+    
+    <div class="button button-github" role="button" aria-label="Gitter">
+      <a href="https://gitter.im/eclipse/hawkbit" title="@eclipse/hawkbit on Gitter" target="_blank" class="toggle-button icon fab fa-gitter"></a>
+    </div>
+    
+
+    
+    <div class="button button-github" role="button" aria-label="Docker">
+      <a href="https://hub.docker.com/u/hawkbit" title="hawkbit on Docker Hub" target="_blank" class="toggle-button icon fab fa-docker"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://www.eclipse.org/hawkbit/" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="https://www.eclipse.org/hawkbit/images/hawkbit_icon.png">
+        </div>
+      
+      <div class="name">
+        <strong>Eclipse hawkBit&trade; </strong>
+        
+          <br>
+          eclipse/hawkbit
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://hub.docker.com/u/hawkbit/" target="_blank" title="hawkBit on DockerHub" data-action="docker">
+              <i class="icon icon-search"></i> Dockerhub
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/eclipse/hawkbit" target="_blank" title="hawkBit on GitHub" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="What is hawkBit" href="/hawkbit/whatishawkbit/">
+	
+	What is hawkBit
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Getting started" href="/hawkbit/gettingstarted/">
+	
+	Getting started
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Guides" href="/hawkbit/guides/">
+	
+	Guides
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Features" href="/hawkbit/features/">
+	
+	Features
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Concepts" href="/hawkbit/concepts/">
+	
+	Concepts
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Architecture" href="/hawkbit/architecture/">
+	
+	Architecture
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Management UI" href="/hawkbit/ui/">
+	
+	Management UI
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="APIs" href="/hawkbit/apis/">
+	
+	APIs
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Community" href="/hawkbit/community/">
+	
+	Community
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Release Notes" href="/hawkbit/release-notes/">
+	
+	Release Notes
+</a>
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+
+        <ul>
+          <li>
+            <a href="https://gitter.im/eclipse/hawkbit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title="Chat on Gitter" target="_blank">
+              <img src="https://badges.gitter.im/eclipse/hawkbit.svg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
+              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent" title="Maven Central Status" target="_blank">
+              <img src="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent/badge.svg" />
+            </a>
+          </li>
+        </ul>
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Device Management Federation API </h1>
+
+			<p>Currently bodies of messages are based on JSON. The DMF API provides java classes which allows that the message body can be deserialized at runtime into a java object. Also java classes can be used to serialize java objects into JSON bodies to send a message to hawkBit.
+</p>
+
+<h2 id="basics">Basics</h2>
+
+<p>There are three basic concepts of AMQP:</p>
+
+<ul>
+<li>Exchanges - what you publish to.</li>
+<li>Queues - what you consume from.</li>
+<li>Bindings - configuration that maps an exchange to a queue.</li>
+</ul>
+
+<p><strong>Queues</strong> are just a place for receiving messages.<br />
+Bindings determine how messages get put in this place
+Queues can also be bound to multiple exchanges.</p>
+
+<p><strong>Exchanges</strong> are just publish messages.
+The user decides who can produce on an exchange and who can create bindings on that exchange for delivery to a specific queue.</p>
+
+<p>hawkBit will create all necessary queues, exchanges and bindings for the user, making it easy to get started.
+The exchange name for outgoing messages is <strong>dmf.exchange</strong>.
+The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless a <code>reply_to</code> header is set, hawkBit will reply on the <strong>sp.direct.exchange</strong> which is bound to the <strong>sp_direct_queue</strong>.</p>
+
+<p>The user can set a <code>reply_to</code> header (see chapter below), to change the default sender exchange.</p>
+
+<p>The following chapter describes the message body, header and properties.</p>
+
+<p>Note: the DMF protocol was intended to be open for other non update use cases by design (e.g. <a href="https://github.com/eclipse/hono">Eclipse Hono</a>. As a result, DMF uses the term <strong>thing</strong> and not <strong>target</strong> but they are actually synonyms in this case.</p>
+
+<h2 id="messages-sent-to-hawkbit">Messages sent to hawkBit</h2>
+
+<p>All messages have to be sent to the exchange <strong>dmf.exchange</strong>.</p>
+
+<h3 id="message-to-register-a-thing">Message to register a thing</h3>
+
+<table>
+<thead>
+<tr>
+<th>Message Header</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the message</td>
+<td>Fixed string &ldquo;THING_CREATED &ldquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>thingId</td>
+<td>The ID of the registered thing</td>
+<td>String</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>sender</td>
+<td>Name of the message sender</td>
+<td>String</td>
+<td>false</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant this thing belongs to</td>
+<td>String</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Message Properties</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>content_type</td>
+<td>The content type of the payload</td>
+<td>String</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>reply_to</td>
+<td>Exchange to reply to. The default is sp.direct.exchange which is bound to the sp_direct_queue</td>
+<td>String</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example Header</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Headers</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=THING_CREATED <br /> tenant=tenant123 <br /> thingId=abc  <br /> sender=Lwm2m</td>
+<td>content_type=application/json <br /> reply_to (optional) =sp.connector.replyTo</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="message-to-update-target-attributes">Message to update target attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Message Header</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the message</td>
+<td>Fixed string &ldquo;EVENT&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>topic</td>
+<td>Topic to handle events different</td>
+<td>Fixed string &ldquo;UPDATE_ATTRIBUTES&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>thingId</td>
+<td>The ID of the registered thing</td>
+<td>String</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant this thing belongs to</td>
+<td>String</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Message Properties</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>content_type</td>
+<td>The content type of the payload</td>
+<td>String</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example Header and Payload</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Headers</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=UPDATE_ATTRIBUTES</td>
+<td>content_type=application/json <br /></td>
+</tr>
+</tbody>
+</table>
+
+<p>Payload Template</p>
+
+<pre><code class="language-json">{
+	&quot;attributes&quot;: {
+		&quot;exampleKey1&quot; : &quot;exampleValue1&quot;,
+		&quot;exampleKey2&quot; : &quot;exampleValue2&quot;
+	}
+}
+</code></pre>
+
+<h3 id="message-to-send-an-action-status-event-to-hawkbit">Message to send an action status event to hawkBit</h3>
+
+<p>The Java representation is ActionUpdateStatus:</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the message</td>
+<td>Fixed string &ldquo;EVENT&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>topic</td>
+<td>Topic to handle events different</td>
+<td>Fixed string &ldquo;UPDATE_ACTION_STATUS&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant this thing belongs to</td>
+<td>String</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Message Properties</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>content_type</td>
+<td>The content type of the payload</td>
+<td>String</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<p>Payload Template</p>
+
+<pre><code class="language-json">{
+   &quot;actionId&quot;: long,
+   &quot;softwareModuleId&quot;: long,
+   &quot;actionStatus&quot;:&quot;String&quot;,
+   &quot;message&quot;:[&quot;String&quot;]
+}
+</code></pre>
+
+<p>Possible actionStatus</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>DOWNLOAD</td>
+<td>Device is downloading</td>
+</tr>
+
+<tr>
+<td>RETRIEVED</td>
+<td>Device management service has retrieved something</td>
+</tr>
+
+<tr>
+<td>RUNNING</td>
+<td>Update is running</td>
+</tr>
+
+<tr>
+<td>FINISHED</td>
+<td>Update process finished successful</td>
+</tr>
+
+<tr>
+<td>ERROR</td>
+<td>Error during update process</td>
+</tr>
+
+<tr>
+<td>WARNING</td>
+<td>Warning during update process</td>
+</tr>
+
+<tr>
+<td>CANCELED</td>
+<td>Cancel update process successful</td>
+</tr>
+
+<tr>
+<td>CANCEL_REJECTED</td>
+<td>Cancel update process has been rejected</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example Header and Payload</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Headers</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>content_type=application/json</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-json">{
+   &quot;actionId&quot;:137,
+   &quot;softwareModuleId&quot;:17,
+   &quot;actionStatus&quot;:&quot;DOWNLOAD&quot;,
+   &quot;message&quot;:[&quot;The download has started&quot;]
+}
+</code></pre>
+
+<h3 id="message-to-cancel-an-update-task">Message to cancel an update task</h3>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the message</td>
+<td>Fixed string &ldquo;Event&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>thingId</td>
+<td>The ID of the registered thing</td>
+<td>String</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>topic</td>
+<td>Topic to handle events different</td>
+<td>Fixed string &ldquo;CANCEL_DOWNLOAD&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant this thing belongs to</td>
+<td>String</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Message Properties</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>content_type</td>
+<td>The content type of the payload</td>
+<td>String</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<p>Payload Template</p>
+
+<pre><code class="language-json">{
+   &quot;actionId&quot;: long
+}
+</code></pre>
+
+<p><strong>Example Header and payload</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Headers</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=CANCEL_DOWNLOAD</td>
+<td>content_type=application/json</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-json">{
+   &quot;actionId&quot;:137
+}
+</code></pre>
+
+<p>After this message has been sent, an action status event with either actionStatus=CANCELED or actionStatus=CANCEL_REJECTED has to be returned.</p>
+
+<p><strong>Example Header and Payload when cancellation is successful</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Headers</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>content_type=application/json</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-json">{
+   &quot;actionId&quot;:137,
+   &quot;softwareModuleId&quot;:17,
+   &quot;actionStatus&quot;:&quot;CANCELED&quot;,
+   &quot;message&quot;:[&quot;The update was canceled.&quot;]
+}
+</code></pre>
+
+<p><strong>Example Header and Payload when cancellation was rejected</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Headers</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>content_type=application/json</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-json">{
+   &quot;actionId&quot;:137,
+   &quot;softwareModuleId&quot;:17,
+   &quot;actionStatus&quot;:&quot;CANCEL_REJECTED&quot;,
+   &quot;message&quot;:[&quot;The cancellation was not possible since the target sent an unexpected response.&quot;]
+}
+</code></pre>
+
+<h2 id="messages-sent-by-hawkbit">Messages sent by hawkBit</h2>
+
+<p>All messages from hawkBit will be sent to the <strong>sp_direct_queue</strong> or the one specified in the <code>reply_to</code> property.</p>
+
+<h3 id="message-sent-by-hawkbit-to-initialize-an-update-task">Message sent by hawkBit to initialize an update task</h3>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the message</td>
+<td>Fixed string &ldquo;EVENT&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>thingId</td>
+<td>The ID of the registered thing</td>
+<td>String</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>topic</td>
+<td>Topic to handle events different</td>
+<td>Fixed string &ldquo;DOWNLOAD_AND_INSTALL&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant this thing belongs to</td>
+<td>String</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Message Properties</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>content_type</td>
+<td>The content type of the payload</td>
+<td>String</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<p>The Java representation is DownloadAndUpdateRequest:</p>
+
+<p>Payload Template</p>
+
+<pre><code class="language-json">{
+   &quot;actionId&quot;: long,
+   &quot;targetSecurityToken&quot;: &quot;String&quot;,
+   &quot;softwareModules&quot;:[
+       {
+       &quot;moduleId&quot;: long,
+       &quot;moduleType&quot;:&quot;String&quot;,
+       &quot;moduleVersion&quot;:&quot;String&quot;,
+       &quot;artifacts&quot;:[
+           {
+           &quot;filename&quot;:&quot;String&quot;,
+           &quot;urls&quot;:{
+               &quot;HTTP&quot;:&quot;String&quot;,
+               &quot;HTTPS&quot;:&quot;String&quot;
+               },
+           &quot;hashes&quot;:{
+               &quot;md5&quot;:&quot;String&quot;,
+               &quot;sha1&quot;:&quot;String&quot;
+               },
+           &quot;size&quot;:long
+           }],
+       &quot;metadata&quot;:[
+           {
+               &quot;key&quot;:&quot;String&quot;,
+               &quot;value&quot;:&quot;String&quot;
+           }
+       ]
+       }]
+}
+</code></pre>
+
+<p><strong>Example Header and Payload</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Headers</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=EVENT  <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=DOWNLOAD_AND_INSTALL</td>
+<td>content_type=application/json</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-json">{
+   &quot;actionId&quot;:137,
+   &quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
+   &quot;softwareModules&quot;:[{
+       &quot;moduleId&quot;:7,
+       &quot;moduleType&quot;:&quot;firmware&quot;,
+       &quot;moduleVersion&quot;:&quot;7.7.7&quot;,
+       &quot;artifacts&quot;:[
+           {
+           &quot;filename&quot;:&quot;artifact.zip&quot;,
+           &quot;urls&quot;:{
+               &quot;HTTP&quot;:&quot;http://download-from-url.com&quot;,
+               &quot;HTTPS&quot;:&quot;https://download-from-url.com&quot;
+               },
+           &quot;hashes&quot;:{
+               &quot;md5&quot;:&quot;md5hash&quot;,
+               &quot;sha1&quot;:&quot;sha1hash&quot;
+               },
+           &quot;size&quot;:512
+           }],
+       &quot;metadata&quot;:[
+           {
+               &quot;key&quot;:&quot;installationType&quot;,
+               &quot;value&quot;:&quot;5784K#&quot;
+           }
+       ]
+    }]
+}
+</code></pre>
+
+			<aside class="copyright" role="note">
+  <div class="logo">
+    <a href="https://www.eclipse.org" target="_blank">
+      <img src="/hawkbit/images/eclipse_foundation_logo.png" />
+    </a>
+  </div>
+  <p class="notice">
+    
+    &copy; 2018 The Eclipse hawkBit Project &ndash;
+    
+    Documentation built with
+    <a href="https://www.gohugo.io" target="_blank">Hugo</a>
+    using the
+    <a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+  </p>
+  <p class="quickLinks">
+    <a href="http://www.eclipse.org/legal/privacy.php" target="_blank">
+      &gt; Privacy Policy
+    </a>
+    <a href="http://www.eclipse.org/legal/termsofuse.php" target="_blank">
+      &gt; Terms of Use
+    </a>
+    <a href="http://www.eclipse.org/legal/copyright.php" target="_blank">
+      &gt; Copyright Agent
+    </a>
+    <a href="http://www.eclipse.org/legal" target="_blank">
+      &gt; Legal
+    </a>
+    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+      &gt; License
+    </a>
+  </p>
+</aside>
+
+
+			<footer class="footer">
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="https://www.eclipse.org/hawkbit/apis/ddi_api/" title="Direct Device Integration API">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Direct Device Integration API
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="https://www.eclipse.org/hawkbit/community/" title="Community">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Community
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
+      var repo_id  = 'eclipse\/hawkbit';
+    
+    </script>
+
+    <script src="https://www.eclipse.org/hawkbit/javascripts/application.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+          if(headers.length > 0) {
+              for(var i = 0; i < headers.length; i++) {
+                  var li = document.createElement("li");
+                  li.setAttribute("class", "anchor");
+
+                  var a  = document.createElement("a");
+                  if(!headers[i].id)
+                      a.setAttribute("href", headers[i].parentNode.href);
+                  else
+                      a.setAttribute("href", "#" + headers[i].id);
+                  a.setAttribute("title", headers[i].innerHTML);
+                  a.innerHTML = headers[i].innerHTML;
+
+                  li.appendChild(a);
+                  scrollspy.appendChild(li);
+              }
+          } else {
+              scrollspy.parentElement.removeChild(scrollspy)
+          }
+
+
+        /* Add permanent link next to the headers */
+          var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link");
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

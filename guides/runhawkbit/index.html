@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Eclipse hawkBit 0.2.0 - First Release - Eclipse hawkBit</title>
+    <title>Run hawkBit - Eclipse hawkBit</title>
     <meta name="generator" content="Hugo 0.46" />
 
     
     <meta name="description" content="IoT. Update. Device.">
     
-    <link rel="canonical" href="https://www.eclipse.org/hawkbit/news/2018-07-26-first-release.html">
+    <link rel="canonical" href="https://www.eclipse.org/hawkbit/guides/runhawkbit/">
     
     <meta name="author" content="The Eclipse hawkBit Project">
     
 
-    <meta property="og:url" content="https://www.eclipse.org/hawkbit/news/2018-07-26-first-release.html">
+    <meta property="og:url" content="https://www.eclipse.org/hawkbit/guides/runhawkbit/">
     <meta property="og:title" content="Eclipse hawkBit">
     <meta property="og:image" content="https://www.eclipse.org/hawkbit/images/hawkbit_icon.png">
     <meta name="apple-mobile-web-app-title" content="Eclipse hawkBit">
@@ -103,7 +103,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Eclipse hawkBit 0.2.0 - First Release
+        Run hawkBit
       </div>
     </div>
 
@@ -396,122 +396,107 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Eclipse hawkBit 0.2.0 - First Release </h1>
+			<h1>Run hawkBit </h1>
 
-			
-
-<p>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well
-as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT
-since 2015 and with version <em>0.2.0</em> a first release is available.</p>
-
-<p>In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get
-started in seconds.</p>
-
-<h2 id="finally-it-is-here">Finally, it is here!</h2>
-
-<p>After being around in the Eclipse IoT realm for quite some time now, we are more than happy to announce our first release:
-<a href="https://projects.eclipse.org/projects/iot.hawkbit/releases/0.2.0"><em>Eclipse hawkBit 0.2.0</em></a>. The release can be found on <a href="https://mvnrepository.com/artifact/org.eclipse.hawkbit">Maven Central</a>
-and <a href="https://hub.docker.com/r/hawkbit/hawkbit-update-server/">Docker Hub</a>. It includes the following core features:</p>
-
-<ul>
-<li>Device and Software Repository</li>
-<li>Update Management</li>
-<li>Artifact Content Delivery</li>
-<li>Rollout Management</li>
-</ul>
-
-<p>The features are accessible via the following interfaces:</p>
-
-<ul>
-<li>Management UI</li>
-<li>Management API</li>
-<li>Direct Device Integration (DDI) API</li>
-<li>Device Management Federation (DMF) API</li>
-</ul>
-
-<p><img src="../images/hawkBit_overview.jpeg" alt="hawkBit Overview" /></p>
-
-<h2 id="what-s-new">What&rsquo;s new?</h2>
-
-<p>Whenever there is a new release, the first question that comes to mind is: What&rsquo;s new? Since this is our first release,
-one could argue that everything is new. However, most of the features are already well-established. This holds true, for
-example, for our APIs or the Rollout Management. Nevertheless, there have been some recent updates to hawkBit, which we
-do not want to leave unmentioned:</p>
-
-<h3 id="streamlined-ui">Streamlined UI</h3>
-
-<p>The probably most noticeable change has been the removal of the two buttons (<code>Drop here to delete</code> and <code>Actions</code>) at the
-bottom of the <em>Deployment</em>, <em>Distributions</em>, and <em>Upload</em> view. This is a major usability improvement! For example,
-deleting an item required (1) dragging an item onto the delete button, (2) opening the delete pop-up, and (3) confirming
-the deletion. Now, an item can be easily removed by clicking on its remove icon and confirming the action. Moreover,
-multiple (or all <code>CTRL</code> + <code>A</code>) items can be selected and removed at once using the same mechanism. This is not  only
-faster and more intuitive, it also saves a lot of display real estate which can now be used to focus on what is important.
-We hope you like this change as much as we do! <em>(Requires: hawkBit &gt; 0.2.2)</em></p>
-
-<p><img src="../images/hawkbit_ui.png" alt="Screenshot of improved UI" /></p>
-
-<h3 id="ms-sql-server">MS SQL Server</h3>
-
-<p>Eclipse hawkBit supports a range of different SQL databases. Up to now, these have been the internal H2 database (which can be
-used for testing, development, or trial) and MySQL/MariaDB for production-grade usage. This list is now extended by
-Microsoft&rsquo;s SQL Server which is also available in production grade, as well as, IBM&rsquo;s DB2 for testing and development.</p>
-
-<h3 id="open-sourced-rest-docs">Open Sourced REST docs</h3>
-
-<p>A huge benefit for the community is the recently open sourced REST docs of hawkBit. This has been an <a href="https://github.com/eclipse/hawkbit/issues/480">open request</a>
-for some time, which we were happy to meet. The documentation is generated using <a href="https://spring.io/projects/spring-restdocs">Spring REST docs</a>, based on unit-tests. These tests, with the respective documentation, are now available in the <a href="https://github.com/eclipse/hawkbit/pull/688">code base</a>.
- Furthermore, the API documentation will be hosted on our new <a href="https://www.eclipse.org/hawkbit/">website</a> (coming soon).</p>
-
-<h3 id="docker-images">Docker Images</h3>
-
-<p>In order to enable interested parties to get started with hawkBit conveniently, we decided to provide the
-<a href="https://hub.docker.com/r/hawkbit/hawkbit-update-server/">Update Server as a Docker image</a> on Docker Hub. The image comes
-in two flavors: The default image uses the internal H2 database, while the images with a <code>-mysql</code> suffix contain the MySQL
-driver to allow connecting a MySQL database. In addition to the Docker image, the hawkBit repository contains a
-<a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/docker/docker-compose.yml">docker-compose.yml</a>
-that not only starts the Update Server, but further includes a MySQL database and a RabbitMQ message broker so you&rsquo;re
-able to use Device Management Federation (DMF) as well.</p>
-
-<p>To start the hawkBit Update Server image, open a terminal and run:</p>
-
-<pre><code>$ docker run -d -p 8080:8080 hawkbit/hawkbit-update-server
-</code></pre>
+			<p>In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is based on the hawkBit example modules and update server.
+</p>
 
 <div class="admonition note">
 <p class="admonition-title"></p>
-<p><em>Note: This requires a running <a href="https://docs.docker.com/install/">Docker deamon</a> on your system.</em></p>
+<p>The update server can in fact be run stand alone. However, only with an embedded H2, no Device Management Federation API and no artifact storage.</p>
 </div>
 
-<p>Now, browse to <a href="http://localhost:8080">http://localhost:8080</a> and log-in with <code>admin:admin</code>. There you go!</p>
+<h2 id="system-architecture">System Architecture</h2>
 
-<h2 id="community-updates">Community Updates</h2>
-
-<p>Although features and functionality play a major role in the hawkBit project, there is also some interesting news from
-the community. As of July 2018, there have been:</p>
+<p>This guide describes a target architecture that is more like one that you will expect in a production system.</p>
 
 <ul>
-<li>Pull Requests: 587</li>
-<li>Forks: 54</li>
-<li>Stars: 137</li>
-<li>Contributors: 25</li>
-<li>Gitter Chat members: 119</li>
+<li>hawkBit <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">Update Server</a>.</li>
+<li><a href="https://mariadb.org">MariaDB</a> for the repository.</li>
+<li><a href="https://www.rabbitmq.com">RabbitMQ</a> for DMF communication.</li>
+<li>For testing and demonstration purposes we will also use:
+
+<ul>
+<li><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-device-simulator">hawkBit Device Simulator</a>.</li>
+<li><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-mgmt-api-client">hawkBit Management API example client</a>.</li>
+</ul></li>
 </ul>
 
-<h3 id="new-project-lead-and-committers">New Project Lead and Committers</h3>
+<h2 id="prerequisites">Prerequisites</h2>
 
-<p>We are happy to announce that the hawkBit project got a new project lead. In addition to
-<a href="https://projects.eclipse.org/user/6364">Kai Zimmermann</a>, project lead from the first hour,
-<a href="https://projects.eclipse.org/user/10982">Jeroen Laverman</a> joined the lead to support him in this responsibility.
-Moreover, with <a href="https://projects.eclipse.org/user/10842">Stefan Behl</a> and Jeroen Laverman, two new committers are aboard.</p>
+<ul>
+<li>You have a working <a href="https://github.com/eclipse/hawkbit">hawkBit core build</a>.</li>
+<li>You have a working <a href="https://github.com/eclipse/hawkbit-examples">hawkBit examples build</a>.</li>
+</ul>
 
-<h2 id="what-s-next">What&rsquo;s next?</h2>
+<h2 id="adapt-hawkbit-update-server-and-device-simulator-to-your-environment">Adapt hawkBit Update Server and Device Simulator to your environment.</h2>
 
-<p>Looking ahead, there are two major topics that we want to tackle next: First, there is the migration of our UI from Vaadin
-7 to Vaadin 8, since Vaadin announced the end-of-life for our current version. Another big topic will be the update
-to Spring Boot 2. On the community side, we are in the final stage of updating our <a href="https://www.eclipse.org/hawkbit/">website</a>
-with a new design, so make sure you stop by in a couple of days to check it out. Finally, the hawkBit team will be
-present at EclipseCon Europe 2018, so if you are interested in meeting us, that is the place to be.</p>
+<p>As mentioned you can create your own application with hawkBit inside or adapt the existing example app. The second option will be shown here.</p>
 
+<h3 id="set-mariadb-dependency-to-compile-in-the-update-server-pom-https-github-com-eclipse-hawkbit-blob-master-hawkbit-runtime-hawkbit-update-server-pom-xml">Set MariaDB dependency to compile in the <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/pom.xml">update server POM</a></h3>
+
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.mariadb.jdbc&lt;/groupId&gt;
+  &lt;artifactId&gt;mariadb-java-client&lt;/artifactId&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h3 id="configure-mariadb-mysql-connection-settings">Configure MariaDB/MySQL connection settings.</h3>
+
+<p>For this you can either edit the existing <em>application.properties</em> or create a <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config-profile-specific-properties">new profile</a>.</p>
+
+<pre><code>spring.jpa.database=MYSQL
+spring.datasource.url=jdbc:mysql://localhost:3306/YOUR_SCHEMA
+spring.datasource.username=YOUR_USER
+spring.datasource.password=YOUR_PWD
+spring.datasource.driverClassName=org.mariadb.jdbc.Driver
+</code></pre>
+
+<h3 id="configure-rabbitmq-connection-settings-for-update-server-and-device-simulator-optional">Configure RabbitMQ connection settings for update server and device simulator (optional).</h3>
+
+<p>We provide already defaults that should work with a standard Rabbit installation. Otherwise configure the following in the <code>application.properties</code> of the two services:</p>
+
+<pre><code>spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+spring.rabbitmq.virtualHost=/
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+</code></pre>
+
+<h3 id="adapt-hostname-of-example-scenario-creation-script-https-github-com-eclipse-hawkbit-examples-blob-master-hawkbit-example-mgmt-simulator-src-main-resources-application-properties">Adapt hostname of example scenario <a href="https://github.com/eclipse/hawkbit-examples/blob/master/hawkbit-example-mgmt-simulator/src/main/resources/application.properties">creation script</a></h3>
+
+<p>Should only be necessary if your system does not run on localhost or uses a different port than the example app.</p>
+
+<p>Adapt <code>application.properties</code> in this case:</p>
+
+<pre><code>hawkbit.url=localhost:8080
+</code></pre>
+
+<p>or provide the parameter on command line:</p>
+
+<pre><code>hawkbit-example-mgmt-simulator-##VERSION##.jar --hawkbit.url=YOUR_HOST:PORT
+</code></pre>
+
+<h2 id="compile-run">Compile &amp; Run</h2>
+
+<h3 id="compile-run-your-production-ready-app">Compile &amp; Run your <em>&ldquo;production ready&rdquo;</em> app.</h3>
+
+<p>see <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">update server</a></p>
+
+<h3 id="compile-run-example-scenario-creation-script-https-github-com-eclipse-hawkbit-examples-tree-master-hawkbit-example-mgmt-simulator-optional">Compile &amp; Run example scenario <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">creation script</a> (optional).</h3>
+
+<p>This has to be done before the device simulator is started. hawkBit creates the mandatory tenant metadata with first login into either <em>Management UI</em> or API (which is done by this client).</p>
+
+<p>However, this is not done by <em>DMF</em> which is in fact used by the device simulator, i.e. without calling <em>Management API</em> first hawkBit would drop all <em>DMF</em> messages as the tenant is unknown.</p>
+
+<h3 id="compile-run-device-simulator-optional">Compile &amp; Run device simulator (optional).</h3>
+
+<p>see <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-device-simulator">device simulator</a></p>
+
+<h1 id="enjoy-hawkbit-with-a-real-database-artifact-storage-and-all-interfaces-apis-available">Enjoy hawkBit with a real database, artifact storage and all <a href="../../apis/">interfaces</a> available.</h1>
+
+<p><img src="../../images/hawkbit_ui.png" alt="" /></p>
 
 			<aside class="copyright" role="note">
   <div class="logo">
@@ -554,18 +539,34 @@ present at EclipseCon Europe 2018, so if you are interested in meeting us, that 
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
+      <a href="https://www.eclipse.org/hawkbit/gettingstarted/" title="Getting Started">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Getting Started
+            </div>
+          </div>
+        </div>
+      </a>
+  
   </div>
 
   <div class="next">
   
-      <a href="https://www.eclipse.org/hawkbit/apis/mgmt/tenant/" title="System Configuration API">
+      <a href="https://www.eclipse.org/hawkbit/guides/feignclient/" title="Feign Client">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              System Configuration API
+              Feign Client
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

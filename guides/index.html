@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Eclipse hawkBit 0.2.0 - First Release - Eclipse hawkBit</title>
+    <title>Guides - Eclipse hawkBit</title>
     <meta name="generator" content="Hugo 0.46" />
 
     
     <meta name="description" content="IoT. Update. Device.">
     
-    <link rel="canonical" href="https://www.eclipse.org/hawkbit/news/2018-07-26-first-release.html">
+    <link rel="canonical" href="https://www.eclipse.org/hawkbit/guides/">
     
     <meta name="author" content="The Eclipse hawkBit Project">
     
 
-    <meta property="og:url" content="https://www.eclipse.org/hawkbit/news/2018-07-26-first-release.html">
+    <meta property="og:url" content="https://www.eclipse.org/hawkbit/guides/">
     <meta property="og:title" content="Eclipse hawkBit">
     <meta property="og:image" content="https://www.eclipse.org/hawkbit/images/hawkbit_icon.png">
     <meta name="apple-mobile-web-app-title" content="Eclipse hawkBit">
@@ -74,15 +74,14 @@
     <script src="//www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
 
     
+    <link href="https://www.eclipse.org/hawkbit/guides/index.xml" rel="alternate" type="application/rss+xml" title="Eclipse hawkBit" />
+    <link href="https://www.eclipse.org/hawkbit/guides/index.xml" rel="feed" type="application/rss+xml" title="Eclipse hawkBit" />
+    
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   </head>
   <body class="palette-primary-deep-purple palette-accent-light-green">
 
-
-
-	
-	
 
 
 <div class="backdrop">
@@ -103,7 +102,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Eclipse hawkBit 0.2.0 - First Release
+        Guides
       </div>
     </div>
 
@@ -157,9 +156,6 @@
       
       <div class="name">
         <strong>Eclipse hawkBit&trade; </strong>
-        
-          <br>
-          eclipse/hawkbit
         
       </div>
     </div>
@@ -232,11 +228,14 @@
 
 
 
-<a  title="Guides" href="/hawkbit/guides/">
+<a class="current" title="Guides" href="/hawkbit/guides/">
 	
 	Guides
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
   
 </li>
@@ -396,122 +395,49 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Eclipse hawkBit 0.2.0 - First Release </h1>
+			<h1>Pages in Guides</h1>
 
 			
+			<a href="https://www.eclipse.org/hawkbit/guides/runhawkbit/" title="Run hawkBit">
+				<h2>Run hawkBit</h2>
+			</a>
 
-<p>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well
-as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT
-since 2015 and with version <em>0.2.0</em> a first release is available.</p>
+			<br>
+			In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is based on the hawkBit example modules and update server.
+ <br><a href="https://www.eclipse.org/hawkbit/guides/runhawkbit/">[...]</a>
 
-<p>In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get
-started in seconds.</p>
+			<hr>
+			
+			<a href="https://www.eclipse.org/hawkbit/guides/feignclient/" title="Feign Client">
+				<h2>Feign Client</h2>
+			</a>
 
-<h2 id="finally-it-is-here">Finally, it is here!</h2>
+			<br>
+			In this guide we describe how to create a <a href="https://github.com/Netflix/feign">Feign</a> Rest Client based on a  <a href="http://projects.spring.io/spring-boot/">Spring Boot</a> Application.
+ <br><a href="https://www.eclipse.org/hawkbit/guides/feignclient/">[...]</a>
 
-<p>After being around in the Eclipse IoT realm for quite some time now, we are more than happy to announce our first release:
-<a href="https://projects.eclipse.org/projects/iot.hawkbit/releases/0.2.0"><em>Eclipse hawkBit 0.2.0</em></a>. The release can be found on <a href="https://mvnrepository.com/artifact/org.eclipse.hawkbit">Maven Central</a>
-and <a href="https://hub.docker.com/r/hawkbit/hawkbit-update-server/">Docker Hub</a>. It includes the following core features:</p>
+			<hr>
+			
+			<a href="https://www.eclipse.org/hawkbit/guides/clustering/" title="Clustering">
+				<h2>Clustering</h2>
+			</a>
 
-<ul>
-<li>Device and Software Repository</li>
-<li>Update Management</li>
-<li>Artifact Content Delivery</li>
-<li>Rollout Management</li>
-</ul>
+			<br>
+			hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to setup your own cluster. You can find additional information in the <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/README.md">hawkBit runtimes&rsquo;s README</a>.
+ <br><a href="https://www.eclipse.org/hawkbit/guides/clustering/">[...]</a>
 
-<p>The features are accessible via the following interfaces:</p>
+			<hr>
+			
+			<a href="https://www.eclipse.org/hawkbit/guides/customtheme/" title="Custom Theme">
+				<h2>Custom Theme</h2>
+			</a>
 
-<ul>
-<li>Management UI</li>
-<li>Management API</li>
-<li>Direct Device Integration (DDI) API</li>
-<li>Device Management Federation (DMF) API</li>
-</ul>
+			<br>
+			This guide provides details about using and creating themes that control the visual look of Eclipse hawkBit Management UI. Theme customization is done using Sass, which is an extension of CSS (Cascading Style Sheets).
+ <br><a href="https://www.eclipse.org/hawkbit/guides/customtheme/">[...]</a>
 
-<p><img src="../images/hawkBit_overview.jpeg" alt="hawkBit Overview" /></p>
-
-<h2 id="what-s-new">What&rsquo;s new?</h2>
-
-<p>Whenever there is a new release, the first question that comes to mind is: What&rsquo;s new? Since this is our first release,
-one could argue that everything is new. However, most of the features are already well-established. This holds true, for
-example, for our APIs or the Rollout Management. Nevertheless, there have been some recent updates to hawkBit, which we
-do not want to leave unmentioned:</p>
-
-<h3 id="streamlined-ui">Streamlined UI</h3>
-
-<p>The probably most noticeable change has been the removal of the two buttons (<code>Drop here to delete</code> and <code>Actions</code>) at the
-bottom of the <em>Deployment</em>, <em>Distributions</em>, and <em>Upload</em> view. This is a major usability improvement! For example,
-deleting an item required (1) dragging an item onto the delete button, (2) opening the delete pop-up, and (3) confirming
-the deletion. Now, an item can be easily removed by clicking on its remove icon and confirming the action. Moreover,
-multiple (or all <code>CTRL</code> + <code>A</code>) items can be selected and removed at once using the same mechanism. This is not  only
-faster and more intuitive, it also saves a lot of display real estate which can now be used to focus on what is important.
-We hope you like this change as much as we do! <em>(Requires: hawkBit &gt; 0.2.2)</em></p>
-
-<p><img src="../images/hawkbit_ui.png" alt="Screenshot of improved UI" /></p>
-
-<h3 id="ms-sql-server">MS SQL Server</h3>
-
-<p>Eclipse hawkBit supports a range of different SQL databases. Up to now, these have been the internal H2 database (which can be
-used for testing, development, or trial) and MySQL/MariaDB for production-grade usage. This list is now extended by
-Microsoft&rsquo;s SQL Server which is also available in production grade, as well as, IBM&rsquo;s DB2 for testing and development.</p>
-
-<h3 id="open-sourced-rest-docs">Open Sourced REST docs</h3>
-
-<p>A huge benefit for the community is the recently open sourced REST docs of hawkBit. This has been an <a href="https://github.com/eclipse/hawkbit/issues/480">open request</a>
-for some time, which we were happy to meet. The documentation is generated using <a href="https://spring.io/projects/spring-restdocs">Spring REST docs</a>, based on unit-tests. These tests, with the respective documentation, are now available in the <a href="https://github.com/eclipse/hawkbit/pull/688">code base</a>.
- Furthermore, the API documentation will be hosted on our new <a href="https://www.eclipse.org/hawkbit/">website</a> (coming soon).</p>
-
-<h3 id="docker-images">Docker Images</h3>
-
-<p>In order to enable interested parties to get started with hawkBit conveniently, we decided to provide the
-<a href="https://hub.docker.com/r/hawkbit/hawkbit-update-server/">Update Server as a Docker image</a> on Docker Hub. The image comes
-in two flavors: The default image uses the internal H2 database, while the images with a <code>-mysql</code> suffix contain the MySQL
-driver to allow connecting a MySQL database. In addition to the Docker image, the hawkBit repository contains a
-<a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/docker/docker-compose.yml">docker-compose.yml</a>
-that not only starts the Update Server, but further includes a MySQL database and a RabbitMQ message broker so you&rsquo;re
-able to use Device Management Federation (DMF) as well.</p>
-
-<p>To start the hawkBit Update Server image, open a terminal and run:</p>
-
-<pre><code>$ docker run -d -p 8080:8080 hawkbit/hawkbit-update-server
-</code></pre>
-
-<div class="admonition note">
-<p class="admonition-title"></p>
-<p><em>Note: This requires a running <a href="https://docs.docker.com/install/">Docker deamon</a> on your system.</em></p>
-</div>
-
-<p>Now, browse to <a href="http://localhost:8080">http://localhost:8080</a> and log-in with <code>admin:admin</code>. There you go!</p>
-
-<h2 id="community-updates">Community Updates</h2>
-
-<p>Although features and functionality play a major role in the hawkBit project, there is also some interesting news from
-the community. As of July 2018, there have been:</p>
-
-<ul>
-<li>Pull Requests: 587</li>
-<li>Forks: 54</li>
-<li>Stars: 137</li>
-<li>Contributors: 25</li>
-<li>Gitter Chat members: 119</li>
-</ul>
-
-<h3 id="new-project-lead-and-committers">New Project Lead and Committers</h3>
-
-<p>We are happy to announce that the hawkBit project got a new project lead. In addition to
-<a href="https://projects.eclipse.org/user/6364">Kai Zimmermann</a>, project lead from the first hour,
-<a href="https://projects.eclipse.org/user/10982">Jeroen Laverman</a> joined the lead to support him in this responsibility.
-Moreover, with <a href="https://projects.eclipse.org/user/10842">Stefan Behl</a> and Jeroen Laverman, two new committers are aboard.</p>
-
-<h2 id="what-s-next">What&rsquo;s next?</h2>
-
-<p>Looking ahead, there are two major topics that we want to tackle next: First, there is the migration of our UI from Vaadin
-7 to Vaadin 8, since Vaadin announced the end-of-life for our current version. Another big topic will be the update
-to Spring Boot 2. On the community side, we are in the final stage of updating our <a href="https://www.eclipse.org/hawkbit/">website</a>
-with a new design, so make sure you stop by in a couple of days to check it out. Finally, the hawkBit team will be
-present at EclipseCon Europe 2018, so if you are interested in meeting us, that is the place to be.</p>
-
+			<hr>
+			
 
 			<aside class="copyright" role="note">
   <div class="logo">
@@ -547,41 +473,6 @@ present at EclipseCon Europe 2018, so if you are interested in meeting us, that 
   </p>
 </aside>
 
-
-			<footer class="footer">
-				
-
-<nav class="pagination" aria-label="Footer">
-  <div class="previous">
-  
-  </div>
-
-  <div class="next">
-  
-      <a href="https://www.eclipse.org/hawkbit/apis/mgmt/tenant/" title="System Configuration API">
-        <span class="direction">
-          Next
-        </span>
-        <div class="page">
-          <div class="stretch">
-            <div class="title">
-              System Configuration API
-            </div>
-          </div>
-          <div class="button button-next" role="button" aria-label="Next">
-            <i class="icon icon-forward"></i>
-          </div>
-        </div>
-      </a>
-  
-  </div>
-</nav>
-
-
-
-
-
-			</footer>
 		</div>
 	</article>
 
@@ -597,8 +488,8 @@ present at EclipseCon Europe 2018, so if you are interested in meeting us, that 
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = '';
+      var repo_id  = '';
     
     </script>
 
@@ -650,4 +541,3 @@ present at EclipseCon Europe 2018, so if you are interested in meeting us, that 
     <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
-

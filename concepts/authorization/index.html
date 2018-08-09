@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Eclipse hawkBit 0.2.0 - First Release - Eclipse hawkBit</title>
+    <title>Authorization - Eclipse hawkBit</title>
     <meta name="generator" content="Hugo 0.46" />
 
     
     <meta name="description" content="IoT. Update. Device.">
     
-    <link rel="canonical" href="https://www.eclipse.org/hawkbit/news/2018-07-26-first-release.html">
+    <link rel="canonical" href="https://www.eclipse.org/hawkbit/concepts/authorization/">
     
     <meta name="author" content="The Eclipse hawkBit Project">
     
 
-    <meta property="og:url" content="https://www.eclipse.org/hawkbit/news/2018-07-26-first-release.html">
+    <meta property="og:url" content="https://www.eclipse.org/hawkbit/concepts/authorization/">
     <meta property="og:title" content="Eclipse hawkBit">
     <meta property="og:image" content="https://www.eclipse.org/hawkbit/images/hawkbit_icon.png">
     <meta name="apple-mobile-web-app-title" content="Eclipse hawkBit">
@@ -103,7 +103,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Eclipse hawkBit 0.2.0 - First Release
+        Authorization
       </div>
     </div>
 
@@ -396,122 +396,115 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Eclipse hawkBit 0.2.0 - First Release </h1>
+			<h1>Authorization </h1>
 
-			
+			<p>Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF) API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on Spring security <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>.
+</p>
 
-<p>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well
-as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT
-since 2015 and with version <em>0.2.0</em> a first release is available.</p>
+<p>However, keep in mind that hawkBit does not offer an off the shelf authentication provider to leverage these permissions and the underlying multi user/tenant capabilities of hawkBit. Check out <a href="http://projects.spring.io/spring-security/">Spring security documentation</a> for further information. In hawkBit <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-autoconfigure/src/main/java/org/eclipse/hawkbit/autoconfigure/security/SecurityAutoConfiguration.java">SecurityAutoConfiguration</a> is a good starting point for integration.</p>
 
-<p>In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get
-started in seconds.</p>
+<p>The default implementation is single user/tenant with basic auth and the logged in user is provided with all permissions.</p>
 
-<h2 id="finally-it-is-here">Finally, it is here!</h2>
+<h2 id="ddi-api">DDI API</h2>
 
-<p>After being around in the Eclipse IoT realm for quite some time now, we are more than happy to announce our first release:
-<a href="https://projects.eclipse.org/projects/iot.hawkbit/releases/0.2.0"><em>Eclipse hawkBit 0.2.0</em></a>. The release can be found on <a href="https://mvnrepository.com/artifact/org.eclipse.hawkbit">Maven Central</a>
-and <a href="https://hub.docker.com/r/hawkbit/hawkbit-update-server/">Docker Hub</a>. It includes the following core features:</p>
+<p>An authenticated target is permitted to:
+- retrieve commands from the server
+- provide feedback to the the server
+- download artifacts that are assigned to it</p>
 
-<ul>
-<li>Device and Software Repository</li>
-<li>Update Management</li>
-<li>Artifact Content Delivery</li>
-<li>Rollout Management</li>
-</ul>
+<p>A target might be permitted to download artifacts without authentication (if enabled, see above). Only the download can be permitted to disable the authentication. This can be used in scenarios where the artifacts itself are e.g. signed and secured.</p>
 
-<p>The features are accessible via the following interfaces:</p>
+<h2 id="management-api-and-ui">Management API and UI</h2>
+
+<h3 id="delivered-permissions">Delivered Permissions</h3>
 
 <ul>
-<li>Management UI</li>
-<li>Management API</li>
-<li>Direct Device Integration (DDI) API</li>
-<li>Device Management Federation (DMF) API</li>
-</ul>
-
-<p><img src="../images/hawkBit_overview.jpeg" alt="hawkBit Overview" /></p>
-
-<h2 id="what-s-new">What&rsquo;s new?</h2>
-
-<p>Whenever there is a new release, the first question that comes to mind is: What&rsquo;s new? Since this is our first release,
-one could argue that everything is new. However, most of the features are already well-established. This holds true, for
-example, for our APIs or the Rollout Management. Nevertheless, there have been some recent updates to hawkBit, which we
-do not want to leave unmentioned:</p>
-
-<h3 id="streamlined-ui">Streamlined UI</h3>
-
-<p>The probably most noticeable change has been the removal of the two buttons (<code>Drop here to delete</code> and <code>Actions</code>) at the
-bottom of the <em>Deployment</em>, <em>Distributions</em>, and <em>Upload</em> view. This is a major usability improvement! For example,
-deleting an item required (1) dragging an item onto the delete button, (2) opening the delete pop-up, and (3) confirming
-the deletion. Now, an item can be easily removed by clicking on its remove icon and confirming the action. Moreover,
-multiple (or all <code>CTRL</code> + <code>A</code>) items can be selected and removed at once using the same mechanism. This is not  only
-faster and more intuitive, it also saves a lot of display real estate which can now be used to focus on what is important.
-We hope you like this change as much as we do! <em>(Requires: hawkBit &gt; 0.2.2)</em></p>
-
-<p><img src="../images/hawkbit_ui.png" alt="Screenshot of improved UI" /></p>
-
-<h3 id="ms-sql-server">MS SQL Server</h3>
-
-<p>Eclipse hawkBit supports a range of different SQL databases. Up to now, these have been the internal H2 database (which can be
-used for testing, development, or trial) and MySQL/MariaDB for production-grade usage. This list is now extended by
-Microsoft&rsquo;s SQL Server which is also available in production grade, as well as, IBM&rsquo;s DB2 for testing and development.</p>
-
-<h3 id="open-sourced-rest-docs">Open Sourced REST docs</h3>
-
-<p>A huge benefit for the community is the recently open sourced REST docs of hawkBit. This has been an <a href="https://github.com/eclipse/hawkbit/issues/480">open request</a>
-for some time, which we were happy to meet. The documentation is generated using <a href="https://spring.io/projects/spring-restdocs">Spring REST docs</a>, based on unit-tests. These tests, with the respective documentation, are now available in the <a href="https://github.com/eclipse/hawkbit/pull/688">code base</a>.
- Furthermore, the API documentation will be hosted on our new <a href="https://www.eclipse.org/hawkbit/">website</a> (coming soon).</p>
-
-<h3 id="docker-images">Docker Images</h3>
-
-<p>In order to enable interested parties to get started with hawkBit conveniently, we decided to provide the
-<a href="https://hub.docker.com/r/hawkbit/hawkbit-update-server/">Update Server as a Docker image</a> on Docker Hub. The image comes
-in two flavors: The default image uses the internal H2 database, while the images with a <code>-mysql</code> suffix contain the MySQL
-driver to allow connecting a MySQL database. In addition to the Docker image, the hawkBit repository contains a
-<a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/docker/docker-compose.yml">docker-compose.yml</a>
-that not only starts the Update Server, but further includes a MySQL database and a RabbitMQ message broker so you&rsquo;re
-able to use Device Management Federation (DMF) as well.</p>
-
-<p>To start the hawkBit Update Server image, open a terminal and run:</p>
-
-<pre><code>$ docker run -d -p 8080:8080 hawkbit/hawkbit-update-server
-</code></pre>
-
-<div class="admonition note">
-<p class="admonition-title"></p>
-<p><em>Note: This requires a running <a href="https://docs.docker.com/install/">Docker deamon</a> on your system.</em></p>
-</div>
-
-<p>Now, browse to <a href="http://localhost:8080">http://localhost:8080</a> and log-in with <code>admin:admin</code>. There you go!</p>
-
-<h2 id="community-updates">Community Updates</h2>
-
-<p>Although features and functionality play a major role in the hawkBit project, there is also some interesting news from
-the community. As of July 2018, there have been:</p>
+<li><p>READ<em>/UPDATE</em>/CREATE_/DELETE_TARGETS for:</p>
 
 <ul>
-<li>Pull Requests: 587</li>
-<li>Forks: 54</li>
-<li>Stars: 137</li>
-<li>Contributors: 25</li>
-<li>Gitter Chat members: 119</li>
+<li>Target entities including metadata (that includes also the installed and assigned distribution sets)</li>
+<li>Target tags</li>
+<li>Target actions</li>
+<li>Target registration rules</li>
+<li>Bulk operations</li>
+<li>Target filters</li>
+</ul></li>
+
+<li><p>READ<em>/UPDATE</em>/CREATE_/DELETE_REPOSITORY for:</p>
+
+<ul>
+<li>Distribution sets</li>
+<li>Software Modules</li>
+<li>Artifacts</li>
+<li>DS tags</li>
+</ul></li>
+
+<li><p>READ_TARGET_SECURITY_TOKEN</p>
+
+<ul>
+<li>Permission to read the target security token. The security token is security concerned and should be protected.</li>
+</ul></li>
+
+<li><p>DOWNLOAD_REPOSITORY_ARTIFACT</p>
+
+<ul>
+<li>Permission to download artifacts of an software module (Note: READ_REPOSITORY allows only to read the metadata).</li>
+</ul></li>
+
+<li><p>TENANT_CONFIGURATION</p>
+
+<ul>
+<li>Permission to administrate the tenant settings.</li>
+</ul></li>
+
+<li><p>ROLLOUT_MANAGEMENT</p>
+
+<ul>
+<li>Permission to provision targets through rollouts.</li>
+</ul></li>
 </ul>
 
-<h3 id="new-project-lead-and-committers">New Project Lead and Committers</h3>
+<h3 id="permission-matrix-for-example-uses-cases-that-need-more-than-one-permission">Permission Matrix for example uses cases that need more than one permission</h3>
 
-<p>We are happy to announce that the hawkBit project got a new project lead. In addition to
-<a href="https://projects.eclipse.org/user/6364">Kai Zimmermann</a>, project lead from the first hour,
-<a href="https://projects.eclipse.org/user/10982">Jeroen Laverman</a> joined the lead to support him in this responsibility.
-Moreover, with <a href="https://projects.eclipse.org/user/10842">Stefan Behl</a> and Jeroen Laverman, two new committers are aboard.</p>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Needed permissions</th>
+</tr>
+</thead>
 
-<h2 id="what-s-next">What&rsquo;s next?</h2>
+<tbody>
+<tr>
+<td>Search <em>targets</em> by installed or assigned <em>distribution set</em></td>
+<td>READ_TARGET, READ_REPOSITORY</td>
+</tr>
 
-<p>Looking ahead, there are two major topics that we want to tackle next: First, there is the migration of our UI from Vaadin
-7 to Vaadin 8, since Vaadin announced the end-of-life for our current version. Another big topic will be the update
-to Spring Boot 2. On the community side, we are in the final stage of updating our <a href="https://www.eclipse.org/hawkbit/">website</a>
-with a new design, so make sure you stop by in a couple of days to check it out. Finally, the hawkBit team will be
-present at EclipseCon Europe 2018, so if you are interested in meeting us, that is the place to be.</p>
+<tr>
+<td>Assign <em>DS</em> to a <em>target</em></td>
+<td>READ_REPOSITORY, UPDATE_TARGET</td>
+</tr>
 
+<tr>
+<td>Assign DS to target through a <em>Rollout</em>, i.e. <em>Rollout</em> creation and start</td>
+<td>READ_REPOSITORY, UPDATE_TARGET, ROLLOUT_MANAGEMENT</td>
+</tr>
+
+<tr>
+<td>Read <em>Rollout</em> status including its <em>deployment groups</em></td>
+<td>ROLLOUT_MANAGEMENT</td>
+</tr>
+
+<tr>
+<td>Checks <em>targets</em> inside <em>Rollout deployment group</em></td>
+<td>READ_TARGET, ROLLOUT_MANAGEMENT</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="device-management-federation-api">Device Management Federation API</h2>
+
+<p>The provided <em>RabbitMQ</em> <a href="https://www.rabbitmq.com/access-control.html">vhost and user</a> should be provided with the necessary permissions to send messages to hawkBit through the exchange and receive messages from it through the specified queue.</p>
 
 			<aside class="copyright" role="note">
   <div class="logo">
@@ -554,18 +547,34 @@ present at EclipseCon Europe 2018, so if you are interested in meeting us, that 
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
+      <a href="https://www.eclipse.org/hawkbit/concepts/authentication/" title="Authentication">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Authentication
+            </div>
+          </div>
+        </div>
+      </a>
+  
   </div>
 
   <div class="next">
   
-      <a href="https://www.eclipse.org/hawkbit/apis/mgmt/tenant/" title="System Configuration API">
+      <a href="https://www.eclipse.org/hawkbit/concepts/datamodel/" title="Data Model">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              System Configuration API
+              Data Model
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

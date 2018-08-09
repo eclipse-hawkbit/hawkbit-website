@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Eclipse hawkBit 0.2.0 - First Release - Eclipse hawkBit</title>
+    <title>Management UI - Eclipse hawkBit</title>
     <meta name="generator" content="Hugo 0.46" />
 
     
     <meta name="description" content="IoT. Update. Device.">
     
-    <link rel="canonical" href="https://www.eclipse.org/hawkbit/news/2018-07-26-first-release.html">
+    <link rel="canonical" href="https://www.eclipse.org/hawkbit/ui/">
     
     <meta name="author" content="The Eclipse hawkBit Project">
     
 
-    <meta property="og:url" content="https://www.eclipse.org/hawkbit/news/2018-07-26-first-release.html">
+    <meta property="og:url" content="https://www.eclipse.org/hawkbit/ui/">
     <meta property="og:title" content="Eclipse hawkBit">
     <meta property="og:image" content="https://www.eclipse.org/hawkbit/images/hawkbit_icon.png">
     <meta name="apple-mobile-web-app-title" content="Eclipse hawkBit">
@@ -103,7 +103,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Eclipse hawkBit 0.2.0 - First Release
+        Management UI
       </div>
     </div>
 
@@ -300,11 +300,14 @@
 
 
 
-<a  title="Management UI" href="/hawkbit/ui/">
+<a class="current" title="Management UI" href="/hawkbit/ui/">
 	
 	Management UI
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
   
 </li>
@@ -396,121 +399,230 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Eclipse hawkBit 0.2.0 - First Release </h1>
+			<h1>Management UI </h1>
 
 			
 
-<p>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well
-as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT
-since 2015 and with version <em>0.2.0</em> a first release is available.</p>
-
-<p>In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get
-started in seconds.</p>
-
-<h2 id="finally-it-is-here">Finally, it is here!</h2>
-
-<p>After being around in the Eclipse IoT realm for quite some time now, we are more than happy to announce our first release:
-<a href="https://projects.eclipse.org/projects/iot.hawkbit/releases/0.2.0"><em>Eclipse hawkBit 0.2.0</em></a>. The release can be found on <a href="https://mvnrepository.com/artifact/org.eclipse.hawkbit">Maven Central</a>
-and <a href="https://hub.docker.com/r/hawkbit/hawkbit-update-server/">Docker Hub</a>. It includes the following core features:</p>
+<p>The hawkBit Management UI provides several views for the different use cases:</p>
 
 <ul>
-<li>Device and Software Repository</li>
-<li>Update Management</li>
-<li>Artifact Content Delivery</li>
-<li>Rollout Management</li>
+<li><em>Deployment Management</em> view for target administration and manual deployment.</li>
+<li><em>Distribution Management</em> view software repository metadata management.</li>
+<li><em>Artifact Management</em> view to manage the artifacts.</li>
+<li><em>Target Filter Management</em> view to manage target filters that can be used both in Deployment and Rollout Management views.</li>
+<li><em>Rollout Management</em> for large scale rollout orchestration.</li>
 </ul>
 
-<p>The features are accessible via the following interfaces:</p>
+<h2 id="deployment-management">Deployment Management</h2>
+
+<h3 id="purpose">Purpose</h3>
+
+<p>Target status overview, target management and manual deployments.</p>
+
+<h3 id="feature-explained">Feature explained</h3>
 
 <ul>
-<li>Management UI</li>
-<li>Management API</li>
-<li>Direct Device Integration (DDI) API</li>
-<li>Device Management Federation (DMF) API</li>
+<li>Target Status: check status of all targets.</li>
+
+<li><p>Target list allows filters based on:</p>
+
+<ul>
+<li>Assigned/installed <em>DistributionSet</em> (drag and drop a set on the filter icon on the top of the list)</li>
+<li>Target update status: click 1-X status to reduce the list of targets that have one of them.</li>
+<li>Target tag: click 1-X tags to reduce the list to targets that have one of them.</li>
+<li>Name, description: use search button on the top of the list.</li>
+</ul></li>
+
+<li><p><em>DistributionSet</em> list allows filters based on:</p>
+
+<ul>
+<li><em>DistributionSet</em> tag: click 1-X tags to reduce the list of sets that have one of them.</li>
+<li>Name, description: use search button on the top of the list.</li>
+</ul></li>
+
+<li><p>Start roll out by drag and drop targets on a DS.</p></li>
+
+<li><p>Target list supports CTRL-A for &ldquo;select all&rdquo;.</p></li>
+
+<li><p>Delete sets, tags or targets by dragging them on delete icon.</p></li>
+
+<li><p>Select <em>Target</em> to see <em>Action</em> History.</p></li>
+
+<li><p>Bulk target upload: create bulk targets by upload.</p></li>
 </ul>
 
-<p><img src="../images/hawkBit_overview.jpeg" alt="hawkBit Overview" /></p>
+<p>Hints for bulk upload:
+- Expected file type : csv.
+- Expected file format : Each line with two values (ControllerID,Target Name). ControllerID is mandatory.
+- Example:</p>
 
-<h2 id="what-s-new">What&rsquo;s new?</h2>
-
-<p>Whenever there is a new release, the first question that comes to mind is: What&rsquo;s new? Since this is our first release,
-one could argue that everything is new. However, most of the features are already well-established. This holds true, for
-example, for our APIs or the Rollout Management. Nevertheless, there have been some recent updates to hawkBit, which we
-do not want to leave unmentioned:</p>
-
-<h3 id="streamlined-ui">Streamlined UI</h3>
-
-<p>The probably most noticeable change has been the removal of the two buttons (<code>Drop here to delete</code> and <code>Actions</code>) at the
-bottom of the <em>Deployment</em>, <em>Distributions</em>, and <em>Upload</em> view. This is a major usability improvement! For example,
-deleting an item required (1) dragging an item onto the delete button, (2) opening the delete pop-up, and (3) confirming
-the deletion. Now, an item can be easily removed by clicking on its remove icon and confirming the action. Moreover,
-multiple (or all <code>CTRL</code> + <code>A</code>) items can be selected and removed at once using the same mechanism. This is not  only
-faster and more intuitive, it also saves a lot of display real estate which can now be used to focus on what is important.
-We hope you like this change as much as we do! <em>(Requires: hawkBit &gt; 0.2.2)</em></p>
-
-<p><img src="../images/hawkbit_ui.png" alt="Screenshot of improved UI" /></p>
-
-<h3 id="ms-sql-server">MS SQL Server</h3>
-
-<p>Eclipse hawkBit supports a range of different SQL databases. Up to now, these have been the internal H2 database (which can be
-used for testing, development, or trial) and MySQL/MariaDB for production-grade usage. This list is now extended by
-Microsoft&rsquo;s SQL Server which is also available in production grade, as well as, IBM&rsquo;s DB2 for testing and development.</p>
-
-<h3 id="open-sourced-rest-docs">Open Sourced REST docs</h3>
-
-<p>A huge benefit for the community is the recently open sourced REST docs of hawkBit. This has been an <a href="https://github.com/eclipse/hawkbit/issues/480">open request</a>
-for some time, which we were happy to meet. The documentation is generated using <a href="https://spring.io/projects/spring-restdocs">Spring REST docs</a>, based on unit-tests. These tests, with the respective documentation, are now available in the <a href="https://github.com/eclipse/hawkbit/pull/688">code base</a>.
- Furthermore, the API documentation will be hosted on our new <a href="https://www.eclipse.org/hawkbit/">website</a> (coming soon).</p>
-
-<h3 id="docker-images">Docker Images</h3>
-
-<p>In order to enable interested parties to get started with hawkBit conveniently, we decided to provide the
-<a href="https://hub.docker.com/r/hawkbit/hawkbit-update-server/">Update Server as a Docker image</a> on Docker Hub. The image comes
-in two flavors: The default image uses the internal H2 database, while the images with a <code>-mysql</code> suffix contain the MySQL
-driver to allow connecting a MySQL database. In addition to the Docker image, the hawkBit repository contains a
-<a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/docker/docker-compose.yml">docker-compose.yml</a>
-that not only starts the Update Server, but further includes a MySQL database and a RabbitMQ message broker so you&rsquo;re
-able to use Device Management Federation (DMF) as well.</p>
-
-<p>To start the hawkBit Update Server image, open a terminal and run:</p>
-
-<pre><code>$ docker run -d -p 8080:8080 hawkbit/hawkbit-update-server
+<pre><code>Controller_id_1,targetName1
+Controller_id_2,targetName2
 </code></pre>
+
+<p><img src="../images/ui/deployment_mgmt.png" alt="Deployment Management view" /></p>
+
+<h2 id="distribution-management">Distribution Management</h2>
+
+<h3 id="purpose-1">Purpose</h3>
+
+<p>Distribution Set view to manage software repository metadata, i.e. Distribution Sets, their Software Modules and the respective types.</p>
+
+<h3 id="features-explained">Features explained</h3>
+
+<ul>
+<li>Browse, create, delete and update Distribution Sets.</li>
+<li>Browse, create, delete and update Distribution Set Types.</li>
+<li>Browse, create, delete and update Software Modules.</li>
+<li>Browse, create, delete and update Software Module Types.</li>
+<li>Assign Software Modules to Distribution Sets.</li>
+</ul>
+
+<p><img src="../images/ui/distribution_mgmt.png" alt="Distribution Management view" /></p>
+
+<h2 id="artifact-management">Artifact Management</h2>
+
+<h3 id="purpose-2">Purpose</h3>
+
+<p>Software artifact management, both metadata (i.e. Software Modules) and artifacts themselves.</p>
+
+<h3 id="features-explained-1">Features explained</h3>
+
+<ul>
+<li>Browse, create, delete and update Software Modules.</li>
+<li>Browse, create, delete and update Software Module Types.</li>
+<li>Upload and delete software artifacts for a module.</li>
+</ul>
+
+<p><img src="../images/ui/artifact_mgmt.png" alt="Artifact Management view" /></p>
+
+<h2 id="rollout-management">Rollout Management</h2>
+
+<h3 id="purpose-3">Purpose</h3>
+
+<p>Software rollout in large scale, rollout status overview and rollout management.</p>
+
+<h3 id="features-explained-2">Features explained</h3>
+
+<ul>
+<li>Create, update, copy and delete of rollouts.</li>
+<li>Start, pause and resume of rollouts.</li>
+<li>Progress monitoring for the entire rollout and the individual groups.</li>
+<li>Drill down to see the groups in a rollout and targets in each group.</li>
+<li>Rollout attributes:
+
+<ul>
+<li>Selection of targets as input for the rollout based on <em>target filter</em></li>
+<li>Selection of <em>distribution set</em></li>
+<li>Auto-splitting of the input target list based on <em>group number</em> defined</li>
+<li><em>Trigger threshold</em> to define the percentage of installation to be completed , to trigger the start of next group</li>
+<li><em>Error threshold</em> defines the percentage of error tolerance of a group before calling for a emergency shutdown of a rollout</li>
+</ul></li>
+</ul>
+
+<p><img src="../images/ui/rollout_mgmt.png" alt="Rollout Management view" /></p>
+
+<p><img src="../images/ui/rollout_groups.png" alt="Rollout Management view" /></p>
 
 <div class="admonition note">
 <p class="admonition-title"></p>
-<p><em>Note: This requires a running <a href="https://docs.docker.com/install/">Docker deamon</a> on your system.</em></p>
+<p>Deletion of targets which are in a rollout, changes the rollout statistics.</p>
 </div>
 
-<p>Now, browse to <a href="http://localhost:8080">http://localhost:8080</a> and log-in with <code>admin:admin</code>. There you go!</p>
+<h2 id="target-filter-management">Target Filter Management</h2>
 
-<h2 id="community-updates">Community Updates</h2>
+<h3 id="purpose-4">Purpose</h3>
 
-<p>Although features and functionality play a major role in the hawkBit project, there is also some interesting news from
-the community. As of July 2018, there have been:</p>
+<p>Custom target filter overview and filter management.</p>
+
+<h3 id="features-explained-3">Features explained</h3>
 
 <ul>
-<li>Pull Requests: 587</li>
-<li>Forks: 54</li>
-<li>Stars: 137</li>
-<li>Contributors: 25</li>
-<li>Gitter Chat members: 119</li>
+<li>Custom target filter allows user to filter targets by defining custom query.</li>
+<li>Displays custom target filter list and user can search any particular filter.</li>
+<li>Create, update and delete features are supported for target filters.</li>
 </ul>
 
-<h3 id="new-project-lead-and-committers">New Project Lead and Committers</h3>
+<h3 id="how-to-filter">How to Filter</h3>
 
-<p>We are happy to announce that the hawkBit project got a new project lead. In addition to
-<a href="https://projects.eclipse.org/user/6364">Kai Zimmermann</a>, project lead from the first hour,
-<a href="https://projects.eclipse.org/user/10982">Jeroen Laverman</a> joined the lead to support him in this responsibility.
-Moreover, with <a href="https://projects.eclipse.org/user/10842">Stefan Behl</a> and Jeroen Laverman, two new committers are aboard.</p>
+<p>The basic syntax to filter is: <code>field&lt;basic_operator&gt;value &lt;composite_operator&gt; field&lt;basic_operator&gt;value &lt;...&gt;</code>
+- <code>field</code>: is the name of the resource field.
+- <code>value</code>: is the value of the target field
+- <code>&lt;basic_operator&gt;</code>: Are operators to do simple queries. Supported basic operators are:
+  - <code>==</code> : equal
+  - <code>!=</code> : not equal
+  - Use <code>=IN=</code> for &lsquo;in&rsquo; parameter.(Example: name=IN=(target1,target2).</p>
 
-<h2 id="what-s-next">What&rsquo;s next?</h2>
+<ul>
+<li><code>&lt;composite_operator&gt;</code>: Are operators to join simple queries: Supported composite operators are:
 
-<p>Looking ahead, there are two major topics that we want to tackle next: First, there is the migration of our UI from Vaadin
-7 to Vaadin 8, since Vaadin announced the end-of-life for our current version. Another big topic will be the update
-to Spring Boot 2. On the community side, we are in the final stage of updating our <a href="https://www.eclipse.org/hawkbit/">website</a>
-with a new design, so make sure you stop by in a couple of days to check it out. Finally, the hawkBit team will be
-present at EclipseCon Europe 2018, so if you are interested in meeting us, that is the place to be.</p>
+<ul>
+<li><code>and</code></li>
+<li><code>or</code></li>
+<li>Use <code>=IN=</code> for &lsquo;in&rsquo; parameter.(Example: name=IN=(target1,target2).</li>
+<li>Use <code>*</code> for wildcard matches.</li>
+</ul></li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+
+<table>
+<thead>
+<tr>
+<th>Custom query</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>updatestatus==error</td>
+<td>Gives all targets in ‘error’ state.</td>
+</tr>
+
+<tr>
+<td>controllerId!=192.168.2.42</td>
+<td>Gives all targets that do not have the controllerId 192.168.2.42.</td>
+</tr>
+
+<tr>
+<td>name==*CCU*</td>
+<td>Gives all targets which contain the term ‘CCU’ in there name.</td>
+</tr>
+
+<tr>
+<td>name==*CCU* or description==*CCU*</td>
+<td>Gives all targets that either have the term ‘CCU’ in their name or their description.</td>
+</tr>
+
+<tr>
+<td>name==*SHC* and description==*SHC*</td>
+<td>Gives all targets that have the term SHC in their name and their description.</td>
+</tr>
+
+<tr>
+<td>name==CCU* and updatestatus==pending</td>
+<td>Gives all targets with their name starting with ‘CCU’ and which are in ‘pending’ state.</td>
+</tr>
+
+<tr>
+<td>(assignedds.name==‘ECU-DS’ and description==test) or updatestatus!=error</td>
+<td>Gives all targets which are either assigned to ‘ECU-DS’ and have description equals to ‘test’ or which are not in error status.</td>
+</tr>
+
+<tr>
+<td>(updatestatus!=In_sync or updatestatus!=error) and name==*SHC1*</td>
+<td>Gives all targets that do not have the update status In_sync or error and that contains the term SHC1 in their name.</td>
+</tr>
+
+<tr>
+<td>(updatestatus!=error or updatestatus!=pending) and (name==*CCU* or description==*CCU*)</td>
+<td>Gives all targets that either have the term ‘CCU’ in their name or their description and that either have the <em>update status</em> not in state error or pending.</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="../images/ui/target_filter.png" alt="Target Filter Management view" /></p>
 
 
 			<aside class="copyright" role="note">
@@ -554,18 +666,34 @@ present at EclipseCon Europe 2018, so if you are interested in meeting us, that 
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
+      <a href="https://www.eclipse.org/hawkbit/architecture/" title="Architecture">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Architecture
+            </div>
+          </div>
+        </div>
+      </a>
+  
   </div>
 
   <div class="next">
   
-      <a href="https://www.eclipse.org/hawkbit/apis/mgmt/tenant/" title="System Configuration API">
+      <a href="https://www.eclipse.org/hawkbit/apis/management_api/" title="Management API">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              System Configuration API
+              Management API
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
