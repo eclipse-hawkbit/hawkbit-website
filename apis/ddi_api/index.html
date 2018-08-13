@@ -170,12 +170,12 @@
       
         <ul class="repo">
           <li class="repo-download">
-            <a href="https://hub.docker.com/u/hawkbit/" target="_blank" title="hawkBit on DockerHub" data-action="docker">
-              <i class="icon icon-search"></i> Dockerhub
+            <a href="https://hawkbit-demo-sandbox.eu-gb.mybluemix.net/UI/login/#/" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
+              <i class="fas fa-desktop"></i> &nbsp; Sandbox
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit" target="_blank" title="hawkBit on GitHub" data-action="star">
+            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -385,7 +385,6 @@
             </a>
           </li>
         </ul>
-        </ul>
         
       </div>
     </div>
@@ -398,11 +397,9 @@
 		<div class="wrapper">
 			<h1>Direct Device Integration API </h1>
 
-			
-
-<p>This API is based on HTTP standards and based on a polling mechanism.</p>
-
-<p>The hawkBit <a href="https://github.com/eclipse/hawkbit">update server</a> provides REST resources which are consumed by the device to retrieve software update tasks.</p>
+			<p>The hawkBit <a href="https://github.com/eclipse/hawkbit">update server</a> provides REST resources which are consumed by the device to retrieve software update tasks.
+This API is based on HTTP standards and a polling mechanism.
+</p>
 
 <div class="admonition note">
 <p class="admonition-title"></p>
@@ -466,7 +463,6 @@
 </table>
 
 <iframe width="100%" height="800px" frameborder="0" src="../../rest-api/rootcontroller-api-guide/"></iframe>
-
 
 			<aside class="copyright" role="note">
   <div class="logo">
@@ -606,7 +602,7 @@
         /* Add permanent link next to the headers */
           var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-        for(i = 0; i < headers.length; i++) {
+        for(var i = 0; i < headers.length; i++) {
             var a = document.createElement("a");
             a.setAttribute("class", "headerlink");
             a.setAttribute("href", "#" + headers[i].id);

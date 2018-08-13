@@ -170,12 +170,12 @@
       
         <ul class="repo">
           <li class="repo-download">
-            <a href="https://hub.docker.com/u/hawkbit/" target="_blank" title="hawkBit on DockerHub" data-action="docker">
-              <i class="icon icon-search"></i> Dockerhub
+            <a href="https://hawkbit-demo-sandbox.eu-gb.mybluemix.net/UI/login/#/" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
+              <i class="fas fa-desktop"></i> &nbsp; Sandbox
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit" target="_blank" title="hawkBit on GitHub" data-action="star">
+            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -384,7 +384,6 @@
               <img src="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent/badge.svg" />
             </a>
           </li>
-        </ul>
         </ul>
         
       </div>
@@ -635,7 +634,7 @@ present at EclipseCon Europe 2018, so if you are interested in meeting us, that 
         /* Add permanent link next to the headers */
           var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-        for(i = 0; i < headers.length; i++) {
+        for(var i = 0; i < headers.length; i++) {
             var a = document.createElement("a");
             a.setAttribute("class", "headerlink");
             a.setAttribute("href", "#" + headers[i].id);

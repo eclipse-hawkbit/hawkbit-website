@@ -26,9 +26,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/ddi_api/</guid>
-      <description>This API is based on HTTP standards and based on a polling mechanism.
-The hawkBit update server provides REST resources which are consumed by the device to retrieve software update tasks.
-In DDI the target is identified using a controllerId. Controller is used as a term for the actual service/client on the device. That allows users to have in some cases even multiple clients on the same target for different tasks, e.</description>
+      <description>&lt;p&gt;The hawkBit &lt;a href=&#34;https://github.com/eclipse/hawkbit&#34;&gt;update server&lt;/a&gt; provides REST resources which are consumed by the device to retrieve software update tasks.
+This API is based on HTTP standards and a polling mechanism.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,7 +37,8 @@ In DDI the target is identified using a controllerId. Controller is used as a te
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/dmf_api/</guid>
-      <description>&lt;p&gt;Currently bodies of messages are based on JSON. The DMF API provides java classes which allows that the message body can be deserialized at runtime into a java object. Also java classes can be used to serialize java objects into JSON bodies to send a message to hawkBit.
+      <description>&lt;p&gt;The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object. Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.
+Currently, bodies of messages are based on JSON.
 &lt;/p&gt;</description>
     </item>
     

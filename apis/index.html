@@ -84,6 +84,10 @@
 
 
 
+  
+  
+
+
 <div class="backdrop">
 	<div class="backdrop-paper"></div>
 </div>
@@ -157,6 +161,9 @@
       <div class="name">
         <strong>Eclipse hawkBit&trade; </strong>
         
+          <br>
+          eclipse/hawkbit
+        
       </div>
     </div>
   </a>
@@ -166,12 +173,12 @@
       
         <ul class="repo">
           <li class="repo-download">
-            <a href="https://hub.docker.com/u/hawkbit/" target="_blank" title="hawkBit on DockerHub" data-action="docker">
-              <i class="icon icon-search"></i> Dockerhub
+            <a href="https://hawkbit-demo-sandbox.eu-gb.mybluemix.net/UI/login/#/" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
+              <i class="fas fa-desktop"></i> &nbsp; Sandbox
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit" target="_blank" title="hawkBit on GitHub" data-action="star">
+            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -384,7 +391,6 @@
             </a>
           </li>
         </ul>
-        </ul>
         
       </div>
     </div>
@@ -413,9 +419,9 @@
 			</a>
 
 			<br>
-			This API is based on HTTP standards and based on a polling mechanism.
-The hawkBit update server provides REST resources which are consumed by the device to retrieve software update tasks.
-In DDI the target is identified using a controllerId. Controller is used as a term for the actual service/client on the device. That allows users to have in some cases even multiple clients on the same target for different tasks, e. <br><a href="https://www.eclipse.org/hawkbit/apis/ddi_api/">[...]</a>
+			The hawkBit <a href="https://github.com/eclipse/hawkbit">update server</a> provides REST resources which are consumed by the device to retrieve software update tasks.
+This API is based on HTTP standards and a polling mechanism.
+ <br><a href="https://www.eclipse.org/hawkbit/apis/ddi_api/">[...]</a>
 
 			<hr>
 			
@@ -424,7 +430,8 @@ In DDI the target is identified using a controllerId. Controller is used as a te
 			</a>
 
 			<br>
-			Currently bodies of messages are based on JSON. The DMF API provides java classes which allows that the message body can be deserialized at runtime into a java object. Also java classes can be used to serialize java objects into JSON bodies to send a message to hawkBit.
+			The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object. Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.
+Currently, bodies of messages are based on JSON.
  <br><a href="https://www.eclipse.org/hawkbit/apis/dmf_api/">[...]</a>
 
 			<hr>
@@ -479,8 +486,8 @@ In DDI the target is identified using a controllerId. Controller is used as a te
 
     <script>
     
-      var base_url = '';
-      var repo_id  = '';
+      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
+      var repo_id  = 'eclipse\/hawkbit';
     
     </script>
 
@@ -517,7 +524,7 @@ In DDI the target is identified using a controllerId. Controller is used as a te
         /* Add permanent link next to the headers */
           var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-        for(i = 0; i < headers.length; i++) {
+        for(var i = 0; i < headers.length; i++) {
             var a = document.createElement("a");
             a.setAttribute("class", "headerlink");
             a.setAttribute("href", "#" + headers[i].id);
