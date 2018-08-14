@@ -544,15 +544,18 @@ Controller_id_2,targetName2
 
 <h3 id="how-to-filter">How to Filter</h3>
 
-<p>The basic syntax to filter is: <code>field&lt;basic_operator&gt;value &lt;composite_operator&gt; field&lt;basic_operator&gt;value &lt;...&gt;</code>
-- <code>field</code>: is the name of the resource field.
-- <code>value</code>: is the value of the target field
-- <code>&lt;basic_operator&gt;</code>: Are operators to do simple queries. Supported basic operators are:
-  - <code>==</code> : equal
-  - <code>!=</code> : not equal
-  - Use <code>=IN=</code> for &lsquo;in&rsquo; parameter.(Example: name=IN=(target1,target2).</p>
+<p>The basic syntax to filter is: <code>field&lt;basic_operator&gt;value &lt;composite_operator&gt; field&lt;basic_operator&gt;value &lt;...&gt;</code></p>
 
 <ul>
+<li><code>field</code>: is the name of the resource field.</li>
+<li><code>value</code>: is the value of the target field</li>
+<li><code>&lt;basic_operator&gt;</code>: Are operators to do simple queries. Supported basic operators are:
+
+<ul>
+<li><code>==</code> : equal</li>
+<li><code>!=</code> : not equal</li>
+<li>Use <code>=IN=</code> for &lsquo;in&rsquo; parameter.(Example: name=IN=(target1,target2).</li>
+</ul></li>
 <li><code>&lt;composite_operator&gt;</code>: Are operators to join simple queries: Supported composite operators are:
 
 <ul>

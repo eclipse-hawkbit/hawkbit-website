@@ -402,6 +402,23 @@
 
 			
 
+<h2 id="on-sandbox">On Sandbox</h2>
+
+<p>We offer a sandbox installation that is free for everyone to try out hawkBit&rsquo;s <a href="/hawkbit/ui/">Management UI</a>,
+<a href="/hawkbit/apis/management_api/">Management API</a>, and <a href="/hawkbit/apis/ddi_api/">Direct Device Integration API</a>: &nbsp;
+<strong><a href="https://hawkbit-demo-sandbox.eu-gb.mybluemix.net/UI/"><i class="fas fa-desktop">&nbsp;</i> https://hawkbit-demo-sandbox.eu-gb.mybluemix.net/UI/</a></strong></p>
+
+<div class="admonition warning">
+<p class="admonition-title"></p>
+<p>The sandbox database will be reset from time to time. It is also not possible to upload any artifacts into the sandbox. Moreover, you are not permitted to store any kind of personal data in the sandbox.</p>
+</div>
+
+<p>In addition, the following vendors offer free trial accounts for their Eclipse hawkBit compatible products:</p>
+
+<ul>
+<li><a href="https://www.bosch-iot-suite.com/rollouts/#plans">Bosch IoT Rollouts</a> (by <a href="https://www.bosch-si.com/corporate/home/homepage.html">Bosch Software Innovations GmbH</a>)</li>
+</ul>
+
 <h2 id="from-docker-image">From Docker Image</h2>
 
 <h3 id="update-server-only">Update server only</h3>
@@ -416,39 +433,38 @@ $ cd hawkbit/hawkbit-runtime/hawkbit-update-server/docker
 $ docker-compose up -d
 </code></pre>
 
+<div class="admonition note">
+<p class="admonition-title"></p>
+<p>Requires Docker-Compose installed.</p>
+</div>
+
 <h2 id="from-sources">From Sources</h2>
 
-<h3 id="clone-and-build-hawkbit">Clone and build hawkBit</h3>
+<h3 id="1-clone-and-build-hawkbit">1: Clone and build hawkBit</h3>
 
 <pre><code class="language-sh">$ git clone https://github.com/eclipse/hawkbit.git
 $ cd hawkbit
 $ mvn clean install
 </code></pre>
 
-<h3 id="start-hawkbit">Start hawkBit</h3>
-
-<p><a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">update server</a></p>
+<h3 id="2-start-hawkbit-update-server-https-github-com-eclipse-hawkbit-tree-master-hawkbit-runtime-hawkbit-update-server">2: Start hawkBit <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">update server</a></h3>
 
 <pre><code class="language-sh">$ java -jar ./hawkbit-runtime/hawkbit-update-server/target/hawkbit-update-server-#version#-SNAPSHOT.jar
 </code></pre>
 
-<h3 id="build-hawkbit-examples">Build hawkBit examples</h3>
+<h3 id="3-build-hawkbit-examples">3: Build hawkBit examples</h3>
 
 <pre><code class="language-sh">$ git clone https://github.com/eclipse/hawkbit-examples.git
 $ cd hawkbit-examples
 $ mvn clean install
 </code></pre>
 
-<h3 id="start-hawkbit-device-simulator">Start hawkBit device simulator</h3>
-
-<p><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-device-simulator">Device Simulator</a></p>
+<h3 id="4-start-hawkbit-device-simulator-https-github-com-eclipse-hawkbit-examples-tree-master-hawkbit-device-simulator">4: Start hawkBit <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-device-simulator">Device Simulator</a></h3>
 
 <pre><code class="language-sh">$ java -jar ./hawkbit-device-simulator/target/hawkbit-device-simulator-#version#.jar
 </code></pre>
 
-<h3 id="generate-getting-started-data">Generate Getting Started data</h3>
-
-<p><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">Example Management API Client</a></p>
+<h3 id="5-generate-getting-started-data-with-example-management-api-client-https-github-com-eclipse-hawkbit-examples-tree-master-hawkbit-example-mgmt-simulator">5: Generate Getting Started data with <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">Example Management API Client</a></h3>
 
 <pre><code class="language-sh">$ java -jar ./hawkbit-example-mgmt-simulator/target/hawkbit-example-mgmt-simulator-#version#.jar
 </code></pre>
