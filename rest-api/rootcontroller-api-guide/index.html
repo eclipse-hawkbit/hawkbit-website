@@ -1590,7 +1590,7 @@ Host: ddi-api.host.com</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 6643
+Content-Length: 6645
 
 {
   "id" : "4",
@@ -1600,13 +1600,13 @@ Content-Length: 6643
     "maintenanceWindow" : "available",
     "chunks" : [ {
       "part" : "jvm",
-      "version" : "1.0.7",
+      "version" : "1.0.75",
       "name" : "oneapp runtime",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "b28f8062e2ef17a901cb2cf0b6147eb47708cf4b",
-          "md5" : "14c3fb12413540da051bd9fb9c4bc6b1"
+          "sha1" : "0539fc77b4cfeedc21663d93569311eefaa366de",
+          "md5" : "6a1d526b1cb6174c39def2a3ae3171ea"
         },
         "size" : 15,
         "_links" : {
@@ -1626,8 +1626,8 @@ Content-Length: 6643
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "b28f8062e2ef17a901cb2cf0b6147eb47708cf4b",
-          "md5" : "14c3fb12413540da051bd9fb9c4bc6b1"
+          "sha1" : "0539fc77b4cfeedc21663d93569311eefaa366de",
+          "md5" : "6a1d526b1cb6174c39def2a3ae3171ea"
         },
         "size" : 15,
         "_links" : {
@@ -1647,15 +1647,15 @@ Content-Length: 6643
       } ]
     }, {
       "part" : "bApp",
-      "version" : "1.0.8",
+      "version" : "1.0.26",
       "name" : "oneapplication",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "84255eb264251548f3be8a5953d3f6d9eb2f2a23",
-          "md5" : "3bb6a8d052e229708da70a66b09e0287"
+          "sha1" : "c0ae82ef5f39a8fd7428f58c92b553343f9b3475",
+          "md5" : "f7a64eaa7b4a3716756a6e73d867ef48"
         },
-        "size" : 14,
+        "size" : 15,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/10/filename/binary.tgz"
@@ -1673,10 +1673,10 @@ Content-Length: 6643
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "84255eb264251548f3be8a5953d3f6d9eb2f2a23",
-          "md5" : "3bb6a8d052e229708da70a66b09e0287"
+          "sha1" : "c0ae82ef5f39a8fd7428f58c92b553343f9b3475",
+          "md5" : "f7a64eaa7b4a3716756a6e73d867ef48"
         },
-        "size" : 14,
+        "size" : 15,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/10/filename/file.signature"
@@ -1698,15 +1698,15 @@ Content-Length: 6643
       } ]
     }, {
       "part" : "os",
-      "version" : "1.0.45",
+      "version" : "1.0.48",
       "name" : "one Firmware",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "d39513ab558348ab7d7488b843db45d2b200108e",
-          "md5" : "c766b678c2377f119d78e2edd17178f7"
+          "sha1" : "771bd39cc497af8cc8b08c5f9b71917f9391a3b5",
+          "md5" : "de921b1384b1005149850476b20565c0"
         },
-        "size" : 15,
+        "size" : 14,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/12/filename/binary.tgz"
@@ -1724,10 +1724,10 @@ Content-Length: 6643
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "d39513ab558348ab7d7488b843db45d2b200108e",
-          "md5" : "c766b678c2377f119d78e2edd17178f7"
+          "sha1" : "771bd39cc497af8cc8b08c5f9b71917f9391a3b5",
+          "md5" : "de921b1384b1005149850476b20565c0"
         },
-        "size" : 15,
+        "size" : 14,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/12/filename/file.signature"
@@ -1781,17 +1781,17 @@ Content-Length: 495
     "maintenanceWindow" : "unavailable",
     "chunks" : [ {
       "part" : "os",
-      "version" : "1.0.63",
+      "version" : "1.0.36",
       "name" : "one Firmware",
       "artifacts" : [ ]
     }, {
       "part" : "bApp",
-      "version" : "1.0.19",
+      "version" : "1.0.11",
       "name" : "oneapplication",
       "artifacts" : [ ]
     }, {
       "part" : "jvm",
-      "version" : "1.0.68",
+      "version" : "1.0.33",
       "name" : "oneapp runtime",
       "artifacts" : [ ]
     } ]
@@ -2234,8 +2234,8 @@ Content-Length: 839
 [ {
   "filename" : "binaryFile",
   "hashes" : {
-    "sha1" : "03a4cfd4559ad3eed1041f3289717b37553b5c52",
-    "md5" : "0787613012af549bc9ea1c89c296b180"
+    "sha1" : "474ee7eb4f766aa659d63bd85a28ce88dec2ad28",
+    "md5" : "1f3b4b941aca85b4e78c5786eec8c8d3"
   },
   "size" : 15,
   "_links" : {
