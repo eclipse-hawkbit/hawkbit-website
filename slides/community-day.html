@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Eclipse hawkBit</title>
+
+    <meta name="description" content="Software Updates in IoT">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/hawkBit.css" id="theme">
+
+    <body>
+        <div class="reveal">
+            <div class="header">
+                <img src="resources/images/hawkbit_logo.png" width="120px" align="right" />
+            </div>
+            <div class="slides">
+                <section>
+                    <div class="intro">
+                        <h1>Software Updates in IoT</h1>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="http://www.eclipse.org" target="_blank">Eclipse Foundation</a> |
+            <a href="http://www.eclipse.org/legal/privacy.php" target="_blank">Privacy Policy</a> |
+            <a href="http://www.eclipse.org/legal/termsofuse.php" target="_blank">Terms of Use</a> |
+            <a href="http://www.eclipse.org/legal/copyright.php" target="_blank">Copyright Agent</a> |
+            <a href="http://www.eclipse.org/legal" target="_blank">Legal</a> |
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [{
+                    src: 'lib/js/classList.js',
+                    condition: function() {
+                        return !document.body.classList;
+                    }
+                }, {
+                    src: 'plugin/markdown/marked.js',
+                    condition: function() {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                }, {
+                    src: 'plugin/markdown/markdown.js',
+                    condition: function() {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                }, {
+                    src: 'plugin/highlight/highlight.js',
+                    async: true,
+                    condition: function() {
+                        return !!document.querySelector('pre code');
+                    },
+                    callback: function() {
+                        hljs.initHighlightingOnLoad();
+                    }
+                }, {
+                    src: 'plugin/zoom-js/zoom.js',
+                    async: true
+                }, {
+                    src: 'plugin/notes/notes.js',
+                    async: true
+                }]
+            });
+
+            Reveal.configure({
+                slideNumber: true
+            });
+        </script>
+
+    </body>
+
+</html>
