@@ -20,7 +20,7 @@ body {
 	right: 20px;
 }
 
- .footer {
+.footer {
     font-size: 10px !Important;
     font-family: Helvetica, Arial, sans-serif;
     color: #687175;
@@ -30,17 +30,16 @@ body {
     margin-bottom: 10px
 }
 
-  .footer a {
+.footer a {
     color: #003b6a;
     text-decoration: none;
- }
+}
 
 .reveal {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 25px;
 	font-weight: normal;
-	color: #222;
-
+		color: #551f62; d
 }
 
 .reveal .controls {
@@ -79,8 +78,8 @@ body {
 }
 
 .reveal h1 {
-	font-size: 2.1em;
-  color: #551f62;
+	font-size: 3.1em;
+	text-shadow: none;
 }
 
 .reveal h2 {
@@ -97,17 +96,13 @@ body {
 	color: #000;
 }
 
-.reveal h1 {
-	text-shadow: none;
-}
-
 /*********************************************
  * OTHER
  *********************************************/
 
 
- .reveal .intro {
-    color: #FFFFFF;
+.reveal .intro {
+   color: #551f62;
 }
 
 .noborder img {
@@ -117,9 +112,9 @@ body {
 }
 
 .intro {
-    color: #FFFFFF;
+    color: #551f62;
     position: relative;
-    top: 300px;
+    top: 250px;
     left: 0px;
 }
 
