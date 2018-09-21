@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Getting Started - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.47.1" />
+    <meta name="generator" content="Hugo 0.48" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -26,6 +26,8 @@
     <meta name="apple-mobile-web-app-title" content="Eclipse hawkBit">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    
 
     <link rel="shortcut icon" type="image/x-icon" href="https://www.eclipse.org/hawkbit/images/favicon.ico">
     <link rel="icon" type="image/x-icon" href="https://www.eclipse.org/hawkbit/images/favicon.ico">
@@ -170,7 +172,7 @@
       
         <ul class="repo">
           <li class="repo-download">
-            <a href="/hawkbit/sandbox/sandboxunavailable/" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
+            <a href="https://hawkbit.eclipse.org" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
               <i class="fas fa-desktop"></i> &nbsp; Sandbox
             </a>
           </li>
@@ -405,11 +407,13 @@
 <h2 id="on-sandbox">On Sandbox</h2>
 
 <p>We offer a sandbox installation that is free for everyone to try out hawkBit&rsquo;s <a href="/hawkbit/ui/">Management UI</a>,
-<a href="/hawkbit/apis/management_api/">Management API</a>, and <a href="/hawkbit/apis/ddi_api/">Direct Device Integration API</a>.</p>
+<a href="/hawkbit/apis/management_api/">Management API</a>, and <a href="/hawkbit/apis/ddi_api/">Direct Device Integration API</a>: &nbsp;
+<strong><a href="https://hawkbit.eclipse.org"><i class="fas fa-desktop">&nbsp;</i> https://hawkbit.eclipse.org</a></strong></p>
 
 <div class="admonition warning">
 <p class="admonition-title"></p>
-<p>The hawkBit sandbox is currently unavailable. <a href="/hawkbit/sandbox/sandboxunavailable/">More infos &hellip;</a></p>
+<p>The sandbox is a shared installation that will be reset from time to time. Therefore, it is not allowed to upload
+any personal data.</p>
 </div>
 
 <p>In addition, the following vendors offer free trial accounts for their Eclipse hawkBit compatible products:</p>
@@ -420,22 +424,74 @@
 
 <h2 id="from-docker-image">From Docker Image</h2>
 
-<h3 id="update-server-only">Update server only</h3>
+<h3 id="overview">Overview</h3>
 
-<pre><code class="language-sh">$ docker run -d -p 8080:8080 hawkbit/hawkbit-update-server
+<table>
+<thead>
+<tr>
+<th>Service / Container</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>hawkBit Update Server</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+
+<tr>
+<td>hawkBit Device Simulator</td>
+<td></td>
+<td></td>
+<td>&#10003;</td>
+</tr>
+
+<tr>
+<td>MySQL</td>
+<td></td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+
+<tr>
+<td>RabbitMQ</td>
+<td></td>
+<td>&#10003;</td>
+<td>&#10003;</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="a-run-hawkbit-update-server-as-docker-container">A: Run hawkBit Update Server as Docker Container</h3>
+
+<p>Start the hawkBit Update Server as a single container</p>
+
+<pre><code class="language-bash">$ docker run -p 8080:8080 hawkbit/hawkbit-update-server:latest
 </code></pre>
 
-<h3 id="updates-server-mysql-rabbitmq">Updates server + MySql + RabbitMq</h3>
+<h3 id="b-run-hawkbit-update-server-with-services-as-docker-compose">B: Run hawkBit Update Server with services as Docker Compose</h3>
 
-<pre><code class="language-sh">$ git clone https://github.com/eclipse/hawkbit.git
+<p>Start the hawkBit Update Server together with an MySQL and RabbitMQ instance as containers</p>
+
+<pre><code class="language-bash">$ git clone https://github.com/eclipse/hawkbit.git
 $ cd hawkbit/hawkbit-runtime/hawkbit-update-server/docker
 $ docker-compose up -d
 </code></pre>
 
-<div class="admonition note">
-<p class="admonition-title"></p>
-<p>Requires Docker-Compose installed.</p>
-</div>
+<h3 id="c-run-hawkbit-update-server-with-services-as-docker-stack">C: Run hawkBit Update Server with services as Docker Stack</h3>
+
+<p>Start the hawkBit Update Server and Device Simulator together with an MySQL and RabbitMQ instance as services within a swarm</p>
+
+<pre><code class="language-bash">$ git clone https://github.com/eclipse/hawkbit.git
+$ cd hawkbit/hawkbit-runtime/hawkbit-update-server/docker
+$ docker stack init
+$ docker stack deploy -c docker-compose-stack.yml hawkbit
+</code></pre>
 
 <h2 id="from-sources">From Sources</h2>
 

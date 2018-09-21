@@ -3,10 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/sandbox/sandboxunavailable/</loc>
-  </url>
-  
-  <url>
     <loc>https://www.eclipse.org/hawkbit/news/2018-07-26-first-release/</loc>
   </url>
   
@@ -183,10 +179,6 @@
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/sandbox/</loc>
-  </url>
-  
-  <url>
     <loc>https://www.eclipse.org/hawkbit/apis/</loc>
     <priority>0</priority>
   </url>
@@ -209,6 +201,10 @@
   <url>
     <loc>https://www.eclipse.org/hawkbit/guides/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.eclipse.org/hawkbit/sandbox/</loc>
   </url>
   
   <url>

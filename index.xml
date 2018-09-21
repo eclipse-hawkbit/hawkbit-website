@@ -11,16 +11,6 @@
     
     
     <item>
-      <title>Sandbox</title>
-      <link>https://www.eclipse.org/hawkbit/sandbox/sandboxunavailable/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/sandbox/sandboxunavailable/</guid>
-      <description> We are sorry, but the sandbox is currently unavailable We are migrating the hawkBit Sandbox to be hosted by the Eclipse Foundation. Therefore, it is currently unavailable. We will be back soon.
- </description>
-    </item>
-    
-    <item>
       <title>Eclipse hawkBit 0.2.0 - First Release</title>
       <link>https://www.eclipse.org/hawkbit/news/2018-07-26-first-release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -136,10 +126,10 @@ Why Software Updates in IoT? Having software update capabilities ensures a secur
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/gettingstarted/</guid>
-      <description>On Sandbox We offer a sandbox installation that is free for everyone to try out hawkBit&amp;rsquo;s Management UI, Management API, and Direct Device Integration API.
-The hawkBit sandbox is currently unavailable. More infos &amp;hellip;
+      <description>On Sandbox We offer a sandbox installation that is free for everyone to try out hawkBit&amp;rsquo;s Management UI, Management API, and Direct Device Integration API: &amp;nbsp; &amp;nbsp; https://hawkbit.eclipse.org
+The sandbox is a shared installation that will be reset from time to time. Therefore, it is not allowed to upload any personal data.
  In addition, the following vendors offer free trial accounts for their Eclipse hawkBit compatible products:
- Bosch IoT Rollouts (by Bosch Software Innovations GmbH)  From Docker Image Update server only $ docker run -d -p 8080:8080 hawkbit/hawkbit-update-server  Updates server + MySql + RabbitMq $ git clone https://github.</description>
+ Bosch IoT Rollouts (by Bosch Software Innovations GmbH)  From Docker Image Overview    Service / Container A B C     hawkBit Update Server &amp;#10003; &amp;#10003; &amp;#10003;   hawkBit Device Simulator   &amp;#10003;   MySQL  &amp;#10003; &amp;#10003;   RabbitMQ  &amp;#10003; &amp;#10003;    A: Run hawkBit Update Server as Docker Container Start the hawkBit Update Server as a single container</description>
     </item>
     
     <item>
@@ -321,7 +311,8 @@ Currently, bodies of messages are based on JSON.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/release-notes/</guid>
-      <description>0.2.1 Release Date: Friday, July 6, 2018 Tag / Release
+      <description>0.2.2 Release Date: Thursday, September 21, 2018 Tag / Release
+0.2.1 Release Date: Friday, July 6, 2018 Tag / Release
 0.2.0 First Eclipse hawkBit release including:
  Core features:
  Device and Software Repository Update Management Management UI/Console Artifact Content Delivery Rollout/Campaign Management  Interfaces:
@@ -425,6 +416,15 @@ Currently, bodies of messages are based on JSON.
       
       <guid>https://www.eclipse.org/hawkbit/rest-api/tenant-api-guide/</guid>
       <description>System Configuration  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.35em .</description>
+    </item>
+    
+    <item>
+      <title>Sandbox</title>
+      <link>https://www.eclipse.org/hawkbit/sandbox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/hawkbit/sandbox/</guid>
+      <description></description>
     </item>
     
   </channel>
