@@ -612,12 +612,12 @@ Content-Length: 1748
 {
   "content" : [ {
     "createdBy" : "system",
-    "createdAt" : 1537525944008,
+    "createdAt" : 1537540363610,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1537525944008,
-    "name" : "OS only",
-    "description" : "Default type with Firmware/OS only.",
-    "key" : "os",
+    "lastModifiedAt" : 1537540363610,
+    "name" : "App(s) only",
+    "description" : "Default type with app(s) only.",
+    "key" : "app",
     "deleted" : false,
     "_links" : {
       "self" : {
@@ -627,12 +627,12 @@ Content-Length: 1748
     "id" : 15
   }, {
     "createdBy" : "system",
-    "createdAt" : 1537525944008,
+    "createdAt" : 1537540363611,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1537525944008,
-    "name" : "App(s) only",
-    "description" : "Default type with app(s) only.",
-    "key" : "app",
+    "lastModifiedAt" : 1537540363611,
+    "name" : "OS with app(s)",
+    "description" : "Default type with Firmware/OS and optional app(s).",
+    "key" : "os_app",
     "deleted" : false,
     "_links" : {
       "self" : {
@@ -642,12 +642,12 @@ Content-Length: 1748
     "id" : 16
   }, {
     "createdBy" : "system",
-    "createdAt" : 1537525944008,
+    "createdAt" : 1537540363610,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1537525944008,
-    "name" : "OS with app(s)",
-    "description" : "Default type with Firmware/OS and optional app(s).",
-    "key" : "os_app",
+    "lastModifiedAt" : 1537540363610,
+    "name" : "OS only",
+    "description" : "Default type with Firmware/OS only.",
+    "key" : "os",
     "deleted" : false,
     "_links" : {
       "self" : {
@@ -657,9 +657,9 @@ Content-Length: 1748
     "id" : 17
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1537525944024,
+    "createdAt" : 1537540363632,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1537525944056,
+    "lastModifiedAt" : 1537540363668,
     "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
     "description" : "Desc1234",
     "key" : "test_default_ds_type",
@@ -928,9 +928,9 @@ Content-Length: 366
 
 [ {
   "createdBy" : "uploadTester",
-  "createdAt" : 1537525943735,
+  "createdAt" : 1537540363311,
   "lastModifiedBy" : "uploadTester",
-  "lastModifiedAt" : 1537525943735,
+  "lastModifiedAt" : 1537540363311,
   "name" : "TestName1",
   "description" : "Desc1",
   "key" : "test1",
@@ -1279,9 +1279,9 @@ Content-Length: 684
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1537525943873,
+  "createdAt" : 1537540363467,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537525943973,
+  "lastModifiedAt" : 1537540363578,
   "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
   "description" : "Desc1234",
   "key" : "test_default_ds_type",
@@ -1546,9 +1546,9 @@ Content-Length: 697
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1537525944462,
+  "createdAt" : 1537540364086,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537525944489,
+  "lastModifiedAt" : 1537540364123,
   "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
   "description" : "an updated desription",
   "key" : "test_default_ds_type",
@@ -1780,9 +1780,9 @@ Content-Length: 384
 
 [ {
   "createdBy" : "system",
-  "createdAt" : 1537525944232,
+  "createdAt" : 1537540363842,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537525944241,
+  "lastModifiedAt" : 1537540363848,
   "name" : "OS",
   "description" : "Updated description.",
   "key" : "os",
@@ -1790,10 +1790,10 @@ Content-Length: 384
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/19"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/20"
     }
   },
-  "id" : 19
+  "id" : 20
 } ]</code></pre>
 </div>
 </div>
@@ -1871,7 +1871,7 @@ Content-Length: 384
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/27/mandatorymoduletypes' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '{
-  "id" : 17
+  "id" : 16
 }'</code></pre>
 </div>
 </div>
@@ -1886,7 +1886,7 @@ Host: management-api.host.com
 Content-Length: 15
 
 {
-  "id" : 17
+  "id" : 16
 }</code></pre>
 </div>
 </div>
@@ -2293,9 +2293,9 @@ Content-Length: 380
 
 {
   "createdBy" : "system",
-  "createdAt" : 1537525944518,
+  "createdAt" : 1537540364148,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537525944524,
+  "lastModifiedAt" : 1537540364154,
   "name" : "OS",
   "description" : "Updated description.",
   "key" : "os",
@@ -2512,9 +2512,9 @@ Content-Length: 394
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1537525944316,
+  "createdAt" : 1537540363929,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537525944318,
+  "lastModifiedAt" : 1537540363933,
   "name" : "runtime",
   "description" : "Updated description.",
   "key" : "runtime",
@@ -2603,7 +2603,7 @@ Content-Length: 394
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/64/optionalmoduletypes' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '{
-  "id" : 40
+  "id" : 41
 }'</code></pre>
 </div>
 </div>
@@ -2618,7 +2618,7 @@ Host: management-api.host.com
 Content-Length: 15
 
 {
-  "id" : 40
+  "id" : 41
 }</code></pre>
 </div>
 </div>
@@ -2773,7 +2773,7 @@ Content-Length: 15
 <h4 id="_curl_12"><a class="link" href="#_curl_12">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/69/optionalmoduletypes/43' -i -X DELETE -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/69/optionalmoduletypes/44' -i -X DELETE -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 </div>
@@ -2781,7 +2781,7 @@ Content-Length: 15
 <h4 id="_request_url_12"><a class="link" href="#_request_url_12">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsettypes/69/optionalmoduletypes/43 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsettypes/69/optionalmoduletypes/44 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com</code></pre>
 </div>
@@ -3024,9 +3024,9 @@ Content-Length: 405
 
 {
   "createdBy" : "system",
-  "createdAt" : 1537525943788,
+  "createdAt" : 1537540363377,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537525943798,
+  "lastModifiedAt" : 1537540363389,
   "name" : "Application",
   "description" : "Updated description.",
   "key" : "application",

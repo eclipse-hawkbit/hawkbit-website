@@ -479,7 +479,7 @@ any personal data.</p>
 <p>Start the hawkBit Update Server together with an MySQL and RabbitMQ instance as containers</p>
 
 <pre><code class="language-bash">$ git clone https://github.com/eclipse/hawkbit.git
-$ cd hawkbit/hawkbit-runtime/hawkbit-update-server/docker
+$ cd hawkbit/hawkbit-runtime/docker
 $ docker-compose up -d
 </code></pre>
 
@@ -488,7 +488,7 @@ $ docker-compose up -d
 <p>Start the hawkBit Update Server and Device Simulator together with an MySQL and RabbitMQ instance as services within a swarm</p>
 
 <pre><code class="language-bash">$ git clone https://github.com/eclipse/hawkbit.git
-$ cd hawkbit/hawkbit-runtime/hawkbit-update-server/docker
+$ cd hawkbit/hawkbit-runtime/docker
 $ docker stack init
 $ docker stack deploy -c docker-compose-stack.yml hawkbit
 </code></pre>
