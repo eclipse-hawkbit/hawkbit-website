@@ -493,7 +493,7 @@ Host: management-api.host.com</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>q</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Query fields based on the Feed Item Query Language (FIQL). See <a href="../developerguide/apispecifications/managementapi/queryparameters.html" target="_parent">FIQL search syntax</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query fields based on the Feed Item Query Language (FIQL). See Entity Definitions for available fields.</p></td>
 </tr>
 </tbody>
 </table>
@@ -567,7 +567,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -579,7 +579,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -608,9 +608,9 @@ Content-Length: 419
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1537540314352,
+    "createdAt" : 1538735788253,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1537540314358,
+    "lastModifiedAt" : 1538735788262,
     "name" : "DsTag",
     "description" : "My name is DsTag",
     "colour" : "default",
@@ -773,7 +773,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -785,7 +785,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -819,9 +819,9 @@ Content-Length: 523
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1537540315476,
+  "createdAt" : 1538735789524,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537540315482,
+  "lastModifiedAt" : 1538735789530,
   "name" : "DsTag",
   "description" : "My name is DsTag",
   "colour" : "default",
@@ -1017,7 +1017,7 @@ Content-Length: 87
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1029,7 +1029,7 @@ Content-Length: 87
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1057,9 +1057,9 @@ Content-Length: 343
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1537540315714,
+  "createdAt" : 1538735789799,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537540315714,
+  "lastModifiedAt" : 1538735789799,
   "name" : "ds tag",
   "description" : "ds tag description",
   "colour" : "red",
@@ -1282,7 +1282,7 @@ Content-Length: 83
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1294,7 +1294,7 @@ Content-Length: 83
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1328,9 +1328,9 @@ Content-Length: 522
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1537540313669,
+  "createdAt" : 1538735786904,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537540313836,
+  "lastModifiedAt" : 1538735787240,
   "name" : "ds tag",
   "description" : "ds tag description",
   "colour" : "red",
@@ -1635,7 +1635,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1647,7 +1647,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1713,25 +1713,25 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 2125
+Content-Length: 2124
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1537540314591,
+    "createdAt" : 1538735788527,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1537540314694,
+    "lastModifiedAt" : 1538735788642,
     "name" : "DS",
     "description" : "The descption of the distribution set.",
     "version" : "1.0",
     "modules" : [ {
       "createdBy" : "bumlux",
-      "createdAt" : 1537540314559,
+      "createdAt" : 1538735788493,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1537540314639,
+      "lastModifiedAt" : 1538735788579,
       "name" : "app runtime",
       "description" : "Description of the software module",
-      "version" : "1.0.10",
+      "version" : "1.0.60",
       "type" : "runtime",
       "vendor" : "vendor GmbH, Stuttgart, Germany",
       "deleted" : false,
@@ -1743,12 +1743,12 @@ Content-Length: 2125
       "id" : 8
     }, {
       "createdBy" : "bumlux",
-      "createdAt" : 1537540314550,
+      "createdAt" : 1538735788483,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1537540314655,
+      "lastModifiedAt" : 1538735788597,
       "name" : "application",
       "description" : "Description of the software module",
-      "version" : "1.0.19",
+      "version" : "1.0.14",
       "type" : "application",
       "vendor" : "vendor Limited, California",
       "deleted" : false,
@@ -1760,12 +1760,12 @@ Content-Length: 2125
       "id" : 7
     }, {
       "createdBy" : "bumlux",
-      "createdAt" : 1537540314568,
+      "createdAt" : 1538735788502,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1537540314623,
+      "lastModifiedAt" : 1538735788561,
       "name" : "Firmware",
       "description" : "Description of the software module",
-      "version" : "1.0.30",
+      "version" : "1.0.5",
       "type" : "os",
       "vendor" : "vendor Limited Inc, California",
       "deleted" : false,
@@ -1958,25 +1958,25 @@ Content-Length: 18
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
-Content-Length: 2157
+Content-Length: 2156
 
 {
   "assignedDistributionSets" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1537540316093,
+    "createdAt" : 1538735790237,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1537540316195,
+    "lastModifiedAt" : 1538735790353,
     "name" : "DS",
     "description" : "The descption of the distribution set.",
     "version" : "1.0",
     "modules" : [ {
       "createdBy" : "bumlux",
-      "createdAt" : 1537540316080,
+      "createdAt" : 1538735790219,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1537540316137,
+      "lastModifiedAt" : 1538735790287,
       "name" : "Firmware",
       "description" : "Description of the software module",
-      "version" : "1.0.15",
+      "version" : "1.0.20",
       "type" : "os",
       "vendor" : "vendor Limited Inc, California",
       "deleted" : false,
@@ -1988,12 +1988,12 @@ Content-Length: 2157
       "id" : 27
     }, {
       "createdBy" : "bumlux",
-      "createdAt" : 1537540316074,
+      "createdAt" : 1538735790213,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1537540316126,
+      "lastModifiedAt" : 1538735790275,
       "name" : "app runtime",
       "description" : "Description of the software module",
-      "version" : "1.0.52",
+      "version" : "1.0.33",
       "type" : "runtime",
       "vendor" : "vendor GmbH, Stuttgart, Germany",
       "deleted" : false,
@@ -2005,12 +2005,12 @@ Content-Length: 2157
       "id" : 26
     }, {
       "createdBy" : "bumlux",
-      "createdAt" : 1537540316069,
+      "createdAt" : 1538735790206,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1537540316115,
+      "lastModifiedAt" : 1538735790262,
       "name" : "application",
       "description" : "Description of the software module",
-      "version" : "1.0.95",
+      "version" : "1.0.3",
       "type" : "application",
       "vendor" : "vendor Limited, California",
       "deleted" : false,
@@ -2207,7 +2207,7 @@ Content-Length: 18
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -2219,7 +2219,7 @@ Content-Length: 18
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -2267,24 +2267,24 @@ Content-Length: 18
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 1943
+Content-Length: 1944
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1537540315878,
+  "createdAt" : 1538735789978,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537540315945,
+  "lastModifiedAt" : 1538735790064,
   "name" : "DS",
   "description" : "The descption of the distribution set.",
   "version" : "1.0",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1537540315863,
+    "createdAt" : 1538735789961,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1537540315911,
+    "lastModifiedAt" : 1538735790016,
     "name" : "Firmware",
     "description" : "Description of the software module",
-    "version" : "1.0.9",
+    "version" : "1.0.13",
     "type" : "os",
     "vendor" : "vendor Limited Inc, California",
     "deleted" : false,
@@ -2296,12 +2296,12 @@ Content-Length: 1943
     "id" : 24
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1537540315847,
+    "createdAt" : 1538735789945,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1537540315922,
+    "lastModifiedAt" : 1538735790031,
     "name" : "application",
     "description" : "Description of the software module",
-    "version" : "1.0.30",
+    "version" : "1.0.79",
     "type" : "application",
     "vendor" : "vendor Limited, California",
     "deleted" : false,
@@ -2313,12 +2313,12 @@ Content-Length: 1943
     "id" : 22
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1537540315853,
+    "createdAt" : 1538735789954,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1537540315900,
+    "lastModifiedAt" : 1538735790002,
     "name" : "app runtime",
     "description" : "Description of the software module",
-    "version" : "1.0.65",
+    "version" : "1.0.76",
     "type" : "runtime",
     "vendor" : "vendor GmbH, Stuttgart, Germany",
     "deleted" : false,

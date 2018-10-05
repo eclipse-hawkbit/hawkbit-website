@@ -496,7 +496,7 @@ Host: management-api.host.com</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>q</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Query fields based on the Feed Item Query Language (FIQL). See <a href="../developerguide/apispecifications/managementapi/queryparameters.html" target="_parent">FIQL search syntax</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query fields based on the Feed Item Query Language (FIQL). See Entity Definitions for available fields.</p></td>
 </tr>
 </tbody>
 </table>
@@ -553,7 +553,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -589,7 +589,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -612,9 +612,9 @@ Content-Length: 1748
 {
   "content" : [ {
     "createdBy" : "system",
-    "createdAt" : 1537540363610,
+    "createdAt" : 1538735844889,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1537540363610,
+    "lastModifiedAt" : 1538735844889,
     "name" : "App(s) only",
     "description" : "Default type with app(s) only.",
     "key" : "app",
@@ -627,9 +627,9 @@ Content-Length: 1748
     "id" : 15
   }, {
     "createdBy" : "system",
-    "createdAt" : 1537540363611,
+    "createdAt" : 1538735844890,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1537540363611,
+    "lastModifiedAt" : 1538735844890,
     "name" : "OS with app(s)",
     "description" : "Default type with Firmware/OS and optional app(s).",
     "key" : "os_app",
@@ -642,9 +642,9 @@ Content-Length: 1748
     "id" : 16
   }, {
     "createdBy" : "system",
-    "createdAt" : 1537540363610,
+    "createdAt" : 1538735844889,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1537540363610,
+    "lastModifiedAt" : 1538735844889,
     "name" : "OS only",
     "description" : "Default type with Firmware/OS only.",
     "key" : "os",
@@ -657,9 +657,9 @@ Content-Length: 1748
     "id" : 17
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1537540363632,
+    "createdAt" : 1538735844911,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1537540363668,
+    "lastModifiedAt" : 1538735844947,
     "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
     "description" : "Desc1234",
     "key" : "test_default_ds_type",
@@ -751,7 +751,7 @@ Content-Length: 1748
   "name" : "TestName1",
   "description" : "Desc1",
   "mandatorymodules" : [ {
-    "id" : 2
+    "id" : 1
   } ],
   "key" : "test1"
 } ]'</code></pre>
@@ -775,7 +775,7 @@ Content-Length: 169
   "name" : "TestName1",
   "description" : "Desc1",
   "mandatorymodules" : [ {
-    "id" : 2
+    "id" : 1
   } ],
   "key" : "test1"
 } ]</code></pre>
@@ -864,7 +864,7 @@ Content-Length: 169
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -900,7 +900,7 @@ Content-Length: 169
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -928,9 +928,9 @@ Content-Length: 366
 
 [ {
   "createdBy" : "uploadTester",
-  "createdAt" : 1537540363311,
+  "createdAt" : 1538735844567,
   "lastModifiedBy" : "uploadTester",
-  "lastModifiedAt" : 1537540363311,
+  "lastModifiedAt" : 1538735844567,
   "name" : "TestName1",
   "description" : "Desc1",
   "key" : "test1",
@@ -1203,7 +1203,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1239,7 +1239,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1279,9 +1279,9 @@ Content-Length: 684
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1537540363467,
+  "createdAt" : 1538735844730,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537540363578,
+  "lastModifiedAt" : 1538735844854,
   "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
   "description" : "Desc1234",
   "key" : "test_default_ds_type",
@@ -1470,7 +1470,7 @@ Content-Length: 45
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1506,7 +1506,7 @@ Content-Length: 45
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1546,9 +1546,9 @@ Content-Length: 697
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1537540364086,
+  "createdAt" : 1538735845354,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537540364123,
+  "lastModifiedAt" : 1538735845387,
   "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
   "description" : "an updated desription",
   "key" : "test_default_ds_type",
@@ -1710,7 +1710,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1752,7 +1752,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1780,9 +1780,9 @@ Content-Length: 384
 
 [ {
   "createdBy" : "system",
-  "createdAt" : 1537540363842,
+  "createdAt" : 1538735845120,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537540363848,
+  "lastModifiedAt" : 1538735845127,
   "name" : "OS",
   "description" : "Updated description.",
   "key" : "os",
@@ -1871,7 +1871,7 @@ Content-Length: 384
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/27/mandatorymoduletypes' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '{
-  "id" : 16
+  "id" : 17
 }'</code></pre>
 </div>
 </div>
@@ -1886,7 +1886,7 @@ Host: management-api.host.com
 Content-Length: 15
 
 {
-  "id" : 16
+  "id" : 17
 }</code></pre>
 </div>
 </div>
@@ -2223,7 +2223,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -2265,7 +2265,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -2293,9 +2293,9 @@ Content-Length: 380
 
 {
   "createdBy" : "system",
-  "createdAt" : 1537540364148,
+  "createdAt" : 1538735845413,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537540364154,
+  "lastModifiedAt" : 1538735845419,
   "name" : "OS",
   "description" : "Updated description.",
   "key" : "os",
@@ -2442,7 +2442,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -2484,7 +2484,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -2512,9 +2512,9 @@ Content-Length: 394
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1537540363929,
+  "createdAt" : 1538735845205,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537540363933,
+  "lastModifiedAt" : 1538735845207,
   "name" : "runtime",
   "description" : "Updated description.",
   "key" : "runtime",
@@ -2954,7 +2954,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -2996,7 +2996,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by Bosch IoT Permission user (IM: + UUID), Rollout cloud user (CLD: + UUID), AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -3024,9 +3024,9 @@ Content-Length: 405
 
 {
   "createdBy" : "system",
-  "createdAt" : 1537540363377,
+  "createdAt" : 1538735844637,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1537540363389,
+  "lastModifiedAt" : 1538735844647,
   "name" : "Application",
   "description" : "Updated description.",
   "key" : "application",
