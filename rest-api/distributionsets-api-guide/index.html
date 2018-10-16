@@ -634,25 +634,25 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
-Content-Length: 2324
+Content-Length: 2353
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735830392,
+    "createdAt" : 1539329405622,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735830396,
+    "lastModifiedAt" : 1539329405624,
     "name" : "DS",
-    "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
+    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
     "version" : "1.0",
     "modules" : [ {
       "createdBy" : "bumlux",
-      "createdAt" : 1538735830384,
+      "createdAt" : 1539329405614,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1538735830406,
+      "lastModifiedAt" : 1539329405632,
       "name" : "Firmware",
-      "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-      "version" : "1.0.49",
+      "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+      "version" : "1.0.82",
       "type" : "os",
       "vendor" : "vendor Limited Inc, California",
       "deleted" : false,
@@ -664,12 +664,12 @@ Content-Length: 2324
       "id" : 73
     }, {
       "createdBy" : "bumlux",
-      "createdAt" : 1538735830377,
+      "createdAt" : 1539329405606,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1538735830401,
+      "lastModifiedAt" : 1539329405628,
       "name" : "application",
-      "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-      "version" : "1.0.3",
+      "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+      "version" : "1.0.71",
       "type" : "application",
       "vendor" : "vendor Limited, California",
       "deleted" : false,
@@ -681,12 +681,12 @@ Content-Length: 2324
       "id" : 71
     }, {
       "createdBy" : "bumlux",
-      "createdAt" : 1538735830381,
+      "createdAt" : 1539329405610,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1538735830403,
+      "lastModifiedAt" : 1539329405630,
       "name" : "app runtime",
-      "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-      "version" : "1.0.46",
+      "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+      "version" : "1.0.76",
       "type" : "runtime",
       "vendor" : "vendor GmbH, Stuttgart, Germany",
       "deleted" : false,
@@ -784,7 +784,7 @@ Content-Length: 2324
 <pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
   "requiredMigrationStep" : false,
   "name" : "one",
-  "description" : "torquent adipiscing imperdiet habitasse penatibus urna nisi mus eu curae",
+  "description" : "sem ut leo dui fringilla facilisi montes convallis nullam tempus",
   "type" : "test_default_ds_type",
   "version" : "one",
   "modules" : [ {
@@ -795,7 +795,7 @@ Content-Length: 2324
 }, {
   "requiredMigrationStep" : false,
   "name" : "two",
-  "description" : "nisl mattis feugiat venenatis interdum viverra egestas vivamus scelerisque sit",
+  "description" : "luctus ornare sapien dictum etiam luctus class lectus risus purus",
   "type" : "test_default_ds_type",
   "version" : "two",
   "modules" : [ {
@@ -806,7 +806,7 @@ Content-Length: 2324
 }, {
   "requiredMigrationStep" : true,
   "name" : "three",
-  "description" : "vitae purus dictum mattis per ipsum blandit himenaeos ad vivamus",
+  "description" : "suspendisse ultrices commodo consectetur luctus ridiculus molestie gravida blandit eu",
   "type" : "test_default_ds_type",
   "version" : "three",
   "modules" : [ {
@@ -830,7 +830,7 @@ Content-Length: 804
 [ {
   "requiredMigrationStep" : false,
   "name" : "one",
-  "description" : "torquent adipiscing imperdiet habitasse penatibus urna nisi mus eu curae",
+  "description" : "sem ut leo dui fringilla facilisi montes convallis nullam tempus",
   "type" : "test_default_ds_type",
   "version" : "one",
   "modules" : [ {
@@ -841,7 +841,7 @@ Content-Length: 804
 }, {
   "requiredMigrationStep" : false,
   "name" : "two",
-  "description" : "nisl mattis feugiat venenatis interdum viverra egestas vivamus scelerisque sit",
+  "description" : "luctus ornare sapien dictum etiam luctus class lectus risus purus",
   "type" : "test_default_ds_type",
   "version" : "two",
   "modules" : [ {
@@ -852,7 +852,7 @@ Content-Length: 804
 }, {
   "requiredMigrationStep" : true,
   "name" : "three",
-  "description" : "vitae purus dictum mattis per ipsum blandit himenaeos ad vivamus",
+  "description" : "suspendisse ultrices commodo consectetur luctus ridiculus molestie gravida blandit eu",
   "type" : "test_default_ds_type",
   "version" : "three",
   "modules" : [ {
@@ -1024,23 +1024,23 @@ Content-Length: 804
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 4581
+Content-Length: 4626
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1538735830291,
+  "createdAt" : 1539329405518,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1538735830291,
+  "lastModifiedAt" : 1539329405518,
   "name" : "one",
-  "description" : "torquent adipiscing imperdiet habitasse penatibus urna nisi mus eu curae",
+  "description" : "sem ut leo dui fringilla facilisi montes convallis nullam tempus",
   "version" : "one",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735830260,
+    "createdAt" : 1539329405489,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735830260,
+    "lastModifiedAt" : 1539329405489,
     "name" : "application",
-    "description" : "sagittis vitae vehicula eu nunc eros urna cras a dictumst",
+    "description" : "rutrum venenatis platea purus pretium fermentum convallis hac convallis ipsum",
     "version" : "1.0",
     "type" : "application",
     "vendor" : "Vendor Limited, California",
@@ -1053,11 +1053,64 @@ Content-Length: 4581
     "id" : 69
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735830262,
+    "createdAt" : 1539329405493,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735830262,
+    "lastModifiedAt" : 1539329405493,
     "name" : "os",
-    "description" : "scelerisque orci id tempus ultricies primis fusce ad eu blandit",
+    "description" : "congue quam enim a sociis potenti ipsum turpis aenean enim",
+    "version" : "1.0",
+    "type" : "os",
+    "vendor" : "Vendor Limited, California",
+    "deleted" : false,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/70"
+      }
+    },
+    "id" : 70
+  } ],
+  "requiredMigrationStep" : false,
+  "type" : "test_default_ds_type",
+  "complete" : true,
+  "deleted" : false,
+  "_links" : {
+    "self" : {
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/24"
+    }
+  },
+  "id" : 24
+}, {
+  "createdBy" : "bumlux",
+  "createdAt" : 1539329405520,
+  "lastModifiedBy" : "bumlux",
+  "lastModifiedAt" : 1539329405520,
+  "name" : "two",
+  "description" : "luctus ornare sapien dictum etiam luctus class lectus risus purus",
+  "version" : "two",
+  "modules" : [ {
+    "createdBy" : "bumlux",
+    "createdAt" : 1539329405489,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1539329405489,
+    "name" : "application",
+    "description" : "rutrum venenatis platea purus pretium fermentum convallis hac convallis ipsum",
+    "version" : "1.0",
+    "type" : "application",
+    "vendor" : "Vendor Limited, California",
+    "deleted" : false,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/69"
+      }
+    },
+    "id" : 69
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1539329405493,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1539329405493,
+    "name" : "os",
+    "description" : "congue quam enim a sociis potenti ipsum turpis aenean enim",
     "version" : "1.0",
     "type" : "os",
     "vendor" : "Vendor Limited, California",
@@ -1081,72 +1134,19 @@ Content-Length: 4581
   "id" : 25
 }, {
   "createdBy" : "bumlux",
-  "createdAt" : 1538735830293,
+  "createdAt" : 1539329405522,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1538735830293,
-  "name" : "two",
-  "description" : "nisl mattis feugiat venenatis interdum viverra egestas vivamus scelerisque sit",
-  "version" : "two",
-  "modules" : [ {
-    "createdBy" : "bumlux",
-    "createdAt" : 1538735830260,
-    "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735830260,
-    "name" : "application",
-    "description" : "sagittis vitae vehicula eu nunc eros urna cras a dictumst",
-    "version" : "1.0",
-    "type" : "application",
-    "vendor" : "Vendor Limited, California",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/69"
-      }
-    },
-    "id" : 69
-  }, {
-    "createdBy" : "bumlux",
-    "createdAt" : 1538735830262,
-    "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735830262,
-    "name" : "os",
-    "description" : "scelerisque orci id tempus ultricies primis fusce ad eu blandit",
-    "version" : "1.0",
-    "type" : "os",
-    "vendor" : "Vendor Limited, California",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/70"
-      }
-    },
-    "id" : 70
-  } ],
-  "requiredMigrationStep" : false,
-  "type" : "test_default_ds_type",
-  "complete" : true,
-  "deleted" : false,
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsets/26"
-    }
-  },
-  "id" : 26
-}, {
-  "createdBy" : "bumlux",
-  "createdAt" : 1538735830295,
-  "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1538735830295,
+  "lastModifiedAt" : 1539329405522,
   "name" : "three",
-  "description" : "vitae purus dictum mattis per ipsum blandit himenaeos ad vivamus",
+  "description" : "suspendisse ultrices commodo consectetur luctus ridiculus molestie gravida blandit eu",
   "version" : "three",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735830260,
+    "createdAt" : 1539329405489,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735830260,
+    "lastModifiedAt" : 1539329405489,
     "name" : "application",
-    "description" : "sagittis vitae vehicula eu nunc eros urna cras a dictumst",
+    "description" : "rutrum venenatis platea purus pretium fermentum convallis hac convallis ipsum",
     "version" : "1.0",
     "type" : "application",
     "vendor" : "Vendor Limited, California",
@@ -1159,11 +1159,11 @@ Content-Length: 4581
     "id" : 69
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735830262,
+    "createdAt" : 1539329405493,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735830262,
+    "lastModifiedAt" : 1539329405493,
     "name" : "os",
-    "description" : "scelerisque orci id tempus ultricies primis fusce ad eu blandit",
+    "description" : "congue quam enim a sociis potenti ipsum turpis aenean enim",
     "version" : "1.0",
     "type" : "os",
     "vendor" : "Vendor Limited, California",
@@ -1181,10 +1181,10 @@ Content-Length: 4581
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsets/24"
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/26"
     }
   },
-  "id" : 24
+  "id" : 26
 } ]</code></pre>
 </div>
 </div>
@@ -1538,24 +1538,24 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
-Content-Length: 2562
+Content-Length: 2590
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1538735828078,
+  "createdAt" : 1539329403645,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1538735828082,
+  "lastModifiedAt" : 1539329403648,
   "name" : "DS",
-  "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
+  "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
   "version" : "1.0",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735828069,
+    "createdAt" : 1539329403636,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735828090,
+    "lastModifiedAt" : 1539329403656,
     "name" : "Firmware",
-    "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-    "version" : "1.0.55",
+    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+    "version" : "1.0.21",
     "type" : "os",
     "vendor" : "vendor Limited Inc, California",
     "deleted" : false,
@@ -1567,12 +1567,12 @@ Content-Length: 2562
     "id" : 15
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735828062,
+    "createdAt" : 1539329403630,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735828086,
+    "lastModifiedAt" : 1539329403652,
     "name" : "application",
-    "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-    "version" : "1.0.22",
+    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+    "version" : "1.0.73",
     "type" : "application",
     "vendor" : "vendor Limited, California",
     "deleted" : false,
@@ -1584,12 +1584,12 @@ Content-Length: 2562
     "id" : 13
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735828065,
+    "createdAt" : 1539329403633,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735828088,
+    "lastModifiedAt" : 1539329403654,
     "name" : "app runtime",
-    "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-    "version" : "1.0.11",
+    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+    "version" : "1.0.94",
     "type" : "runtime",
     "vendor" : "vendor GmbH, Stuttgart, Germany",
     "deleted" : false,
@@ -1917,24 +1917,24 @@ Content-Length: 135
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
-Content-Length: 2521
+Content-Length: 2542
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1538735828668,
+  "createdAt" : 1539329404109,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1538735828690,
+  "lastModifiedAt" : 1539329404127,
   "name" : "another Name",
   "description" : "a new description",
   "version" : "another Version",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735828652,
+    "createdAt" : 1539329404097,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735828677,
+    "lastModifiedAt" : 1539329404116,
     "name" : "app runtime",
-    "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-    "version" : "1.0.23",
+    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+    "version" : "1.0.29",
     "type" : "runtime",
     "vendor" : "vendor GmbH, Stuttgart, Germany",
     "deleted" : false,
@@ -1946,12 +1946,12 @@ Content-Length: 2521
     "id" : 32
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735828656,
+    "createdAt" : 1539329404101,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735828679,
+    "lastModifiedAt" : 1539329404118,
     "name" : "Firmware",
-    "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-    "version" : "1.0.41",
+    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+    "version" : "1.0.21",
     "type" : "os",
     "vendor" : "vendor Limited Inc, California",
     "deleted" : false,
@@ -1963,12 +1963,12 @@ Content-Length: 2521
     "id" : 33
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735828647,
+    "createdAt" : 1539329404094,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735828675,
+    "lastModifiedAt" : 1539329404114,
     "name" : "application",
-    "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-    "version" : "1.0.40",
+    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+    "version" : "1.0.32",
     "type" : "application",
     "vendor" : "vendor Limited, California",
     "deleted" : false,
@@ -2272,17 +2272,17 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
-Content-Length: 1652
+Content-Length: 1673
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735829472,
+    "createdAt" : 1539329404811,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735829498,
+    "lastModifiedAt" : 1539329404832,
     "name" : "application",
-    "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-    "version" : "1.0.73",
+    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+    "version" : "1.0.88",
     "type" : "application",
     "vendor" : "vendor Limited, California",
     "deleted" : false,
@@ -2294,12 +2294,12 @@ Content-Length: 1652
     "id" : 49
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735829475,
+    "createdAt" : 1539329404813,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735829502,
+    "lastModifiedAt" : 1539329404833,
     "name" : "app runtime",
-    "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-    "version" : "1.0.35",
+    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+    "version" : "1.0.8",
     "type" : "runtime",
     "vendor" : "vendor GmbH, Stuttgart, Germany",
     "deleted" : false,
@@ -2311,12 +2311,12 @@ Content-Length: 1652
     "id" : 50
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735829480,
+    "createdAt" : 1539329404816,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735829504,
+    "lastModifiedAt" : 1539329404835,
     "name" : "Firmware",
-    "description" : "Updated Desc: sem neque cum aenean imperdiet malesuada faucibus aliquam massa dolor",
-    "version" : "1.0.3",
+    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+    "version" : "1.0.32",
     "type" : "os",
     "vendor" : "vendor Limited Inc, California",
     "deleted" : false,
@@ -2822,13 +2822,13 @@ Content-Length: 501
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735827738,
+    "createdAt" : 1539329403333,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735827867,
+    "lastModifiedAt" : 1539329403430,
     "name" : "targetExist",
     "controllerId" : "targetExist",
     "updateStatus" : "pending",
-    "securityToken" : "99ac792299d7cd742985834e93b6e0b2",
+    "securityToken" : "f8458d40699ad913de6f86abfad62641",
     "requestAttributes" : true,
     "_links" : {
       "self" : {
@@ -2912,46 +2912,46 @@ Content-Length: 501
 <pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/16/assignedTargets' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 47 12 5 10 ? 2018",
+    "schedule" : "0 40 9 12 10 ? 2018",
     "timezone" : "+02:00"
   },
-  "forcetime" : 1538735829284,
+  "forcetime" : 1539329404632,
   "id" : "target1",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 47 12 5 10 ? 2018",
+    "schedule" : "0 40 9 12 10 ? 2018",
     "timezone" : "+02:00"
   },
-  "forcetime" : 1538735829284,
+  "forcetime" : 1539329404632,
   "id" : "target2",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 47 12 5 10 ? 2018",
+    "schedule" : "0 40 9 12 10 ? 2018",
     "timezone" : "+02:00"
   },
-  "forcetime" : 1538735829284,
+  "forcetime" : 1539329404632,
   "id" : "target3",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 47 12 5 10 ? 2018",
+    "schedule" : "0 40 9 12 10 ? 2018",
     "timezone" : "+02:00"
   },
-  "forcetime" : 1538735829284,
+  "forcetime" : 1539329404632,
   "id" : "target4",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 47 12 5 10 ? 2018",
+    "schedule" : "0 40 9 12 10 ? 2018",
     "timezone" : "+02:00"
   },
-  "forcetime" : 1538735829284,
+  "forcetime" : 1539329404632,
   "id" : "target5",
   "type" : "timeforced"
 } ]'</code></pre>
@@ -2970,46 +2970,46 @@ Content-Length: 1032
 [ {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 47 12 5 10 ? 2018",
+    "schedule" : "0 40 9 12 10 ? 2018",
     "timezone" : "+02:00"
   },
-  "forcetime" : 1538735829284,
+  "forcetime" : 1539329404632,
   "id" : "target1",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 47 12 5 10 ? 2018",
+    "schedule" : "0 40 9 12 10 ? 2018",
     "timezone" : "+02:00"
   },
-  "forcetime" : 1538735829284,
+  "forcetime" : 1539329404632,
   "id" : "target2",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 47 12 5 10 ? 2018",
+    "schedule" : "0 40 9 12 10 ? 2018",
     "timezone" : "+02:00"
   },
-  "forcetime" : 1538735829284,
+  "forcetime" : 1539329404632,
   "id" : "target3",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 47 12 5 10 ? 2018",
+    "schedule" : "0 40 9 12 10 ? 2018",
     "timezone" : "+02:00"
   },
-  "forcetime" : 1538735829284,
+  "forcetime" : 1539329404632,
   "id" : "target4",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 47 12 5 10 ? 2018",
+    "schedule" : "0 40 9 12 10 ? 2018",
     "timezone" : "+02:00"
   },
-  "forcetime" : 1538735829284,
+  "forcetime" : 1539329404632,
   "id" : "target5",
   "type" : "timeforced"
 } ]</code></pre>
@@ -3401,14 +3401,14 @@ Content-Length: 536
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735829628,
+    "createdAt" : 1539329404932,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735829644,
+    "lastModifiedAt" : 1539329404949,
     "name" : "targetExist",
     "controllerId" : "targetExist",
     "updateStatus" : "in_sync",
-    "installedAt" : 1538735829641,
-    "securityToken" : "475359d05ce491980a47d9dd90e80391",
+    "installedAt" : 1539329404947,
+    "securityToken" : "67b02f5aa974955eca4fdff2d49c3aa0",
     "requestAttributes" : true,
     "_links" : {
       "self" : {
@@ -3620,9 +3620,9 @@ Content-Length: 775
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735829159,
+    "createdAt" : 1539329404526,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735829159,
+    "lastModifiedAt" : 1539329404526,
     "name" : "filter1",
     "query" : "name==a",
     "autoAssignDistributionSet" : 15,
@@ -3634,9 +3634,9 @@ Content-Length: 775
     "id" : 2
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1538735829164,
+    "createdAt" : 1539329404529,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1538735829164,
+    "lastModifiedAt" : 1539329404529,
     "name" : "filter2",
     "query" : "name==b",
     "autoAssignDistributionSet" : 15,
