@@ -457,7 +457,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h4 id="_curl"><a class="link" href="#_curl">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets' -i -H 'Accept: application/json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 </div>
@@ -604,7 +605,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content[].requiredMigrationStep</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS a required migration step. As a result the DS will be installed even when a newer. (note: updatable only if DS is not yet assigned to a target)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS is a required migration step for another DS. As a result the DS&#8217;s assignment will not be cancelled when another DS is assigned (note: updatable only if DS is not yet assigned to a target)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -634,68 +635,68 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
-Content-Length: 2353
+Content-Length: 2339
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329405622,
+    "createdAt" : 1549349037237,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329405624,
+    "lastModifiedAt" : 1549349037241,
     "name" : "DS",
-    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+    "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
     "version" : "1.0",
     "modules" : [ {
       "createdBy" : "bumlux",
-      "createdAt" : 1539329405614,
+      "createdAt" : 1549349037223,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1539329405632,
+      "lastModifiedAt" : 1549349037250,
       "name" : "Firmware",
-      "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-      "version" : "1.0.82",
+      "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+      "version" : "1.0.35",
       "type" : "os",
       "vendor" : "vendor Limited Inc, California",
       "deleted" : false,
       "_links" : {
         "self" : {
-          "href" : "https://management-api.host.com/rest/v1/softwaremodules/73"
+          "href" : "https://management-api.host.com/rest/v1/softwaremodules/202"
         }
       },
-      "id" : 73
+      "id" : 202
     }, {
       "createdBy" : "bumlux",
-      "createdAt" : 1539329405606,
+      "createdAt" : 1549349037217,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1539329405628,
-      "name" : "application",
-      "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-      "version" : "1.0.71",
-      "type" : "application",
-      "vendor" : "vendor Limited, California",
-      "deleted" : false,
-      "_links" : {
-        "self" : {
-          "href" : "https://management-api.host.com/rest/v1/softwaremodules/71"
-        }
-      },
-      "id" : 71
-    }, {
-      "createdBy" : "bumlux",
-      "createdAt" : 1539329405610,
-      "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1539329405630,
+      "lastModifiedAt" : 1549349037247,
       "name" : "app runtime",
-      "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-      "version" : "1.0.76",
+      "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+      "version" : "1.0.88",
       "type" : "runtime",
       "vendor" : "vendor GmbH, Stuttgart, Germany",
       "deleted" : false,
       "_links" : {
         "self" : {
-          "href" : "https://management-api.host.com/rest/v1/softwaremodules/72"
+          "href" : "https://management-api.host.com/rest/v1/softwaremodules/201"
         }
       },
-      "id" : 72
+      "id" : 201
+    }, {
+      "createdBy" : "bumlux",
+      "createdAt" : 1549349037212,
+      "lastModifiedBy" : "bumlux",
+      "lastModifiedAt" : 1549349037253,
+      "name" : "application",
+      "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+      "version" : "1.0.78",
+      "type" : "application",
+      "vendor" : "vendor Limited, California",
+      "deleted" : false,
+      "_links" : {
+        "self" : {
+          "href" : "https://management-api.host.com/rest/v1/softwaremodules/200"
+        }
+      },
+      "id" : 200
     } ],
     "requiredMigrationStep" : false,
     "type" : "test_default_ds_type",
@@ -703,10 +704,10 @@ Content-Length: 2353
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/distributionsets/27"
+        "href" : "https://management-api.host.com/rest/v1/distributionsets/65"
       }
     },
-    "id" : 27
+    "id" : 65
   } ],
   "total" : 1,
   "size" : 1
@@ -781,38 +782,40 @@ Content-Length: 2353
 <h4 id="_curl_2"><a class="link" href="#_curl_2">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '[ {
   "requiredMigrationStep" : false,
   "name" : "one",
-  "description" : "sem ut leo dui fringilla facilisi montes convallis nullam tempus",
+  "description" : "lobortis class est in fames a porta est nascetur sapien",
   "type" : "test_default_ds_type",
   "version" : "one",
   "modules" : [ {
-    "id" : 69
+    "id" : 199
   }, {
-    "id" : 70
+    "id" : 198
   } ]
 }, {
   "requiredMigrationStep" : false,
   "name" : "two",
-  "description" : "luctus ornare sapien dictum etiam luctus class lectus risus purus",
+  "description" : "curabitur montes tempor venenatis vehicula vivamus eget maecenas scelerisque dignissim",
   "type" : "test_default_ds_type",
   "version" : "two",
   "modules" : [ {
-    "id" : 69
+    "id" : 199
   }, {
-    "id" : 70
+    "id" : 198
   } ]
 }, {
   "requiredMigrationStep" : true,
   "name" : "three",
-  "description" : "suspendisse ultrices commodo consectetur luctus ridiculus molestie gravida blandit eu",
+  "description" : "class viverra aenean sollicitudin torquent magnis sapien dictumst faucibus sapien",
   "type" : "test_default_ds_type",
   "version" : "three",
   "modules" : [ {
-    "id" : 69
+    "id" : 199
   }, {
-    "id" : 70
+    "id" : 198
   } ]
 } ]'</code></pre>
 </div>
@@ -823,42 +826,42 @@ Content-Length: 2353
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsets/ HTTP/1.1
+Content-Length: 818
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 804
 
 [ {
   "requiredMigrationStep" : false,
   "name" : "one",
-  "description" : "sem ut leo dui fringilla facilisi montes convallis nullam tempus",
+  "description" : "lobortis class est in fames a porta est nascetur sapien",
   "type" : "test_default_ds_type",
   "version" : "one",
   "modules" : [ {
-    "id" : 69
+    "id" : 199
   }, {
-    "id" : 70
+    "id" : 198
   } ]
 }, {
   "requiredMigrationStep" : false,
   "name" : "two",
-  "description" : "luctus ornare sapien dictum etiam luctus class lectus risus purus",
+  "description" : "curabitur montes tempor venenatis vehicula vivamus eget maecenas scelerisque dignissim",
   "type" : "test_default_ds_type",
   "version" : "two",
   "modules" : [ {
-    "id" : 69
+    "id" : 199
   }, {
-    "id" : 70
+    "id" : 198
   } ]
 }, {
   "requiredMigrationStep" : true,
   "name" : "three",
-  "description" : "suspendisse ultrices commodo consectetur luctus ridiculus molestie gravida blandit eu",
+  "description" : "class viverra aenean sollicitudin torquent magnis sapien dictumst faucibus sapien",
   "type" : "test_default_ds_type",
   "version" : "three",
   "modules" : [ {
-    "id" : 69
+    "id" : 199
   }, {
-    "id" : 70
+    "id" : 198
   } ]
 } ]</code></pre>
 </div>
@@ -908,7 +911,7 @@ Content-Length: 804
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]requiredMigrationStep</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS a required migration step. As a result the DS will be installed even when a newer. (note: updatable only if DS is not yet assigned to a target)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS is a required migration step for another DS. As a result the DS&#8217;s assignment will not be cancelled when another DS is assigned (note: updatable only if DS is not yet assigned to a target)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -994,7 +997,7 @@ Content-Length: 804
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]requiredMigrationStep</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS a required migration step. As a result the DS will be installed even when a newer. (note: updatable only if DS is not yet assigned to a target)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS is a required migration step for another DS. As a result the DS&#8217;s assignment will not be cancelled when another DS is assigned (note: updatable only if DS is not yet assigned to a target)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1023,51 +1026,51 @@ Content-Length: 804
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
+Content-Length: 4676
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 4626
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329405518,
+  "createdAt" : 1549349037041,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329405518,
+  "lastModifiedAt" : 1549349037041,
   "name" : "one",
-  "description" : "sem ut leo dui fringilla facilisi montes convallis nullam tempus",
+  "description" : "lobortis class est in fames a porta est nascetur sapien",
   "version" : "one",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329405489,
+    "createdAt" : 1549349037012,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329405489,
-    "name" : "application",
-    "description" : "rutrum venenatis platea purus pretium fermentum convallis hac convallis ipsum",
-    "version" : "1.0",
-    "type" : "application",
-    "vendor" : "Vendor Limited, California",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/69"
-      }
-    },
-    "id" : 69
-  }, {
-    "createdBy" : "bumlux",
-    "createdAt" : 1539329405493,
-    "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329405493,
+    "lastModifiedAt" : 1549349037012,
     "name" : "os",
-    "description" : "congue quam enim a sociis potenti ipsum turpis aenean enim",
+    "description" : "sit velit ullamcorper massa sit scelerisque ligula fames ullamcorper elit",
     "version" : "1.0",
     "type" : "os",
     "vendor" : "Vendor Limited, California",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/70"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/199"
       }
     },
-    "id" : 70
+    "id" : 199
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1549349037008,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1549349037008,
+    "name" : "application",
+    "description" : "tristique curabitur accumsan dis integer facilisis nibh leo platea donec",
+    "version" : "1.0",
+    "type" : "application",
+    "vendor" : "Vendor Limited, California",
+    "deleted" : false,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/198"
+      }
+    },
+    "id" : 198
   } ],
   "requiredMigrationStep" : false,
   "type" : "test_default_ds_type",
@@ -1075,52 +1078,52 @@ Content-Length: 4626
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsets/24"
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/62"
     }
   },
-  "id" : 24
+  "id" : 62
 }, {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329405520,
+  "createdAt" : 1549349037044,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329405520,
+  "lastModifiedAt" : 1549349037044,
   "name" : "two",
-  "description" : "luctus ornare sapien dictum etiam luctus class lectus risus purus",
+  "description" : "curabitur montes tempor venenatis vehicula vivamus eget maecenas scelerisque dignissim",
   "version" : "two",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329405489,
+    "createdAt" : 1549349037012,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329405489,
-    "name" : "application",
-    "description" : "rutrum venenatis platea purus pretium fermentum convallis hac convallis ipsum",
-    "version" : "1.0",
-    "type" : "application",
-    "vendor" : "Vendor Limited, California",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/69"
-      }
-    },
-    "id" : 69
-  }, {
-    "createdBy" : "bumlux",
-    "createdAt" : 1539329405493,
-    "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329405493,
+    "lastModifiedAt" : 1549349037012,
     "name" : "os",
-    "description" : "congue quam enim a sociis potenti ipsum turpis aenean enim",
+    "description" : "sit velit ullamcorper massa sit scelerisque ligula fames ullamcorper elit",
     "version" : "1.0",
     "type" : "os",
     "vendor" : "Vendor Limited, California",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/70"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/199"
       }
     },
-    "id" : 70
+    "id" : 199
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1549349037008,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1549349037008,
+    "name" : "application",
+    "description" : "tristique curabitur accumsan dis integer facilisis nibh leo platea donec",
+    "version" : "1.0",
+    "type" : "application",
+    "vendor" : "Vendor Limited, California",
+    "deleted" : false,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/198"
+      }
+    },
+    "id" : 198
   } ],
   "requiredMigrationStep" : false,
   "type" : "test_default_ds_type",
@@ -1128,52 +1131,52 @@ Content-Length: 4626
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsets/25"
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/64"
     }
   },
-  "id" : 25
+  "id" : 64
 }, {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329405522,
+  "createdAt" : 1549349037047,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329405522,
+  "lastModifiedAt" : 1549349037047,
   "name" : "three",
-  "description" : "suspendisse ultrices commodo consectetur luctus ridiculus molestie gravida blandit eu",
+  "description" : "class viverra aenean sollicitudin torquent magnis sapien dictumst faucibus sapien",
   "version" : "three",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329405489,
+    "createdAt" : 1549349037012,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329405489,
-    "name" : "application",
-    "description" : "rutrum venenatis platea purus pretium fermentum convallis hac convallis ipsum",
-    "version" : "1.0",
-    "type" : "application",
-    "vendor" : "Vendor Limited, California",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/69"
-      }
-    },
-    "id" : 69
-  }, {
-    "createdBy" : "bumlux",
-    "createdAt" : 1539329405493,
-    "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329405493,
+    "lastModifiedAt" : 1549349037012,
     "name" : "os",
-    "description" : "congue quam enim a sociis potenti ipsum turpis aenean enim",
+    "description" : "sit velit ullamcorper massa sit scelerisque ligula fames ullamcorper elit",
     "version" : "1.0",
     "type" : "os",
     "vendor" : "Vendor Limited, California",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/70"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/199"
       }
     },
-    "id" : 70
+    "id" : 199
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1549349037008,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1549349037008,
+    "name" : "application",
+    "description" : "tristique curabitur accumsan dis integer facilisis nibh leo platea donec",
+    "version" : "1.0",
+    "type" : "application",
+    "vendor" : "Vendor Limited, California",
+    "deleted" : false,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/198"
+      }
+    },
+    "id" : 198
   } ],
   "requiredMigrationStep" : true,
   "type" : "test_default_ds_type",
@@ -1181,10 +1184,10 @@ Content-Length: 4626
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsets/26"
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/63"
     }
   },
-  "id" : 26
+  "id" : 63
 } ]</code></pre>
 </div>
 </div>
@@ -1266,7 +1269,7 @@ Content-Length: 4626
 <h4 id="_curl_3"><a class="link" href="#_curl_3">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/9' -i -X DELETE</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/47' -i -X DELETE</code></pre>
 </div>
 </div>
 </div>
@@ -1274,7 +1277,7 @@ Content-Length: 4626
 <h4 id="_request_url_3"><a class="link" href="#_request_url_3">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsets/9 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsets/47 HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -1383,7 +1386,8 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_4"><a class="link" href="#_curl_4">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/5' -i -H 'Accept: application/json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/43' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 </div>
@@ -1391,7 +1395,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_url_4"><a class="link" href="#_request_url_4">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/5 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/43 HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -1490,7 +1494,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">requiredMigrationStep</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS a required migration step. As a result the DS will be installed even when a newer. (note: updatable only if DS is not yet assigned to a target)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS is a required migration step for another DS. As a result the DS&#8217;s assignment will not be cancelled when another DS is assigned (note: updatable only if DS is not yet assigned to a target)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1537,68 +1541,68 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 2581
 Content-Type: application/json;charset=UTF-8
-Content-Length: 2590
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329403645,
+  "createdAt" : 1549349034449,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329403648,
+  "lastModifiedAt" : 1549349034455,
   "name" : "DS",
-  "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
+  "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
   "version" : "1.0",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329403636,
+    "createdAt" : 1549349034425,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329403656,
-    "name" : "Firmware",
-    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-    "version" : "1.0.21",
-    "type" : "os",
-    "vendor" : "vendor Limited Inc, California",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/15"
-      }
-    },
-    "id" : 15
-  }, {
-    "createdBy" : "bumlux",
-    "createdAt" : 1539329403630,
-    "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329403652,
+    "lastModifiedAt" : 1549349034464,
     "name" : "application",
-    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-    "version" : "1.0.73",
+    "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+    "version" : "1.0.29",
     "type" : "application",
     "vendor" : "vendor Limited, California",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/13"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/142"
       }
     },
-    "id" : 13
+    "id" : 142
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329403633,
+    "createdAt" : 1549349034436,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329403654,
+    "lastModifiedAt" : 1549349034460,
+    "name" : "Firmware",
+    "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+    "version" : "1.0.40",
+    "type" : "os",
+    "vendor" : "vendor Limited Inc, California",
+    "deleted" : false,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/144"
+      }
+    },
+    "id" : 144
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1549349034432,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1549349034467,
     "name" : "app runtime",
-    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-    "version" : "1.0.94",
+    "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+    "version" : "1.0.41",
     "type" : "runtime",
     "vendor" : "vendor GmbH, Stuttgart, Germany",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/14"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/143"
       }
     },
-    "id" : 14
+    "id" : 143
   } ],
   "requiredMigrationStep" : false,
   "type" : "test_default_ds_type",
@@ -1606,21 +1610,21 @@ Content-Length: 2590
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsets/5"
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/43"
     },
     "modules" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsets/5/assignedSM?offset=0&amp;limit=50{&amp;sort}",
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/43/assignedSM?offset=0&amp;limit=50{&amp;sort}",
       "templated" : true
     },
     "type" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/20"
+      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/232"
     },
     "metadata" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsets/5/metadata?offset=0&amp;limit=50{&amp;sort,q}",
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/43/metadata?offset=0&amp;limit=50{&amp;sort,q}",
       "templated" : true
     }
   },
-  "id" : 5
+  "id" : 43
 }</code></pre>
 </div>
 </div>
@@ -1697,7 +1701,10 @@ Content-Length: 2590
 <h4 id="_curl_5"><a class="link" href="#_curl_5">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/11' -i -X PUT -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept: application/json' -d '{
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/49' -i -X PUT \
+    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '{
   "requiredMigrationStep" : true,
   "name" : "another Name",
   "description" : "a new description",
@@ -1710,11 +1717,11 @@ Content-Length: 2590
 <h4 id="_request_url_5"><a class="link" href="#_request_url_5">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/distributionsets/11 HTTP/1.1
-Content-Type: application/json;charset=UTF-8
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/distributionsets/49 HTTP/1.1
 Accept: application/json
-Host: management-api.host.com
+Content-Type: application/json;charset=UTF-8
 Content-Length: 135
+Host: management-api.host.com
 
 {
   "requiredMigrationStep" : true,
@@ -1790,7 +1797,7 @@ Content-Length: 135
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">requiredMigrationStep</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS a required migration step. As a result the DS will be installed even when a newer. (note: updatable only if DS is not yet assigned to a target)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS is a required migration step for another DS. As a result the DS&#8217;s assignment will not be cancelled when another DS is assigned (note: updatable only if DS is not yet assigned to a target)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -1869,7 +1876,7 @@ Content-Length: 135
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">requiredMigrationStep</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS a required migration step. As a result the DS will be installed even when a newer. (note: updatable only if DS is not yet assigned to a target)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS is a required migration step for another DS. As a result the DS&#8217;s assignment will not be cancelled when another DS is assigned (note: updatable only if DS is not yet assigned to a target)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1916,68 +1923,68 @@ Content-Length: 135
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 2534
 Content-Type: application/json;charset=UTF-8
-Content-Length: 2542
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329404109,
+  "createdAt" : 1549349035225,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329404127,
+  "lastModifiedAt" : 1549349035250,
   "name" : "another Name",
   "description" : "a new description",
   "version" : "another Version",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329404097,
+    "createdAt" : 1549349035207,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329404116,
+    "lastModifiedAt" : 1549349035239,
     "name" : "app runtime",
-    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-    "version" : "1.0.29",
+    "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+    "version" : "1.0.55",
     "type" : "runtime",
     "vendor" : "vendor GmbH, Stuttgart, Germany",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/32"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/161"
       }
     },
-    "id" : 32
+    "id" : 161
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329404101,
+    "createdAt" : 1549349035203,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329404118,
-    "name" : "Firmware",
-    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-    "version" : "1.0.21",
-    "type" : "os",
-    "vendor" : "vendor Limited Inc, California",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/33"
-      }
-    },
-    "id" : 33
-  }, {
-    "createdBy" : "bumlux",
-    "createdAt" : 1539329404094,
-    "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329404114,
+    "lastModifiedAt" : 1549349035236,
     "name" : "application",
-    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-    "version" : "1.0.32",
+    "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+    "version" : "1.0.76",
     "type" : "application",
     "vendor" : "vendor Limited, California",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/31"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/160"
       }
     },
-    "id" : 31
+    "id" : 160
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1549349035212,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1549349035233,
+    "name" : "Firmware",
+    "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+    "version" : "1.0.91",
+    "type" : "os",
+    "vendor" : "vendor Limited Inc, California",
+    "deleted" : false,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/162"
+      }
+    },
+    "id" : 162
   } ],
   "requiredMigrationStep" : true,
   "type" : "test_default_ds_type",
@@ -1985,21 +1992,21 @@ Content-Length: 2542
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsets/11"
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/49"
     },
     "modules" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsets/11/assignedSM?offset=0&amp;limit=50{&amp;sort}",
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/49/assignedSM?offset=0&amp;limit=50{&amp;sort}",
       "templated" : true
     },
     "type" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/36"
+      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/248"
     },
     "metadata" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsets/11/metadata?offset=0&amp;limit=50{&amp;sort,q}",
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/49/metadata?offset=0&amp;limit=50{&amp;sort,q}",
       "templated" : true
     }
   },
-  "id" : 11
+  "id" : 49
 }</code></pre>
 </div>
 </div>
@@ -2086,7 +2093,8 @@ Content-Length: 2542
 <h4 id="_curl_6"><a class="link" href="#_curl_6">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/17/assignedSM' -i -H 'Accept: application/json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/55/assignedSM' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 </div>
@@ -2094,7 +2102,7 @@ Content-Length: 2542
 <h4 id="_request_url_6"><a class="link" href="#_request_url_6">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/17/assignedSM HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/55/assignedSM HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -2158,7 +2166,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_parameter_example"><a class="link" href="#_request_parameter_example">Request parameter example</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/12/assignedSM?offset=1&amp;limit=2&amp;sort=version%3ADESC&amp;q=name%3D%3Done* HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/50/assignedSM?offset=1&amp;limit=2&amp;sort=version%3ADESC&amp;q=name%3D%3Done* HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -2271,61 +2279,61 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 1665
 Content-Type: application/json;charset=UTF-8
-Content-Length: 1673
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329404811,
+    "createdAt" : 1549349036097,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329404832,
+    "lastModifiedAt" : 1549349036128,
     "name" : "application",
-    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-    "version" : "1.0.88",
+    "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+    "version" : "1.0.98",
     "type" : "application",
     "vendor" : "vendor Limited, California",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/49"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/178"
       }
     },
-    "id" : 49
+    "id" : 178
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329404813,
+    "createdAt" : 1549349036102,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329404833,
+    "lastModifiedAt" : 1549349036123,
     "name" : "app runtime",
-    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-    "version" : "1.0.8",
+    "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+    "version" : "1.0.69",
     "type" : "runtime",
     "vendor" : "vendor GmbH, Stuttgart, Germany",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/50"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/179"
       }
     },
-    "id" : 50
+    "id" : 179
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329404816,
+    "createdAt" : 1549349036106,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329404835,
+    "lastModifiedAt" : 1549349036125,
     "name" : "Firmware",
-    "description" : "Updated Desc: elementum curae ligula netus class tincidunt suscipit commodo aliquet turpis",
-    "version" : "1.0.32",
+    "description" : "Updated Desc: nam risus curae taciti turpis pellentesque ultricies nostra cum aliquam",
+    "version" : "1.0.72",
     "type" : "os",
     "vendor" : "vendor Limited Inc, California",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/51"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/180"
       }
     },
-    "id" : 51
+    "id" : 180
   } ],
   "total" : 3,
   "size" : 3
@@ -2400,10 +2408,12 @@ Content-Length: 1673
 <h4 id="_curl_7"><a class="link" href="#_curl_7">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/19/assignedSM' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
-  "id" : 55
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/57/assignedSM' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '[ {
+  "id" : 184
 }, {
-  "id" : 56
+  "id" : 185
 } ]'</code></pre>
 </div>
 </div>
@@ -2412,15 +2422,15 @@ Content-Length: 1673
 <h4 id="_request_url_7"><a class="link" href="#_request_url_7">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsets/19/assignedSM HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsets/57/assignedSM HTTP/1.1
+Content-Length: 38
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 36
 
 [ {
-  "id" : 55
+  "id" : 184
 }, {
-  "id" : 56
+  "id" : 185
 } ]</code></pre>
 </div>
 </div>
@@ -2569,7 +2579,8 @@ Content-Length: 36
 <h4 id="_curl_8"><a class="link" href="#_curl_8">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/4/assignedSM/12' -i -X DELETE -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/42/assignedSM/141' -i -X DELETE \
+    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 </div>
@@ -2577,7 +2588,7 @@ Content-Length: 36
 <h4 id="_request_url_8"><a class="link" href="#_request_url_8">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsets/4/assignedSM/12 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsets/42/assignedSM/141 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com</code></pre>
 </div>
@@ -2691,7 +2702,8 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_9"><a class="link" href="#_curl_9">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/3/assignedTargets' -i -H 'Accept: application/json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/41/assignedTargets' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 </div>
@@ -2699,7 +2711,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_url_9"><a class="link" href="#_request_url_9">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/3/assignedTargets HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/41/assignedTargets HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -2763,7 +2775,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_parameter_example_2"><a class="link" href="#_request_parameter_example_2">Request parameter example</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/10/assignedTargets?offset=1&amp;limit=2&amp;sort=name%3ADESC&amp;q=controllerId%3D%3Dtarget* HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/48/assignedTargets?offset=1&amp;limit=2&amp;sort=name%3ADESC&amp;q=controllerId%3D%3Dtarget* HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -2816,19 +2828,19 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/json;charset=UTF-8
 Content-Length: 501
+Content-Type: application/json;charset=UTF-8
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329403333,
+    "createdAt" : 1549349033978,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329403430,
+    "lastModifiedAt" : 1549349034153,
     "name" : "targetExist",
     "controllerId" : "targetExist",
     "updateStatus" : "pending",
-    "securityToken" : "f8458d40699ad913de6f86abfad62641",
+    "securityToken" : "604b439f2ce3c3fdab072b529124c1dc",
     "requestAttributes" : true,
     "_links" : {
       "self" : {
@@ -2909,49 +2921,51 @@ Content-Length: 501
 <h4 id="_curl_10"><a class="link" href="#_curl_10">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/16/assignedTargets' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/54/assignedTargets' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '[ {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 40 9 12 10 ? 2018",
-    "timezone" : "+02:00"
+    "schedule" : "55 23 9 5 2 ? 2019",
+    "timezone" : "+01:00"
   },
-  "forcetime" : 1539329404632,
+  "forcetime" : 1549349035906,
   "id" : "target1",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 40 9 12 10 ? 2018",
-    "timezone" : "+02:00"
+    "schedule" : "55 23 9 5 2 ? 2019",
+    "timezone" : "+01:00"
   },
-  "forcetime" : 1539329404632,
+  "forcetime" : 1549349035906,
   "id" : "target2",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 40 9 12 10 ? 2018",
-    "timezone" : "+02:00"
+    "schedule" : "55 23 9 5 2 ? 2019",
+    "timezone" : "+01:00"
   },
-  "forcetime" : 1539329404632,
+  "forcetime" : 1549349035906,
   "id" : "target3",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 40 9 12 10 ? 2018",
-    "timezone" : "+02:00"
+    "schedule" : "55 23 9 5 2 ? 2019",
+    "timezone" : "+01:00"
   },
-  "forcetime" : 1539329404632,
+  "forcetime" : 1549349035906,
   "id" : "target4",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 40 9 12 10 ? 2018",
-    "timezone" : "+02:00"
+    "schedule" : "55 23 9 5 2 ? 2019",
+    "timezone" : "+01:00"
   },
-  "forcetime" : 1539329404632,
+  "forcetime" : 1549349035906,
   "id" : "target5",
   "type" : "timeforced"
 } ]'</code></pre>
@@ -2962,54 +2976,54 @@ Content-Length: 501
 <h4 id="_request_url_10"><a class="link" href="#_request_url_10">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsets/16/assignedTargets HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsets/54/assignedTargets HTTP/1.1
+Content-Length: 1027
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 1032
 
 [ {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 40 9 12 10 ? 2018",
-    "timezone" : "+02:00"
+    "schedule" : "55 23 9 5 2 ? 2019",
+    "timezone" : "+01:00"
   },
-  "forcetime" : 1539329404632,
+  "forcetime" : 1549349035906,
   "id" : "target1",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 40 9 12 10 ? 2018",
-    "timezone" : "+02:00"
+    "schedule" : "55 23 9 5 2 ? 2019",
+    "timezone" : "+01:00"
   },
-  "forcetime" : 1539329404632,
+  "forcetime" : 1549349035906,
   "id" : "target2",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 40 9 12 10 ? 2018",
-    "timezone" : "+02:00"
+    "schedule" : "55 23 9 5 2 ? 2019",
+    "timezone" : "+01:00"
   },
-  "forcetime" : 1539329404632,
+  "forcetime" : 1549349035906,
   "id" : "target3",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 40 9 12 10 ? 2018",
-    "timezone" : "+02:00"
+    "schedule" : "55 23 9 5 2 ? 2019",
+    "timezone" : "+01:00"
   },
-  "forcetime" : 1539329404632,
+  "forcetime" : 1549349035906,
   "id" : "target4",
   "type" : "timeforced"
 }, {
   "maintenanceWindow" : {
     "duration" : "00:10:00",
-    "schedule" : "0 40 9 12 10 ? 2018",
-    "timezone" : "+02:00"
+    "schedule" : "55 23 9 5 2 ? 2019",
+    "timezone" : "+01:00"
   },
-  "forcetime" : 1539329404632,
+  "forcetime" : 1549349035906,
   "id" : "target5",
   "type" : "timeforced"
 } ]</code></pre>
@@ -3177,8 +3191,8 @@ Content-Length: 1032
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 60
+Content-Type: application/hal+json;charset=UTF-8
 
 {
   "assigned" : 4,
@@ -3270,7 +3284,8 @@ Content-Length: 60
 <h4 id="_curl_11"><a class="link" href="#_curl_11">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/18/installedTargets' -i -H 'Accept: application/json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/56/installedTargets' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 </div>
@@ -3278,7 +3293,7 @@ Content-Length: 60
 <h4 id="_request_url_11"><a class="link" href="#_request_url_11">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/18/installedTargets HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/56/installedTargets HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -3342,7 +3357,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_parameter_example_3"><a class="link" href="#_request_parameter_example_3">Request parameter example</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/2/installedTargets?offset=1&amp;limit=2&amp;sort=name%3ADESC&amp;q=controllerId%3D%3Dtarget* HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/40/installedTargets?offset=1&amp;limit=2&amp;sort=name%3ADESC&amp;q=controllerId%3D%3Dtarget* HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -3395,20 +3410,20 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/json;charset=UTF-8
 Content-Length: 536
+Content-Type: application/json;charset=UTF-8
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329404932,
+    "createdAt" : 1549349036268,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329404949,
+    "lastModifiedAt" : 1549349036286,
     "name" : "targetExist",
     "controllerId" : "targetExist",
     "updateStatus" : "in_sync",
-    "installedAt" : 1539329404947,
-    "securityToken" : "67b02f5aa974955eca4fdff2d49c3aa0",
+    "installedAt" : 1549349036283,
+    "securityToken" : "f7b54575a35cc2457576329988dcd5e3",
     "requestAttributes" : true,
     "_links" : {
       "self" : {
@@ -3489,7 +3504,8 @@ Content-Length: 536
 <h4 id="_curl_12"><a class="link" href="#_curl_12">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/15/autoAssignTargetFilters' -i -H 'Accept: application/json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/53/autoAssignTargetFilters' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 </div>
@@ -3497,7 +3513,7 @@ Content-Length: 536
 <h4 id="_request_url_12"><a class="link" href="#_request_url_12">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/15/autoAssignTargetFilters HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/53/autoAssignTargetFilters HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -3561,7 +3577,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_parameter_example_4"><a class="link" href="#_request_parameter_example_4">Request parameter example</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/1/autoAssignTargetFilters?offset=1&amp;limit=2&amp;sort=name%3ADESC&amp;q=name%3D%3D*1 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/39/autoAssignTargetFilters?offset=1&amp;limit=2&amp;sort=name%3ADESC&amp;q=name%3D%3D*1 HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -3614,38 +3630,38 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 779
 Content-Type: application/json;charset=UTF-8
-Content-Length: 775
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329404526,
+    "createdAt" : 1549349035779,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329404526,
+    "lastModifiedAt" : 1549349035779,
     "name" : "filter1",
     "query" : "name==a",
-    "autoAssignDistributionSet" : 15,
+    "autoAssignDistributionSet" : 53,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/targetfilters/2"
+        "href" : "https://management-api.host.com/rest/v1/targetfilters/10"
       }
     },
-    "id" : 2
+    "id" : 10
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329404529,
+    "createdAt" : 1549349035783,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329404529,
+    "lastModifiedAt" : 1549349035783,
     "name" : "filter2",
     "query" : "name==b",
-    "autoAssignDistributionSet" : 15,
+    "autoAssignDistributionSet" : 53,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/targetfilters/3"
+        "href" : "https://management-api.host.com/rest/v1/targetfilters/11"
       }
     },
-    "id" : 3
+    "id" : 11
   } ],
   "total" : 2,
   "size" : 2
@@ -3720,7 +3736,7 @@ Content-Length: 775
 <h4 id="_curl_13"><a class="link" href="#_curl_13">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/22/metadata' -i</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/60/metadata' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -3728,7 +3744,7 @@ Content-Length: 775
 <h4 id="_request_url_13"><a class="link" href="#_request_url_13">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/22/metadata HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/60/metadata HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -3791,7 +3807,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_parameter_example_5"><a class="link" href="#_request_parameter_example_5">Request parameter example</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/21/metadata?offset=1&amp;limit=2&amp;sort=key%3ADESC&amp;q=key%3D%3Dknown* HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/59/metadata?offset=1&amp;limit=2&amp;sort=key%3ADESC&amp;q=key%3D%3Dknown* HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -3945,7 +3961,9 @@ Content-Length: 289
 <h4 id="_curl_14"><a class="link" href="#_curl_14">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/14/metadata' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/52/metadata' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '[ {
   "value" : "knownValue1",
   "key" : "knownKey1"
 }, {
@@ -3959,10 +3977,10 @@ Content-Length: 289
 <h4 id="_request_url_14"><a class="link" href="#_request_url_14">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsets/14/metadata HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsets/52/metadata HTTP/1.1
+Content-Length: 110
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 110
 
 [ {
   "value" : "knownValue1",
@@ -4040,8 +4058,8 @@ Content-Length: 110
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
-Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 110
+Content-Type: application/hal+json;charset=UTF-8
 
 [ {
   "key" : "knownKey1",
@@ -4135,7 +4153,7 @@ Content-Length: 110
 <h4 id="_curl_15"><a class="link" href="#_curl_15">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/23/metadata/knownKey' -i -X DELETE</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/61/metadata/knownKey' -i -X DELETE</code></pre>
 </div>
 </div>
 </div>
@@ -4143,7 +4161,7 @@ Content-Length: 110
 <h4 id="_request_url_15"><a class="link" href="#_request_url_15">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsets/23/metadata/knownKey HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsets/61/metadata/knownKey HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -4256,7 +4274,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_16"><a class="link" href="#_curl_16">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/20/metadata/knownKey' -i</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/58/metadata/knownKey' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -4264,7 +4282,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_url_16"><a class="link" href="#_request_url_16">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/20/metadata/knownKey HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsets/58/metadata/knownKey HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -4335,8 +4353,8 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/json;charset=UTF-8
 Content-Length: 50
+Content-Type: application/json;charset=UTF-8
 
 {
   "key" : "knownKey",
@@ -4412,7 +4430,9 @@ Content-Length: 50
 <h4 id="_curl_17"><a class="link" href="#_curl_17">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/13/metadata/knownKey' -i -X PUT -H 'Content-Type: application/json;charset=UTF-8' -d '{
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsets/51/metadata/knownKey' -i -X PUT \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '{
   "value" : "valueForUpdate",
   "key" : "knownKey"
 }'</code></pre>
@@ -4423,10 +4443,10 @@ Content-Length: 50
 <h4 id="_request_url_17"><a class="link" href="#_request_url_17">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/distributionsets/13/metadata/knownKey HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/distributionsets/51/metadata/knownKey HTTP/1.1
+Content-Length: 54
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 54
 
 {
   "value" : "valueForUpdate",
@@ -4538,8 +4558,8 @@ Content-Length: 54
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 54
+Content-Type: application/hal+json;charset=UTF-8
 
 {
   "key" : "knownKey",

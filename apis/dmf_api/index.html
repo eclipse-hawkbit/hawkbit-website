@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Device Management Federation API - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.49.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -404,8 +404,7 @@
 			<h1>Device Management Federation API </h1>
 
 			<p>The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object. Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.
-Currently, bodies of messages are based on JSON.
-</p>
+Currently, bodies of messages are based on JSON.</p>
 
 <h2 id="basics">Basics</h2>
 
@@ -425,14 +424,13 @@ Queues can also be bound to multiple exchanges.</p>
 The user decides who can produce on an exchange and who can create bindings on that exchange for delivery to a specific queue.</p>
 
 <p>hawkBit will create all necessary queues, exchanges and bindings for the user, making it easy to get started.
-The exchange name for outgoing messages is <strong>dmf.exchange</strong>.
-The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless a <code>reply_to</code> header is set, hawkBit will reply on the <strong>sp.direct.exchange</strong> which is bound to the <strong>sp_direct_queue</strong>.</p>
+The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 
-<p>The user can set a <code>reply_to</code> header (see chapter below), to change the default sender exchange.</p>
+<p>The user has to set a <code>reply_to</code> header (see chapter below), to change the default sender exchange.</p>
 
 <p>The following chapter describes the message body, header and properties.</p>
 
-<p>Note: the DMF protocol was intended to be open for other non update use cases by design (e.g. <a href="https://github.com/eclipse/hono">Eclipse Hono</a>. As a result, DMF uses the term <strong>thing</strong> and not <strong>target</strong> but they are actually synonyms in this case.</p>
+<p>Note: the DMF protocol was intended to be compatible to other use cases by design. As a result, DMF uses the term <strong>thing</strong> and not <strong>target</strong> but they are actually synonyms in this case.</p>
 
 <h2 id="messages-sent-to-hawkbit">Messages sent to hawkBit</h2>
 
@@ -466,17 +464,10 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 </tr>
 
 <tr>
-<td>sender</td>
-<td>Name of the message sender</td>
-<td>String</td>
-<td>false</td>
-</tr>
-
-<tr>
 <td>tenant</td>
 <td>The tenant this thing belongs to</td>
 <td>String</td>
-<td>false</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
@@ -493,17 +484,10 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 
 <tbody>
 <tr>
-<td>content_type</td>
-<td>The content type of the payload</td>
+<td>reply_to</td>
+<td>Exchange to reply to.</td>
 <td>String</td>
 <td>true</td>
-</tr>
-
-<tr>
-<td>reply_to</td>
-<td>Exchange to reply to. The default is sp.direct.exchange which is bound to the sp_direct_queue</td>
-<td>String</td>
-<td>false</td>
 </tr>
 </tbody>
 </table>
@@ -520,8 +504,8 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 
 <tbody>
 <tr>
-<td>type=THING_CREATED <br /> tenant=tenant123 <br /> thingId=abc  <br /> sender=Lwm2m</td>
-<td>content_type=application/json <br /> reply_to (optional) =sp.connector.replyTo</td>
+<td>type=THING_CREATED <br /> tenant=tenant123 <br /> thingId=abc</td>
+<td>reply_to=dmfclient.replyTo</td>
 </tr>
 </tbody>
 </table>
@@ -564,7 +548,7 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 <td>tenant</td>
 <td>The tenant this thing belongs to</td>
 <td>String</td>
-<td>false</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
@@ -601,8 +585,8 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 
 <tbody>
 <tr>
-<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=UPDATE_ATTRIBUTES</td>
-<td>content_type=application/json <br /></td>
+<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc <br /> topic=UPDATE_ATTRIBUTES</td>
+<td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
@@ -610,10 +594,10 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 <p>Payload Template</p>
 
 <pre><code class="language-json">{
-	&quot;attributes&quot;: {
-		&quot;exampleKey1&quot; : &quot;exampleValue1&quot;,
-		&quot;exampleKey2&quot; : &quot;exampleValue2&quot;
-	}
+  &quot;attributes&quot;: {
+    &quot;exampleKey1&quot;: &quot;exampleValue1&quot;,
+    &quot;exampleKey2&quot;: &quot;exampleValue2&quot;
+  }
 }
 </code></pre>
 
@@ -650,7 +634,7 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 <td>tenant</td>
 <td>The tenant this thing belongs to</td>
 <td>String</td>
-<td>false</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
@@ -678,10 +662,10 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 <p>Payload Template</p>
 
 <pre><code class="language-json">{
-   &quot;actionId&quot;: long,
-   &quot;softwareModuleId&quot;: long,
-   &quot;actionStatus&quot;:&quot;String&quot;,
-   &quot;message&quot;:[&quot;String&quot;]
+  &quot;actionId&quot;: long,
+  &quot;softwareModuleId&quot;: long,
+  &quot;actionStatus&quot;: &quot;String&quot;,
+  &quot;message&quot;: [&quot;String&quot;]
 }
 </code></pre>
 
@@ -750,17 +734,17 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 
 <tbody>
 <tr>
-<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
 
 <pre><code class="language-json">{
-   &quot;actionId&quot;:137,
-   &quot;softwareModuleId&quot;:17,
-   &quot;actionStatus&quot;:&quot;DOWNLOAD&quot;,
-   &quot;message&quot;:[&quot;The download has started&quot;]
+  &quot;actionId&quot;: 137,
+  &quot;softwareModuleId&quot;: 17,
+  &quot;actionStatus&quot;: &quot;DOWNLOAD&quot;,
+  &quot;message&quot;: [&quot;The download has started&quot;]
 }
 </code></pre>
 
@@ -802,7 +786,7 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 <td>tenant</td>
 <td>The tenant this thing belongs to</td>
 <td>String</td>
-<td>false</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
@@ -830,7 +814,7 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 <p>Payload Template</p>
 
 <pre><code class="language-json">{
-   &quot;actionId&quot;: long
+  &quot;actionId&quot;: long
 }
 </code></pre>
 
@@ -846,14 +830,14 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 
 <tbody>
 <tr>
-<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=CANCEL_DOWNLOAD</td>
+<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc <br /> topic=CANCEL_DOWNLOAD</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
 
 <pre><code class="language-json">{
-   &quot;actionId&quot;:137
+  &quot;actionId&quot;: 137
 }
 </code></pre>
 
@@ -871,17 +855,17 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 
 <tbody>
 <tr>
-<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
 
 <pre><code class="language-json">{
-   &quot;actionId&quot;:137,
-   &quot;softwareModuleId&quot;:17,
-   &quot;actionStatus&quot;:&quot;CANCELED&quot;,
-   &quot;message&quot;:[&quot;The update was canceled.&quot;]
+  &quot;actionId&quot;: 137,
+  &quot;softwareModuleId&quot;: 17,
+  &quot;actionStatus&quot;: &quot;CANCELED&quot;,
+  &quot;message&quot;: [&quot;The update was canceled.&quot;]
 }
 </code></pre>
 
@@ -897,23 +881,25 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 
 <tbody>
 <tr>
-<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
 
 <pre><code class="language-json">{
-   &quot;actionId&quot;:137,
-   &quot;softwareModuleId&quot;:17,
-   &quot;actionStatus&quot;:&quot;CANCEL_REJECTED&quot;,
-   &quot;message&quot;:[&quot;The cancellation was not possible since the target sent an unexpected response.&quot;]
+  &quot;actionId&quot;: 137,
+  &quot;softwareModuleId&quot;: 17,
+  &quot;actionStatus&quot;: &quot;CANCEL_REJECTED&quot;,
+  &quot;message&quot;: [
+    &quot;The cancellation was not possible since the target sent an unexpected response.&quot;
+  ]
 }
 </code></pre>
 
 <h2 id="messages-sent-by-hawkbit">Messages sent by hawkBit</h2>
 
-<p>All messages from hawkBit will be sent to the <strong>sp_direct_queue</strong> or the one specified in the <code>reply_to</code> property.</p>
+<p>All messages from hawkBit will be sent to the specified exchange in the <code>reply_to</code> property.</p>
 
 <h3 id="message-sent-by-hawkbit-to-initialize-an-update-task">Message sent by hawkBit to initialize an update task</h3>
 
@@ -953,7 +939,7 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 <td>tenant</td>
 <td>The tenant this thing belongs to</td>
 <td>String</td>
-<td>false</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
@@ -983,33 +969,35 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 <p>Payload Template</p>
 
 <pre><code class="language-json">{
-   &quot;actionId&quot;: long,
-   &quot;targetSecurityToken&quot;: &quot;String&quot;,
-   &quot;softwareModules&quot;:[
-       {
-       &quot;moduleId&quot;: long,
-       &quot;moduleType&quot;:&quot;String&quot;,
-       &quot;moduleVersion&quot;:&quot;String&quot;,
-       &quot;artifacts&quot;:[
-           {
-           &quot;filename&quot;:&quot;String&quot;,
-           &quot;urls&quot;:{
-               &quot;HTTP&quot;:&quot;String&quot;,
-               &quot;HTTPS&quot;:&quot;String&quot;
-               },
-           &quot;hashes&quot;:{
-               &quot;md5&quot;:&quot;String&quot;,
-               &quot;sha1&quot;:&quot;String&quot;
-               },
-           &quot;size&quot;:long
-           }],
-       &quot;metadata&quot;:[
-           {
-               &quot;key&quot;:&quot;String&quot;,
-               &quot;value&quot;:&quot;String&quot;
-           }
-       ]
-       }]
+  &quot;actionId&quot;: long,
+  &quot;targetSecurityToken&quot;: &quot;String&quot;,
+  &quot;softwareModules&quot;: [
+    {
+      &quot;moduleId&quot;: long,
+      &quot;moduleType&quot;: &quot;String&quot;,
+      &quot;moduleVersion&quot;: &quot;String&quot;,
+      &quot;artifacts&quot;: [
+        {
+          &quot;filename&quot;: &quot;String&quot;,
+          &quot;urls&quot;: {
+            &quot;HTTP&quot;: &quot;String&quot;,
+            &quot;HTTPS&quot;: &quot;String&quot;
+          },
+          &quot;hashes&quot;: {
+            &quot;md5&quot;: &quot;String&quot;,
+            &quot;sha1&quot;: &quot;String&quot;
+          },
+          &quot;size&quot;: long
+        }
+      ],
+      &quot;metadata&quot;: [
+        {
+          &quot;key&quot;: &quot;String&quot;,
+          &quot;value&quot;: &quot;String&quot;
+        }
+      ]
+    }
+  ]
 }
 </code></pre>
 
@@ -1025,39 +1013,42 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
 
 <tbody>
 <tr>
-<td>type=EVENT  <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=DOWNLOAD_AND_INSTALL</td>
+<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc <br /> topic=DOWNLOAD_AND_INSTALL</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
 
 <pre><code class="language-json">{
-   &quot;actionId&quot;:137,
-   &quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
-   &quot;softwareModules&quot;:[{
-       &quot;moduleId&quot;:7,
-       &quot;moduleType&quot;:&quot;firmware&quot;,
-       &quot;moduleVersion&quot;:&quot;7.7.7&quot;,
-       &quot;artifacts&quot;:[
-           {
-           &quot;filename&quot;:&quot;artifact.zip&quot;,
-           &quot;urls&quot;:{
-               &quot;HTTP&quot;:&quot;http://download-from-url.com&quot;,
-               &quot;HTTPS&quot;:&quot;https://download-from-url.com&quot;
-               },
-           &quot;hashes&quot;:{
-               &quot;md5&quot;:&quot;md5hash&quot;,
-               &quot;sha1&quot;:&quot;sha1hash&quot;
-               },
-           &quot;size&quot;:512
-           }],
-       &quot;metadata&quot;:[
-           {
-               &quot;key&quot;:&quot;installationType&quot;,
-               &quot;value&quot;:&quot;5784K#&quot;
-           }
-       ]
-    }]
+  &quot;actionId&quot;: 137,
+  &quot;targetSecurityToken&quot;: &quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
+  &quot;softwareModules&quot;: [
+    {
+      &quot;moduleId&quot;: 7,
+      &quot;moduleType&quot;: &quot;firmware&quot;,
+      &quot;moduleVersion&quot;: &quot;7.7.7&quot;,
+      &quot;artifacts&quot;: [
+        {
+          &quot;filename&quot;: &quot;artifact.zip&quot;,
+          &quot;urls&quot;: {
+            &quot;HTTP&quot;: &quot;http://download-from-url.com&quot;,
+            &quot;HTTPS&quot;: &quot;https://download-from-url.com&quot;
+          },
+          &quot;hashes&quot;: {
+            &quot;md5&quot;: &quot;md5hash&quot;,
+            &quot;sha1&quot;: &quot;sha1hash&quot;
+          },
+          &quot;size&quot;: 512
+        }
+      ],
+      &quot;metadata&quot;: [
+        {
+          &quot;key&quot;: &quot;installationType&quot;,
+          &quot;value&quot;: &quot;5784K#&quot;
+        }
+      ]
+    }
+  ]
 }
 </code></pre>
 
@@ -1069,7 +1060,7 @@ The queue name for incoming messages is <strong>sp_direct_queue</strong>. Unless
   </div>
   <p class="notice">
     
-    &copy; 2018 The Eclipse hawkBit Project &ndash;
+    &copy; 2019 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>

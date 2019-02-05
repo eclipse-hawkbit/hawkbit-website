@@ -444,7 +444,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h4 id="_curl"><a class="link" href="#_curl">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/system/configs/' -i</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/system/configs/' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -577,143 +577,203 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 3489
+Content-Length: 5229
 
 {
   "anonymous.download.enabled" : {
     "value" : false,
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/anonymous.download.enabled"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/anonymous.download.enabled",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "authentication.header.authority" : {
     "value" : "",
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/authentication.header.authority"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/authentication.header.authority",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "authentication.gatewaytoken.enabled" : {
     "value" : false,
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/authentication.gatewaytoken.enabled"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/authentication.gatewaytoken.enabled",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "authentication.gatewaytoken.key" : {
     "value" : "",
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/authentication.gatewaytoken.key"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/authentication.gatewaytoken.key",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "action.cleanup.actionStatus" : {
     "value" : "CANCELED,ERROR",
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/action.cleanup.actionStatus"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/action.cleanup.actionStatus",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "action.cleanup.enabled" : {
     "value" : false,
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/action.cleanup.enabled"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/action.cleanup.enabled",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "pollingTime" : {
     "value" : "12:00:00",
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/pollingTime"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/pollingTime",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "authentication.targettoken.enabled" : {
     "value" : false,
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/authentication.targettoken.enabled"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/authentication.targettoken.enabled",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "rollout.approval.enabled" : {
     "value" : false,
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/rollout.approval.enabled"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/rollout.approval.enabled",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "maintenanceWindowPollCount" : {
     "value" : 3,
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/maintenanceWindowPollCount"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/maintenanceWindowPollCount",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "repository.actions.autoclose.enabled" : {
     "value" : false,
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/repository.actions.autoclose.enabled"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/repository.actions.autoclose.enabled",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "action.cleanup.actionExpiry" : {
     "value" : 2592000000,
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/action.cleanup.actionExpiry"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/action.cleanup.actionExpiry",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "pollingOverdueTime" : {
     "value" : "23:59:59",
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/pollingOverdueTime"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/pollingOverdueTime",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "authentication.header.enabled" : {
     "value" : true,
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/authentication.header.enabled"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/authentication.header.enabled",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   },
   "minPollingTime" : {
     "value" : "00:00:30",
     "global" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/system/configs/minPollingTime"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/system/configs/minPollingTime",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   }
 }</code></pre>
 </div>
@@ -791,7 +851,7 @@ Content-Length: 3489
 <h4 id="_curl_2"><a class="link" href="#_curl_2">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/system/configs/authentication.gatewaytoken.key/' -i</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/system/configs/authentication.gatewaytoken.key/' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -890,8 +950,8 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 182
+Content-Type: application/hal+json;charset=UTF-8
 
 {
   "value" : "",
@@ -977,7 +1037,9 @@ Content-Length: 182
 <h4 id="_curl_3"><a class="link" href="#_curl_3">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/system/configs/authentication.gatewaytoken.key/' -i -X PUT -H 'Content-Type: application/json' -d '{
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/system/configs/authentication.gatewaytoken.key/' -i -X PUT \
+    -H 'Content-Type: application/json' \
+    -d '{
   "value" : "exampleToken"
 }'</code></pre>
 </div>
@@ -988,9 +1050,9 @@ Content-Length: 182
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/system/configs/authentication.gatewaytoken.key/ HTTP/1.1
+Content-Length: 30
 Content-Type: application/json
 Host: management-api.host.com
-Content-Length: 30
 
 {
   "value" : "exampleToken"
@@ -1119,9 +1181,9 @@ Content-Length: 319
 
 {
   "value" : "exampleToken",
-  "lastModifiedAt" : 1539329436367,
+  "lastModifiedAt" : 1549349075288,
   "lastModifiedBy" : "bumlux",
-  "createdAt" : 1539329436367,
+  "createdAt" : 1549349075288,
   "createdBy" : "bumlux",
   "global" : false,
   "_links" : {

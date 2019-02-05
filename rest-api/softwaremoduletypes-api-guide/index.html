@@ -445,7 +445,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h4 id="_curl"><a class="link" href="#_curl">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes' -i -H 'Accept: application/json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 </div>
@@ -591,15 +592,15 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 1760
 Content-Type: application/json;charset=UTF-8
-Content-Length: 1752
 
 {
   "content" : [ {
     "createdBy" : "system",
-    "createdAt" : 1539329425063,
+    "createdAt" : 1549349062020,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329425069,
+    "lastModifiedAt" : 1549349062031,
     "name" : "OS",
     "description" : "Updated description.",
     "key" : "os",
@@ -607,15 +608,15 @@ Content-Length: 1752
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/17"
+        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/368"
       }
     },
-    "id" : 17
+    "id" : 368
   }, {
     "createdBy" : "system",
-    "createdAt" : 1539329425063,
+    "createdAt" : 1549349062019,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329425071,
+    "lastModifiedAt" : 1549349062036,
     "name" : "Application",
     "description" : "Updated description.",
     "key" : "application",
@@ -623,15 +624,15 @@ Content-Length: 1752
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/18"
+        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/369"
       }
     },
-    "id" : 18
+    "id" : 369
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329425073,
+    "createdAt" : 1549349062039,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329425075,
+    "lastModifiedAt" : 1549349062043,
     "name" : "runtime",
     "description" : "Updated description.",
     "key" : "runtime",
@@ -639,15 +640,15 @@ Content-Length: 1752
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/19"
+        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/370"
       }
     },
-    "id" : 19
+    "id" : 370
   }, {
     "createdBy" : "uploadTester",
-    "createdAt" : 1539329425093,
+    "createdAt" : 1549349062069,
     "lastModifiedBy" : "uploadTester",
-    "lastModifiedAt" : 1539329425095,
+    "lastModifiedAt" : 1549349062072,
     "name" : "test123",
     "description" : "Desc1234",
     "key" : "test123",
@@ -655,10 +656,10 @@ Content-Length: 1752
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/20"
+        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/371"
       }
     },
-    "id" : 20
+    "id" : 371
   } ],
   "total" : 4,
   "size" : 4
@@ -733,7 +734,10 @@ Content-Length: 1752
 <h4 id="_curl_2"><a class="link" href="#_curl_2">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept: application/json' -d '[ {
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes' -i -X POST \
+    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '[ {
   "name" : "TestName1",
   "description" : "Desc1",
   "maxAssignments" : 1,
@@ -747,10 +751,10 @@ Content-Length: 1752
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/softwaremoduletypes HTTP/1.1
-Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Host: management-api.host.com
+Content-Type: application/json;charset=UTF-8
 Content-Length: 100
+Host: management-api.host.com
 
 [ {
   "name" : "TestName1",
@@ -798,7 +802,7 @@ Content-Length: 100
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]maxAssignments</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of assigments to a distribution set/target, e.g. only one firmware but multiple applications.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of assignments to a distribution set/target, e.g. only one firmware but multiple applications.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -901,14 +905,14 @@ Content-Length: 100
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
+Content-Length: 393
 Content-Type: application/json;charset=UTF-8
-Content-Length: 391
 
 [ {
   "createdBy" : "uploadTester",
-  "createdAt" : 1539329425165,
+  "createdAt" : 1549349062173,
   "lastModifiedBy" : "uploadTester",
-  "lastModifiedAt" : 1539329425165,
+  "lastModifiedAt" : 1549349062173,
   "name" : "TestName1",
   "description" : "Desc1",
   "key" : "test1",
@@ -916,10 +920,10 @@ Content-Length: 391
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/24"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/375"
     }
   },
-  "id" : 24
+  "id" : 375
 } ]</code></pre>
 </div>
 </div>
@@ -1006,7 +1010,7 @@ Content-Length: 391
 <h4 id="_curl_3"><a class="link" href="#_curl_3">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes/8' -i -X DELETE</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes/359' -i -X DELETE</code></pre>
 </div>
 </div>
 </div>
@@ -1014,7 +1018,7 @@ Content-Length: 391
 <h4 id="_request_url_3"><a class="link" href="#_request_url_3">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/softwaremoduletypes/8 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/softwaremoduletypes/359 HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -1123,7 +1127,8 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_4"><a class="link" href="#_curl_4">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes/16' -i -H 'Accept: application/json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes/367' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 </div>
@@ -1131,7 +1136,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_url_4"><a class="link" href="#_request_url_4">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremoduletypes/16 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremoduletypes/367 HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -1247,14 +1252,14 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 392
 Content-Type: application/json;charset=UTF-8
-Content-Length: 390
 
 {
   "createdBy" : "uploadTester",
-  "createdAt" : 1539329425034,
+  "createdAt" : 1549349061986,
   "lastModifiedBy" : "uploadTester",
-  "lastModifiedAt" : 1539329425036,
+  "lastModifiedAt" : 1549349061989,
   "name" : "test123",
   "description" : "Desc1234",
   "key" : "test123",
@@ -1262,10 +1267,10 @@ Content-Length: 390
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/16"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/367"
     }
   },
-  "id" : 16
+  "id" : 367
 }</code></pre>
 </div>
 </div>
@@ -1337,7 +1342,9 @@ Content-Length: 390
 <h4 id="_curl_5"><a class="link" href="#_curl_5">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes/12' -i -X PUT -H 'Content-Type: application/json;charset=UTF-8' -d '{
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes/363' -i -X PUT \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '{
   "description" : "a new description"
 }'</code></pre>
 </div>
@@ -1347,10 +1354,10 @@ Content-Length: 390
 <h4 id="_request_url_5"><a class="link" href="#_request_url_5">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/softwaremoduletypes/12 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/softwaremoduletypes/363 HTTP/1.1
+Content-Length: 41
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 41
 
 {
   "description" : "a new description"
@@ -1499,13 +1506,13 @@ Content-Length: 41
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 387
+Content-Length: 389
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329424951,
+  "createdAt" : 1549349061899,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329424955,
+  "lastModifiedAt" : 1549349061906,
   "name" : "test123",
   "description" : "a new description",
   "key" : "test123",
@@ -1513,10 +1520,10 @@ Content-Length: 387
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/12"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/363"
     }
   },
-  "id" : 12
+  "id" : 363
 }</code></pre>
 </div>
 </div>

@@ -452,7 +452,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h4 id="_curl"><a class="link" href="#_curl">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts' -i -H 'Accept: application/hal+json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts' -i -X GET \
+    -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
 </div>
@@ -634,13 +635,13 @@ Content-Length: 555
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388910,
+    "createdAt" : 1549349017321,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329389008,
+    "lastModifiedAt" : 1549349017461,
     "name" : "exampleRollout",
     "description" : "exampleDescription",
     "targetFilterQuery" : "controllerId==exampleTarget*",
-    "distributionSetId" : 15,
+    "distributionSetId" : 31,
     "status" : "ready",
     "totalTargets" : 20,
     "deleted" : false,
@@ -724,7 +725,8 @@ Content-Length: 555
 <h4 id="_curl_2"><a class="link" href="#_curl_2">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/2' -i -H 'Accept: application/hal+json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/2' -i -X GET \
+    -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
 </div>
@@ -903,17 +905,17 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 1337
+Content-Length: 1338
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329385019,
+  "createdAt" : 1549349012165,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329385197,
+  "lastModifiedAt" : 1549349012394,
   "name" : "exampleRollout",
   "description" : "exampleDescription",
   "targetFilterQuery" : "controllerId==exampleTarget*",
-  "distributionSetId" : 2,
+  "distributionSetId" : 18,
   "status" : "ready",
   "totalTargets" : 20,
   "totalTargetsPerStatus" : {
@@ -1028,8 +1030,11 @@ Content-Length: 1337
 <h4 id="_curl_3"><a class="link" href="#_curl_3">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts' -i -X POST -H 'Content-Type: application/hal+json;charset=UTF-8' -H 'Accept: application/hal+json' -d '{
-  "distributionSetId" : 6,
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts' -i -X POST \
+    -H 'Content-Type: application/hal+json;charset=UTF-8' \
+    -H 'Accept: application/hal+json' \
+    -d '{
+  "distributionSetId" : 22,
   "successCondition" : {
     "condition" : "THRESHOLD",
     "expression" : "50"
@@ -1060,12 +1065,12 @@ Content-Length: 1337
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/rollouts HTTP/1.1
 Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 490
 Accept: application/hal+json
 Host: management-api.host.com
-Content-Length: 489
 
 {
-  "distributionSetId" : 6,
+  "distributionSetId" : 22,
   "successCondition" : {
     "condition" : "THRESHOLD",
     "expression" : "50"
@@ -1376,17 +1381,17 @@ Content-Length: 489
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 1336
+Content-Length: 1337
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329386999,
+  "createdAt" : 1549349014678,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329386999,
+  "lastModifiedAt" : 1549349014678,
   "name" : "exampleRollout",
   "description" : "Rollout for all named targets",
   "targetFilterQuery" : "id==targets-*",
-  "distributionSetId" : 6,
+  "distributionSetId" : 22,
   "status" : "creating",
   "totalTargets" : 20,
   "totalTargetsPerStatus" : {
@@ -1436,8 +1441,11 @@ Content-Length: 1336
 <h4 id="_curl_4"><a class="link" href="#_curl_4">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts' -i -X POST -H 'Content-Type: application/json' -H 'Accept: application/hal+json' -d '{
-  "distributionSetId" : 8,
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts' -i -X POST \
+    -H 'Content-Type: application/json' \
+    -H 'Accept: application/hal+json' \
+    -d '{
+  "distributionSetId" : 24,
   "successCondition" : {
     "condition" : "THRESHOLD",
     "expression" : "50"
@@ -1500,11 +1508,11 @@ Content-Length: 1336
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/rollouts HTTP/1.1
 Content-Type: application/json
 Accept: application/hal+json
+Content-Length: 1206
 Host: management-api.host.com
-Content-Length: 1205
 
 {
-  "distributionSetId" : 8,
+  "distributionSetId" : 24,
   "successCondition" : {
     "condition" : "THRESHOLD",
     "expression" : "50"
@@ -1958,17 +1966,17 @@ Content-Length: 1205
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 1353
+Content-Length: 1354
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329387364,
+  "createdAt" : 1549349015225,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329387364,
+  "lastModifiedAt" : 1549349015225,
   "name" : "exampleRolloutWithDefinedGroups",
   "description" : "Rollout for all named targets",
   "targetFilterQuery" : "id==targets-*",
-  "distributionSetId" : 8,
+  "distributionSetId" : 24,
   "status" : "creating",
   "totalTargets" : 10,
   "totalTargetsPerStatus" : {
@@ -2090,7 +2098,8 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h4 id="_curl_5"><a class="link" href="#_curl_5">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/1/approve' -i -X POST -H 'Accept: application/hal+json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/1/approve' -i -X POST \
+    -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
 </div>
@@ -2182,7 +2191,8 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h4 id="_curl_6"><a class="link" href="#_curl_6">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/7/deny' -i -X POST -H 'Accept: application/hal+json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/7/deny' -i -X POST \
+    -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
 </div>
@@ -2272,7 +2282,8 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_7"><a class="link" href="#_curl_7">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/12/start' -i -X POST -H 'Accept: application/hal+json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/12/start' -i -X POST \
+    -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
 </div>
@@ -2362,7 +2373,8 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_8"><a class="link" href="#_curl_8">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/5/pause' -i -X POST -H 'Accept: application/hal+json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/5/pause' -i -X POST \
+    -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
 </div>
@@ -2449,7 +2461,8 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_9"><a class="link" href="#_curl_9">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/4/resume' -i -X POST -H 'Accept: application/hal+json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/4/resume' -i -X POST \
+    -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
 </div>
@@ -2653,7 +2666,8 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_11"><a class="link" href="#_curl_11">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/13/deploygroups' -i -H 'Accept: application/hal+json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/13/deploygroups' -i -X GET \
+    -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
 </div>
@@ -2922,9 +2936,9 @@ Content-Length: 8104
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388453,
+    "createdAt" : 1549349016649,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388545,
+    "lastModifiedAt" : 1549349016769,
     "name" : "group-1",
     "description" : "group-1",
     "successCondition" : {
@@ -2955,9 +2969,9 @@ Content-Length: 8104
     "id" : 113
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388454,
+    "createdAt" : 1549349016650,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388546,
+    "lastModifiedAt" : 1549349016770,
     "name" : "group-2",
     "description" : "group-2",
     "successCondition" : {
@@ -2988,9 +3002,9 @@ Content-Length: 8104
     "id" : 114
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388454,
+    "createdAt" : 1549349016651,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388547,
+    "lastModifiedAt" : 1549349016771,
     "name" : "group-3",
     "description" : "group-3",
     "successCondition" : {
@@ -3021,9 +3035,9 @@ Content-Length: 8104
     "id" : 115
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388455,
+    "createdAt" : 1549349016652,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388547,
+    "lastModifiedAt" : 1549349016771,
     "name" : "group-4",
     "description" : "group-4",
     "successCondition" : {
@@ -3054,9 +3068,9 @@ Content-Length: 8104
     "id" : 116
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388455,
+    "createdAt" : 1549349016654,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388547,
+    "lastModifiedAt" : 1549349016772,
     "name" : "group-5",
     "description" : "group-5",
     "successCondition" : {
@@ -3087,9 +3101,9 @@ Content-Length: 8104
     "id" : 117
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388456,
+    "createdAt" : 1549349016655,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388548,
+    "lastModifiedAt" : 1549349016772,
     "name" : "group-6",
     "description" : "group-6",
     "successCondition" : {
@@ -3120,9 +3134,9 @@ Content-Length: 8104
     "id" : 118
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388456,
+    "createdAt" : 1549349016656,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388548,
+    "lastModifiedAt" : 1549349016773,
     "name" : "group-7",
     "description" : "group-7",
     "successCondition" : {
@@ -3153,9 +3167,9 @@ Content-Length: 8104
     "id" : 119
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388457,
+    "createdAt" : 1549349016658,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388548,
+    "lastModifiedAt" : 1549349016773,
     "name" : "group-8",
     "description" : "group-8",
     "successCondition" : {
@@ -3186,9 +3200,9 @@ Content-Length: 8104
     "id" : 120
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388457,
+    "createdAt" : 1549349016659,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388549,
+    "lastModifiedAt" : 1549349016774,
     "name" : "group-9",
     "description" : "group-9",
     "successCondition" : {
@@ -3219,9 +3233,9 @@ Content-Length: 8104
     "id" : 121
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388458,
+    "createdAt" : 1549349016660,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388549,
+    "lastModifiedAt" : 1549349016774,
     "name" : "group-10",
     "description" : "group-10",
     "successCondition" : {
@@ -3329,7 +3343,8 @@ Content-Length: 8104
 <h4 id="_curl_12"><a class="link" href="#_curl_12">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/16/deploygroups/143' -i -H 'Accept: application/hal+json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/16/deploygroups/143' -i -X GET \
+    -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
 </div>
@@ -3541,14 +3556,14 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 889
+Content-Type: application/hal+json;charset=UTF-8
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329389121,
+  "createdAt" : 1549349017661,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329389200,
+  "lastModifiedAt" : 1549349017833,
   "name" : "group-1",
   "description" : "group-1",
   "successCondition" : {
@@ -3661,7 +3676,8 @@ Content-Length: 889
 <h4 id="_curl_13"><a class="link" href="#_curl_13">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/14/deploygroups/123/targets' -i -H 'Accept: application/hal+json'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/14/deploygroups/123/targets' -i -X GET \
+    -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
 </div>
@@ -3851,7 +3867,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content[].ipAddress</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Last known IP address of the target. Only presented if IP address of the target itself is known (connected directy through DDI API).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last known IP address of the target. Only presented if IP address of the target itself is known (connected directly through DDI API).</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -3868,20 +3884,20 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 1077
+Content-Type: application/hal+json;charset=UTF-8
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388663,
+    "createdAt" : 1549349016933,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388663,
+    "lastModifiedAt" : 1549349016933,
     "name" : "exampleTarget-00000",
     "description" : "exampleTarget0",
     "controllerId" : "exampleTarget-00000",
     "updateStatus" : "unknown",
-    "securityToken" : "46ea15493d632ce1b8f7987ae1d630ba",
+    "securityToken" : "8fc58e5e0bdb29463bbe989d08f3dfdc",
     "requestAttributes" : true,
     "_links" : {
       "self" : {
@@ -3890,14 +3906,14 @@ Content-Length: 1077
     }
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329388664,
+    "createdAt" : 1549349016936,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329388664,
+    "lastModifiedAt" : 1549349016936,
     "name" : "exampleTarget-00001",
     "description" : "exampleTarget1",
     "controllerId" : "exampleTarget-00001",
     "updateStatus" : "unknown",
-    "securityToken" : "df74e44b37dabc9168351fb7ce5d3f2c",
+    "securityToken" : "1b0e508cfd4454a46e54869c17efb0d7",
     "requestAttributes" : true,
     "_links" : {
       "self" : {

@@ -449,7 +449,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h4 id="_curl"><a class="link" href="#_curl">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags' -i</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -608,9 +608,9 @@ Content-Length: 418
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329431006,
+    "createdAt" : 1549349069116,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329431009,
+    "lastModifiedAt" : 1549349069120,
     "name" : "targetTag",
     "description" : "My name is targetTag",
     "colour" : "default",
@@ -694,7 +694,7 @@ Content-Length: 418
 <h4 id="_curl_2"><a class="link" href="#_curl_2">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/3' -i</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/3' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -814,14 +814,14 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 504
+Content-Type: application/hal+json;charset=UTF-8
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329430672,
+  "createdAt" : 1549349068633,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329430674,
+  "lastModifiedAt" : 1549349068637,
   "name" : "targetTag",
   "description" : "My name is targetTag",
   "colour" : "default",
@@ -906,7 +906,9 @@ Content-Length: 504
 <h4 id="_curl_3"><a class="link" href="#_curl_3">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '[ {
   "colour" : "red",
   "name" : "target tag",
   "description" : "target tag description"
@@ -919,9 +921,9 @@ Content-Length: 504
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/targettags HTTP/1.1
+Content-Length: 95
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 95
 
 [ {
   "colour" : "red",
@@ -1057,9 +1059,9 @@ Content-Length: 342
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329430273,
+  "createdAt" : 1549349067991,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329430273,
+  "lastModifiedAt" : 1549349067991,
   "name" : "target tag",
   "description" : "target tag description",
   "colour" : "red",
@@ -1150,7 +1152,9 @@ Content-Length: 342
 <h4 id="_curl_4"><a class="link" href="#_curl_4">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/4' -i -X PUT -H 'Content-Type: application/json;charset=UTF-8' -d '{
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/4' -i -X PUT \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '{
   "colour" : "red",
   "name" : "target tag",
   "description" : "target tag description"
@@ -1163,9 +1167,9 @@ Content-Length: 342
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/targettags/4 HTTP/1.1
+Content-Length: 91
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 91
 
 {
   "colour" : "red",
@@ -1328,9 +1332,9 @@ Content-Length: 503
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329430789,
+  "createdAt" : 1549349068799,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329430796,
+  "lastModifiedAt" : 1549349068810,
   "name" : "target tag",
   "description" : "target tag description",
   "colour" : "red",
@@ -1430,7 +1434,8 @@ Content-Length: 503
 <h4 id="_curl_5"><a class="link" href="#_curl_5">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/5' -i -X DELETE -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/5' -i -X DELETE \
+    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 </div>
@@ -1548,7 +1553,8 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_6"><a class="link" href="#_curl_6">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/2/assigned' -i -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/2/assigned' -i -X GET \
+    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 </div>
@@ -1679,7 +1685,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content[].ipAddress</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Last known IP address of the target. Only presented if IP address of the target itself is known (connected directy through DDI API).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last known IP address of the target. Only presented if IP address of the target itself is known (connected directly through DDI API).</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1720,18 +1726,18 @@ Content-Length: 684
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329430449,
+    "createdAt" : 1549349068279,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329430549,
+    "lastModifiedAt" : 1549349068452,
     "name" : "Target1",
     "description" : "My name is Target1",
     "controllerId" : "Target1",
     "updateStatus" : "in_sync",
-    "lastControllerRequestAt" : 1539329430418,
-    "installedAt" : 1539329430534,
+    "lastControllerRequestAt" : 1549349068172,
+    "installedAt" : 1549349068431,
     "ipAddress" : "192.168.0.1",
     "address" : "http://192.168.0.1",
-    "securityToken" : "94e13188a23a96562cb614b4f6abc30e",
+    "securityToken" : "332be2ba22450b0c0aa8377d6d8b90a3",
     "requestAttributes" : true,
     "_links" : {
       "self" : {
@@ -1817,7 +1823,9 @@ Content-Length: 684
 <h4 id="_curl_7"><a class="link" href="#_curl_7">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/10/assigned/toggleTagAssignment' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/10/assigned/toggleTagAssignment' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '[ {
   "controllerId" : "Target1"
 } ]'</code></pre>
 </div>
@@ -1829,8 +1837,8 @@ Content-Length: 684
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/targettags/10/assigned/toggleTagAssignment HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Host: management-api.host.com
 Content-Length: 36
+Host: management-api.host.com
 
 [ {
   "controllerId" : "Target1"
@@ -1910,28 +1918,32 @@ Content-Length: 36
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 657
+Content-Length: 773
 
 {
   "assignedTargets" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329431480,
+    "createdAt" : 1549349069817,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329431500,
+    "lastModifiedAt" : 1549349069851,
     "name" : "Target1",
     "description" : "My name is Target1",
     "controllerId" : "Target1",
     "updateStatus" : "pending",
-    "lastControllerRequestAt" : 1539329431480,
+    "lastControllerRequestAt" : 1549349069816,
     "ipAddress" : "192.168.0.1",
     "address" : "http://192.168.0.1",
-    "securityToken" : "fc44555fcb40f6b1648d3f4de7371db4",
+    "securityToken" : "d935ca19ff71fc634d57cf178a2171cd",
     "requestAttributes" : true,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/targets/Target1"
-      }
-    }
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/targets/Target1",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ]
   } ],
   "unassignedTargets" : [ ]
 }</code></pre>
@@ -2015,7 +2027,9 @@ Content-Length: 657
 <h4 id="_curl_8"><a class="link" href="#_curl_8">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/8/assigned' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/8/assigned' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '[ {
   "controllerId" : "Target1"
 } ]'</code></pre>
 </div>
@@ -2027,8 +2041,8 @@ Content-Length: 657
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/targettags/8/assigned HTTP/1.1
 Content-Type: application/json;charset=UTF-8
-Host: management-api.host.com
 Content-Length: 36
+Host: management-api.host.com
 
 [ {
   "controllerId" : "Target1"
@@ -2162,7 +2176,7 @@ Content-Length: 36
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]ipAddress</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Last known IP address of the target. Only presented if IP address of the target itself is known (connected directy through DDI API).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last known IP address of the target. Only presented if IP address of the target itself is known (connected directly through DDI API).</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -2184,18 +2198,18 @@ Content-Length: 597
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329431220,
+  "createdAt" : 1549349069432,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329431242,
+  "lastModifiedAt" : 1549349069460,
   "name" : "Target1",
   "description" : "My name is Target1",
   "controllerId" : "Target1",
   "updateStatus" : "in_sync",
-  "lastControllerRequestAt" : 1539329431220,
-  "installedAt" : 1539329431232,
+  "lastControllerRequestAt" : 1549349069432,
+  "installedAt" : 1549349069447,
   "ipAddress" : "192.168.0.1",
   "address" : "http://192.168.0.1",
-  "securityToken" : "092ca0717b6118fd115cc6c5b60f4645",
+  "securityToken" : "f98b674a1d21adc197d502ab35f60103",
   "requestAttributes" : true,
   "_links" : {
     "self" : {
@@ -2283,7 +2297,8 @@ Content-Length: 597
 <h4 id="_curl_9"><a class="link" href="#_curl_9">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/7/assigned/targetExist' -i -X DELETE -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettags/7/assigned/targetExist' -i -X DELETE \
+    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 </div>

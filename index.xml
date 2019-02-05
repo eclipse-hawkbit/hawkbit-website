@@ -138,8 +138,7 @@ The sandbox is a shared installation that will be reset from time to time. There
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/guides/runhawkbit/</guid>
-      <description>&lt;p&gt;In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is based on the hawkBit example modules and update server.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is based on the hawkBit example modules and update server.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -148,8 +147,7 @@ The sandbox is a shared installation that will be reset from time to time. There
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/guides/feignclient/</guid>
-      <description>&lt;p&gt;In this guide we describe how to create a &lt;a href=&#34;https://github.com/Netflix/feign&#34;&gt;Feign&lt;/a&gt; Rest Client based on a  &lt;a href=&#34;http://projects.spring.io/spring-boot/&#34;&gt;Spring Boot&lt;/a&gt; Application.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;In this guide we describe how to create a &lt;a href=&#34;https://github.com/Netflix/feign&#34;&gt;Feign&lt;/a&gt; Rest Client based on a  &lt;a href=&#34;http://projects.spring.io/spring-boot/&#34;&gt;Spring Boot&lt;/a&gt; Application.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -158,8 +156,7 @@ The sandbox is a shared installation that will be reset from time to time. There
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/guides/clustering/</guid>
-      <description>&lt;p&gt;hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to setup your own cluster. You can find additional information in the &lt;a href=&#34;https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/README.md&#34;&gt;hawkBit runtimes&amp;rsquo;s README&lt;/a&gt;.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to setup your own cluster. You can find additional information in the &lt;a href=&#34;https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/README.md&#34;&gt;hawkBit runtimes&amp;rsquo;s README&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -168,8 +165,7 @@ The sandbox is a shared installation that will be reset from time to time. There
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/guides/customtheme/</guid>
-      <description>&lt;p&gt;This guide provides details about using and creating themes that control the visual look of Eclipse hawkBit Management UI. Theme customization is done using Sass, which is an extension of CSS (Cascading Style Sheets).
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;This guide provides details about using and creating themes that control the visual look of Eclipse hawkBit Management UI. Theme customization is done using Sass, which is an extension of CSS (Cascading Style Sheets).&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -178,7 +174,7 @@ The sandbox is a shared installation that will be reset from time to time. There
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/features/</guid>
-      <description>Device and software repository  Repository that holds the provisioning targets and assignable software distributions. That includes a full software update history for every device. Support for pre-commission devices in the repository and plug and play, i.e. device is created if it is authenticated for the first time.  Update Management  Directly deploy a defined software distribution to a device (by Management UI or API). Update handling is independent of the device type, integration approach or connectivity.</description>
+      <description>Device and Software Repository  Repository that holds the provisioning targets and assignable software distributions. That includes a full software update history for every device. Support for pre-commission devices in the repository and plug and play, i.e. device is created if it is authenticated for the first time.  Update Management  Directly deploy a defined software distribution to a device (by Management UI or API). Update handling is independent of the device type, integration approach or connectivity.</description>
     </item>
     
     <item>
@@ -193,15 +189,8 @@ The sandbox is a shared installation that will be reset from time to time. There
 &lt;li&gt;&lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; by &lt;strong&gt;targets&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Management API&lt;/em&gt; by 3rd party &lt;strong&gt;applications&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Device Management Federation (DMF) API&lt;/em&gt; by 3rd party &lt;strong&gt;applications&lt;/strong&gt; through AMQP.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Management UI&lt;/em&gt; by &lt;strong&gt;users&lt;/strong&gt;.
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;ddi-api-authentication-modes&#34;&gt;DDI API Authentication Modes&lt;/h2&gt;
-
-&lt;h3 id=&#34;security-token&#34;&gt;Security Token&lt;/h3&gt;
-
-&lt;p&gt;hawkBit supports multiple ways to authenticate a target against the server. The different authentication modes can be individual enabled and disabled within hawkBit. Both on system level (with Spring Boot properties) as per individual tenant.&lt;/p&gt;</description>
+&lt;li&gt;&lt;em&gt;Management UI&lt;/em&gt; by &lt;strong&gt;users&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -210,8 +199,7 @@ The sandbox is a shared installation that will be reset from time to time. There
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/concepts/authorization/</guid>
-      <description>&lt;p&gt;Authorization is handled separately for &lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; and &lt;em&gt;Device Management Federation (DMF) API&lt;/em&gt; (where successful authentication includes full authorization) and &lt;em&gt;Management API&lt;/em&gt; and &lt;em&gt;UI&lt;/em&gt; which is based on Spring security &lt;a href=&#34;https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java&#34;&gt;authorities&lt;/a&gt;.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Authorization is handled separately for &lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; and &lt;em&gt;Device Management Federation (DMF) API&lt;/em&gt; (where successful authentication includes full authorization) and &lt;em&gt;Management API&lt;/em&gt; and &lt;em&gt;UI&lt;/em&gt; which is based on Spring security &lt;a href=&#34;https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java&#34;&gt;authorities&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -220,8 +208,7 @@ The sandbox is a shared installation that will be reset from time to time. There
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/concepts/datamodel/</guid>
-      <description>&lt;p&gt;The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full blown configuration management on the other.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full blown configuration management on the other.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -230,8 +217,7 @@ The sandbox is a shared installation that will be reset from time to time. There
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/concepts/rollout-management/</guid>
-      <description>&lt;p&gt;Software update operations in large scale IoT scenarios with hundreds of thousands of devices require special handling.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Software update operations in large scale IoT scenarios with hundreds of thousands of devices require special handling.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -240,8 +226,7 @@ The sandbox is a shared installation that will be reset from time to time. There
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/concepts/targetstate/</guid>
-      <description>&lt;p&gt;A target has a current state which reflects the provisioning status of the device at this point in time. State changes are driven either by the update server by means of starting an update or by the controller on the provisioning target that gives feedback to the update server, e.g. &amp;ldquo;I am here&amp;rdquo;, &amp;ldquo;I am working on a provisioning&amp;rdquo;, &amp;ldquo;I have finished a provisioning&amp;rdquo;.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;A target has a current state which reflects the provisioning status of the device at this point in time. State changes are driven either by the update server by means of starting an update or by the controller on the provisioning target that gives feedback to the update server, e.g. &amp;ldquo;I am here&amp;rdquo;, &amp;ldquo;I am working on a provisioning&amp;rdquo;, &amp;ldquo;I have finished a provisioning&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -269,8 +254,7 @@ The sandbox is a shared installation that will be reset from time to time. There
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/management_api/</guid>
-      <description>&lt;p&gt;The Management API is a RESTful API that enables to perform Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software).
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;The Management API is a RESTful API that enables to perform Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software).&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -280,8 +264,7 @@ The sandbox is a shared installation that will be reset from time to time. There
       
       <guid>https://www.eclipse.org/hawkbit/apis/ddi_api/</guid>
       <description>&lt;p&gt;The hawkBit &lt;a href=&#34;https://github.com/eclipse/hawkbit&#34;&gt;update server&lt;/a&gt; provides REST resources which are consumed by the device to retrieve software update tasks.
-This API is based on HTTP standards and a polling mechanism.
-&lt;/p&gt;</description>
+This API is based on HTTP standards and a polling mechanism.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -291,8 +274,7 @@ This API is based on HTTP standards and a polling mechanism.
       
       <guid>https://www.eclipse.org/hawkbit/apis/dmf_api/</guid>
       <description>&lt;p&gt;The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object. Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.
-Currently, bodies of messages are based on JSON.
-&lt;/p&gt;</description>
+Currently, bodies of messages are based on JSON.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -311,14 +293,14 @@ Currently, bodies of messages are based on JSON.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/release-notes/</guid>
-      <description>0.2.4 Release Date: Friday, October 26, 2018 Tag / Release
+      <description>0.2.5 Release Date: Friday, November 30, 2018 Tag / Release
+0.2.4 Release Date: Friday, October 26, 2018 Tag / Release
 0.2.3 Release Date: Monday, October 1, 2018 Tag / Release
 0.2.2 Release Date: Thursday, September 21, 2018 Tag / Release
 0.2.1 Release Date: Friday, July 6, 2018 Tag / Release
 0.2.0 First Eclipse hawkBit release including:
  Core features:
- Device and Software Repository Update Management Management UI/Console Artifact Content Delivery Rollout/Campaign Management  Interfaces:
- Management API Direct Device Integration (DDI) API Device Management Federation (DMF) API   Release Date: Friday, June 15, 2018 Tag / Release / Eclipse</description>
+ Device and Software Repository Update Management Management UI/Console Artifact Content Delivery Rollout/Campaign Management  Interfaces:</description>
     </item>
     
     <item>

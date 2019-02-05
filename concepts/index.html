@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Concepts - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.49.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -415,21 +415,14 @@
 			</a>
 
 			<br>
-			<p>A hawkBit update server can be accessed in four different ways:</p>
+			A hawkBit update server can be accessed in four different ways:</p>
 
 <ul>
 <li><em>Direct Device Integration (DDI) API</em> by <strong>targets</strong>.</li>
 <li><em>Management API</em> by 3rd party <strong>applications</strong>.</li>
 <li><em>Device Management Federation (DMF) API</em> by 3rd party <strong>applications</strong> through AMQP.</li>
-<li><em>Management UI</em> by <strong>users</strong>.
-</li>
+<li><em>Management UI</em> by <strong>users</strong>.</li>
 </ul>
-
-<h2 id="ddi-api-authentication-modes">DDI API Authentication Modes</h2>
-
-<h3 id="security-token">Security Token</h3>
-
-<p>hawkBit supports multiple ways to authenticate a target against the server. The different authentication modes can be individual enabled and disabled within hawkBit. Both on system level (with Spring Boot properties) as per individual tenant.</p>
  <br><a href="https://www.eclipse.org/hawkbit/concepts/authentication/">[...]</a>
 
 			<hr>
@@ -439,8 +432,7 @@
 			</a>
 
 			<br>
-			Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF) API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on Spring security <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>.
- <br><a href="https://www.eclipse.org/hawkbit/concepts/authorization/">[...]</a>
+			Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF) API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on Spring security <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>. <br><a href="https://www.eclipse.org/hawkbit/concepts/authorization/">[...]</a>
 
 			<hr>
 			
@@ -449,8 +441,7 @@
 			</a>
 
 			<br>
-			The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full blown configuration management on the other.
- <br><a href="https://www.eclipse.org/hawkbit/concepts/datamodel/">[...]</a>
+			The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full blown configuration management on the other. <br><a href="https://www.eclipse.org/hawkbit/concepts/datamodel/">[...]</a>
 
 			<hr>
 			
@@ -459,8 +450,7 @@
 			</a>
 
 			<br>
-			Software update operations in large scale IoT scenarios with hundreds of thousands of devices require special handling.
- <br><a href="https://www.eclipse.org/hawkbit/concepts/rollout-management/">[...]</a>
+			Software update operations in large scale IoT scenarios with hundreds of thousands of devices require special handling. <br><a href="https://www.eclipse.org/hawkbit/concepts/rollout-management/">[...]</a>
 
 			<hr>
 			
@@ -469,8 +459,7 @@
 			</a>
 
 			<br>
-			A target has a current state which reflects the provisioning status of the device at this point in time. State changes are driven either by the update server by means of starting an update or by the controller on the provisioning target that gives feedback to the update server, e.g. &ldquo;I am here&rdquo;, &ldquo;I am working on a provisioning&rdquo;, &ldquo;I have finished a provisioning&rdquo;.
- <br><a href="https://www.eclipse.org/hawkbit/concepts/targetstate/">[...]</a>
+			A target has a current state which reflects the provisioning status of the device at this point in time. State changes are driven either by the update server by means of starting an update or by the controller on the provisioning target that gives feedback to the update server, e.g. &ldquo;I am here&rdquo;, &ldquo;I am working on a provisioning&rdquo;, &ldquo;I have finished a provisioning&rdquo;. <br><a href="https://www.eclipse.org/hawkbit/concepts/targetstate/">[...]</a>
 
 			<hr>
 			
@@ -483,7 +472,7 @@
   </div>
   <p class="notice">
     
-    &copy; 2018 The Eclipse hawkBit Project &ndash;
+    &copy; 2019 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>

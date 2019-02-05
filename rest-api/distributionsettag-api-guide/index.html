@@ -449,7 +449,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h4 id="_curl"><a class="link" href="#_curl">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags' -i</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -608,9 +608,9 @@ Content-Length: 419
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329367792,
+    "createdAt" : 1549348990657,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329367800,
+    "lastModifiedAt" : 1549348990669,
     "name" : "DsTag",
     "description" : "My name is DsTag",
     "colour" : "default",
@@ -694,7 +694,7 @@ Content-Length: 419
 <h4 id="_curl_2"><a class="link" href="#_curl_2">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/6' -i</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/6' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -819,9 +819,9 @@ Content-Length: 523
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329369023,
+  "createdAt" : 1549348992587,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329369029,
+  "lastModifiedAt" : 1549348992595,
   "name" : "DsTag",
   "description" : "My name is DsTag",
   "colour" : "default",
@@ -906,7 +906,9 @@ Content-Length: 523
 <h4 id="_curl_3"><a class="link" href="#_curl_3">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '[ {
   "colour" : "red",
   "name" : "ds tag",
   "description" : "ds tag description"
@@ -919,9 +921,9 @@ Content-Length: 523
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsettags HTTP/1.1
+Content-Length: 87
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 87
 
 [ {
   "colour" : "red",
@@ -1057,9 +1059,9 @@ Content-Length: 343
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329369252,
+  "createdAt" : 1549348992898,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329369252,
+  "lastModifiedAt" : 1549348992898,
   "name" : "ds tag",
   "description" : "ds tag description",
   "colour" : "red",
@@ -1150,7 +1152,9 @@ Content-Length: 343
 <h4 id="_curl_4"><a class="link" href="#_curl_4">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/1' -i -X PUT -H 'Content-Type: application/json;charset=UTF-8' -d '{
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/1' -i -X PUT \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '{
   "colour" : "red",
   "name" : "ds tag",
   "description" : "ds tag description"
@@ -1163,9 +1167,9 @@ Content-Length: 343
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/distributionsettags/1 HTTP/1.1
+Content-Length: 83
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 83
 
 {
   "colour" : "red",
@@ -1328,9 +1332,9 @@ Content-Length: 522
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329367103,
+  "createdAt" : 1549348989296,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329367242,
+  "lastModifiedAt" : 1549348989634,
   "name" : "ds tag",
   "description" : "ds tag description",
   "colour" : "red",
@@ -1430,7 +1434,8 @@ Content-Length: 522
 <h4 id="_curl_5"><a class="link" href="#_curl_5">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/4' -i -X DELETE -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/4' -i -X DELETE \
+    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 </div>
@@ -1558,7 +1563,8 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_6"><a class="link" href="#_curl_6">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/3/assigned' -i -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/3/assigned' -i -X GET \
+    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 </div>
@@ -1665,7 +1671,7 @@ Host: management-api.host.com</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content[].requiredMigrationStep</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS a required migration step. As a result the DS will be installed even when a newer. (note: updatable only if DS is not yet assigned to a target)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS is a required migration step for another DS. As a result the DS&#8217;s assignment will not be cancelled when another DS is assigned (note: updatable only if DS is not yet assigned to a target)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1718,20 +1724,20 @@ Content-Length: 2125
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329368052,
+    "createdAt" : 1549348991047,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329368174,
+    "lastModifiedAt" : 1549348991212,
     "name" : "DS",
     "description" : "The descption of the distribution set.",
     "version" : "1.0",
     "modules" : [ {
       "createdBy" : "bumlux",
-      "createdAt" : 1539329368014,
+      "createdAt" : 1549348990998,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1539329368122,
+      "lastModifiedAt" : 1549348991130,
       "name" : "app runtime",
       "description" : "Description of the software module",
-      "version" : "1.0.80",
+      "version" : "1.0.58",
       "type" : "runtime",
       "vendor" : "vendor GmbH, Stuttgart, Germany",
       "deleted" : false,
@@ -1743,12 +1749,12 @@ Content-Length: 2125
       "id" : 8
     }, {
       "createdBy" : "bumlux",
-      "createdAt" : 1539329368004,
+      "createdAt" : 1549348990984,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1539329368138,
+      "lastModifiedAt" : 1549348991156,
       "name" : "application",
       "description" : "Description of the software module",
-      "version" : "1.0.81",
+      "version" : "1.0.26",
       "type" : "application",
       "vendor" : "vendor Limited, California",
       "deleted" : false,
@@ -1760,12 +1766,12 @@ Content-Length: 2125
       "id" : 7
     }, {
       "createdBy" : "bumlux",
-      "createdAt" : 1539329368025,
+      "createdAt" : 1549348991013,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1539329368103,
+      "lastModifiedAt" : 1549348991098,
       "name" : "Firmware",
       "description" : "Description of the software module",
-      "version" : "1.0.91",
+      "version" : "1.0.95",
       "type" : "os",
       "vendor" : "vendor Limited Inc, California",
       "deleted" : false,
@@ -1865,7 +1871,9 @@ Content-Length: 2125
 <h4 id="_curl_7"><a class="link" href="#_curl_7">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/9/assigned/toggleTagAssignment' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/9/assigned/toggleTagAssignment' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '[ {
   "id" : 9
 } ]'</code></pre>
 </div>
@@ -1876,9 +1884,9 @@ Content-Length: 2125
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsettags/9/assigned/toggleTagAssignment HTTP/1.1
+Content-Length: 18
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 18
 
 [ {
   "id" : 9
@@ -1958,78 +1966,94 @@ Content-Length: 18
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
-Content-Length: 2157
+Content-Length: 2645
 
 {
   "assignedDistributionSets" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329369706,
+    "createdAt" : 1549348993438,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329369828,
+    "lastModifiedAt" : 1549348993592,
     "name" : "DS",
     "description" : "The descption of the distribution set.",
     "version" : "1.0",
     "modules" : [ {
       "createdBy" : "bumlux",
-      "createdAt" : 1539329369687,
+      "createdAt" : 1549348993420,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1539329369759,
+      "lastModifiedAt" : 1549348993498,
       "name" : "Firmware",
       "description" : "Description of the software module",
-      "version" : "1.0.57",
+      "version" : "1.0.82",
       "type" : "os",
       "vendor" : "vendor Limited Inc, California",
       "deleted" : false,
-      "_links" : {
-        "self" : {
-          "href" : "https://management-api.host.com/rest/v1/softwaremodules/27"
-        }
-      },
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/27",
+        "hreflang" : null,
+        "media" : null,
+        "title" : null,
+        "type" : null,
+        "deprecation" : null
+      } ],
       "id" : 27
     }, {
       "createdBy" : "bumlux",
-      "createdAt" : 1539329369671,
+      "createdAt" : 1549348993405,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1539329369731,
+      "lastModifiedAt" : 1549348993467,
       "name" : "application",
       "description" : "Description of the software module",
-      "version" : "1.0.60",
+      "version" : "1.0.68",
       "type" : "application",
       "vendor" : "vendor Limited, California",
       "deleted" : false,
-      "_links" : {
-        "self" : {
-          "href" : "https://management-api.host.com/rest/v1/softwaremodules/25"
-        }
-      },
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/25",
+        "hreflang" : null,
+        "media" : null,
+        "title" : null,
+        "type" : null,
+        "deprecation" : null
+      } ],
       "id" : 25
     }, {
       "createdBy" : "bumlux",
-      "createdAt" : 1539329369679,
+      "createdAt" : 1549348993413,
       "lastModifiedBy" : "bumlux",
-      "lastModifiedAt" : 1539329369745,
+      "lastModifiedAt" : 1549348993481,
       "name" : "app runtime",
       "description" : "Description of the software module",
-      "version" : "1.0.89",
+      "version" : "1.0.41",
       "type" : "runtime",
       "vendor" : "vendor GmbH, Stuttgart, Germany",
       "deleted" : false,
-      "_links" : {
-        "self" : {
-          "href" : "https://management-api.host.com/rest/v1/softwaremodules/26"
-        }
-      },
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/26",
+        "hreflang" : null,
+        "media" : null,
+        "title" : null,
+        "type" : null,
+        "deprecation" : null
+      } ],
       "id" : 26
     } ],
     "requiredMigrationStep" : false,
     "type" : "test_default_ds_type",
     "complete" : true,
     "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/distributionsets/9"
-      }
-    },
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://management-api.host.com/rest/v1/distributionsets/9",
+      "hreflang" : null,
+      "media" : null,
+      "title" : null,
+      "type" : null,
+      "deprecation" : null
+    } ],
     "id" : 9
   } ],
   "unassignedDistributionSets" : [ ]
@@ -2114,7 +2138,9 @@ Content-Length: 2157
 <h4 id="_curl_8"><a class="link" href="#_curl_8">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/8/assigned' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '[ {
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/8/assigned' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '[ {
   "id" : 8
 } ]'</code></pre>
 </div>
@@ -2125,9 +2151,9 @@ Content-Length: 2157
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsettags/8/assigned HTTP/1.1
+Content-Length: 18
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
-Content-Length: 18
 
 [ {
   "id" : 8
@@ -2237,7 +2263,7 @@ Content-Length: 18
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[]requiredMigrationStep</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS a required migration step. As a result the DS will be installed even when a newer. (note: updatable only if DS is not yet assigned to a target)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True if DS is a required migration step for another DS. As a result the DS&#8217;s assignment will not be cancelled when another DS is assigned (note: updatable only if DS is not yet assigned to a target)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -2271,20 +2297,20 @@ Content-Length: 1944
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1539329369416,
+  "createdAt" : 1549348993117,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1539329369503,
+  "lastModifiedAt" : 1549348993224,
   "name" : "DS",
   "description" : "The descption of the distribution set.",
   "version" : "1.0",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329369399,
+    "createdAt" : 1549348993090,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329369451,
+    "lastModifiedAt" : 1549348993167,
     "name" : "Firmware",
     "description" : "Description of the software module",
-    "version" : "1.0.56",
+    "version" : "1.0.81",
     "type" : "os",
     "vendor" : "vendor Limited Inc, California",
     "deleted" : false,
@@ -2296,12 +2322,12 @@ Content-Length: 1944
     "id" : 24
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329369388,
+    "createdAt" : 1549348993073,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329369468,
+    "lastModifiedAt" : 1549348993185,
     "name" : "application",
     "description" : "Description of the software module",
-    "version" : "1.0.73",
+    "version" : "1.0.14",
     "type" : "application",
     "vendor" : "vendor Limited, California",
     "deleted" : false,
@@ -2313,12 +2339,12 @@ Content-Length: 1944
     "id" : 22
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1539329369393,
+    "createdAt" : 1549348993081,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1539329369438,
+    "lastModifiedAt" : 1549348993153,
     "name" : "app runtime",
     "description" : "Description of the software module",
-    "version" : "1.0.28",
+    "version" : "1.0.12",
     "type" : "runtime",
     "vendor" : "vendor GmbH, Stuttgart, Germany",
     "deleted" : false,
@@ -2420,7 +2446,8 @@ Content-Length: 1944
 <h4 id="_curl_9"><a class="link" href="#_curl_9">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/10/assigned/11' -i -X DELETE -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettags/10/assigned/11' -i -X DELETE \
+    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 </div>

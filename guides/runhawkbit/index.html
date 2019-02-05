@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Run hawkBit - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.49.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -403,8 +403,7 @@
 		<div class="wrapper">
 			<h1>Run hawkBit </h1>
 
-			<p>In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is based on the hawkBit example modules and update server.
-</p>
+			<p>In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is based on the hawkBit example modules and update server.</p>
 
 <div class="admonition note">
 <p class="admonition-title"></p>
@@ -419,12 +418,9 @@
 <li>hawkBit <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">Update Server</a>.</li>
 <li><a href="https://mariadb.org">MariaDB</a> for the repository.</li>
 <li><a href="https://www.rabbitmq.com">RabbitMQ</a> for DMF communication.</li>
-<li>For testing and demonstration purposes we will also use:
-
-<ul>
+<li>For testing and demonstration purposes we will also use:</li>
 <li><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-device-simulator">hawkBit Device Simulator</a>.</li>
 <li><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-mgmt-api-client">hawkBit Management API example client</a>.</li>
-</ul></li>
 </ul>
 
 <h2 id="prerequisites">Prerequisites</h2>
@@ -451,7 +447,7 @@
 
 <p>For this you can either edit the existing <em>application.properties</em> or create a <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config-profile-specific-properties">new profile</a>.</p>
 
-<pre><code>spring.jpa.database=MYSQL
+<pre><code class="language-properties">spring.jpa.database=MYSQL
 spring.datasource.url=jdbc:mysql://localhost:3306/YOUR_SCHEMA
 spring.datasource.username=YOUR_USER
 spring.datasource.password=YOUR_PWD
@@ -462,7 +458,7 @@ spring.datasource.driverClassName=org.mariadb.jdbc.Driver
 
 <p>We provide already defaults that should work with a standard Rabbit installation. Otherwise configure the following in the <code>application.properties</code> of the two services:</p>
 
-<pre><code>spring.rabbitmq.username=guest
+<pre><code class="language-properties">spring.rabbitmq.username=guest
 spring.rabbitmq.password=guest
 spring.rabbitmq.virtualHost=/
 spring.rabbitmq.host=localhost
@@ -475,31 +471,31 @@ spring.rabbitmq.port=5672
 
 <p>Adapt <code>application.properties</code> in this case:</p>
 
-<pre><code>hawkbit.url=localhost:8080
+<pre><code class="language-properties">hawkbit.url=localhost:8080
 </code></pre>
 
 <p>or provide the parameter on command line:</p>
 
-<pre><code>hawkbit-example-mgmt-simulator-##VERSION##.jar --hawkbit.url=YOUR_HOST:PORT
+<pre><code class="language-properties">hawkbit-example-mgmt-simulator-##VERSION##.jar --hawkbit.url=YOUR_HOST:PORT
 </code></pre>
 
 <h2 id="compile-run">Compile &amp; Run</h2>
 
-<h3 id="compile-run-your-production-ready-app">Compile &amp; Run your <em>&ldquo;production ready&rdquo;</em> app.</h3>
+<h3 id="compile-run-your-production-ready-app">Compile &amp; Run your <em>&ldquo;production ready&rdquo;</em> app</h3>
 
 <p>see <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">update server</a></p>
 
-<h3 id="compile-run-example-scenario-creation-script-https-github-com-eclipse-hawkbit-examples-tree-master-hawkbit-example-mgmt-simulator-optional">Compile &amp; Run example scenario <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">creation script</a> (optional).</h3>
+<h3 id="compile-run-example-scenario-creation-script-https-github-com-eclipse-hawkbit-examples-tree-master-hawkbit-example-mgmt-simulator-optional">Compile &amp; Run example scenario <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">creation script</a> (optional)</h3>
 
 <p>This has to be done before the device simulator is started. hawkBit creates the mandatory tenant metadata with first login into either <em>Management UI</em> or API (which is done by this client).</p>
 
 <p>However, this is not done by <em>DMF</em> which is in fact used by the device simulator, i.e. without calling <em>Management API</em> first hawkBit would drop all <em>DMF</em> messages as the tenant is unknown.</p>
 
-<h3 id="compile-run-device-simulator-optional">Compile &amp; Run device simulator (optional).</h3>
+<h3 id="compile-run-device-simulator-optional">Compile &amp; Run device simulator (optional)</h3>
 
 <p>see <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-device-simulator">device simulator</a></p>
 
-<h1 id="enjoy-hawkbit-with-a-real-database-artifact-storage-and-all-interfaces-apis-available">Enjoy hawkBit with a real database, artifact storage and all <a href="../../apis/">interfaces</a> available.</h1>
+<h1 id="enjoy-hawkbit-with-a-real-database-artifact-storage-and-all-interfaces-apis-available">Enjoy hawkBit with a real database, artifact storage and all <a href="../../apis/">interfaces</a> available</h1>
 
 <p><img src="../../images/hawkbit_ui.png" alt="" /></p>
 
@@ -511,7 +507,7 @@ spring.rabbitmq.port=5672
   </div>
   <p class="notice">
     
-    &copy; 2018 The Eclipse hawkBit Project &ndash;
+    &copy; 2019 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
