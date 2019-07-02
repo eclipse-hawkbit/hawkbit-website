@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Rollout Management - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.55.5" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -452,6 +452,36 @@
 
 <p><img src="../../images/rolloutgroupstatediagram.png" alt="" /></p>
 
+<h2 id="multi-assignments-beta">Multi-Assignments (beta)</h2>
+
+<p>One of the main paradigms of Eclipse hawkBit is, that a Distribution Set represents the currently installed software of a device. Hence, a device can have only one Distribution Set assigned/installed at a time. With <em>Multi-Assignments</em> enabled, this paradigm shifts. Multi-Assignments allows to assign multiple Distribution Sets to a device simultaneously, without cancelling each other. As a consequence, an operator can trigger multiple campaigns addressing the same devices in parallel.</p>
+
+<h3 id="consequences">Consequences</h3>
+
+<p>While this feature provides more flexibility to the user and enables new use-cases, there are also some consequences one should be aware of:</p>
+
+<p><strong>Critical</strong></p>
+
+<ul>
+<li>This feature is in beta and may change unannounced.</li>
+<li>For now, this feature is <strong>opt-in only</strong>. Once activated, it cannot be deactivated.</li>
+<li>Currently, there is no mechanism to hint devices to process the actions in a certain order.</li>
+</ul>
+
+<p><strong>Minor</strong></p>
+
+<ul>
+<li>While on DMF-API a MULTI_ACTION request is sent, DDI-API only exposes the oldest open action.</li>
+<li>All information regarding the currently assigned or installed Distribution Set does only respect the last assignment, as well as the last successfully installed Distribution set. This also affects:
+
+<ul>
+<li>Pinning a target or Distribution Set in Deployment View.</li>
+<li>Statistics about installed or assigned Distribution Sets.</li>
+</ul></li>
+<li>Auto close running actions, when a new Distribution Set is assigned (<code>repository.actions.autoclose.enabled</code>) is deactivated.</li>
+<li>Marking a Distribution Set to be a <em>Required Migration Step</em> is deactivated.</li>
+</ul>
+
 			<aside class="copyright" role="note">
   <div class="logo">
     <a href="https://www.eclipse.org" target="_blank">
@@ -493,7 +523,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://www.eclipse.org/hawkbit/concepts/datamodel/" title="Data Model">
+      <a href="https://www.eclipse.org/hawkbit/concepts/targetstate/" title="Target State Machine">
         <span class="direction">
           Previous
         </span>
@@ -503,7 +533,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              Data Model
+              Target State Machine
             </div>
           </div>
         </div>
@@ -513,14 +543,14 @@
 
   <div class="next">
   
-      <a href="https://www.eclipse.org/hawkbit/concepts/targetstate/" title="Target State Machine">
+      <a href="https://www.eclipse.org/hawkbit/concepts/datamodel/" title="Data Model">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Target State Machine
+              Data Model
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

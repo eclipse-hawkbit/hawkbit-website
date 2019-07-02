@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Device Management Federation API - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.55.5" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -432,16 +432,16 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 
 <p>Note: the DMF protocol was intended to be compatible to other use cases by design. As a result, DMF uses the term <strong>thing</strong> and not <strong>target</strong> but they are actually synonyms in this case.</p>
 
-<h2 id="messages-sent-to-hawkbit">Messages sent to hawkBit</h2>
+<h2 id="messages-sent-to-hawkbit-client-hawkbit">Messages sent to hawkBit (Client -&gt; hawkBit)</h2>
 
-<p>All messages have to be sent to the exchange <strong>dmf.exchange</strong>.</p>
+<h3 id="thing-created">THING_CREATED</h3>
 
-<h3 id="message-to-register-a-thing">Message to register a thing</h3>
+<p>Message to register and update a provisioning target.</p>
 
 <table>
 <thead>
 <tr>
-<th>Message Header</th>
+<th>Header</th>
 <th>Description</th>
 <th>Type</th>
 <th>Mandatory</th>
@@ -452,22 +452,29 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <tr>
 <td>type</td>
 <td>Type of the message</td>
-<td>Fixed string &ldquo;THING_CREATED &ldquo;</td>
+<td>Fixed string &ldquo;THING_CREATED&rdquo;</td>
 <td>true</td>
 </tr>
 
 <tr>
 <td>thingId</td>
-<td>The ID of the registered thing</td>
+<td>The ID of the registered provisioning target</td>
 <td>String</td>
 <td>true</td>
 </tr>
 
 <tr>
-<td>tenant</td>
-<td>The tenant this thing belongs to</td>
+<td>sender</td>
+<td>Name of the message sender</td>
 <td>String</td>
-<td>true</td>
+<td>false</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant this provisioning target belongs to</td>
+<td>String</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
@@ -484,38 +491,47 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 
 <tbody>
 <tr>
-<td>reply_to</td>
-<td>Exchange to reply to.</td>
+<td>content_type</td>
+<td>The content type of the payload</td>
 <td>String</td>
 <td>true</td>
+</tr>
+
+<tr>
+<td>reply_to</td>
+<td>Exchange to reply to. The default is sp.direct.exchange which is bound to the sp_direct_queue</td>
+<td>String</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
 
-<p><strong>Example Header</strong></p>
+<p>Example headers</p>
 
 <table>
 <thead>
 <tr>
-<th>Headers</th>
+<th>Header</th>
 <th>MessageProperties</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>type=THING_CREATED <br /> tenant=tenant123 <br /> thingId=abc</td>
-<td>reply_to=dmfclient.replyTo</td>
+<td>type=THING_CREATED <br /> tenant=tenant123 <br /> thingId=abc  <br /> sender=Lwm2m</td>
+<td>content_type=application/json <br /> reply_to (optional) =sp.connector.replyTo</td>
 </tr>
 </tbody>
 </table>
 
-<h3 id="message-to-update-target-attributes">Message to update target attributes</h3>
+<h3 id="update-attributes">UPDATE_ATTRIBUTES</h3>
+
+<p>Message to update target attributes. This message can be send in response to a _REQUEST_ATTRIBUTES<em>UPDATE</em> event, sent by hawkBit.</p>
 
 <table>
 <thead>
 <tr>
-<th>Message Header</th>
+<th>Header</th>
 <th>Description</th>
 <th>Type</th>
 <th>Mandatory</th>
@@ -532,7 +548,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 
 <tr>
 <td>topic</td>
-<td>Topic to handle events different</td>
+<td>Topic name identifying the event</td>
 <td>Fixed string &ldquo;UPDATE_ATTRIBUTES&rdquo;</td>
 <td>true</td>
 </tr>
@@ -548,7 +564,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>tenant</td>
 <td>The tenant this thing belongs to</td>
 <td>String</td>
-<td>true</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
@@ -573,37 +589,66 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tbody>
 </table>
 
-<p><strong>Example Header and Payload</strong></p>
+<p>Example header and payload:</p>
 
 <table>
 <thead>
 <tr>
-<th>Headers</th>
+<th>Header</th>
 <th>MessageProperties</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc <br /> topic=UPDATE_ATTRIBUTES</td>
-<td>content_type=application/json</td>
+<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=UPDATE_ATTRIBUTES</td>
+<td>content_type=application/json <br /></td>
 </tr>
 </tbody>
 </table>
 
-<p>Payload Template</p>
+<p>Payload Template:</p>
 
 <pre><code class="language-json">{
-  &quot;attributes&quot;: {
-    &quot;exampleKey1&quot;: &quot;exampleValue1&quot;,
-    &quot;exampleKey2&quot;: &quot;exampleValue2&quot;
-  }
+    &quot;attributes&quot;: {
+        &quot;exampleKey1&quot; : &quot;exampleValue1&quot;,
+        &quot;exampleKey2&quot; : &quot;exampleValue2&quot;
+    },
+    &quot;mode&quot;: &quot;String&quot;
 }
 </code></pre>
 
-<h3 id="message-to-send-an-action-status-event-to-hawkbit">Message to send an action status event to hawkBit</h3>
+<p>The &ldquo;mode&rdquo; property specifies the update mode that should be applied. This property is optional. Possible <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfUpdateMode.java">mode</a> values:</p>
 
-<p>The Java representation is ActionUpdateStatus:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>MERGE</td>
+<td>The target attributes specified in the payload are merged into the existing attributes. This is the default mode that is applied if no &ldquo;mode&rdquo; property is specified in the payload.</td>
+</tr>
+
+<tr>
+<td>REPLACE</td>
+<td>The existing attributes are replaced with the target attributes specified in the payload.</td>
+</tr>
+
+<tr>
+<td>REMOVE</td>
+<td>The target attributes specified in the payload are removed from the existing attributes.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="update-action-status">UPDATE_ACTION_STATUS</h3>
+
+<p>Message to send an action status event to hawkBit.</p>
 
 <table>
 <thead>
@@ -625,7 +670,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 
 <tr>
 <td>topic</td>
-<td>Topic to handle events different</td>
+<td>Topic name identifying the event</td>
 <td>Fixed string &ldquo;UPDATE_ACTION_STATUS&rdquo;</td>
 <td>true</td>
 </tr>
@@ -634,7 +679,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>tenant</td>
 <td>The tenant this thing belongs to</td>
 <td>String</td>
-<td>true</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
@@ -659,22 +704,22 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tbody>
 </table>
 
-<p>Payload Template</p>
+<p>Payload Template (the Java representation is <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfActionUpdateStatus.java">ActionUpdateStatus</a>):</p>
 
 <pre><code class="language-json">{
   &quot;actionId&quot;: long,
   &quot;softwareModuleId&quot;: long,
-  &quot;actionStatus&quot;: &quot;String&quot;,
-  &quot;message&quot;: [&quot;String&quot;]
+  &quot;actionStatus&quot;:&quot;String&quot;,
+  &quot;message&quot;:[&quot;String&quot;]
 }
 </code></pre>
 
-<p>Possible actionStatus</p>
+<p>Possible <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfActionStatus.java">actionStatus</a> values:</p>
 
 <table>
 <thead>
 <tr>
-<th>Header</th>
+<th>Value</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -686,8 +731,13 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 
 <tr>
+<td>DOWNLOADED</td>
+<td>Device completed download</td>
+</tr>
+
+<tr>
 <td>RETRIEVED</td>
-<td>Device management service has retrieved something</td>
+<td>Device has retrieved the artifact</td>
 </tr>
 
 <tr>
@@ -722,33 +772,88 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tbody>
 </table>
 
-<p><strong>Example Header and Payload</strong></p>
+<p>Example header and payload:</p>
 
 <table>
 <thead>
 <tr>
-<th>Headers</th>
+<th>Header</th>
 <th>MessageProperties</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>type=EVENT <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
 
 <pre><code class="language-json">{
-  &quot;actionId&quot;: 137,
-  &quot;softwareModuleId&quot;: 17,
-  &quot;actionStatus&quot;: &quot;DOWNLOAD&quot;,
-  &quot;message&quot;: [&quot;The download has started&quot;]
+  &quot;actionId&quot;:137,
+  &quot;softwareModuleId&quot;:17,
+  &quot;actionStatus&quot;:&quot;DOWNLOAD&quot;,
+  &quot;message&quot;:[&quot;The download has started&quot;]
 }
 </code></pre>
 
-<h3 id="message-to-cancel-an-update-task">Message to cancel an update task</h3>
+<h3 id="ping">PING</h3>
+
+<p>hawkBit allows DMF clients to check the availability of the DMF service. For this scenario DMF specifies a PING message that can be sent by the client:</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the message</td>
+<td>Fixed string &ldquo;PING&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant the PING belongs to</td>
+<td>String</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Message Properties</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>correlationId</td>
+<td>CorrelationId that allows the client to map a PING request to PING_RESPONSE</td>
+<td>String</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="messages-sent-by-hawkbit-hawkbit-client">Messages sent by hawkBit (hawkBit -&gt; Client)</h2>
+
+<h3 id="cancel-download">CANCEL_DOWNLOAD</h3>
+
+<p>Message to cancel an update task.</p>
 
 <table>
 <thead>
@@ -770,23 +875,23 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 
 <tr>
 <td>thingId</td>
-<td>The ID of the registered thing</td>
+<td>The ID of the registered provisioning target</td>
 <td>String</td>
 <td>true</td>
 </tr>
 
 <tr>
 <td>topic</td>
-<td>Topic to handle events different</td>
+<td>Topic name identifying the event</td>
 <td>Fixed string &ldquo;CANCEL_DOWNLOAD&rdquo;</td>
 <td>true</td>
 </tr>
 
 <tr>
 <td>tenant</td>
-<td>The tenant this thing belongs to</td>
+<td>The tenant this provisioning target belongs to</td>
 <td>String</td>
-<td>true</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
@@ -811,97 +916,93 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tbody>
 </table>
 
-<p>Payload Template</p>
+<p>Payload template:</p>
 
 <pre><code class="language-json">{
-  &quot;actionId&quot;: long
+    &quot;actionId&quot;: long
 }
 </code></pre>
 
-<p><strong>Example Header and payload</strong></p>
+<p>Example Headers and Payload:</p>
 
 <table>
 <thead>
 <tr>
-<th>Headers</th>
+<th>Header</th>
 <th>MessageProperties</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc <br /> topic=CANCEL_DOWNLOAD</td>
+<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=CANCEL_DOWNLOAD</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
 
 <pre><code class="language-json">{
-  &quot;actionId&quot;: 137
+&quot;actionId&quot;:137
 }
 </code></pre>
 
-<p>After this message has been sent, an action status event with either actionStatus=CANCELED or actionStatus=CANCEL_REJECTED has to be returned.</p>
+<p>After sending this message, an action status event with either actionStatus=CANCELED or actionStatus=CANCEL_REJECTED has to be returned.</p>
 
-<p><strong>Example Header and Payload when cancellation is successful</strong></p>
+<p>Example header and payload when cancellation is successful:</p>
 
 <table>
 <thead>
 <tr>
-<th>Headers</th>
+<th>Header</th>
 <th>MessageProperties</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>type=EVENT <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
 
 <pre><code class="language-json">{
-  &quot;actionId&quot;: 137,
-  &quot;softwareModuleId&quot;: 17,
-  &quot;actionStatus&quot;: &quot;CANCELED&quot;,
-  &quot;message&quot;: [&quot;The update was canceled.&quot;]
+  &quot;actionId&quot;:137,
+  &quot;softwareModuleId&quot;:17,
+  &quot;actionStatus&quot;:&quot;CANCELED&quot;,
+  &quot;message&quot;:[&quot;The update was canceled.&quot;]
 }
 </code></pre>
 
-<p><strong>Example Header and Payload when cancellation was rejected</strong></p>
+<p>Example header and payload when cancellation is rejected:</p>
 
 <table>
 <thead>
 <tr>
-<th>Headers</th>
+<th>Header</th>
 <th>MessageProperties</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>type=EVENT <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
 
 <pre><code class="language-json">{
-  &quot;actionId&quot;: 137,
-  &quot;softwareModuleId&quot;: 17,
-  &quot;actionStatus&quot;: &quot;CANCEL_REJECTED&quot;,
-  &quot;message&quot;: [
-    &quot;The cancellation was not possible since the target sent an unexpected response.&quot;
-  ]
+  &quot;actionId&quot;:137,
+  &quot;softwareModuleId&quot;:17,
+  &quot;actionStatus&quot;:&quot;CANCEL_REJECTED&quot;,
+  &quot;message&quot;:[&quot;The cancellation was not possible since the target sent an unexpected response.&quot;]
 }
 </code></pre>
 
-<h2 id="messages-sent-by-hawkbit">Messages sent by hawkBit</h2>
+<h3 id="download-and-install-or-download">DOWNLOAD_AND_INSTALL or DOWNLOAD</h3>
 
-<p>All messages from hawkBit will be sent to the specified exchange in the <code>reply_to</code> property.</p>
-
-<h3 id="message-sent-by-hawkbit-to-initialize-an-update-task">Message sent by hawkBit to initialize an update task</h3>
+<p>Message sent by hawkBit to initialize an update or download task. Note: in case of a maintenance window configured but not yet active the message will have the topic <em>DOWNLOAD</em> instead of _DOWNLOAD_AND<em>INSTALL</em>.</p>
 
 <table>
 <thead>
@@ -923,23 +1024,23 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 
 <tr>
 <td>thingId</td>
-<td>The ID of the registered thing</td>
+<td>The ID of the registered provisioning target</td>
 <td>String</td>
 <td>true</td>
 </tr>
 
 <tr>
 <td>topic</td>
-<td>Topic to handle events different</td>
-<td>Fixed string &ldquo;DOWNLOAD_AND_INSTALL&rdquo;</td>
+<td>Topic name identifying the event</td>
+<td>Fixed string &ldquo;DOWNLOAD_AND_INSTALL&rdquo; or &ldquo;DOWNLOAD&rdquo;</td>
 <td>true</td>
 </tr>
 
 <tr>
 <td>tenant</td>
-<td>The tenant this thing belongs to</td>
+<td>The tenant this provisioning target belongs to</td>
 <td>String</td>
-<td>true</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
@@ -964,92 +1065,502 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tbody>
 </table>
 
-<p>The Java representation is DownloadAndUpdateRequest:</p>
-
-<p>Payload Template</p>
+<p>Payload Template (the Java representation is <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfDownloadAndUpdateRequest.java">DmfDownloadAndUpdateRequest</a>):</p>
 
 <pre><code class="language-json">{
-  &quot;actionId&quot;: long,
-  &quot;targetSecurityToken&quot;: &quot;String&quot;,
-  &quot;softwareModules&quot;: [
+&quot;actionId&quot;: long,
+&quot;targetSecurityToken&quot;: &quot;String&quot;,
+&quot;softwareModules&quot;:[
     {
-      &quot;moduleId&quot;: long,
-      &quot;moduleType&quot;: &quot;String&quot;,
-      &quot;moduleVersion&quot;: &quot;String&quot;,
-      &quot;artifacts&quot;: [
+    &quot;moduleId&quot;: long,
+    &quot;moduleType&quot;:&quot;String&quot;,
+    &quot;moduleVersion&quot;:&quot;String&quot;,
+    &quot;artifacts&quot;:[
         {
-          &quot;filename&quot;: &quot;String&quot;,
-          &quot;urls&quot;: {
-            &quot;HTTP&quot;: &quot;String&quot;,
-            &quot;HTTPS&quot;: &quot;String&quot;
-          },
-          &quot;hashes&quot;: {
-            &quot;md5&quot;: &quot;String&quot;,
-            &quot;sha1&quot;: &quot;String&quot;
-          },
-          &quot;size&quot;: long
-        }
-      ],
-      &quot;metadata&quot;: [
+        &quot;filename&quot;:&quot;String&quot;,
+        &quot;urls&quot;:{
+            &quot;HTTP&quot;:&quot;String&quot;,
+            &quot;HTTPS&quot;:&quot;String&quot;
+            },
+        &quot;hashes&quot;:{
+            &quot;md5&quot;:&quot;String&quot;,
+            &quot;sha1&quot;:&quot;String&quot;
+            },
+        &quot;size&quot;:long
+        }],
+    &quot;metadata&quot;:[
         {
-          &quot;key&quot;: &quot;String&quot;,
-          &quot;value&quot;: &quot;String&quot;
+            &quot;key&quot;:&quot;String&quot;,
+            &quot;value&quot;:&quot;String&quot;
         }
-      ]
-    }
-  ]
+    ]
+    }]
 }
 </code></pre>
 
-<p><strong>Example Header and Payload</strong></p>
+<p>Example header and payload:</p>
 
 <table>
 <thead>
 <tr>
-<th>Headers</th>
+<th>Header</th>
 <th>MessageProperties</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc <br /> topic=DOWNLOAD_AND_INSTALL</td>
+<td>type=EVENT  <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=DOWNLOAD_AND_INSTALL</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
 
 <pre><code class="language-json">{
-  &quot;actionId&quot;: 137,
-  &quot;targetSecurityToken&quot;: &quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
-  &quot;softwareModules&quot;: [
+&quot;actionId&quot;:137,
+&quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
+&quot;softwareModules&quot;:[
     {
-      &quot;moduleId&quot;: 7,
-      &quot;moduleType&quot;: &quot;firmware&quot;,
-      &quot;moduleVersion&quot;: &quot;7.7.7&quot;,
-      &quot;artifacts&quot;: [
+    &quot;moduleId&quot;:7,
+    &quot;moduleType&quot;:&quot;firmware&quot;,
+    &quot;moduleVersion&quot;:&quot;7.7.7&quot;,
+    &quot;artifacts&quot;:[
         {
-          &quot;filename&quot;: &quot;artifact.zip&quot;,
-          &quot;urls&quot;: {
-            &quot;HTTP&quot;: &quot;http://download-from-url.com&quot;,
-            &quot;HTTPS&quot;: &quot;https://download-from-url.com&quot;
-          },
-          &quot;hashes&quot;: {
-            &quot;md5&quot;: &quot;md5hash&quot;,
-            &quot;sha1&quot;: &quot;sha1hash&quot;
-          },
-          &quot;size&quot;: 512
-        }
-      ],
-      &quot;metadata&quot;: [
+        &quot;filename&quot;:&quot;artifact.zip&quot;,
+        &quot;urls&quot;:{
+            &quot;HTTP&quot;:&quot;http://download-from-url.com&quot;,
+            &quot;HTTPS&quot;:&quot;https://download-from-url.com&quot;
+            },
+        &quot;hashes&quot;:{
+            &quot;md5&quot;:&quot;md5hash&quot;,
+            &quot;sha1&quot;:&quot;sha1hash&quot;
+            },
+        &quot;size&quot;:512
+        }],
+    &quot;metadata&quot;:[
         {
-          &quot;key&quot;: &quot;installationType&quot;,
-          &quot;value&quot;: &quot;5784K#&quot;
+            &quot;key&quot;:&quot;installationType&quot;,
+            &quot;value&quot;:&quot;5784K#&quot;
         }
-      ]
-    }
-  ]
+    ]
+    }]
 }
+</code></pre>
+
+<h3 id="multi-action">MULTI_ACTION</h3>
+
+<p>If <code>multi.assignments.enabled</code> is enabled, this message is sent instead of DOWNLOAD_AND_INSTALL, DOWNLOAD, or CANCEL_DOWNLOAD
+ by hawkBit to initialize update, download, or cancel task(s).</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the message</td>
+<td>Fixed string &ldquo;EVENT&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>thingId</td>
+<td>The ID of the registered provisioning target</td>
+<td>String</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>topic</td>
+<td>Topic name identifying the event</td>
+<td>Fixed string &ldquo;MULTI_ACTION&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant this provisioning target belongs to</td>
+<td>String</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Message Properties</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>content_type</td>
+<td>The content type of the payload</td>
+<td>String</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<p>Payload Template (the Java representation is <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfMultiActionRequest.java">DmfMultiActionRequest</a>):</p>
+
+<pre><code class="language-json">[{
+&quot;topic&quot;: &quot;String&quot;,
+&quot;action&quot;: {
+  &quot;actionId&quot;: long,
+  &quot;targetSecurityToken&quot;: &quot;String&quot;,
+  &quot;softwareModules&quot;:[
+      {
+      &quot;moduleId&quot;: long,
+      &quot;moduleType&quot;:&quot;String&quot;,
+      &quot;moduleVersion&quot;:&quot;String&quot;,
+      &quot;artifacts&quot;:[
+          {
+          &quot;filename&quot;:&quot;String&quot;,
+          &quot;urls&quot;:{
+              &quot;HTTP&quot;:&quot;String&quot;,
+              &quot;HTTPS&quot;:&quot;String&quot;
+              },
+          &quot;hashes&quot;:{
+              &quot;md5&quot;:&quot;String&quot;,
+              &quot;sha1&quot;:&quot;String&quot;
+              },
+          &quot;size&quot;:long
+          }],
+      &quot;metadata&quot;:[
+          {
+              &quot;key&quot;:&quot;String&quot;,
+              &quot;value&quot;:&quot;String&quot;
+          }
+      ]
+      }]
+  }
+},
+{
+&quot;topic&quot;: &quot;String&quot;,
+&quot;action&quot;: {
+  &quot;actionId&quot;: long,
+  &quot;targetSecurityToken&quot;: &quot;String&quot;,
+  &quot;softwareModules&quot;:[
+      {
+      &quot;moduleId&quot;: long,
+      &quot;moduleType&quot;:&quot;String&quot;,
+      &quot;moduleVersion&quot;:&quot;String&quot;,
+      &quot;artifacts&quot;:[
+          {
+          &quot;filename&quot;:&quot;String&quot;,
+          &quot;urls&quot;:{
+              &quot;HTTP&quot;:&quot;String&quot;,
+              &quot;HTTPS&quot;:&quot;String&quot;
+              },
+          &quot;hashes&quot;:{
+              &quot;md5&quot;:&quot;String&quot;,
+              &quot;sha1&quot;:&quot;String&quot;
+              },
+          &quot;size&quot;:long
+          }],
+      &quot;metadata&quot;:[
+          {
+              &quot;key&quot;:&quot;String&quot;,
+              &quot;value&quot;:&quot;String&quot;
+          }
+      ]
+      }]
+  }
+}]
+</code></pre>
+
+<p>Example header and payload:</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=EVENT  <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=MULTI_ACTION</td>
+<td>content_type=application/json</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-json">[{
+&quot;topic&quot;: &quot;DOWNLOAD_AND_INSTALL&quot;,
+&quot;action&quot;: {
+  &quot;actionId&quot;:137,
+  &quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
+  &quot;softwareModules&quot;:[
+      {
+      &quot;moduleId&quot;:7,
+      &quot;moduleType&quot;:&quot;firmware&quot;,
+      &quot;moduleVersion&quot;:&quot;7.7.7&quot;,
+      &quot;artifacts&quot;:[
+          {
+          &quot;filename&quot;:&quot;artifact.zip&quot;,
+          &quot;urls&quot;:{
+              &quot;HTTP&quot;:&quot;http://download-from-url.com&quot;,
+              &quot;HTTPS&quot;:&quot;https://download-from-url.com&quot;
+              },
+          &quot;hashes&quot;:{
+              &quot;md5&quot;:&quot;md5hash&quot;,
+              &quot;sha1&quot;:&quot;sha1hash&quot;
+              },
+          &quot;size&quot;:512
+          }],
+      &quot;metadata&quot;:[
+          {
+              &quot;key&quot;:&quot;installationType&quot;,
+              &quot;value&quot;:&quot;5784K#&quot;
+          }
+      ]
+      }]
+  }
+},
+{
+&quot;topic&quot;: &quot;DOWNLOAD&quot;,
+&quot;action&quot;: {
+  &quot;actionId&quot;:138,
+  &quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
+  &quot;softwareModules&quot;:[
+      {
+      &quot;moduleId&quot;:4,
+      &quot;moduleType&quot;:&quot;firmware&quot;,
+      &quot;moduleVersion&quot;:&quot;7.7.9&quot;,
+      &quot;artifacts&quot;:[
+          {
+          &quot;filename&quot;:&quot;artifact.zip&quot;,
+          &quot;urls&quot;:{
+              &quot;HTTP&quot;:&quot;http://download-from-url.com&quot;,
+              &quot;HTTPS&quot;:&quot;https://download-from-url.com&quot;
+              },
+          &quot;hashes&quot;:{
+              &quot;md5&quot;:&quot;md5hash&quot;,
+              &quot;sha1&quot;:&quot;sha1hash&quot;
+              },
+          &quot;size&quot;:512
+          }],
+      &quot;metadata&quot;:[
+          {
+              &quot;key&quot;:&quot;installationType&quot;,
+              &quot;value&quot;:&quot;5784K#&quot;
+          }
+      ]
+      }]
+  }
+}]
+</code></pre>
+
+<h3 id="thing-deleted">THING_DELETED</h3>
+
+<p>Message sent by hawkBit when a target has been deleted.</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the message</td>
+<td>Fixed string &ldquo;THING_DELETED&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>thingId</td>
+<td>The ID of the registered provisioning target</td>
+<td>String</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant this provisioning target belongs to</td>
+<td>String</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<p>Example header:</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=THING_DELETED <br /> tenant=tenant123 <br /> thingId=abc</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="request-attributes-update">REQUEST_ATTRIBUTES_UPDATE</h3>
+
+<p>Message sent by Eclipse hawkBit when a re-transmission of target attributes is requested.</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the message</td>
+<td>Fixed string &ldquo;EVENT&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>thingId</td>
+<td>The ID of the registered provisioning target</td>
+<td>String</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>topic</td>
+<td>Topic name identifying the event</td>
+<td>Fixed string &ldquo;REQUEST_ATTRIBUTES_UPDATE&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant this provisioning target belongs to</td>
+<td>String</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<p>Example headers:</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc <br /> topic=REQUEST_ATTRIBUTES_UPDATE</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="ping-response">PING_RESPONSE</h3>
+
+<p><em>hawkBit</em> will respond to the PING message with a PING_RESPONSE type message that has the same correlationId as the original PING message:</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the message</td>
+<td>Fixed string &ldquo;PING_RESPONSE&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant the PING belongs to</td>
+<td>String</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Message Properties</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>correlationId</td>
+<td>CorrelationId of the original PING request</td>
+<td>String</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>content_type</td>
+<td>The content type of the payload</td>
+<td>String</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<p>The PING_RESPONSE also contains a timestamp (i.e. the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC) as plain text. It is not guaranteed that this timestamp is completely accurate.</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=PING_RESPONSE  <br /> tenant=tenant123</td>
+<td>content_type=text/plain</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-text">1505215891247
 </code></pre>
 
 			<aside class="copyright" role="note">
@@ -1093,7 +1604,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://www.eclipse.org/hawkbit/apis/ddi_api/" title="Direct Device Integration API">
+      <a href="https://www.eclipse.org/hawkbit/community/" title="Community">
         <span class="direction">
           Previous
         </span>
@@ -1103,7 +1614,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
           </div>
           <div class="stretch">
             <div class="title">
-              Direct Device Integration API
+              Community
             </div>
           </div>
         </div>
@@ -1113,14 +1624,14 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 
   <div class="next">
   
-      <a href="https://www.eclipse.org/hawkbit/community/" title="Community">
+      <a href="https://www.eclipse.org/hawkbit/apis/ddi_api/" title="Direct Device Integration API">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Community
+              Direct Device Integration API
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
