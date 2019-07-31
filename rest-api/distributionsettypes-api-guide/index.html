@@ -452,64 +452,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_get_distribution_set_types"><a class="link" href="#_get_distribution_set_types">Get distribution set types</a></h3>
 <div class="sect3">
 <h4 id="_curl"><a class="link" href="#_curl">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes' -i -X GET \
-    -H 'Accept: application/json'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-distribution-set-types/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url"><a class="link" href="#_request_url">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsettypes HTTP/1.1
-Accept: application/json
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-distribution-set-types/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_query_parameter"><a class="link" href="#_request_query_parameter">Request query parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>limit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of entries in a page (default is 50).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sort</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The query parameter sort allows to define the sort order for the result of a query. A sort criteria consists of the name of a field and the sort direction (ASC for ascending and DESC descending). The sequence of the sort criteria (multiple can be used) defines the sort order of the entities in the result.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offset</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The paging offset (default is 0).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>q</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Query fields based on the Feed Item Query Language (FIQL). See Entity Definitions for available fields.</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-distribution-set-types-with-parameters/request-parameters.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_request_parameter_example"><a class="link" href="#_request_parameter_example">Request parameter example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsettypes?offset=1&amp;limit=2&amp;sort=name%3ADESC&amp;q=name%3D%3Da* HTTP/1.1
-Accept: application/json
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-distribution-set-types-with-parameters/http-request.adoc[]</p>
 </div>
 </div>
 </div>
@@ -517,165 +479,14 @@ Host: management-api.host.com</code></pre>
 <h3 id="_response_status_200"><a class="link" href="#_response_status_200">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields"><a class="link" href="#_response_fields">Response fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Current page size</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">total</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Total number of elements</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Array</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List of provisioning targets.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Functional key of the distribution set type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-distribution-set-types/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example"><a class="link" href="#_response_example">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/json;charset=UTF-8
-Content-Length: 1756
-
-{
-  "content" : [ {
-    "createdBy" : "system",
-    "createdAt" : 1549349055410,
-    "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1549349055410,
-    "name" : "App(s) only",
-    "description" : "Default type with app(s) only.",
-    "key" : "app",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/423"
-      }
-    },
-    "id" : 423
-  }, {
-    "createdBy" : "system",
-    "createdAt" : 1549349055411,
-    "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1549349055411,
-    "name" : "OS with app(s)",
-    "description" : "Default type with Firmware/OS and optional app(s).",
-    "key" : "os_app",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/424"
-      }
-    },
-    "id" : 424
-  }, {
-    "createdBy" : "system",
-    "createdAt" : 1549349055409,
-    "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1549349055409,
-    "name" : "OS only",
-    "description" : "Default type with Firmware/OS only.",
-    "key" : "os",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/425"
-      }
-    },
-    "id" : 425
-  }, {
-    "createdBy" : "bumlux",
-    "createdAt" : 1549349055438,
-    "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1549349055484,
-    "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
-    "description" : "Desc1234",
-    "key" : "test_default_ds_type",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/426"
-      }
-    },
-    "id" : 426
-  } ],
-  "total" : 4,
-  "size" : 4
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-distribution-set-types/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -743,210 +554,35 @@ Content-Length: 1756
 <h3 id="_create_distribution_set_types"><a class="link" href="#_create_distribution_set_types">Create distribution set types</a></h3>
 <div class="sect3">
 <h4 id="_curl_2"><a class="link" href="#_curl_2">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes' -i -X POST \
-    -H 'Accept: application/json' \
-    -H 'Content-Type: application/json;charset=UTF-8' \
-    -d '[ {
-  "optionalmodules" : [ {
-    "id" : 309
-  } ],
-  "name" : "TestName1",
-  "description" : "Desc1",
-  "mandatorymodules" : [ {
-    "id" : 308
-  } ],
-  "key" : "test1"
-} ]'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-distribution-set-types/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_2"><a class="link" href="#_request_url_2">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsettypes HTTP/1.1
-Content-Length: 173
-Accept: application/json
-Content-Type: application/json;charset=UTF-8
-Host: management-api.host.com
-
-[ {
-  "optionalmodules" : [ {
-    "id" : 309
-  } ],
-  "name" : "TestName1",
-  "description" : "Desc1",
-  "mandatorymodules" : [ {
-    "id" : 308
-  } ],
-  "key" : "test1"
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-distribution-set-types/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_fields"><a class="link" href="#_request_fields">Request fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-<th class="tableblock halign-left valign-top">Mandatory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Functional key of the distribution set type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]mandatorymodules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Array</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory module type IDs.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]optionalmodules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Array</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional module type IDs.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-distribution-set-types/request-fields.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_201"><a class="link" href="#_response_status_201">Response (Status 201)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_2"><a class="link" href="#_response_fields_2">Response fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Functional key of the distribution set type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]deleted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-distribution-set-types/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_2"><a class="link" href="#_response_example_2">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
-Content-Length: 370
-Content-Type: application/json;charset=UTF-8
-
-[ {
-  "createdBy" : "uploadTester",
-  "createdAt" : 1549349055023,
-  "lastModifiedBy" : "uploadTester",
-  "lastModifiedAt" : 1549349055023,
-  "name" : "TestName1",
-  "description" : "Desc1",
-  "key" : "test1",
-  "deleted" : false,
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/413"
-    }
-  },
-  "id" : 413
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-distribution-set-types/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1029,51 +665,29 @@ Content-Type: application/json;charset=UTF-8
 <h3 id="_delete_distribution_set_type"><a class="link" href="#_delete_distribution_set_type">Delete distribution set type</a></h3>
 <div class="sect3">
 <h4 id="_curl_3"><a class="link" href="#_curl_3">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/449' -i -X DELETE</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-distribution-set-type/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_3"><a class="link" href="#_request_url_3">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsettypes/449 HTTP/1.1
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-distribution-set-type/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter"><a class="link" href="#_request_path_parameter">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-distribution-set-type/path-parameters.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_2"><a class="link" href="#_response_status_200_2">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_example_3"><a class="link" href="#_response_example_3">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-distribution-set-type/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1146,165 +760,35 @@ Host: management-api.host.com</code></pre>
 <h3 id="_get_distribution_set_type"><a class="link" href="#_get_distribution_set_type">Get distribution set type</a></h3>
 <div class="sect3">
 <h4 id="_curl_4"><a class="link" href="#_curl_4">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/422' -i -X GET \
-    -H 'Accept: application/json'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-distribution-set-type/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_4"><a class="link" href="#_request_url_4">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsettypes/422 HTTP/1.1
-Accept: application/json
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-distribution-set-type/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_2"><a class="link" href="#_request_path_parameter_2">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-distribution-set-type/path-parameters.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_3"><a class="link" href="#_response_status_200_3">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_3"><a class="link" href="#_response_fields_3">Response fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Functional key of the distribution set type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deleted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">_links.mandatorymodules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Link to mandatory software modules types in this distribution set type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">_links.optionalmodules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Link to optional software modules types in this distribution set type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-distribution-set-type/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_4"><a class="link" href="#_response_example_4">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 688
-Content-Type: application/json;charset=UTF-8
-
-{
-  "createdBy" : "bumlux",
-  "createdAt" : 1549349055201,
-  "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1549349055372,
-  "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
-  "description" : "Desc1234",
-  "key" : "test_default_ds_type",
-  "deleted" : false,
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/422"
-    },
-    "mandatorymodules" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/422/mandatorymoduletypes"
-    },
-    "optionalmodules" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/422/optionalmoduletypes"
-    }
-  },
-  "id" : 422
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-distribution-set-type/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1377,203 +861,41 @@ Content-Type: application/json;charset=UTF-8
 <h3 id="_update_distribution_set_type"><a class="link" href="#_update_distribution_set_type">Update distribution set type</a></h3>
 <div class="sect3">
 <h4 id="_curl_5"><a class="link" href="#_curl_5">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/453' -i -X PUT \
-    -H 'Content-Type: application/json;charset=UTF-8' \
-    -d '{
-  "description" : "an updated desription"
-}'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/put-distribution-set-type/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_5"><a class="link" href="#_request_url_5">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/distributionsettypes/453 HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 45
-Host: management-api.host.com
-
-{
-  "description" : "an updated desription"
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/put-distribution-set-type/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_3"><a class="link" href="#_request_path_parameter_3">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/put-distribution-set-type/path-parameters.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_request_fields_2"><a class="link" href="#_request_fields_2">Request fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-<th class="tableblock halign-left valign-top">Mandatory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/put-distribution-set-type/request-fields.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_4"><a class="link" href="#_response_status_200_4">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_4"><a class="link" href="#_response_fields_4">Response fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Functional key of the distribution set type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deleted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">_links.mandatorymodules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Link to mandatory software modules types in this distribution set type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">_links.optionalmodules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Link to optional software modules types in this distribution set type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/put-distribution-set-type/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_5"><a class="link" href="#_response_example_5">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 701
-
-{
-  "createdBy" : "bumlux",
-  "createdAt" : 1549349055951,
-  "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1549349055997,
-  "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
-  "description" : "an updated desription",
-  "key" : "test_default_ds_type",
-  "deleted" : false,
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/453"
-    },
-    "mandatorymodules" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/453/mandatorymoduletypes"
-    },
-    "optionalmodules" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/453/optionalmoduletypes"
-    }
-  },
-  "id" : 453
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/put-distribution-set-type/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1656,154 +978,35 @@ Content-Length: 701
 <h3 id="_lists_all_mandatory_software_module_types"><a class="link" href="#_lists_all_mandatory_software_module_types">Lists all mandatory software module types</a></h3>
 <div class="sect3">
 <h4 id="_curl_6"><a class="link" href="#_curl_6">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/440/mandatorymoduletypes' -i -X GET \
-    -H 'Accept: application/json'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-mandatory-modules/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_6"><a class="link" href="#_request_url_6">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsettypes/440/mandatorymoduletypes HTTP/1.1
-Accept: application/json
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-mandatory-modules/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_4"><a class="link" href="#_request_path_parameter_4">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-mandatory-modules/path-parameters.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_5"><a class="link" href="#_response_status_200_5">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_5"><a class="link" href="#_response_fields_5">Response fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Key that can be interpreted by the target.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]maxAssignments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Software modules of that type can be assigned at this maximum number (e.g. operating system only once).</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]deleted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-mandatory-modules/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_6"><a class="link" href="#_response_example_6">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/json;charset=UTF-8
-Content-Length: 386
-
-[ {
-  "createdBy" : "system",
-  "createdAt" : 1549349055696,
-  "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1549349055705,
-  "name" : "OS",
-  "description" : "Updated description.",
-  "key" : "os",
-  "maxAssignments" : 1,
-  "deleted" : false,
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/325"
-    }
-  },
-  "id" : 325
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-mandatory-modules/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1876,91 +1079,35 @@ Content-Length: 386
 <h3 id="_add_mandatory_software_module_type"><a class="link" href="#_add_mandatory_software_module_type">Add mandatory software module type</a></h3>
 <div class="sect3">
 <h4 id="_curl_7"><a class="link" href="#_curl_7">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/435/mandatorymoduletypes' -i -X POST \
-    -H 'Content-Type: application/json;charset=UTF-8' \
-    -d '{
-  "id" : 323
-}'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-mandatory-module/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_7"><a class="link" href="#_request_url_7">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsettypes/435/mandatorymoduletypes HTTP/1.1
-Content-Length: 16
-Content-Type: application/json;charset=UTF-8
-Host: management-api.host.com
-
-{
-  "id" : 323
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-mandatory-module/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_5"><a class="link" href="#_request_path_parameter_5">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-mandatory-module/path-parameters.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_request_fields_3"><a class="link" href="#_request_fields_3">Request fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-<th class="tableblock halign-left valign-top">Mandatory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-mandatory-module/request-fields.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_201_2"><a class="link" href="#_response_status_201_2">Response (Status 201)</a></h3>
 <div class="sect3">
 <h4 id="_response_example_7"><a class="link" href="#_response_example_7">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-mandatory-module/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -2046,57 +1193,29 @@ Host: management-api.host.com
 <h3 id="_remove_mandatory_module_from_distribution_set_type"><a class="link" href="#_remove_mandatory_module_from_distribution_set_type">Remove mandatory module from distribution set type</a></h3>
 <div class="sect3">
 <h4 id="_curl_8"><a class="link" href="#_curl_8">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/467/mandatorymoduletypes/343' -i -X DELETE \
-    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-mandatory-module/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_8"><a class="link" href="#_request_url_8">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsettypes/467/mandatorymoduletypes/343 HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-mandatory-module/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_6"><a class="link" href="#_request_path_parameter_6">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">softwareModuleTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-mandatory-module/path-parameters.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_6"><a class="link" href="#_response_status_200_6">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_example_8"><a class="link" href="#_response_example_8">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-mandatory-module/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -2169,158 +1288,35 @@ Host: management-api.host.com</code></pre>
 <h3 id="_retrieve_mandatory_software_module_type"><a class="link" href="#_retrieve_mandatory_software_module_type">Retrieve mandatory software module type</a></h3>
 <div class="sect3">
 <h4 id="_curl_9"><a class="link" href="#_curl_9">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/458/mandatorymoduletypes/338' -i -X GET \
-    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-mandatory-module/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_9"><a class="link" href="#_request_url_9">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsettypes/458/mandatorymoduletypes/338 HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-mandatory-module/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_7"><a class="link" href="#_request_path_parameter_7">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">softwareModuleTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-mandatory-module/path-parameters.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_7"><a class="link" href="#_response_status_200_7">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_6"><a class="link" href="#_response_fields_6">Response fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Key that can be interpreted by the target.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">maxAssignments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Software modules of that type can be assigned at this maximum number (e.g. operating system only once).</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deleted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-mandatory-module/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_9"><a class="link" href="#_response_example_9">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 382
-Content-Type: application/hal+json;charset=UTF-8
-
-{
-  "createdBy" : "system",
-  "createdAt" : 1549349056028,
-  "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1549349056037,
-  "name" : "OS",
-  "description" : "Updated description.",
-  "key" : "os",
-  "maxAssignments" : 1,
-  "deleted" : false,
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/338"
-    }
-  },
-  "id" : 338
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-mandatory-module/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -2393,154 +1389,35 @@ Content-Type: application/hal+json;charset=UTF-8
 <h3 id="_lists_all_optional_software_module_types"><a class="link" href="#_lists_all_optional_software_module_types">Lists all optional software module types</a></h3>
 <div class="sect3">
 <h4 id="_curl_10"><a class="link" href="#_curl_10">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/445/optionalmoduletypes' -i -X GET \
-    -H 'Accept: application/json'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-optional-modules/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_10"><a class="link" href="#_request_url_10">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsettypes/445/optionalmoduletypes HTTP/1.1
-Accept: application/json
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-optional-modules/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_8"><a class="link" href="#_request_path_parameter_8">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-optional-modules/path-parameters.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_8"><a class="link" href="#_response_status_200_8">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_7"><a class="link" href="#_response_fields_7">Response fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Key that can be interpreted by the target.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]maxAssignments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Software modules of that type can be assigned at this maximum number (e.g. operating system only once).</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]deleted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-optional-modules/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_10"><a class="link" href="#_response_example_10">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 396
-Content-Type: application/json;charset=UTF-8
-
-[ {
-  "createdBy" : "bumlux",
-  "createdAt" : 1549349055781,
-  "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1549349055784,
-  "name" : "runtime",
-  "description" : "Updated description.",
-  "key" : "runtime",
-  "maxAssignments" : 1,
-  "deleted" : false,
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/330"
-    }
-  },
-  "id" : 330
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-optional-modules/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -2613,91 +1490,35 @@ Content-Type: application/json;charset=UTF-8
 <h3 id="_add_optional_software_module_type"><a class="link" href="#_add_optional_software_module_type">Add optional software module type</a></h3>
 <div class="sect3">
 <h4 id="_curl_11"><a class="link" href="#_curl_11">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/472/optionalmoduletypes' -i -X POST \
-    -H 'Content-Type: application/json;charset=UTF-8' \
-    -d '{
-  "id" : 346
-}'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-optional-module/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_11"><a class="link" href="#_request_url_11">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/distributionsettypes/472/optionalmoduletypes HTTP/1.1
-Content-Length: 16
-Content-Type: application/json;charset=UTF-8
-Host: management-api.host.com
-
-{
-  "id" : 346
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-optional-module/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_9"><a class="link" href="#_request_path_parameter_9">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-optional-module/path-parameters.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_request_fields_4"><a class="link" href="#_request_fields_4">Request fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-<th class="tableblock halign-left valign-top">Mandatory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-optional-module/request-fields.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_201_3"><a class="link" href="#_response_status_201_3">Response (Status 201)</a></h3>
 <div class="sect3">
 <h4 id="_response_example_11"><a class="link" href="#_response_example_11">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-optional-module/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -2786,57 +1607,29 @@ Host: management-api.host.com
 <h3 id="_remove_optional_module_from_distribution_set_type"><a class="link" href="#_remove_optional_module_from_distribution_set_type">Remove optional module from distribution set type</a></h3>
 <div class="sect3">
 <h4 id="_curl_12"><a class="link" href="#_curl_12">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/477/optionalmoduletypes/349' -i -X DELETE \
-    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-optional-module/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_12"><a class="link" href="#_request_url_12">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsettypes/477/optionalmoduletypes/349 HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-optional-module/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_10"><a class="link" href="#_request_path_parameter_10">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">softwareModuleTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-optional-module/path-parameters.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_9"><a class="link" href="#_response_status_200_9">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_example_12"><a class="link" href="#_response_example_12">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/delete-optional-module/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -2909,154 +1702,35 @@ Host: management-api.host.com</code></pre>
 <h3 id="_retrieve_optional_software_module_type"><a class="link" href="#_retrieve_optional_software_module_type">Retrieve optional software module type</a></h3>
 <div class="sect3">
 <h4 id="_curl_13"><a class="link" href="#_curl_13">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/418/optionalmoduletypes/310' -i -X GET \
-    -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-optional-module/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_13"><a class="link" href="#_request_url_13">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/distributionsettypes/418/optionalmoduletypes/310 HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-optional-module/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_11"><a class="link" href="#_request_path_parameter_11">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/post-optional-module/path-parameters.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_10"><a class="link" href="#_response_status_200_10">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_8"><a class="link" href="#_response_fields_8">Response fields</a></h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Key that can be interpreted by the target.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">maxAssignments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Software modules of that type can be assigned at this maximum number (e.g. operating system only once).</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deleted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-optional-module/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_13"><a class="link" href="#_response_example_13">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 409
-Content-Type: application/hal+json;charset=UTF-8
-
-{
-  "createdBy" : "system",
-  "createdAt" : 1549349055064,
-  "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1549349055078,
-  "name" : "Application",
-  "description" : "Updated description.",
-  "key" : "application",
-  "maxAssignments" : 2147483647,
-  "deleted" : false,
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/310"
-    }
-  },
-  "id" : 310
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in distributionsettypes-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/distributionsettypes/get-optional-module/http-response.adoc[]</p>
 </div>
 </div>
 </div>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Management UI - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.56.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -546,6 +546,7 @@ Controller_id_2,targetName2
 <li>Custom target filter allows user to filter targets by defining custom query.</li>
 <li>Displays custom target filter list and user can search any particular filter.</li>
 <li>Create, update and delete features are supported for target filters.</li>
+<li>Auto assignment of a distribution set to filtered targets.</li>
 </ul>
 
 <h3 id="how-to-filter">How to Filter</h3>
@@ -632,6 +633,16 @@ Controller_id_2,targetName2
 
 <p><img src="../images/ui/target_filter.png" alt="Target Filter Management view" /></p>
 
+<h3 id="auto-assignment">Auto assignment</h3>
+
+<p>It is possible to assign some distribution set with different action types (<em>forced</em>, <em>soft</em>, or <em>download only</em>) to all targets that belong to the corresponding custom target filter, including the ones, that are registered later on.</p>
+
+<p>In order to activate the auto-assignment, one should first click on <em>Auto assignment</em> cell in Custom Filters table, and then check the corresponding checkbox. After that, the action type and distribution set for auto-assignment should be selected and confirmed.</p>
+
+<p>As long as the auto-assignment stays active, the scheduler will try to assign selected distribution set to corresponding custom filter targets, that have never seen it before.</p>
+
+<p><img src="../images/ui/target_filter_auto_assignment.png" alt="Auto assignment" /></p>
+
 
 			<aside class="copyright" role="note">
   <div class="logo">
@@ -674,7 +685,7 @@ Controller_id_2,targetName2
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://www.eclipse.org/hawkbit/architecture/" title="Architecture">
+      <a href="https://www.eclipse.org/hawkbit/apis/management_api/" title="Management API">
         <span class="direction">
           Previous
         </span>
@@ -684,7 +695,7 @@ Controller_id_2,targetName2
           </div>
           <div class="stretch">
             <div class="title">
-              Architecture
+              Management API
             </div>
           </div>
         </div>
@@ -694,14 +705,14 @@ Controller_id_2,targetName2
 
   <div class="next">
   
-      <a href="https://www.eclipse.org/hawkbit/apis/management_api/" title="Management API">
+      <a href="https://www.eclipse.org/hawkbit/architecture/" title="Architecture">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Management API
+              Architecture
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

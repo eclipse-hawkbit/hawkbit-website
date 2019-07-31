@@ -293,14 +293,13 @@ Currently, bodies of messages are based on JSON.&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/release-notes/</guid>
-      <description>0.2.5 Release Date: Friday, November 30, 2018 Tag / Release
-0.2.4 Release Date: Friday, October 26, 2018 Tag / Release
-0.2.3 Release Date: Monday, October 1, 2018 Tag / Release
-0.2.2 Release Date: Thursday, September 21, 2018 Tag / Release
-0.2.1 Release Date: Friday, July 6, 2018 Tag / Release
-0.2.0 First Eclipse hawkBit release including:
- Core features:
- Device and Software Repository Update Management Management UI/Console Artifact Content Delivery Rollout/Campaign Management  Interfaces:</description>
+      <description>0.3.0M5 Release Date: Tuesday, July 29, 2019 Tag / Release
+0.3.0M4 Release Date: Thursday, June 6, 2019 Tag / Release
+0.3.0M3 Release Date: Tuesday, May 21, 2019 Tag / Release
+0.3.0M2 Release Date: Tuesday, April 2, 2019 Tag / Release
+0.3.0M1 Release Date: Saturday, February 2, 2019 Tag / Release
+0.2.5 Release Date: Friday, November 30, 2018 Tag / Release
+0.2.4 Release Date: Friday, October 26, 2018 Tag / Release</description>
     </item>
     
     <item>

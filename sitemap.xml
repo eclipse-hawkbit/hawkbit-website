@@ -124,58 +124,72 @@
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/apis/mgmt/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/news/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/distributionsets-api-guide/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/distributionsettag-api-guide/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/distributionsettypes-api-guide/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/rollout-api-guide/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/rootcontroller-api-guide/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/softwaremodules-api-guide/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/softwaremoduletypes-api-guide/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/targetfilters-api-guide/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/targets-api-guide/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/targettag-api-guide/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.eclipse.org/hawkbit/rest-api/tenant-api-guide/</loc>
+    <priority>0</priority>
   </url>
   
   <url>

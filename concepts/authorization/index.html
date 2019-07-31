@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Authorization - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="generator" content="Hugo 0.56.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -440,7 +440,7 @@ hawkbit.server.im.users[1].email=test@tester.com
 hawkbit.server.im.users[1].permissions=READ_TARGET,UPDATE_TARGET,CREATE_TARGET,DELETE_TARGET
 </code></pre>
 
-<p>A permissions value of <code>ALL</code> will provide that user will all possible permissions. Passwords need to be specified with the used password encoder in brackets. In this example, <code>noop</code> is used as the plaintext encoder. For production use, it is recommended to use a hash function designed for passwords such as <em>bcrypt</em>. See this <a href="https://spring.io/blog/2017/11/01/spring-security-5-0-0-rc1-released#password-storage-format">blog post</a> for more information on password encoders in Spring Security.</p>
+<p>A permissions value of <code>ALL</code> will provide that user with all possible permissions. Passwords need to be specified with the used password encoder in brackets. In this example, <code>noop</code> is used as the plaintext encoder. For production use, it is recommended to use a hash function designed for passwords such as <em>bcrypt</em>. See this <a href="https://spring.io/blog/2017/11/01/spring-security-5-0-0-rc1-released#password-storage-format">blog post</a> for more information on password encoders in Spring Security.</p>
 
 <h3 id="delivered-permissions">Delivered Permissions</h3>
 
@@ -474,7 +474,7 @@ hawkbit.server.im.users[1].permissions=READ_TARGET,UPDATE_TARGET,CREATE_TARGET,D
 <li><p>DOWNLOAD_REPOSITORY_ARTIFACT</p>
 
 <ul>
-<li>Permission to download artifacts of an software module (Note: READ_REPOSITORY allows only to read the metadata).</li>
+<li>Permission to download artifacts of a software module (Note: READ_REPOSITORY allows only to read the metadata).</li>
 </ul></li>
 
 <li><p>TENANT_CONFIGURATION</p>

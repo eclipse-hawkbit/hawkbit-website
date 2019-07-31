@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Custom Theme - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.56.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -431,22 +431,21 @@
 <li>Create a <strong>XXXvariables.scss</strong> file under <strong>customstyles</strong> folder, putting all the variables inside the same file. For more details about the variables we recommend to take a look at the <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-ui/src/main/resources/VAADIN/themes/hawkbit/customstyles/hawkbitvariables.scss">hawkBit defaults</a>.</li>
 <li>Create <strong>styles.scss</strong> file under the <strong>&ldquo;XXXtheme&rdquo;</strong> folder.</li>
 <li>Any images should be placed under the sub folder <strong>&ldquo;images&rdquo;</strong> folder.</li>
-<li>Within the <strong><em>styles.scss</em></strong> file, import <strong>XXXvariables.scss</strong> and the base theme (hawkBit theme as mentioned in previous chapter <strong>Overview</strong> . Please find below the syntax:</li>
-</ul>
 
-<pre><code class="language-css">  @import &quot;../hawkbit/customstyles/hawkbitvariables&quot;;
-  @import &quot;customstyles/examplevariables&quot;;
-  @import &quot;../hawkbit/hawkbittheme&quot;;
-  @import &quot;addons&quot;;
+<li><p>Within the <strong><em>styles.scss</em></strong> file, import <strong>XXXvariables.scss</strong> and the base theme (hawkBit theme as mentioned in previous chapter <strong>Overview</strong> . Please find below the syntax:</p>
 
-  .exampletheme {
-    @include addons;
-    @include hawkbittheme;
-  }
-</code></pre>
+<pre><code class="language-css">@import &quot;../hawkbit/customstyles/hawkbitvariables&quot;;
+@import &quot;customstyles/examplevariables&quot;;
+@import &quot;../hawkbit/hawkbittheme&quot;;
+@import &quot;addons&quot;;
 
-<ul>
-<li>Finally the structure should be as in the <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-custom-theme-example/src/main/resources/VAADIN">example app</a>.</li>
+.exampletheme {
+@include addons;
+@include hawkbittheme;
+}
+</code></pre></li>
+
+<li><p>Finally the structure should be as in the <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-custom-theme-example/src/main/resources/VAADIN">example app</a>.</p></li>
 </ul>
 
 <h2 id="procedure-to-add-a-custom-footer">Procedure to add a custom footer</h2>
@@ -496,7 +495,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://www.eclipse.org/hawkbit/guides/clustering/" title="Clustering">
+      <a href="https://www.eclipse.org/hawkbit/features/" title="Features">
         <span class="direction">
           Previous
         </span>
@@ -506,7 +505,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              Clustering
+              Features
             </div>
           </div>
         </div>
@@ -516,14 +515,14 @@
 
   <div class="next">
   
-      <a href="https://www.eclipse.org/hawkbit/features/" title="Features">
+      <a href="https://www.eclipse.org/hawkbit/guides/clustering/" title="Clustering">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Features
+              Clustering
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
