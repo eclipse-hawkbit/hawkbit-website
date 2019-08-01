@@ -450,26 +450,64 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_get_paged_list_of_rollouts"><a class="link" href="#_get_paged_list_of_rollouts">Get paged list of Rollouts</a></h3>
 <div class="sect3">
 <h4 id="_curl"><a class="link" href="#_curl">Curl</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollouts/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts' -i -X GET \
+    -H 'Accept: application/hal+json'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url"><a class="link" href="#_request_url">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollouts/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/rollouts HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_query_parameter"><a class="link" href="#_request_query_parameter">Request query parameter</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollouts-with-parameters/request-parameters.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>limit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of entries in a page (default is 50).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The query parameter sort allows to define the sort order for the result of a query. A sort criteria consists of the name of a field and the sort direction (ASC for ascending and DESC descending). The sequence of the sort criteria (multiple can be used) defines the sort order of the entities in the result.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offset</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The paging offset (default is 0).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>q</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query fields based on the Feed Item Query Language (FIQL). See Entity Definitions for available fields.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_request_query_parameter_example"><a class="link" href="#_request_query_parameter_example">Request query parameter example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollouts-with-parameters/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/rollouts?offset=0&amp;limit=2&amp;sort=id%3ADESC&amp;q=name%3D%3DexampleRollout* HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -477,14 +515,154 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_response_status_200"><a class="link" href="#_response_status_200">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields"><a class="link" href="#_response_fields">Response fields</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollouts/response-fields.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Allowed Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total number of elements</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current page size</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list of rollouts</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].targetFilterQuery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target filter query language expression</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].distributionSetId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the ID of distributionset of this rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the status of this rollout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['creating','ready','paused','running','finished']</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of this rollout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['forced','soft','timeforced','downloadonly']</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].totalTargets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the total targets of a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_response_example"><a class="link" href="#_response_example">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollouts/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 578
+
+{
+  "content" : [ {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644177252,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644177385,
+    "name" : "exampleRollout",
+    "description" : "exampleDescription",
+    "targetFilterQuery" : "controllerId==exampleTarget*",
+    "distributionSetId" : 31,
+    "status" : "ready",
+    "totalTargets" : 20,
+    "deleted" : false,
+    "type" : "forced",
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/rollouts/15"
+      }
+    },
+    "id" : 15
+  } ],
+  "total" : 1,
+  "size" : 1
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -552,35 +730,246 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_get_rollout"><a class="link" href="#_get_rollout">Get Rollout</a></h3>
 <div class="sect3">
 <h4 id="_curl_2"><a class="link" href="#_curl_2">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/2' -i -X GET \
+    -H 'Accept: application/hal+json'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_2"><a class="link" href="#_request_url_2">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/rollouts/2 HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter"><a class="link" href="#_request_path_parameter">Request path parameter</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout/path-parameters.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rolloutId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_2"><a class="link" href="#_response_status_200_2">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_2"><a class="link" href="#_response_fields_2">Response fields</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout/response-fields.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Allowed Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">targetFilterQuery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target filter query language expression</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the ID of distributionset of this rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the status of this rollout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['creating','ready','paused','running','finished']</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of this rollout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['forced','soft','timeforced','downloadonly']</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">totalTargets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the total targets of a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">totalTargetsPerStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the total targets per status</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to start the rollout in sync mode</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.pause</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to pause a running rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.resume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to resume a paused rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.groups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to retrieve the groups a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.approve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to approve a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.deny</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to deny a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_response_example_2"><a class="link" href="#_response_example_2">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 1359
+
+{
+  "createdBy" : "bumlux",
+  "createdAt" : 1564644107815,
+  "lastModifiedBy" : "bumlux",
+  "lastModifiedAt" : 1564644108005,
+  "name" : "exampleRollout",
+  "description" : "exampleDescription",
+  "targetFilterQuery" : "controllerId==exampleTarget*",
+  "distributionSetId" : 18,
+  "status" : "ready",
+  "totalTargets" : 20,
+  "totalTargetsPerStatus" : {
+    "running" : 0,
+    "notstarted" : 20,
+    "scheduled" : 0,
+    "cancelled" : 0,
+    "finished" : 0,
+    "error" : 0
+  },
+  "deleted" : false,
+  "type" : "forced",
+  "_links" : {
+    "start" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/2/start"
+    },
+    "pause" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/2/pause"
+    },
+    "resume" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/2/resume"
+    },
+    "approve" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/2/approve{?remark}",
+      "templated" : true
+    },
+    "deny" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/2/deny{?remark}",
+      "templated" : true
+    },
+    "groups" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/2/deploygroups?offset=0&amp;limit=50{&amp;sort,q}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/2"
+    }
+  },
+  "id" : 2
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -653,35 +1042,417 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_create_rollout_with_defined_amount_of_groups"><a class="link" href="#_create_rollout_with_defined_amount_of_groups">Create Rollout with defined amount of groups</a></h3>
 <div class="sect3">
 <h4 id="_curl_3"><a class="link" href="#_curl_3">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/create-rollout/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts' -i -X POST \
+    -H 'Content-Type: application/hal+json;charset=UTF-8' \
+    -H 'Accept: application/hal+json' \
+    -d '{
+  "distributionSetId" : 22,
+  "successCondition" : {
+    "condition" : "THRESHOLD",
+    "expression" : "50"
+  },
+  "successAction" : {
+    "expression" : "",
+    "action" : "NEXTGROUP"
+  },
+  "targetFilterQuery" : "id==targets-*",
+  "name" : "exampleRollout",
+  "description" : "Rollout for all named targets",
+  "amountGroups" : 10,
+  "errorAction" : {
+    "expression" : "",
+    "action" : "PAUSE"
+  },
+  "errorCondition" : {
+    "condition" : "THRESHOLD",
+    "expression" : "80"
+  }
+}'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_3"><a class="link" href="#_request_url_3">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/create-rollout/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/rollouts HTTP/1.1
+Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 490
+Accept: application/hal+json
+Host: management-api.host.com
+
+{
+  "distributionSetId" : 22,
+  "successCondition" : {
+    "condition" : "THRESHOLD",
+    "expression" : "50"
+  },
+  "successAction" : {
+    "expression" : "",
+    "action" : "NEXTGROUP"
+  },
+  "targetFilterQuery" : "id==targets-*",
+  "name" : "exampleRollout",
+  "description" : "Rollout for all named targets",
+  "amountGroups" : 10,
+  "errorAction" : {
+    "expression" : "",
+    "action" : "PAUSE"
+  },
+  "errorCondition" : {
+    "condition" : "THRESHOLD",
+    "expression" : "80"
+  }
+}</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_fields"><a class="link" href="#_request_fields">Request fields</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/create-rollout/request-fields.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Allowed Values</th>
+<th class="tableblock halign-left valign-top">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the ID of distributionset of this rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">targetFilterQuery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target filter query language expression</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">amountGroups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the amount of groups the rollout should split targets into</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successCondition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success condition which takes in place to evaluate if a rollout group is successful and so the next group can be started</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successCondition.condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of the condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['threshold']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successCondition.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression according to the condition, e.g. the value of threshold in percentage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successAction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success action which takes in place to execute in case the success action is fulfilled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successAction.action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success action to execute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['nextgroup']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successAction.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression for the success action</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorCondition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error condition which takes in place to evaluate if a rollout group encounter errors</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorCondition.condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of the condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['threshold']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorCondition.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression according to the condition, e.g. the value of threshold in percentage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorAction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error action which is executed if the error condition is fulfilled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorAction.action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error action to execute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['pause']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorAction.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression for the error action</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_201"><a class="link" href="#_response_status_201">Response (Status 201)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_3"><a class="link" href="#_response_fields_3">Response fields</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/create-rollout/response-fields.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Allowed Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">targetFilterQuery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target filter query language expression</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the ID of distributionset of this rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the status of this rollout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['creating','ready','paused','running','finished']</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of this rollout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['forced','soft','timeforced','downloadonly']</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">totalTargets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the total targets of a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">totalTargetsPerStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the total targets per status</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to start the rollout in sync mode</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.pause</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to pause a running rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.resume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to resume a paused rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.groups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to retrieve the groups a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.approve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to approve a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.deny</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to deny a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_response_example_3"><a class="link" href="#_response_example_3">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/create-rollout/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
+Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 1358
+
+{
+  "createdBy" : "bumlux",
+  "createdAt" : 1564644129892,
+  "lastModifiedBy" : "bumlux",
+  "lastModifiedAt" : 1564644129892,
+  "name" : "exampleRollout",
+  "description" : "Rollout for all named targets",
+  "targetFilterQuery" : "id==targets-*",
+  "distributionSetId" : 22,
+  "status" : "creating",
+  "totalTargets" : 20,
+  "totalTargetsPerStatus" : {
+    "running" : 0,
+    "notstarted" : 20,
+    "scheduled" : 0,
+    "cancelled" : 0,
+    "finished" : 0,
+    "error" : 0
+  },
+  "deleted" : false,
+  "type" : "forced",
+  "_links" : {
+    "start" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/6/start"
+    },
+    "pause" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/6/pause"
+    },
+    "resume" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/6/resume"
+    },
+    "approve" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/6/approve{?remark}",
+      "templated" : true
+    },
+    "deny" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/6/deny{?remark}",
+      "templated" : true
+    },
+    "groups" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/6/deploygroups?offset=0&amp;limit=50{&amp;sort,q}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/6"
+    }
+  },
+  "id" : 6
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -689,35 +1460,591 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_create_rollout_with_groups_definition"><a class="link" href="#_create_rollout_with_groups_definition">Create Rollout with groups definition</a></h3>
 <div class="sect3">
 <h4 id="_curl_4"><a class="link" href="#_curl_4">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/create-rollout-with-groups-definition/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts' -i -X POST \
+    -H 'Content-Type: application/json' \
+    -H 'Accept: application/hal+json' \
+    -d '{
+  "distributionSetId" : 24,
+  "successCondition" : {
+    "condition" : "THRESHOLD",
+    "expression" : "50"
+  },
+  "successAction" : {
+    "expression" : "",
+    "action" : "NEXTGROUP"
+  },
+  "targetFilterQuery" : "id==targets-*",
+  "name" : "exampleRolloutWithDefinedGroups",
+  "description" : "Rollout for all named targets",
+  "groups" : [ {
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "90"
+    },
+    "targetPercentage" : 20,
+    "successAction" : {
+      "expression" : "",
+      "action" : "NEXTGROUP"
+    },
+    "targetFilterQuery" : "name==targets-1*",
+    "name" : "Group1",
+    "description" : "Group1desc",
+    "errorAction" : {
+      "expression" : "",
+      "action" : "PAUSE"
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "30"
+    }
+  }, {
+    "successCondition" : {
+      "condition" : "THRESHOLD"
+    },
+    "targetPercentage" : 100,
+    "successAction" : {
+      "action" : "NEXTGROUP"
+    },
+    "name" : "Group2",
+    "description" : "Group2desc"
+  } ],
+  "errorAction" : {
+    "expression" : "",
+    "action" : "PAUSE"
+  },
+  "errorCondition" : {
+    "condition" : "THRESHOLD",
+    "expression" : "80"
+  }
+}'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_4"><a class="link" href="#_request_url_4">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/create-rollout-with-groups-definition/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/rollouts HTTP/1.1
+Content-Type: application/json
+Accept: application/hal+json
+Content-Length: 1206
+Host: management-api.host.com
+
+{
+  "distributionSetId" : 24,
+  "successCondition" : {
+    "condition" : "THRESHOLD",
+    "expression" : "50"
+  },
+  "successAction" : {
+    "expression" : "",
+    "action" : "NEXTGROUP"
+  },
+  "targetFilterQuery" : "id==targets-*",
+  "name" : "exampleRolloutWithDefinedGroups",
+  "description" : "Rollout for all named targets",
+  "groups" : [ {
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "90"
+    },
+    "targetPercentage" : 20,
+    "successAction" : {
+      "expression" : "",
+      "action" : "NEXTGROUP"
+    },
+    "targetFilterQuery" : "name==targets-1*",
+    "name" : "Group1",
+    "description" : "Group1desc",
+    "errorAction" : {
+      "expression" : "",
+      "action" : "PAUSE"
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "30"
+    }
+  }, {
+    "successCondition" : {
+      "condition" : "THRESHOLD"
+    },
+    "targetPercentage" : 100,
+    "successAction" : {
+      "action" : "NEXTGROUP"
+    },
+    "name" : "Group2",
+    "description" : "Group2desc"
+  } ],
+  "errorAction" : {
+    "expression" : "",
+    "action" : "PAUSE"
+  },
+  "errorCondition" : {
+    "condition" : "THRESHOLD",
+    "expression" : "80"
+  }
+}</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_fields_2"><a class="link" href="#_request_fields_2">Request fields</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/create-rollout-with-groups-definition/request-fields.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Allowed Values</th>
+<th class="tableblock halign-left valign-top">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the ID of distributionset of this rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">targetFilterQuery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target filter query language expression</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successCondition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success condition which takes in place to evaluate if a rollout group is successful and so the next group can be started</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successCondition.condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of the condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['threshold']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successCondition.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression according to the condition, e.g. the value of threshold in percentage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successAction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success action which takes in place to execute in case the success action is fulfilled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successAction.action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success action to execute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['nextgroup']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successAction.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression for the success action</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorCondition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error condition which takes in place to evaluate if a rollout group encounter errors</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorCondition.condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of the condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['threshold']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorCondition.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression according to the condition, e.g. the value of threshold in percentage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorAction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error action which is executed if the error condition is fulfilled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorAction.action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error action to execute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['pause']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorAction.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression for the error action</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the list of group definitions</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].targetFilterQuery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target filter query language expression that selects a subset of targets which match the target filter of the Rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].targetPercentage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">percentage of remaining and matching targets that should be added to this group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0..100</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].successCondition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success condition which takes in place to evaluate if a rollout group is successful and so the next group can be started</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].successCondition.condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of the condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['threshold']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].successCondition.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression according to the condition, e.g. the value of threshold in percentage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].successAction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success action which takes in place to execute in case the success action is fulfilled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].successAction.action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success action to execute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['nextgroup']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].successAction.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression for the success action</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].errorCondition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error condition which takes in place to evaluate if a rollout group encounter errors</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].errorCondition.condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of the condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['threshold']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].errorCondition.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression according to the condition, e.g. the value of threshold in percentage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].errorAction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error action which is executed if the error condition is fulfilled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].errorAction.action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error action to execute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['pause']</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groups[].errorAction.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression for the error action</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_201_2"><a class="link" href="#_response_status_201_2">Response (Status 201)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_4"><a class="link" href="#_response_fields_4">Response fields</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/create-rollout-with-groups-definition/response-fields.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Allowed Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">targetFilterQuery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target filter query language expression</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">distributionSetId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the ID of distributionset of this rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the status of this rollout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['creating','ready','paused','running','finished']</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of this rollout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['forced','soft','timeforced','downloadonly']</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">totalTargets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the total targets of a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">totalTargetsPerStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the total targets per status</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to start the rollout in sync mode</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.pause</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to pause a running rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.resume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to resume a paused rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.groups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to retrieve the groups a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.approve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to approve a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">_links.deny</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to deny a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_response_example_4"><a class="link" href="#_response_example_4">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/create-rollout-with-groups-definition/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
+Content-Length: 1375
+Content-Type: application/hal+json;charset=UTF-8
+
+{
+  "createdBy" : "bumlux",
+  "createdAt" : 1564644140321,
+  "lastModifiedBy" : "bumlux",
+  "lastModifiedAt" : 1564644140321,
+  "name" : "exampleRolloutWithDefinedGroups",
+  "description" : "Rollout for all named targets",
+  "targetFilterQuery" : "id==targets-*",
+  "distributionSetId" : 24,
+  "status" : "creating",
+  "totalTargets" : 10,
+  "totalTargetsPerStatus" : {
+    "running" : 0,
+    "notstarted" : 10,
+    "scheduled" : 0,
+    "cancelled" : 0,
+    "finished" : 0,
+    "error" : 0
+  },
+  "deleted" : false,
+  "type" : "forced",
+  "_links" : {
+    "start" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/8/start"
+    },
+    "pause" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/8/pause"
+    },
+    "resume" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/8/resume"
+    },
+    "approve" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/8/approve{?remark}",
+      "templated" : true
+    },
+    "deny" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/8/deny{?remark}",
+      "templated" : true
+    },
+    "groups" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/8/deploygroups?offset=0&amp;limit=50{&amp;sort,q}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/8"
+    }
+  },
+  "id" : 8
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -797,14 +2124,21 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_approve_rollout"><a class="link" href="#_approve_rollout">Approve Rollout</a></h3>
 <div class="sect3">
 <h4 id="_curl_5"><a class="link" href="#_curl_5">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/approve-rollout/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/1/approve' -i -X POST \
+    -H 'Accept: application/hal+json'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_5"><a class="link" href="#_request_url_5">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/approve-rollout/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/rollouts/1/approve HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -812,8 +2146,10 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_response_status_200_3"><a class="link" href="#_response_status_200_3">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_example_5"><a class="link" href="#_response_example_5">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/approve-rollout/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -881,14 +2217,21 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_deny_rollout"><a class="link" href="#_deny_rollout">Deny Rollout</a></h3>
 <div class="sect3">
 <h4 id="_curl_6"><a class="link" href="#_curl_6">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/deny-rollout/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/7/deny' -i -X POST \
+    -H 'Accept: application/hal+json'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_6"><a class="link" href="#_request_url_6">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/deny-rollout/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/rollouts/7/deny HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -896,8 +2239,10 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_response_status_200_4"><a class="link" href="#_response_status_200_4">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_example_6"><a class="link" href="#_response_example_6">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/deny-rollout/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -963,14 +2308,21 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_start_rollout"><a class="link" href="#_start_rollout">Start Rollout</a></h3>
 <div class="sect3">
 <h4 id="_curl_7"><a class="link" href="#_curl_7">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/start-rollout/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/12/start' -i -X POST \
+    -H 'Accept: application/hal+json'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_7"><a class="link" href="#_request_url_7">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/start-rollout/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/rollouts/12/start HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -978,8 +2330,10 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_response_status_200_5"><a class="link" href="#_response_status_200_5">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_example_7"><a class="link" href="#_response_example_7">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/start-rollout/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1045,20 +2399,29 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_pause_rollout"><a class="link" href="#_pause_rollout">Pause Rollout</a></h3>
 <div class="sect3">
 <h4 id="_curl_8"><a class="link" href="#_curl_8">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/pause-rollout/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/5/pause' -i -X POST \
+    -H 'Accept: application/hal+json'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_8"><a class="link" href="#_request_url_8">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/pause-rollout/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/rollouts/5/pause HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_8"><a class="link" href="#_response_example_8">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/pause-rollout/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1124,20 +2487,29 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_resume_rollout"><a class="link" href="#_resume_rollout">Resume Rollout</a></h3>
 <div class="sect3">
 <h4 id="_curl_9"><a class="link" href="#_curl_9">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/resume-rollout/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/4/resume' -i -X POST \
+    -H 'Accept: application/hal+json'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_9"><a class="link" href="#_request_url_9">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/resume-rollout/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/rollouts/4/resume HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_9"><a class="link" href="#_response_example_9">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/resume-rollout/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1203,29 +2575,51 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_deleting_a_rollout"><a class="link" href="#_deleting_a_rollout">Deleting a rollout</a></h3>
 <div class="sect3">
 <h4 id="_curl_10"><a class="link" href="#_curl_10">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/delete-rollout/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/11' -i -X DELETE</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_10"><a class="link" href="#_request_url_10">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/delete-rollout/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/rollouts/11 HTTP/1.1
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_2"><a class="link" href="#_request_path_parameter_2">Request path parameter</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/delete-rollout/path-parameters.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rolloutId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_6"><a class="link" href="#_response_status_200_6">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_example_10"><a class="link" href="#_response_example_10">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/delete-rollout/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1298,32 +2692,85 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_get_deploy_groups"><a class="link" href="#_get_deploy_groups">Get Deploy Groups</a></h3>
 <div class="sect3">
 <h4 id="_curl_11"><a class="link" href="#_curl_11">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-groups/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/13/deploygroups' -i -X GET \
+    -H 'Accept: application/hal+json'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_11"><a class="link" href="#_request_url_11">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-groups/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/rollouts/13/deploygroups HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_3"><a class="link" href="#_request_path_parameter_3">Request path parameter</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-groups/path-parameters.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rolloutId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_request_query_parameter_2"><a class="link" href="#_request_query_parameter_2">Request query parameter</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollouts-with-parameters/request-parameters.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>limit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of entries in a page (default is 50).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The query parameter sort allows to define the sort order for the result of a query. A sort criteria consists of the name of a field and the sort direction (ASC for ascending and DESC descending). The sequence of the sort criteria (multiple can be used) defines the sort order of the entities in the result.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offset</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The paging offset (default is 0).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>q</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query fields based on the Feed Item Query Language (FIQL). See Entity Definitions for available fields.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_request_query_parameter_example_2"><a class="link" href="#_request_query_parameter_example_2">Request query parameter example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollouts-with-parameters/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/rollouts?offset=0&amp;limit=2&amp;sort=id%3ADESC&amp;q=name%3D%3DexampleRollout* HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1331,14 +2778,525 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_response_status_200_7"><a class="link" href="#_response_status_200_7">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_5"><a class="link" href="#_response_fields_5">Response fields</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-groups/response-fields.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Allowed Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total number of elements</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current page size</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list of rollouts</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the status of this rollout group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['creating','ready','paused','running','finished']</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].totalTargets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the total targets of a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].targetFilterQuery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target filter query language expression that selects a subset of targets which match the target filter of the Rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].targetPercentage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">percentage of remaining and matching targets that should be added to this group</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].successCondition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success condition which takes in place to evaluate if a rollout group is successful and so the next group can be started</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].successCondition.condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of the condition</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].successCondition.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression according to the condition, e.g. the value of threshold in percentage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].successAction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success action which takes in place to execute in case the success action is fulfilled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].successAction.action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success action to execute</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].successAction.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression for the success action</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].errorCondition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error condition which takes in place to evaluate if a rollout group encounter errors</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].errorCondition.condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of the condition</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].errorCondition.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression according to the condition, e.g. the value of threshold in percentage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].errorAction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error action which is executed if the error condition is fulfilled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].errorAction.action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error action to execute</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].errorAction.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression for the error action</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_response_example_11"><a class="link" href="#_response_example_11">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-groups/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 8104
+
+{
+  "content" : [ {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644166652,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644166782,
+    "name" : "group-1",
+    "description" : "group-1",
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "10"
+    },
+    "successAction" : {
+      "action" : "NEXTGROUP",
+      "expression" : ""
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "50"
+    },
+    "errorAction" : {
+      "action" : "PAUSE",
+      "expression" : ""
+    },
+    "targetFilterQuery" : "",
+    "targetPercentage" : 10.0,
+    "status" : "ready",
+    "totalTargets" : 2,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/rollouts/13/deploygroups/113"
+      }
+    },
+    "id" : 113
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644166654,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644166783,
+    "name" : "group-2",
+    "description" : "group-2",
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "10"
+    },
+    "successAction" : {
+      "action" : "NEXTGROUP",
+      "expression" : ""
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "50"
+    },
+    "errorAction" : {
+      "action" : "PAUSE",
+      "expression" : ""
+    },
+    "targetFilterQuery" : "",
+    "targetPercentage" : 11.111112,
+    "status" : "ready",
+    "totalTargets" : 2,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/rollouts/13/deploygroups/114"
+      }
+    },
+    "id" : 114
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644166655,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644166784,
+    "name" : "group-3",
+    "description" : "group-3",
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "10"
+    },
+    "successAction" : {
+      "action" : "NEXTGROUP",
+      "expression" : ""
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "50"
+    },
+    "errorAction" : {
+      "action" : "PAUSE",
+      "expression" : ""
+    },
+    "targetFilterQuery" : "",
+    "targetPercentage" : 12.5,
+    "status" : "ready",
+    "totalTargets" : 2,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/rollouts/13/deploygroups/115"
+      }
+    },
+    "id" : 115
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644166657,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644166785,
+    "name" : "group-4",
+    "description" : "group-4",
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "10"
+    },
+    "successAction" : {
+      "action" : "NEXTGROUP",
+      "expression" : ""
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "50"
+    },
+    "errorAction" : {
+      "action" : "PAUSE",
+      "expression" : ""
+    },
+    "targetFilterQuery" : "",
+    "targetPercentage" : 14.285715,
+    "status" : "ready",
+    "totalTargets" : 2,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/rollouts/13/deploygroups/116"
+      }
+    },
+    "id" : 116
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644166658,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644166786,
+    "name" : "group-5",
+    "description" : "group-5",
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "10"
+    },
+    "successAction" : {
+      "action" : "NEXTGROUP",
+      "expression" : ""
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "50"
+    },
+    "errorAction" : {
+      "action" : "PAUSE",
+      "expression" : ""
+    },
+    "targetFilterQuery" : "",
+    "targetPercentage" : 16.666668,
+    "status" : "ready",
+    "totalTargets" : 2,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/rollouts/13/deploygroups/117"
+      }
+    },
+    "id" : 117
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644166659,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644166787,
+    "name" : "group-6",
+    "description" : "group-6",
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "10"
+    },
+    "successAction" : {
+      "action" : "NEXTGROUP",
+      "expression" : ""
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "50"
+    },
+    "errorAction" : {
+      "action" : "PAUSE",
+      "expression" : ""
+    },
+    "targetFilterQuery" : "",
+    "targetPercentage" : 20.0,
+    "status" : "ready",
+    "totalTargets" : 2,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/rollouts/13/deploygroups/118"
+      }
+    },
+    "id" : 118
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644166660,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644166788,
+    "name" : "group-7",
+    "description" : "group-7",
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "10"
+    },
+    "successAction" : {
+      "action" : "NEXTGROUP",
+      "expression" : ""
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "50"
+    },
+    "errorAction" : {
+      "action" : "PAUSE",
+      "expression" : ""
+    },
+    "targetFilterQuery" : "",
+    "targetPercentage" : 25.0,
+    "status" : "ready",
+    "totalTargets" : 2,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/rollouts/13/deploygroups/119"
+      }
+    },
+    "id" : 119
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644166661,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644166789,
+    "name" : "group-8",
+    "description" : "group-8",
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "10"
+    },
+    "successAction" : {
+      "action" : "NEXTGROUP",
+      "expression" : ""
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "50"
+    },
+    "errorAction" : {
+      "action" : "PAUSE",
+      "expression" : ""
+    },
+    "targetFilterQuery" : "",
+    "targetPercentage" : 33.333336,
+    "status" : "ready",
+    "totalTargets" : 2,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/rollouts/13/deploygroups/120"
+      }
+    },
+    "id" : 120
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644166662,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644166790,
+    "name" : "group-9",
+    "description" : "group-9",
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "10"
+    },
+    "successAction" : {
+      "action" : "NEXTGROUP",
+      "expression" : ""
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "50"
+    },
+    "errorAction" : {
+      "action" : "PAUSE",
+      "expression" : ""
+    },
+    "targetFilterQuery" : "",
+    "targetPercentage" : 50.0,
+    "status" : "ready",
+    "totalTargets" : 2,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/rollouts/13/deploygroups/121"
+      }
+    },
+    "id" : 121
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644166663,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644166791,
+    "name" : "group-10",
+    "description" : "group-10",
+    "successCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "10"
+    },
+    "successAction" : {
+      "action" : "NEXTGROUP",
+      "expression" : ""
+    },
+    "errorCondition" : {
+      "condition" : "THRESHOLD",
+      "expression" : "50"
+    },
+    "errorAction" : {
+      "action" : "PAUSE",
+      "expression" : ""
+    },
+    "targetFilterQuery" : "",
+    "targetPercentage" : 100.0,
+    "status" : "ready",
+    "totalTargets" : 2,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/rollouts/13/deploygroups/122"
+      }
+    },
+    "id" : 122
+  } ],
+  "total" : 10,
+  "size" : 10
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1411,35 +3369,267 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_get_deploy_groups_2"><a class="link" href="#_get_deploy_groups_2">Get Deploy Groups</a></h3>
 <div class="sect3">
 <h4 id="_curl_12"><a class="link" href="#_curl_12">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/16/deploygroups/143' -i -X GET \
+    -H 'Accept: application/hal+json'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_12"><a class="link" href="#_request_url_12">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/rollouts/16/deploygroups/143 HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_4"><a class="link" href="#_request_path_parameter_4">Request path parameter</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group/path-parameters.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rolloutId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deployGroupId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_8"><a class="link" href="#_response_status_200_8">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_6"><a class="link" href="#_response_fields_6">Response fields</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group/response-fields.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Allowed Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the status of this rollout group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['creating','ready','paused','running','finished']</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">totalTargets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the total targets of a rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">totalTargetsPerStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the total targets per status</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">targetFilterQuery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target filter query language expression that selects a subset of targets which match the target filter of the Rollout</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">targetPercentage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">percentage of remaining and matching targets that should be added to this group</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successCondition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success condition which takes in place to evaluate if a rollout group is successful and so the next group can be started</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successCondition.condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of the condition</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successCondition.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression according to the condition, e.g. the value of threshold in percentage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successAction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success action which takes in place to execute in case the success action is fulfilled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successAction.action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the success action to execute</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">successAction.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression for the success action</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorCondition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error condition which takes in place to evaluate if a rollout group encounter errors</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorCondition.condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the type of the condition</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorCondition.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression according to the condition, e.g. the value of threshold in percentage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorAction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error action which is executed if the error condition is fulfilled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorAction.action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the error action to execute</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorAction.expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the expression for the error action</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_response_example_12"><a class="link" href="#_response_example_12">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 889
+Content-Type: application/hal+json;charset=UTF-8
+
+{
+  "createdBy" : "bumlux",
+  "createdAt" : 1564644182519,
+  "lastModifiedBy" : "bumlux",
+  "lastModifiedAt" : 1564644182628,
+  "name" : "group-1",
+  "description" : "group-1",
+  "successCondition" : {
+    "condition" : "THRESHOLD",
+    "expression" : "10"
+  },
+  "successAction" : {
+    "action" : "NEXTGROUP",
+    "expression" : ""
+  },
+  "errorCondition" : {
+    "condition" : "THRESHOLD",
+    "expression" : "50"
+  },
+  "errorAction" : {
+    "action" : "PAUSE",
+    "expression" : ""
+  },
+  "targetFilterQuery" : "",
+  "targetPercentage" : 10.0,
+  "status" : "ready",
+  "totalTargets" : 2,
+  "totalTargetsPerStatus" : {
+    "running" : 0,
+    "notstarted" : 2,
+    "scheduled" : 0,
+    "cancelled" : 0,
+    "finished" : 0,
+    "error" : 0
+  },
+  "_links" : {
+    "self" : {
+      "href" : "https://management-api.host.com/rest/v1/rollouts/16/deploygroups/143"
+    }
+  },
+  "id" : 143
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1512,32 +3702,89 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_get_deploy_group_targets"><a class="link" href="#_get_deploy_group_targets">Get Deploy Group Targets</a></h3>
 <div class="sect3">
 <h4 id="_curl_13"><a class="link" href="#_curl_13">CURL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group-targets/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/rollouts/14/deploygroups/123/targets' -i -X GET \
+    -H 'Accept: application/hal+json'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_13"><a class="link" href="#_request_url_13">Request URL</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group-targets/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/rollouts/14/deploygroups/123/targets HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_5"><a class="link" href="#_request_path_parameter_5">Request path parameter</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group-targets/path-parameters.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rolloutId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deployGroupId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_request_query_parameter_3"><a class="link" href="#_request_query_parameter_3">Request query parameter</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group-targets-with-parameters/request-parameters.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>limit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of entries in a page (default is 50).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The query parameter sort allows to define the sort order for the result of a query. A sort criteria consists of the name of a field and the sort direction (ASC for ascending and DESC descending). The sequence of the sort criteria (multiple can be used) defines the sort order of the entities in the result.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offset</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The paging offset (default is 0).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>q</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query fields based on the Feed Item Query Language (FIQL). See Entity Definitions for available fields.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_request_query_parameter_example_3"><a class="link" href="#_request_query_parameter_example_3">Request query parameter example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group-targets-with-parameters/http-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/rollouts/3/deploygroups/21/targets?offset=0&amp;limit=2&amp;sort=name%3AASC&amp;q=controllerId%3D%3DexampleTarget0 HTTP/1.1
+Accept: application/hal+json
+Host: management-api.host.com</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1545,14 +3792,167 @@ Required Permission: APPROVE_ROLLOUT</p>
 <h3 id="_response_status_200_9"><a class="link" href="#_response_status_200_9">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_7"><a class="link" href="#_response_fields_7">Response fields</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group-targets/response-fields.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Allowed Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current page size</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total number of elements</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of provisioning targets.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">class java.lang.String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The last known address URI of the target. Includes information of the target is connected either directly (DDI) through HTTP or indirectly (DMF) through amqp.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">class java.lang.String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].controllerId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].updateStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current update status of the target.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['error', 'in_sync', 'pending', 'registered', 'unknown']</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].securityToken</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pre-Shared key that allows targets to authenticate at Direct Device Integration API if enabled in the tenant settings.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].installedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">class java.lang.Long</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Installation time of current installed DistributionSet.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by User, AMQP-Controller, anonymous etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].ipAddress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last known IP address of the target. Only presented if IP address of the target itself is known (connected directly through DDI API).</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastControllerRequestAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last time where the target polled the server, same as pollStatus.lastRequestAt.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_response_example_13"><a class="link" href="#_response_example_13">Response example</a></h4>
-<div class="paragraph">
-<p>Unresolved directive in rollout-api-guide.adoc - include::/Users/laverman/IdeaProjects/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/rollouts/get-rollout-deploy-group-targets/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 1077
+Content-Type: application/hal+json;charset=UTF-8
+
+{
+  "content" : [ {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644171915,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644171915,
+    "name" : "exampleTarget-00000",
+    "description" : "exampleTarget0",
+    "controllerId" : "exampleTarget-00000",
+    "updateStatus" : "unknown",
+    "securityToken" : "ec332b452b9661ba156e12eed7ad3b5a",
+    "requestAttributes" : true,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/targets/exampleTarget-00000"
+      }
+    }
+  }, {
+    "createdBy" : "bumlux",
+    "createdAt" : 1564644171916,
+    "lastModifiedBy" : "bumlux",
+    "lastModifiedAt" : 1564644171916,
+    "name" : "exampleTarget-00001",
+    "description" : "exampleTarget1",
+    "controllerId" : "exampleTarget-00001",
+    "updateStatus" : "unknown",
+    "securityToken" : "4a4d756f0be0cef975d36ac300d682c2",
+    "requestAttributes" : true,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/targets/exampleTarget-00001"
+      }
+    }
+  } ],
+  "total" : 2,
+  "size" : 2
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
