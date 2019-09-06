@@ -557,7 +557,7 @@ Content-Length: 355
   },
   "_links" : {
     "deploymentBase" : {
-      "href" : "https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/deploymentBase/81?c=-2056995960"
+      "href" : "https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/deploymentBase/82?c=-2056072439"
     },
     "configData" : {
       "href" : "https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/configData"
@@ -637,7 +637,7 @@ Content-Length: 337
   },
   "_links" : {
     "cancelAction" : {
-      "href" : "https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/cancelAction/79"
+      "href" : "https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/cancelAction/80"
     },
     "configData" : {
       "href" : "https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/configData"
@@ -714,7 +714,7 @@ Content-Length: 337
 <h4 id="_curl_2"><a class="link" href="#_curl_2">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/cancelAction/84' -i -X GET \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/cancelAction/85' -i -X GET \
     -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
@@ -723,7 +723,7 @@ Content-Length: 337
 <h4 id="_request_url_2"><a class="link" href="#_request_url_2">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /TENANT_ID/controller/v1/CONTROLLER_ID/cancelAction/84 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /TENANT_ID/controller/v1/CONTROLLER_ID/cancelAction/85 HTTP/1.1
 Host: ddi-api.host.com
 Accept: application/hal+json</code></pre>
 </div>
@@ -809,9 +809,9 @@ Content-Length: 63
 Content-Type: application/hal+json;charset=UTF-8
 
 {
-  "id" : "84",
+  "id" : "85",
   "cancelAction" : {
-    "stopId" : "84"
+    "stopId" : "85"
   }
 }</code></pre>
 </div>
@@ -884,10 +884,10 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_curl_3"><a class="link" href="#_curl_3">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/cancelAction/87/feedback' -i -X POST \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/cancelAction/88/feedback' -i -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -d '{
-  "id" : "87",
+  "id" : "88",
   "time" : "20140511T121314",
   "status" : {
     "result" : {
@@ -904,13 +904,13 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_request_url_3"><a class="link" href="#_request_url_3">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /TENANT_ID/controller/v1/CONTROLLER_ID/cancelAction/87/feedback HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /TENANT_ID/controller/v1/CONTROLLER_ID/cancelAction/88/feedback HTTP/1.1
 Content-Length: 184
 Host: ddi-api.host.com
 Content-Type: application/json;charset=UTF-8
 
 {
-  "id" : "87",
+  "id" : "88",
   "time" : "20140511T121314",
   "status" : {
     "result" : {
@@ -1349,7 +1349,7 @@ Content-Type: application/json;charset=UTF-8
 <h4 id="_curl_5"><a class="link" href="#_curl_5">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/deploymentBase/82?actionHistory=10' -i -X GET \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/deploymentBase/83?actionHistory=10' -i -X GET \
     -H 'Accept: application/hal+json'</code></pre>
 </div>
 </div>
@@ -1358,7 +1358,7 @@ Content-Type: application/json;charset=UTF-8
 <h4 id="_request_url_5"><a class="link" href="#_request_url_5">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /TENANT_ID/controller/v1/CONTROLLER_ID/deploymentBase/82?actionHistory=10 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /TENANT_ID/controller/v1/CONTROLLER_ID/deploymentBase/83?actionHistory=10 HTTP/1.1
 Host: ddi-api.host.com
 Accept: application/hal+json</code></pre>
 </div>
@@ -1603,26 +1603,26 @@ Accept: application/hal+json</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 7198
+Content-Length: 7203
 
 {
-  "id" : "82",
+  "id" : "83",
   "deployment" : {
     "download" : "forced",
     "update" : "forced",
     "maintenanceWindow" : "available",
     "chunks" : [ {
       "part" : "bApp",
-      "version" : "1.0.46",
+      "version" : "1.0.56",
       "name" : "oneapplication",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "2d86c2a659e364e9abba49ea6ffcd53dd5559f05",
-          "md5" : "0d1b08c34858921bc7c662b228acb7ba",
-          "sha256" : "a03b221c6c6eae7122ca51695d456d5222e524889136394944b2f9763b483615"
+          "sha1" : "8a7392fdfb2ce521a1ddcc17dec89c991e7a76d7",
+          "md5" : "b3e0fb6c0b8217586737bf125e0a290f",
+          "sha256" : "67d7ed83397981d19a08dde1b0830c83723ba1b3d06b6596f3b5024d30f4c8ae"
         },
-        "size" : 3,
+        "size" : 11,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/305/filename/binary.tgz"
@@ -1640,11 +1640,11 @@ Content-Length: 7198
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "2d86c2a659e364e9abba49ea6ffcd53dd5559f05",
-          "md5" : "0d1b08c34858921bc7c662b228acb7ba",
-          "sha256" : "a03b221c6c6eae7122ca51695d456d5222e524889136394944b2f9763b483615"
+          "sha1" : "8a7392fdfb2ce521a1ddcc17dec89c991e7a76d7",
+          "md5" : "b3e0fb6c0b8217586737bf125e0a290f",
+          "sha256" : "67d7ed83397981d19a08dde1b0830c83723ba1b3d06b6596f3b5024d30f4c8ae"
         },
-        "size" : 3,
+        "size" : 11,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/305/filename/file.signature"
@@ -1662,16 +1662,16 @@ Content-Length: 7198
       } ]
     }, {
       "part" : "jvm",
-      "version" : "1.0.26",
+      "version" : "1.0.13",
       "name" : "oneapp runtime",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "3b93fd2d045d59af27a25c719945db1d9fe3decb",
-          "md5" : "e94f0bfab8c987a7437ba4e1697c1cc0",
-          "sha256" : "5d04c6a96439100ad3cb4672ef2fdc219dae8aaa655c9a3095c9e7ad25f4d96c"
+          "sha1" : "3be71354ef02334c31dfa9bce91cde1c6fc22115",
+          "md5" : "5b0d83b772a785fc5d78e66e4e03528c",
+          "sha256" : "5a5936a2d54f0d795eeeae60b7a6a4644c286f19dd220af688903a995c8b1898"
         },
-        "size" : 4,
+        "size" : 15,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/306/filename/binary.tgz"
@@ -1689,11 +1689,11 @@ Content-Length: 7198
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "3b93fd2d045d59af27a25c719945db1d9fe3decb",
-          "md5" : "e94f0bfab8c987a7437ba4e1697c1cc0",
-          "sha256" : "5d04c6a96439100ad3cb4672ef2fdc219dae8aaa655c9a3095c9e7ad25f4d96c"
+          "sha1" : "3be71354ef02334c31dfa9bce91cde1c6fc22115",
+          "md5" : "5b0d83b772a785fc5d78e66e4e03528c",
+          "sha256" : "5a5936a2d54f0d795eeeae60b7a6a4644c286f19dd220af688903a995c8b1898"
         },
-        "size" : 4,
+        "size" : 15,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/306/filename/file.signature"
@@ -1711,16 +1711,16 @@ Content-Length: 7198
       } ]
     }, {
       "part" : "os",
-      "version" : "1.0.99",
+      "version" : "1.0.6",
       "name" : "one Firmware",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "3b93fd2d045d59af27a25c719945db1d9fe3decb",
-          "md5" : "e94f0bfab8c987a7437ba4e1697c1cc0",
-          "sha256" : "5d04c6a96439100ad3cb4672ef2fdc219dae8aaa655c9a3095c9e7ad25f4d96c"
+          "sha1" : "e72107909de2b6dbb9b36141c64af58f3f95abe2",
+          "md5" : "a61b237485ffdab37df7324bcb52a9e4",
+          "sha256" : "0605827450ec3eba08322b8d91159100f012638d64c063d94831fe2013b1eb8f"
         },
-        "size" : 4,
+        "size" : 11,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/307/filename/binary.tgz"
@@ -1738,11 +1738,11 @@ Content-Length: 7198
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "3b93fd2d045d59af27a25c719945db1d9fe3decb",
-          "md5" : "e94f0bfab8c987a7437ba4e1697c1cc0",
-          "sha256" : "5d04c6a96439100ad3cb4672ef2fdc219dae8aaa655c9a3095c9e7ad25f4d96c"
+          "sha1" : "e72107909de2b6dbb9b36141c64af58f3f95abe2",
+          "md5" : "a61b237485ffdab37df7324bcb52a9e4",
+          "sha256" : "0605827450ec3eba08322b8d91159100f012638d64c063d94831fe2013b1eb8f"
         },
-        "size" : 4,
+        "size" : 11,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/307/filename/file.signature"
@@ -1793,24 +1793,24 @@ Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 496
 
 {
-  "id" : "85",
+  "id" : "86",
   "deployment" : {
     "download" : "forced",
     "update" : "skip",
     "maintenanceWindow" : "unavailable",
     "chunks" : [ {
       "part" : "jvm",
-      "version" : "1.0.94",
+      "version" : "1.0.38",
       "name" : "oneapp runtime",
       "artifacts" : [ ]
     }, {
       "part" : "bApp",
-      "version" : "1.0.39",
+      "version" : "1.0.71",
       "name" : "oneapplication",
       "artifacts" : [ ]
     }, {
       "part" : "os",
-      "version" : "1.0.57",
+      "version" : "1.0.88",
       "name" : "one Firmware",
       "artifacts" : [ ]
     } ]
@@ -1886,11 +1886,11 @@ Content-Length: 496
 <h4 id="_curl_6"><a class="link" href="#_curl_6">Curl</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/deploymentBase/83/feedback' -i -X POST \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://ddi-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/deploymentBase/84/feedback' -i -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/hal+json' \
     -d '{
-  "id" : "83",
+  "id" : "84",
   "time" : "20140511T121314",
   "status" : {
     "result" : {
@@ -1911,14 +1911,14 @@ Content-Length: 496
 <h4 id="_request_url_6"><a class="link" href="#_request_url_6">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /TENANT_ID/controller/v1/CONTROLLER_ID/deploymentBase/83/feedback HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /TENANT_ID/controller/v1/CONTROLLER_ID/deploymentBase/84/feedback HTTP/1.1
 Content-Length: 250
 Host: ddi-api.host.com
 Content-Type: application/json;charset=UTF-8
 Accept: application/hal+json
 
 {
-  "id" : "83",
+  "id" : "84",
   "time" : "20140511T121314",
   "status" : {
     "result" : {
@@ -2257,17 +2257,17 @@ Accept: application/hal+json</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 926
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 925
 
 [ {
   "filename" : "binaryFile",
   "hashes" : {
-    "sha1" : "3b93fd2d045d59af27a25c719945db1d9fe3decb",
-    "md5" : "e94f0bfab8c987a7437ba4e1697c1cc0",
-    "sha256" : "5d04c6a96439100ad3cb4672ef2fdc219dae8aaa655c9a3095c9e7ad25f4d96c"
+    "sha1" : "116c563c060b5bcad6ac6ff984cd1296781b0d45",
+    "md5" : "5873ddc4e14c924c81e2f22c2ca0d050",
+    "sha256" : "9c165676477947163e67585c17a59a7ed980689ee7872b25afa799d11f17f9b6"
   },
-  "size" : 4,
+  "size" : 11,
   "_links" : {
     "download" : {
       "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/318/filename/binaryFile"
@@ -2392,7 +2392,7 @@ Content-Length: 925
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-06-21 11:05:51 +02:00
+Last updated 2019-04-23 14:00:53 +02:00
 </div>
 </div>
 </body>

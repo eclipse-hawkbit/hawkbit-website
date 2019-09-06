@@ -613,12 +613,12 @@ Content-Length: 1756
 {
   "content" : [ {
     "createdBy" : "system",
-    "createdAt" : 1564644603533,
+    "createdAt" : 1567757266727,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1564644603533,
-    "name" : "App(s) only",
-    "description" : "Default type with app(s) only.",
-    "key" : "app",
+    "lastModifiedAt" : 1567757266727,
+    "name" : "OS only",
+    "description" : "Default type with Firmware/OS only.",
+    "key" : "os",
     "deleted" : false,
     "_links" : {
       "self" : {
@@ -628,9 +628,9 @@ Content-Length: 1756
     "id" : 423
   }, {
     "createdBy" : "system",
-    "createdAt" : 1564644603534,
+    "createdAt" : 1567757266728,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1564644603534,
+    "lastModifiedAt" : 1567757266728,
     "name" : "OS with app(s)",
     "description" : "Default type with Firmware/OS and optional app(s).",
     "key" : "os_app",
@@ -643,12 +643,12 @@ Content-Length: 1756
     "id" : 424
   }, {
     "createdBy" : "system",
-    "createdAt" : 1564644603533,
+    "createdAt" : 1567757266727,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1564644603533,
-    "name" : "OS only",
-    "description" : "Default type with Firmware/OS only.",
-    "key" : "os",
+    "lastModifiedAt" : 1567757266727,
+    "name" : "App(s) only",
+    "description" : "Default type with app(s) only.",
+    "key" : "app",
     "deleted" : false,
     "_links" : {
       "self" : {
@@ -658,9 +658,9 @@ Content-Length: 1756
     "id" : 425
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1564644603549,
+    "createdAt" : 1567757266742,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1564644603583,
+    "lastModifiedAt" : 1567757266776,
     "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
     "description" : "Desc1234",
     "key" : "test_default_ds_type",
@@ -755,7 +755,7 @@ Content-Length: 1756
   "name" : "TestName1",
   "description" : "Desc1",
   "mandatorymodules" : [ {
-    "id" : 308
+    "id" : 307
   } ],
   "key" : "test1"
 } ]'</code></pre>
@@ -779,7 +779,7 @@ Host: management-api.host.com
   "name" : "TestName1",
   "description" : "Desc1",
   "mandatorymodules" : [ {
-    "id" : 308
+    "id" : 307
   } ],
   "key" : "test1"
 } ]</code></pre>
@@ -932,9 +932,9 @@ Content-Type: application/json;charset=UTF-8
 
 [ {
   "createdBy" : "uploadTester",
-  "createdAt" : 1564644588212,
+  "createdAt" : 1567757266358,
   "lastModifiedBy" : "uploadTester",
-  "lastModifiedAt" : 1564644588212,
+  "lastModifiedAt" : 1567757266358,
   "name" : "TestName1",
   "description" : "Desc1",
   "key" : "test1",
@@ -1284,9 +1284,9 @@ Content-Type: application/json;charset=UTF-8
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1564644598349,
+  "createdAt" : 1567757266519,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1564644598492,
+  "lastModifiedAt" : 1567757266695,
   "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
   "description" : "Desc1234",
   "key" : "test_default_ds_type",
@@ -1553,9 +1553,9 @@ Content-Length: 701
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1564644634027,
+  "createdAt" : 1567757267153,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1564644634075,
+  "lastModifiedAt" : 1567757267189,
   "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
   "description" : "an updated desription",
   "key" : "test_default_ds_type",
@@ -1788,9 +1788,9 @@ Content-Length: 386
 
 [ {
   "createdBy" : "system",
-  "createdAt" : 1564644618752,
+  "createdAt" : 1567757266941,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1564644618759,
+  "lastModifiedAt" : 1567757266952,
   "name" : "OS",
   "description" : "Updated description.",
   "key" : "os",
@@ -1798,10 +1798,10 @@ Content-Length: 386
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/325"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/326"
     }
   },
-  "id" : 325
+  "id" : 326
 } ]</code></pre>
 </div>
 </div>
@@ -1881,7 +1881,7 @@ Content-Length: 386
 <pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/435/mandatorymoduletypes' -i -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -d '{
-  "id" : 322
+  "id" : 323
 }'</code></pre>
 </div>
 </div>
@@ -1896,7 +1896,7 @@ Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com
 
 {
-  "id" : 322
+  "id" : 323
 }</code></pre>
 </div>
 </div>
@@ -2305,9 +2305,9 @@ Content-Type: application/hal+json;charset=UTF-8
 
 {
   "createdBy" : "system",
-  "createdAt" : 1564644639118,
+  "createdAt" : 1567757267217,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1564644639125,
+  "lastModifiedAt" : 1567757267223,
   "name" : "OS",
   "description" : "Updated description.",
   "key" : "os",
@@ -2525,9 +2525,9 @@ Content-Type: application/json;charset=UTF-8
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1564644623839,
+  "createdAt" : 1567757267018,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1564644623841,
+  "lastModifiedAt" : 1567757267021,
   "name" : "runtime",
   "description" : "Updated description.",
   "key" : "runtime",
@@ -2788,7 +2788,7 @@ Host: management-api.host.com
 <h4 id="_curl_12"><a class="link" href="#_curl_12">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/477/optionalmoduletypes/349' -i -X DELETE \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/477/optionalmoduletypes/350' -i -X DELETE \
     -H 'Content-Type: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
@@ -2797,7 +2797,7 @@ Host: management-api.host.com
 <h4 id="_request_url_12"><a class="link" href="#_request_url_12">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsettypes/477/optionalmoduletypes/349 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/distributionsettypes/477/optionalmoduletypes/350 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Host: management-api.host.com</code></pre>
 </div>
@@ -3041,9 +3041,9 @@ Content-Type: application/hal+json;charset=UTF-8
 
 {
   "createdBy" : "system",
-  "createdAt" : 1564644593250,
+  "createdAt" : 1567757266411,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1564644593260,
+  "lastModifiedAt" : 1567757266425,
   "name" : "Application",
   "description" : "Updated description.",
   "key" : "application",
@@ -3170,7 +3170,7 @@ Content-Type: application/hal+json;charset=UTF-8
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-06-11 15:04:18 +02:00
+Last updated 2019-04-23 14:00:53 +02:00
 </div>
 </div>
 </body>
