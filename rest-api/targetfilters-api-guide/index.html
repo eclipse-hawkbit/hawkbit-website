@@ -607,19 +607,20 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 451
+Content-Length: 482
 Content-Type: application/hal+json;charset=UTF-8
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1564644050389,
+    "createdAt" : 1575375100006,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1564644050398,
+    "lastModifiedAt" : 1575375100013,
     "name" : "filter1",
     "query" : "name==*",
     "autoAssignDistributionSet" : 13,
     "autoAssignActionType" : "forced",
+    "autoAssignWeight" : null,
     "_links" : {
       "self" : {
         "href" : "https://management-api.host.com/rest/v1/targetfilters/2"
@@ -814,6 +815,12 @@ Host: management-api.host.com
 <td class="tableblock halign-left valign-top"><p class="tableblock">['forced', 'soft', 'downloadonly']</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">autoAssignWeight</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weight of the resulting Actions</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
@@ -851,18 +858,19 @@ Host: management-api.host.com
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
-Content-Length: 484
 Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 513
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1564644055537,
+  "createdAt" : 1575375100126,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1564644055537,
+  "lastModifiedAt" : 1575375100126,
   "name" : "filter1",
   "query" : "name==*",
   "autoAssignDistributionSet" : null,
   "autoAssignActionType" : null,
+  "autoAssignWeight" : null,
   "_links" : {
     "self" : {
       "href" : "https://management-api.host.com/rest/v1/targetfilters/3"
@@ -1156,6 +1164,12 @@ Host: management-api.host.com</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">['forced', 'soft', 'downloadonly']</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">autoAssignWeight</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weight of the resulting Actions</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
@@ -1193,18 +1207,19 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 515
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 486
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1564644065981,
+  "createdAt" : 1575375100388,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1564644066000,
+  "lastModifiedAt" : 1575375100392,
   "name" : "filter1",
   "query" : "name==*",
   "autoAssignDistributionSet" : 14,
   "autoAssignActionType" : "forced",
+  "autoAssignWeight" : null,
   "_links" : {
     "self" : {
       "href" : "https://management-api.host.com/rest/v1/targetfilters/5"
@@ -1425,6 +1440,12 @@ Host: management-api.host.com
 <td class="tableblock halign-left valign-top"><p class="tableblock">['forced', 'soft', 'downloadonly']</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">autoAssignWeight</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weight of the resulting Actions</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
@@ -1463,17 +1484,18 @@ Host: management-api.host.com
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 506
+Content-Length: 535
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1564644060655,
+  "createdAt" : 1575375100220,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1564644060664,
+  "lastModifiedAt" : 1575375100231,
   "name" : "newFilterName",
   "query" : "attribute.hwRevision==2",
   "autoAssignDistributionSet" : null,
   "autoAssignActionType" : null,
+  "autoAssignWeight" : null,
   "_links" : {
     "self" : {
       "href" : "https://management-api.host.com/rest/v1/targetfilters/4"
@@ -1722,25 +1744,25 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 2374
 Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 2373
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1564644081602,
+  "createdAt" : 1575375100769,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1564644081611,
+  "lastModifiedAt" : 1575375100774,
   "name" : "DS",
   "description" : "The descption of the distribution set.",
   "version" : "1.0",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1564644081561,
+    "createdAt" : 1575375100745,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1564644081696,
+    "lastModifiedAt" : 1575375100805,
     "name" : "application",
     "description" : "Description of the software module",
-    "version" : "1.0.54",
+    "version" : "1.0.73",
     "type" : "application",
     "vendor" : "vendor Limited, California",
     "deleted" : false,
@@ -1752,12 +1774,12 @@ Content-Type: application/hal+json;charset=UTF-8
     "id" : 46
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1564644081569,
+    "createdAt" : 1575375100750,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1564644081644,
+    "lastModifiedAt" : 1575375100785,
     "name" : "app runtime",
     "description" : "Description of the software module",
-    "version" : "1.0.57",
+    "version" : "1.0.89",
     "type" : "runtime",
     "vendor" : "vendor GmbH, Stuttgart, Germany",
     "deleted" : false,
@@ -1769,12 +1791,12 @@ Content-Type: application/hal+json;charset=UTF-8
     "id" : 47
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1564644081579,
+    "createdAt" : 1575375100755,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1564644081669,
+    "lastModifiedAt" : 1575375100795,
     "name" : "Firmware",
     "description" : "Description of the software module",
-    "version" : "1.0.54",
+    "version" : "1.0.6",
     "type" : "os",
     "vendor" : "vendor Limited Inc, California",
     "deleted" : false,
@@ -1881,7 +1903,8 @@ Required permissions: UPDATE_TARGET and READ_REPOSITORY</p>
 <pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targetfilters/7/autoAssignDS' -i -X POST \
     -H 'Content-Type: application/json' \
     -d '{
-  "id" : "15",
+  "weight" : 200,
+  "id" : 15,
   "type" : "soft"
 }'</code></pre>
 </div>
@@ -1892,12 +1915,13 @@ Required permissions: UPDATE_TARGET and READ_REPOSITORY</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/targetfilters/7/autoAssignDS HTTP/1.1
+Content-Length: 52
 Content-Type: application/json
-Content-Length: 36
 Host: management-api.host.com
 
 {
-  "id" : "15",
+  "weight" : 200,
+  "id" : 15,
   "type" : "soft"
 }</code></pre>
 </div>
@@ -1946,7 +1970,7 @@ Host: management-api.host.com
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Id of the distribution set.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
@@ -1957,6 +1981,13 @@ Host: management-api.host.com
 <td class="tableblock halign-left valign-top"><p class="tableblock">Force type of the action that provides a hint if the controller should apply the action immediately or whenever possible.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">['forced', 'soft', 'downloadonly']</p></td>
 <td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">weight</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weight of the resulting Actions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 - 1000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">when multi-assignment is enabled</p></td>
 </tr>
 </tbody>
 </table>
@@ -2013,6 +2044,12 @@ Host: management-api.host.com
 <td class="tableblock halign-left valign-top"><p class="tableblock">['forced', 'soft', 'downloadonly']</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">autoAssignWeight</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weight of the resulting Actions</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
@@ -2050,18 +2087,19 @@ Host: management-api.host.com
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 484
 Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 512
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1564644076311,
+  "createdAt" : 1575375100568,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1564644076419,
+  "lastModifiedAt" : 1575375100653,
   "name" : "filter1",
   "query" : "name==*",
   "autoAssignDistributionSet" : 15,
   "autoAssignActionType" : "soft",
+  "autoAssignWeight" : 200,
   "_links" : {
     "self" : {
       "href" : "https://management-api.host.com/rest/v1/targetfilters/7"
@@ -2308,7 +2346,7 @@ Host: management-api.host.com</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-06-11 15:04:18 +02:00
+Last updated 2019-04-23 14:00:53 +02:00
 </div>
 </div>
 </body>

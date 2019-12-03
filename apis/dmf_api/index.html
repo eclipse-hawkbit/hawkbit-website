@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Device Management Federation API - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.56.0" />
+    <meta name="generator" content="Hugo 0.56.3" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -506,7 +506,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tbody>
 </table>
 
-<p>Example headers</p>
+<p>Example headers and payload:</p>
 
 <table>
 <thead>
@@ -520,6 +520,91 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <tr>
 <td>type=THING_CREATED <br /> tenant=tenant123 <br /> thingId=abc  <br /> sender=Lwm2m</td>
 <td>content_type=application/json <br /> reply_to (optional) =sp.connector.replyTo</td>
+</tr>
+</tbody>
+</table>
+
+<p>Payload Template (optional):</p>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;String&quot;
+}
+</code></pre>
+
+<p>The &ldquo;name&rdquo; property specifies the name of the thing, which by default is the thing ID. This property is optional.</p>
+
+<h3 id="thing-removed">THING_REMOVED</h3>
+
+<p>Message to request the deletion of a provisioning target.</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the message</td>
+<td>Fixed string &ldquo;THING_REMOVED&rdquo;</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>thingId</td>
+<td>The ID of the registered provisioning target</td>
+<td>String</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>tenant</td>
+<td>The tenant this provisioning target belongs to</td>
+<td>String</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Message Properties</th>
+<th>Description</th>
+<th>Type</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>content_type</td>
+<td>The content type of the payload</td>
+<td>String</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<p>Example headers</p>
+
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>MessageProperties</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type=THING_REMOVED <br /> tenant=tenant123 <br /> thingId=abc</td>
+<td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
@@ -1152,6 +1237,8 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <p>If <code>multi.assignments.enabled</code> is enabled, this message is sent instead of DOWNLOAD_AND_INSTALL, DOWNLOAD, or CANCEL_DOWNLOAD
  by hawkBit to initialize update, download, or cancel task(s).</p>
 
+<p>With weight, one can set the priority to the action. The higher the weight, the higher is the priority of an action.</p>
+
 <table>
 <thead>
 <tr>
@@ -1217,6 +1304,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 
 <pre><code class="language-json">[{
 &quot;topic&quot;: &quot;String&quot;,
+&quot;weight&quot;: long,
 &quot;action&quot;: {
   &quot;actionId&quot;: long,
   &quot;targetSecurityToken&quot;: &quot;String&quot;,
@@ -1249,6 +1337,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 },
 {
 &quot;topic&quot;: &quot;String&quot;,
+&quot;weight&quot;: long,
 &quot;action&quot;: {
   &quot;actionId&quot;: long,
   &quot;targetSecurityToken&quot;: &quot;String&quot;,
@@ -1301,6 +1390,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 
 <pre><code class="language-json">[{
 &quot;topic&quot;: &quot;DOWNLOAD_AND_INSTALL&quot;,
+&quot;weight&quot;: 600,
 &quot;action&quot;: {
   &quot;actionId&quot;:137,
   &quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
@@ -1333,6 +1423,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 },
 {
 &quot;topic&quot;: &quot;DOWNLOAD&quot;,
+&quot;weight&quot;: 500,
 &quot;action&quot;: {
   &quot;actionId&quot;:138,
   &quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
