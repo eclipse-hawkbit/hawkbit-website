@@ -617,15 +617,15 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 959
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 963
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1567757248214,
+    "createdAt" : 1582108907389,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1567757248217,
+    "lastModifiedAt" : 1582108907408,
     "name" : "os",
     "description" : "a description",
     "version" : "1.0",
@@ -634,15 +634,15 @@ Content-Length: 963
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/113"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/17"
       }
     },
-    "id" : 113
+    "id" : 17
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1567757248219,
+    "createdAt" : 1582108907424,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1567757248221,
+    "lastModifiedAt" : 1582108907439,
     "name" : "application",
     "description" : "a description",
     "version" : "1.0",
@@ -651,10 +651,10 @@ Content-Length: 963
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremodules/114"
+        "href" : "https://management-api.host.com/rest/v1/softwaremodules/18"
       }
     },
-    "id" : 114
+    "id" : 18
   } ],
   "total" : 2,
   "size" : 2
@@ -925,14 +925,14 @@ Host: management-api.host.com
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
+Content-Length: 807
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 815
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1567757247616,
+  "createdAt" : 1582108904692,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1567757247616,
+  "lastModifiedAt" : 1582108904692,
   "name" : "name1",
   "description" : "description1",
   "version" : "version1",
@@ -941,15 +941,15 @@ Content-Length: 815
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/100"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/5"
     }
   },
-  "id" : 100
+  "id" : 5
 }, {
   "createdBy" : "bumlux",
-  "createdAt" : 1567757247618,
+  "createdAt" : 1582108904698,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1567757247618,
+  "lastModifiedAt" : 1582108904698,
   "name" : "name3",
   "description" : "description1",
   "version" : "version1",
@@ -958,10 +958,10 @@ Content-Length: 815
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/101"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/4"
     }
   },
-  "id" : 101
+  "id" : 4
 } ]</code></pre>
 </div>
 </div>
@@ -1048,7 +1048,7 @@ Content-Length: 815
 <h4 id="_curl_3"><a class="link" href="#_curl_3">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/98' -i -X DELETE</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/2' -i -X DELETE</code></pre>
 </div>
 </div>
 </div>
@@ -1056,7 +1056,7 @@ Content-Length: 815
 <h4 id="_request_url_3"><a class="link" href="#_request_url_3">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/softwaremodules/98 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/softwaremodules/2 HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -1165,7 +1165,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_4"><a class="link" href="#_curl_4">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/102' -i -X GET</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/6' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -1173,7 +1173,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_url_4"><a class="link" href="#_request_url_4">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/102 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/6 HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -1313,13 +1313,13 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 759
+Content-Length: 750
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1567757247680,
+  "createdAt" : 1582108904999,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1567757247682,
+  "lastModifiedAt" : 1582108905016,
   "name" : "os",
   "description" : "a description",
   "version" : "1.0",
@@ -1328,19 +1328,19 @@ Content-Length: 759
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/102"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/6"
     },
     "artifacts" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/102/artifacts"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/6/artifacts"
     },
     "type" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/118"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/13"
     },
     "metadata" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/102/metadata?offset=0&amp;limit=50"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/6/metadata?offset=0&amp;limit=50"
     }
   },
-  "id" : 102
+  "id" : 6
 }</code></pre>
 </div>
 </div>
@@ -1417,7 +1417,7 @@ Content-Length: 759
 <h4 id="_curl_5"><a class="link" href="#_curl_5">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/99' -i -X PUT \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/3' -i -X PUT \
     -H 'Content-Type: application/hal+json;charset=UTF-8' \
     -d '{
   "vendor" : "another Vendor",
@@ -1430,7 +1430,7 @@ Content-Length: 759
 <h4 id="_request_url_5"><a class="link" href="#_request_url_5">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/softwaremodules/99 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/softwaremodules/3 HTTP/1.1
 Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 72
 Host: management-api.host.com
@@ -1613,14 +1613,14 @@ Host: management-api.host.com
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 747
 Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 741
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1567757247516,
+  "createdAt" : 1582108904246,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1567757247528,
+  "lastModifiedAt" : 1582108904321,
   "name" : "os",
   "description" : "a new description",
   "version" : "1.0",
@@ -1629,19 +1629,19 @@ Content-Type: application/hal+json;charset=UTF-8
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/99"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/3"
     },
     "artifacts" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/99/artifacts"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/3/artifacts"
     },
     "type" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/113"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/8"
     },
     "metadata" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/99/metadata?offset=0&amp;limit=50"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/3/metadata?offset=0&amp;limit=50"
     }
   },
-  "id" : 99
+  "id" : 3
 }</code></pre>
 </div>
 </div>
@@ -1728,7 +1728,7 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_curl_6"><a class="link" href="#_curl_6">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/112/artifacts' -i -X GET</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/16/artifacts' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -1736,7 +1736,7 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_request_url_6"><a class="link" href="#_request_url_6">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/112/artifacts HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/16/artifacts HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -1832,6 +1832,12 @@ Host: management-api.host.com</code></pre>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[].hashes.sha256</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SHA256 hash of the artifact.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[].providedFilename</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filename of the artifact.</p></td>
@@ -1846,25 +1852,26 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 445
+Content-Length: 524
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1567757248152,
+  "createdAt" : 1582108907125,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1567757248152,
+  "lastModifiedAt" : 1582108907125,
   "hashes" : {
-    "sha1" : "e924e63b94002ba34f722f6669d9860541b71d69",
-    "md5" : "567e42820c13eb30254b70e2534a2db2"
+    "sha1" : "2d86c2a659e364e9abba49ea6ffcd53dd5559f05",
+    "md5" : "0d1b08c34858921bc7c662b228acb7ba",
+    "sha256" : "a03b221c6c6eae7122ca51695d456d5222e524889136394944b2f9763b483615"
   },
   "providedFilename" : "file1",
-  "size" : 13,
+  "size" : 3,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/112/artifacts/47"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/16/artifacts/2"
     }
   },
-  "id" : 47
+  "id" : 2
 } ]</code></pre>
 </div>
 </div>
@@ -1941,7 +1948,7 @@ Content-Length: 445
 <h4 id="_curl_7"><a class="link" href="#_curl_7">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/97/artifacts' -i -X POST \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/1/artifacts' -i -X POST \
     -H 'Content-Type: multipart/form-data' \
     -F 'file=@origFilename'</code></pre>
 </div>
@@ -1951,14 +1958,14 @@ Content-Length: 445
 <h4 id="_request_url_7"><a class="link" href="#_request_url_7">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/softwaremodules/97/artifacts HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/softwaremodules/1/artifacts HTTP/1.1
 Content-Type: multipart/form-data; boundary=6o2knFse3p53ty9dmcQvWAIx1zInP11uCfbm
 Host: management-api.host.com
 
 --6o2knFse3p53ty9dmcQvWAIx1zInP11uCfbm
 Content-Disposition: form-data; name=file; filename=origFilename
 
-듛㗧쭬𤈭
+???
 --6o2knFse3p53ty9dmcQvWAIx1zInP11uCfbm--</code></pre>
 </div>
 </div>
@@ -2021,7 +2028,7 @@ Content-Disposition: form-data; name=file; filename=origFilename
 <h4 id="_request_parameter_example_2"><a class="link" href="#_request_parameter_example_2">Request parameter example</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/softwaremodules/111/artifacts HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/softwaremodules/15/artifacts HTTP/1.1
 Content-Type: multipart/form-data; boundary=6o2knFse3p53ty9dmcQvWAIx1zInP11uCfbm
 Host: management-api.host.com
 
@@ -2044,7 +2051,7 @@ sha1sum
 --6o2knFse3p53ty9dmcQvWAIx1zInP11uCfbm
 Content-Disposition: form-data; name=file; filename=origFilename
 
-㽠遊鿉𡆻
+????
 --6o2knFse3p53ty9dmcQvWAIx1zInP11uCfbm--</code></pre>
 </div>
 </div>
@@ -2125,6 +2132,12 @@ Content-Disposition: form-data; name=file; filename=origFilename
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hashes.sha256</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SHA256 hash of the artifact.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">providedFilename</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filename of the artifact.</p></td>
@@ -2138,29 +2151,30 @@ Content-Disposition: form-data; name=file; filename=origFilename
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
-Content-Length: 571
+Content-Length: 648
 Content-Type: application/hal+json;charset=UTF-8
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1567757247357,
+  "createdAt" : 1582108903500,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1567757247357,
+  "lastModifiedAt" : 1582108903500,
   "hashes" : {
-    "sha1" : "50509b2721dbd6c3cd7e66b6abd0e725fc46c7e4",
-    "md5" : "19a09c38c02e4fd9e2d091f1dfb06eb8"
+    "sha1" : "2d86c2a659e364e9abba49ea6ffcd53dd5559f05",
+    "md5" : "0d1b08c34858921bc7c662b228acb7ba",
+    "sha256" : "a03b221c6c6eae7122ca51695d456d5222e524889136394944b2f9763b483615"
   },
   "providedFilename" : "origFilename",
-  "size" : 13,
+  "size" : 3,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/97/artifacts/46"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/1/artifacts/1"
     },
     "download" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/97/artifacts/46/download"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/1/artifacts/1/download"
     }
   },
-  "id" : 46
+  "id" : 1
 }</code></pre>
 </div>
 </div>
@@ -2242,7 +2256,7 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_curl_8"><a class="link" href="#_curl_8">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/117/artifacts/50' -i -X DELETE</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/21/artifacts/5' -i -X DELETE</code></pre>
 </div>
 </div>
 </div>
@@ -2250,7 +2264,7 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_request_url_8"><a class="link" href="#_request_url_8">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/softwaremodules/117/artifacts/50 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/softwaremodules/21/artifacts/5 HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -2363,7 +2377,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_9"><a class="link" href="#_curl_9">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/115/artifacts/48' -i -X GET</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/19/artifacts/3' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -2371,7 +2385,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_url_9"><a class="link" href="#_request_url_9">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/115/artifacts/48 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/19/artifacts/3 HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -2471,6 +2485,12 @@ Host: management-api.host.com</code></pre>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hashes.sha256</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SHA256 hash of the artifact.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">providedFilename</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filename of the artifact.</p></td>
@@ -2491,28 +2511,29 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json;charset=UTF-8
-Content-Length: 566
+Content-Length: 643
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1567757248291,
+  "createdAt" : 1582108907739,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1567757248291,
+  "lastModifiedAt" : 1582108907739,
   "hashes" : {
-    "sha1" : "80c88512ee6ff7c7820ce55e466c3df03f43d0a6",
-    "md5" : "1c068ac76f40e7c12c94b8daf8086e88"
+    "sha1" : "3b93fd2d045d59af27a25c719945db1d9fe3decb",
+    "md5" : "e94f0bfab8c987a7437ba4e1697c1cc0",
+    "sha256" : "5d04c6a96439100ad3cb4672ef2fdc219dae8aaa655c9a3095c9e7ad25f4d96c"
   },
   "providedFilename" : "file1",
-  "size" : 13,
+  "size" : 4,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/115/artifacts/48"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/19/artifacts/3"
     },
     "download" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/115/artifacts/48/download"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/19/artifacts/3/download"
     }
   },
-  "id" : 48
+  "id" : 3
 }</code></pre>
 </div>
 </div>
@@ -2589,7 +2610,7 @@ Content-Length: 566
 <h4 id="_curl_10"><a class="link" href="#_curl_10">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/116/artifacts/49/download' -i -X GET \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/20/artifacts/4/download' -i -X GET \
     -H 'Accept: application/octet-stream'</code></pre>
 </div>
 </div>
@@ -2598,7 +2619,7 @@ Content-Length: 566
 <h4 id="_request_url_10"><a class="link" href="#_request_url_10">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/116/artifacts/49/download HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/20/artifacts/4/download HTTP/1.1
 Accept: application/octet-stream
 Host: management-api.host.com</code></pre>
 </div>
@@ -2637,15 +2658,15 @@ Host: management-api.host.com</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Last-Modified: Fri, 06 Sep 2019 08:07:28 GMT
-Content-Range: bytes 0-12/13
+Last-Modified: Wed, 19 Feb 2020 10:41:48 GMT
 Accept-Ranges: bytes
-ETag: fb0ff786d38290a8ed318bd3d451a61fee84d844
+Content-Range: bytes 0-2/3
 Content-Type: application/octet-stream
-Content-Length: 13
 Content-Disposition: attachment;filename=file1
+Content-Length: 3
+ETag: 2d86c2a659e364e9abba49ea6ffcd53dd5559f05
 
-❿灗𥤵㻓</code></pre>
+???</code></pre>
 </div>
 </div>
 </div>
@@ -2721,7 +2742,7 @@ Content-Disposition: attachment;filename=file1
 <h4 id="_curl_11"><a class="link" href="#_curl_11">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/126/metadata' -i -X GET</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/30/metadata' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -2729,7 +2750,7 @@ Content-Disposition: attachment;filename=file1
 <h4 id="_request_url_11"><a class="link" href="#_request_url_11">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/126/metadata HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/30/metadata HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -2792,7 +2813,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_parameter_example_3"><a class="link" href="#_request_parameter_example_3">Request parameter example</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/123/metadata?offset=1&amp;limit=2&amp;sort=key%3ADESC&amp;q=key%3D%3Dknown* HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/27/metadata?offset=1&amp;limit=2&amp;sort=key%3ADESC&amp;q=key%3D%3Dknown* HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -2961,7 +2982,7 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_curl_12"><a class="link" href="#_curl_12">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/105/metadata' -i -X POST \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/9/metadata' -i -X POST \
     -H 'Content-Type: application/hal+json;charset=UTF-8' \
     -d '[ {
   "value" : "knownValue1",
@@ -2978,7 +2999,7 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_request_url_12"><a class="link" href="#_request_url_12">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/softwaremodules/105/metadata HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /rest/v1/softwaremodules/9/metadata HTTP/1.1
 Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 136
 Host: management-api.host.com
@@ -3203,7 +3224,7 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_curl_13"><a class="link" href="#_curl_13">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/129/metadata/knownKey' -i -X DELETE</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/33/metadata/knownKey' -i -X DELETE</code></pre>
 </div>
 </div>
 </div>
@@ -3211,7 +3232,7 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_request_url_13"><a class="link" href="#_request_url_13">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/softwaremodules/129/metadata/knownKey HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /rest/v1/softwaremodules/33/metadata/knownKey HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -3324,7 +3345,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_14"><a class="link" href="#_curl_14">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/120/metadata/knownKey' -i -X GET</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/24/metadata/knownKey' -i -X GET</code></pre>
 </div>
 </div>
 </div>
@@ -3332,7 +3353,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_url_14"><a class="link" href="#_request_url_14">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/120/metadata/knownKey HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /rest/v1/softwaremodules/24/metadata/knownKey HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -3492,7 +3513,7 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_curl_15"><a class="link" href="#_curl_15">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/110/metadata/knownKey' -i -X PUT \
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremodules/14/metadata/knownKey' -i -X PUT \
     -H 'Content-Type: application/hal+json;charset=UTF-8' \
     -d '{
   "targetVisible" : true,
@@ -3506,7 +3527,7 @@ Content-Type: application/hal+json;charset=UTF-8
 <h4 id="_request_url_15"><a class="link" href="#_request_url_15">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/softwaremodules/110/metadata/knownKey HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /rest/v1/softwaremodules/14/metadata/knownKey HTTP/1.1
 Content-Type: application/hal+json;charset=UTF-8
 Content-Length: 80
 Host: management-api.host.com
@@ -3635,14 +3656,14 @@ Host: management-api.host.com
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 747
 Content-Type: application/hal+json;charset=UTF-8
+Content-Length: 741
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1567757247516,
+  "createdAt" : 1582108904246,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1567757247528,
+  "lastModifiedAt" : 1582108904321,
   "name" : "os",
   "description" : "a new description",
   "version" : "1.0",
@@ -3651,19 +3672,19 @@ Content-Type: application/hal+json;charset=UTF-8
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/99"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/3"
     },
     "artifacts" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/99/artifacts"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/3/artifacts"
     },
     "type" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/113"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/8"
     },
     "metadata" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremodules/99/metadata?offset=0&amp;limit=50"
+      "href" : "https://management-api.host.com/rest/v1/softwaremodules/3/metadata?offset=0&amp;limit=50"
     }
   },
-  "id" : 99
+  "id" : 3
 }</code></pre>
 </div>
 </div>
@@ -3779,7 +3800,7 @@ Content-Type: application/hal+json;charset=UTF-8
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-23 14:00:53 +02:00
+Last updated 2020-02-19 09:36:17 +00:00
 </div>
 </div>
 </body>

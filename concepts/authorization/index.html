@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Authorization - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.56.0" />
+    <meta name="generator" content="Hugo 0.56.3" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -405,7 +405,7 @@
 
 			<p>Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF) API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on Spring security <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>.</p>
 
-<p>However, keep in mind that hawkBit does not offer an off the shelf authentication provider to leverage these permissions and the underlying multi user/tenant capabilities of hawkBit. Check out <a href="http://projects.spring.io/spring-security/">Spring security documentation</a> for further information. In hawkBit <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-autoconfigure/src/main/java/org/eclipse/hawkbit/autoconfigure/security/SecurityAutoConfiguration.java">SecurityAutoConfiguration</a> is a good starting point for integration.</p>
+<p>However, keep in mind that hawkBit does not offer an off the shelf authentication provider to leverage these permissions and the underlying multi user/tenant capabilities of hawkBit but it supports authentication providers offering an OpenID Connect interface. Check out <a href="http://projects.spring.io/spring-security/">Spring security documentation</a> for further information. In hawkBit <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-autoconfigure/src/main/java/org/eclipse/hawkbit/autoconfigure/security/SecurityAutoConfiguration.java">SecurityAutoConfiguration</a> is a good starting point for integration.</p>
 
 <p>The default implementation is single user/tenant with basic auth and the logged in user is provided with all permissions. Additionally, the application properties may be configured for multiple static users; see <a href="#multiple-users">Multiple Users</a> for details.</p>
 
@@ -441,6 +441,20 @@ hawkbit.server.im.users[1].permissions=READ_TARGET,UPDATE_TARGET,CREATE_TARGET,D
 </code></pre>
 
 <p>A permissions value of <code>ALL</code> will provide that user with all possible permissions. Passwords need to be specified with the used password encoder in brackets. In this example, <code>noop</code> is used as the plaintext encoder. For production use, it is recommended to use a hash function designed for passwords such as <em>bcrypt</em>. See this <a href="https://spring.io/blog/2017/11/01/spring-security-5-0-0-rc1-released#password-storage-format">blog post</a> for more information on password encoders in Spring Security.</p>
+
+<h3 id="openid-connect">OpenID Connect</h3>
+
+<p>hawkbit supports authentication providers which use the OpenID Connect standard, an authentication layer built on top of the OAuth 2.0 protocol.
+An example configuration is given below.</p>
+
+<pre><code>spring.security.oauth2.client.registration.oidc.client-id=clientID
+spring.security.oauth2.client.registration.oidc.client-secret=oidc-client-secret
+spring.security.oauth2.client.provider.oidc.issuer-uri=https://oidc-provider/issuer-uri
+spring.security.oauth2.client.provider.oidc.authorization-uri=https://oidc-provider/authorization-uri
+spring.security.oauth2.client.provider.oidc.token-uri=https://oidc-provider/token-uri
+spring.security.oauth2.client.provider.oidc.user-info-uri=https://oidc-provider/user-info-uri
+spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jwk-set-uri
+</code></pre>
 
 <h3 id="delivered-permissions">Delivered Permissions</h3>
 
@@ -540,7 +554,7 @@ hawkbit.server.im.users[1].permissions=READ_TARGET,UPDATE_TARGET,CREATE_TARGET,D
   </div>
   <p class="notice">
     
-    &copy; 2019 The Eclipse hawkBit Project &ndash;
+    &copy; 2020 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
