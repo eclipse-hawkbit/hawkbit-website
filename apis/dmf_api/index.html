@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Device Management Federation API - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.70.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -405,39 +405,26 @@
 
 			<p>The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object. Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.
 Currently, bodies of messages are based on JSON.</p>
-
 <h2 id="basics">Basics</h2>
-
 <p>There are three basic concepts of AMQP:</p>
-
 <ul>
 <li>Exchanges - what you publish to.</li>
 <li>Queues - what you consume from.</li>
 <li>Bindings - configuration that maps an exchange to a queue.</li>
 </ul>
-
-<p><strong>Queues</strong> are just a place for receiving messages.<br />
+<p><strong>Queues</strong> are just a place for receiving messages.<br>
 Bindings determine how messages get put in this place
 Queues can also be bound to multiple exchanges.</p>
-
 <p><strong>Exchanges</strong> are just publish messages.
 The user decides who can produce on an exchange and who can create bindings on that exchange for delivery to a specific queue.</p>
-
 <p>hawkBit will create all necessary queues, exchanges and bindings for the user, making it easy to get started.
 The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
-
-<p>The user has to set a <code>reply_to</code> header (see chapter below), to change the default sender exchange.</p>
-
+<p>The user has to set a <code>reply_to</code> header (see chapter below), in order to specify the exchange to which hawkBit should reply to.</p>
 <p>The following chapter describes the message body, header and properties.</p>
-
 <p>Note: the DMF protocol was intended to be compatible to other use cases by design. As a result, DMF uses the term <strong>thing</strong> and not <strong>target</strong> but they are actually synonyms in this case.</p>
-
-<h2 id="messages-sent-to-hawkbit-client-hawkbit">Messages sent to hawkBit (Client -&gt; hawkBit)</h2>
-
-<h3 id="thing-created">THING_CREATED</h3>
-
+<h2 id="messages-sent-to-hawkbit-client---hawkbit">Messages sent to hawkBit (Client -&gt; hawkBit)</h2>
+<h3 id="thing_created">THING_CREATED</h3>
 <p>Message to register and update a provisioning target.</p>
-
 <table>
 <thead>
 <tr>
@@ -447,7 +434,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type</td>
@@ -455,30 +441,26 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>Fixed string &ldquo;THING_CREATED&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>thingId</td>
 <td>The ID of the registered provisioning target</td>
 <td>String</td>
 <td>true</td>
 </tr>
-
+<tr>
+<td>tenant</td>
+<td>The tenant this provisioning target belongs to</td>
+<td>String</td>
+<td>true</td>
+</tr>
 <tr>
 <td>sender</td>
 <td>Name of the message sender</td>
 <td>String</td>
 <td>false</td>
 </tr>
-
-<tr>
-<td>tenant</td>
-<td>The tenant this provisioning target belongs to</td>
-<td>String</td>
-<td>false</td>
-</tr>
 </tbody>
 </table>
-
 <table>
 <thead>
 <tr>
@@ -488,7 +470,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>content_type</td>
@@ -496,18 +477,15 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>String</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>reply_to</td>
-<td>Exchange to reply to. The default is sp.direct.exchange which is bound to the sp_direct_queue</td>
+<td>Exchange to reply to</td>
 <td>String</td>
-<td>false</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
-
 <p>Example headers and payload:</p>
-
 <table>
 <thead>
 <tr>
@@ -515,28 +493,20 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=THING_CREATED <br /> tenant=tenant123 <br /> thingId=abc  <br /> sender=Lwm2m</td>
-<td>content_type=application/json <br /> reply_to (optional) =sp.connector.replyTo</td>
+<td>type=THING_CREATED <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc  <!-- raw HTML omitted --> sender=myClient</td>
+<td>content_type=application/json <!-- raw HTML omitted --> reply_to=myExchangeToReplyTo</td>
 </tr>
 </tbody>
 </table>
-
 <p>Payload Template (optional):</p>
-
-<pre><code class="language-json">{
-    &quot;name&quot;: &quot;String&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>
 }
-</code></pre>
-
-<p>The &ldquo;name&rdquo; property specifies the name of the thing, which by default is the thing ID. This property is optional.</p>
-
-<h3 id="thing-removed">THING_REMOVED</h3>
-
+</code></pre></div><p>The &ldquo;name&rdquo; property specifies the name of the thing, which by default is the thing ID. This property is optional.</p>
+<h3 id="thing_removed">THING_REMOVED</h3>
 <p>Message to request the deletion of a provisioning target.</p>
-
 <table>
 <thead>
 <tr>
@@ -546,7 +516,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type</td>
@@ -554,14 +523,12 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>Fixed string &ldquo;THING_REMOVED&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>thingId</td>
 <td>The ID of the registered provisioning target</td>
 <td>String</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>tenant</td>
 <td>The tenant this provisioning target belongs to</td>
@@ -570,7 +537,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <table>
 <thead>
 <tr>
@@ -580,7 +546,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>content_type</td>
@@ -590,9 +555,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Example headers</p>
-
 <table>
 <thead>
 <tr>
@@ -600,19 +563,15 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=THING_REMOVED <br /> tenant=tenant123 <br /> thingId=abc</td>
+<td>type=THING_REMOVED <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="update-attributes">UPDATE_ATTRIBUTES</h3>
-
-<p>Message to update target attributes. This message can be send in response to a _REQUEST_ATTRIBUTES<em>UPDATE</em> event, sent by hawkBit.</p>
-
+<h3 id="update_attributes">UPDATE_ATTRIBUTES</h3>
+<p>Message to update target attributes. This message can be send in response to a <em>REQUEST_ATTRIBUTES_UPDATE</em> event, sent by hawkBit.</p>
 <table>
 <thead>
 <tr>
@@ -622,7 +581,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type</td>
@@ -630,21 +588,18 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>Fixed string &ldquo;EVENT&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>topic</td>
 <td>Topic name identifying the event</td>
 <td>Fixed string &ldquo;UPDATE_ATTRIBUTES&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>thingId</td>
 <td>The ID of the registered thing</td>
 <td>String</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>tenant</td>
 <td>The tenant this thing belongs to</td>
@@ -653,7 +608,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <table>
 <thead>
 <tr>
@@ -663,7 +617,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>content_type</td>
@@ -673,9 +626,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Example header and payload:</p>
-
 <table>
 <thead>
 <tr>
@@ -683,28 +634,22 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=UPDATE_ATTRIBUTES</td>
-<td>content_type=application/json <br /></td>
+<td>type=EVENT <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc  <!-- raw HTML omitted --> topic=UPDATE_ATTRIBUTES</td>
+<td>content_type=application/json <!-- raw HTML omitted --></td>
 </tr>
 </tbody>
 </table>
-
 <p>Payload Template:</p>
-
-<pre><code class="language-json">{
-    &quot;attributes&quot;: {
-        &quot;exampleKey1&quot; : &quot;exampleValue1&quot;,
-        &quot;exampleKey2&quot; : &quot;exampleValue2&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;attributes&#34;</span>: {
+        <span style="color:#f92672">&#34;exampleKey1&#34;</span> : <span style="color:#e6db74">&#34;exampleValue1&#34;</span>,
+        <span style="color:#f92672">&#34;exampleKey2&#34;</span> : <span style="color:#e6db74">&#34;exampleValue2&#34;</span>
     },
-    &quot;mode&quot;: &quot;String&quot;
+    <span style="color:#f92672">&#34;mode&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>
 }
-</code></pre>
-
-<p>The &ldquo;mode&rdquo; property specifies the update mode that should be applied. This property is optional. Possible <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfUpdateMode.java">mode</a> values:</p>
-
+</code></pre></div><p>The &ldquo;mode&rdquo; property specifies the update mode that should be applied. This property is optional. Possible <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfUpdateMode.java">mode</a> values:</p>
 <table>
 <thead>
 <tr>
@@ -712,29 +657,23 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>MERGE</td>
 <td>The target attributes specified in the payload are merged into the existing attributes. This is the default mode that is applied if no &ldquo;mode&rdquo; property is specified in the payload.</td>
 </tr>
-
 <tr>
 <td>REPLACE</td>
 <td>The existing attributes are replaced with the target attributes specified in the payload.</td>
 </tr>
-
 <tr>
 <td>REMOVE</td>
 <td>The target attributes specified in the payload are removed from the existing attributes.</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="update-action-status">UPDATE_ACTION_STATUS</h3>
-
+<h3 id="update_action_status">UPDATE_ACTION_STATUS</h3>
 <p>Message to send an action status event to hawkBit.</p>
-
 <table>
 <thead>
 <tr>
@@ -744,7 +683,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type</td>
@@ -752,14 +690,12 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>Fixed string &ldquo;EVENT&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>topic</td>
 <td>Topic name identifying the event</td>
 <td>Fixed string &ldquo;UPDATE_ACTION_STATUS&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>tenant</td>
 <td>The tenant this thing belongs to</td>
@@ -768,7 +704,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <table>
 <thead>
 <tr>
@@ -778,7 +713,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>content_type</td>
@@ -788,19 +722,14 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Payload Template (the Java representation is <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfActionUpdateStatus.java">ActionUpdateStatus</a>):</p>
-
-<pre><code class="language-json">{
-  &quot;actionId&quot;: long,
-  &quot;softwareModuleId&quot;: long,
-  &quot;actionStatus&quot;:&quot;String&quot;,
-  &quot;message&quot;:[&quot;String&quot;]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;actionId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
+  <span style="color:#f92672">&#34;softwareModuleId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
+  <span style="color:#f92672">&#34;actionStatus&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+  <span style="color:#f92672">&#34;message&#34;</span>:[<span style="color:#e6db74">&#34;String&#34;</span>]
 }
-</code></pre>
-
-<p>Possible <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfActionStatus.java">actionStatus</a> values:</p>
-
+</code></pre></div><p>Possible <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfActionStatus.java">actionStatus</a> values:</p>
 <table>
 <thead>
 <tr>
@@ -808,57 +737,46 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>DOWNLOAD</td>
 <td>Device is downloading</td>
 </tr>
-
 <tr>
 <td>DOWNLOADED</td>
 <td>Device completed download</td>
 </tr>
-
 <tr>
 <td>RETRIEVED</td>
 <td>Device has retrieved the artifact</td>
 </tr>
-
 <tr>
 <td>RUNNING</td>
 <td>Update is running</td>
 </tr>
-
 <tr>
 <td>FINISHED</td>
 <td>Update process finished successful</td>
 </tr>
-
 <tr>
 <td>ERROR</td>
 <td>Error during update process</td>
 </tr>
-
 <tr>
 <td>WARNING</td>
 <td>Warning during update process</td>
 </tr>
-
 <tr>
 <td>CANCELED</td>
 <td>Cancel update process successful</td>
 </tr>
-
 <tr>
 <td>CANCEL_REJECTED</td>
 <td>Cancel update process has been rejected</td>
 </tr>
 </tbody>
 </table>
-
 <p>Example header and payload:</p>
-
 <table>
 <thead>
 <tr>
@@ -866,27 +784,21 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT  <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
-
-<pre><code class="language-json">{
-  &quot;actionId&quot;:137,
-  &quot;softwareModuleId&quot;:17,
-  &quot;actionStatus&quot;:&quot;DOWNLOAD&quot;,
-  &quot;message&quot;:[&quot;The download has started&quot;]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>,
+  <span style="color:#f92672">&#34;softwareModuleId&#34;</span>:<span style="color:#ae81ff">17</span>,
+  <span style="color:#f92672">&#34;actionStatus&#34;</span>:<span style="color:#e6db74">&#34;DOWNLOAD&#34;</span>,
+  <span style="color:#f92672">&#34;message&#34;</span>:[<span style="color:#e6db74">&#34;The download has started&#34;</span>]
 }
-</code></pre>
-
-<h3 id="ping">PING</h3>
-
+</code></pre></div><h3 id="ping">PING</h3>
 <p>hawkBit allows DMF clients to check the availability of the DMF service. For this scenario DMF specifies a PING message that can be sent by the client:</p>
-
 <table>
 <thead>
 <tr>
@@ -896,7 +808,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type</td>
@@ -904,7 +815,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>Fixed string &ldquo;PING&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>tenant</td>
 <td>The tenant the PING belongs to</td>
@@ -913,7 +823,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <table>
 <thead>
 <tr>
@@ -923,7 +832,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>correlationId</td>
@@ -933,13 +841,9 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
-<h2 id="messages-sent-by-hawkbit-hawkbit-client">Messages sent by hawkBit (hawkBit -&gt; Client)</h2>
-
-<h3 id="cancel-download">CANCEL_DOWNLOAD</h3>
-
+<h2 id="messages-sent-by-hawkbit-hawkbit---client">Messages sent by hawkBit (hawkBit -&gt; Client)</h2>
+<h3 id="cancel_download">CANCEL_DOWNLOAD</h3>
 <p>Message to cancel an update task.</p>
-
 <table>
 <thead>
 <tr>
@@ -949,7 +853,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type</td>
@@ -957,21 +860,18 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>Fixed string &ldquo;Event&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>thingId</td>
 <td>The ID of the registered provisioning target</td>
 <td>String</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>topic</td>
 <td>Topic name identifying the event</td>
 <td>Fixed string &ldquo;CANCEL_DOWNLOAD&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>tenant</td>
 <td>The tenant this provisioning target belongs to</td>
@@ -980,7 +880,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <table>
 <thead>
 <tr>
@@ -990,7 +889,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>content_type</td>
@@ -1000,16 +898,11 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Payload template:</p>
-
-<pre><code class="language-json">{
-    &quot;actionId&quot;: long
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;actionId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>
 }
-</code></pre>
-
-<p>Example Headers and Payload:</p>
-
+</code></pre></div><p>Example Headers and Payload:</p>
 <table>
 <thead>
 <tr>
@@ -1017,24 +910,18 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=CANCEL_DOWNLOAD</td>
+<td>type=EVENT <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc  <!-- raw HTML omitted --> topic=CANCEL_DOWNLOAD</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
-
-<pre><code class="language-json">{
-&quot;actionId&quot;:137
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>
 }
-</code></pre>
-
-<p>After sending this message, an action status event with either actionStatus=CANCELED or actionStatus=CANCEL_REJECTED has to be returned.</p>
-
+</code></pre></div><p>After sending this message, an action status event with either actionStatus=CANCELED or actionStatus=CANCEL_REJECTED has to be returned.</p>
 <p>Example header and payload when cancellation is successful:</p>
-
 <table>
 <thead>
 <tr>
@@ -1042,25 +929,20 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT  <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
-
-<pre><code class="language-json">{
-  &quot;actionId&quot;:137,
-  &quot;softwareModuleId&quot;:17,
-  &quot;actionStatus&quot;:&quot;CANCELED&quot;,
-  &quot;message&quot;:[&quot;The update was canceled.&quot;]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>,
+  <span style="color:#f92672">&#34;softwareModuleId&#34;</span>:<span style="color:#ae81ff">17</span>,
+  <span style="color:#f92672">&#34;actionStatus&#34;</span>:<span style="color:#e6db74">&#34;CANCELED&#34;</span>,
+  <span style="color:#f92672">&#34;message&#34;</span>:[<span style="color:#e6db74">&#34;The update was canceled.&#34;</span>]
 }
-</code></pre>
-
-<p>Example header and payload when cancellation is rejected:</p>
-
+</code></pre></div><p>Example header and payload when cancellation is rejected:</p>
 <table>
 <thead>
 <tr>
@@ -1068,27 +950,21 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=EVENT  <br /> tenant=tenant123 <br /> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT  <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
-
-<pre><code class="language-json">{
-  &quot;actionId&quot;:137,
-  &quot;softwareModuleId&quot;:17,
-  &quot;actionStatus&quot;:&quot;CANCEL_REJECTED&quot;,
-  &quot;message&quot;:[&quot;The cancellation was not possible since the target sent an unexpected response.&quot;]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>,
+  <span style="color:#f92672">&#34;softwareModuleId&#34;</span>:<span style="color:#ae81ff">17</span>,
+  <span style="color:#f92672">&#34;actionStatus&#34;</span>:<span style="color:#e6db74">&#34;CANCEL_REJECTED&#34;</span>,
+  <span style="color:#f92672">&#34;message&#34;</span>:[<span style="color:#e6db74">&#34;The cancellation was not possible since the target sent an unexpected response.&#34;</span>]
 }
-</code></pre>
-
-<h3 id="download-and-install-or-download">DOWNLOAD_AND_INSTALL or DOWNLOAD</h3>
-
-<p>Message sent by hawkBit to initialize an update or download task. Note: in case of a maintenance window configured but not yet active the message will have the topic <em>DOWNLOAD</em> instead of _DOWNLOAD_AND<em>INSTALL</em>.</p>
-
+</code></pre></div><h3 id="download_and_install-or-download">DOWNLOAD_AND_INSTALL or DOWNLOAD</h3>
+<p>Message sent by hawkBit to initialize an update or download task. Note: in case of a maintenance window configured but not yet active the message will have the topic <em>DOWNLOAD</em> instead of <em>DOWNLOAD_AND_INSTALL</em>.</p>
 <table>
 <thead>
 <tr>
@@ -1098,7 +974,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type</td>
@@ -1106,21 +981,18 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>Fixed string &ldquo;EVENT&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>thingId</td>
 <td>The ID of the registered provisioning target</td>
 <td>String</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>topic</td>
 <td>Topic name identifying the event</td>
 <td>Fixed string &ldquo;DOWNLOAD_AND_INSTALL&rdquo; or &ldquo;DOWNLOAD&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>tenant</td>
 <td>The tenant this provisioning target belongs to</td>
@@ -1129,7 +1001,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <table>
 <thead>
 <tr>
@@ -1139,7 +1010,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>content_type</td>
@@ -1149,42 +1019,37 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Payload Template (the Java representation is <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfDownloadAndUpdateRequest.java">DmfDownloadAndUpdateRequest</a>):</p>
-
-<pre><code class="language-json">{
-&quot;actionId&quot;: long,
-&quot;targetSecurityToken&quot;: &quot;String&quot;,
-&quot;softwareModules&quot;:[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<span style="color:#f92672">&#34;actionId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
+<span style="color:#f92672">&#34;targetSecurityToken&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>,
+<span style="color:#f92672">&#34;softwareModules&#34;</span>:[
     {
-    &quot;moduleId&quot;: long,
-    &quot;moduleType&quot;:&quot;String&quot;,
-    &quot;moduleVersion&quot;:&quot;String&quot;,
-    &quot;artifacts&quot;:[
+    <span style="color:#f92672">&#34;moduleId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
+    <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+    <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+    <span style="color:#f92672">&#34;artifacts&#34;</span>:[
         {
-        &quot;filename&quot;:&quot;String&quot;,
-        &quot;urls&quot;:{
-            &quot;HTTP&quot;:&quot;String&quot;,
-            &quot;HTTPS&quot;:&quot;String&quot;
+        <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+        <span style="color:#f92672">&#34;urls&#34;</span>:{
+            <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+            <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
             },
-        &quot;hashes&quot;:{
-            &quot;md5&quot;:&quot;String&quot;,
-            &quot;sha1&quot;:&quot;String&quot;
+        <span style="color:#f92672">&#34;hashes&#34;</span>:{
+            <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+            <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
             },
-        &quot;size&quot;:long
+        <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#960050;background-color:#1e0010">long</span>
         }],
-    &quot;metadata&quot;:[
+    <span style="color:#f92672">&#34;metadata&#34;</span>:[
         {
-            &quot;key&quot;:&quot;String&quot;,
-            &quot;value&quot;:&quot;String&quot;
+            <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+            <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
         }
     ]
     }]
 }
-</code></pre>
-
-<p>Example header and payload:</p>
-
+</code></pre></div><p>Example header and payload:</p>
 <table>
 <thead>
 <tr>
@@ -1192,53 +1057,46 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=EVENT  <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=DOWNLOAD_AND_INSTALL</td>
+<td>type=EVENT  <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc  <!-- raw HTML omitted --> topic=DOWNLOAD_AND_INSTALL</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
-
-<pre><code class="language-json">{
-&quot;actionId&quot;:137,
-&quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
-&quot;softwareModules&quot;:[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>,
+<span style="color:#f92672">&#34;targetSecurityToken&#34;</span>:<span style="color:#e6db74">&#34;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&#34;</span>,
+<span style="color:#f92672">&#34;softwareModules&#34;</span>:[
     {
-    &quot;moduleId&quot;:7,
-    &quot;moduleType&quot;:&quot;firmware&quot;,
-    &quot;moduleVersion&quot;:&quot;7.7.7&quot;,
-    &quot;artifacts&quot;:[
+    <span style="color:#f92672">&#34;moduleId&#34;</span>:<span style="color:#ae81ff">7</span>,
+    <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;firmware&#34;</span>,
+    <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;7.7.7&#34;</span>,
+    <span style="color:#f92672">&#34;artifacts&#34;</span>:[
         {
-        &quot;filename&quot;:&quot;artifact.zip&quot;,
-        &quot;urls&quot;:{
-            &quot;HTTP&quot;:&quot;http://download-from-url.com&quot;,
-            &quot;HTTPS&quot;:&quot;https://download-from-url.com&quot;
+        <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;artifact.zip&#34;</span>,
+        <span style="color:#f92672">&#34;urls&#34;</span>:{
+            <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;http://download-from-url.com&#34;</span>,
+            <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;https://download-from-url.com&#34;</span>
             },
-        &quot;hashes&quot;:{
-            &quot;md5&quot;:&quot;md5hash&quot;,
-            &quot;sha1&quot;:&quot;sha1hash&quot;
+        <span style="color:#f92672">&#34;hashes&#34;</span>:{
+            <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;md5hash&#34;</span>,
+            <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;sha1hash&#34;</span>
             },
-        &quot;size&quot;:512
+        <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#ae81ff">512</span>
         }],
-    &quot;metadata&quot;:[
+    <span style="color:#f92672">&#34;metadata&#34;</span>:[
         {
-            &quot;key&quot;:&quot;installationType&quot;,
-            &quot;value&quot;:&quot;5784K#&quot;
+            <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;installationType&#34;</span>,
+            <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;5784K#&#34;</span>
         }
     ]
     }]
 }
-</code></pre>
-
-<h3 id="multi-action">MULTI_ACTION</h3>
-
+</code></pre></div><h3 id="multi_action">MULTI_ACTION</h3>
 <p>If <code>multi.assignments.enabled</code> is enabled, this message is sent instead of DOWNLOAD_AND_INSTALL, DOWNLOAD, or CANCEL_DOWNLOAD
- by hawkBit to initialize update, download, or cancel task(s).</p>
-
+by hawkBit to initialize update, download, or cancel task(s).</p>
 <p>With weight, one can set the priority to the action. The higher the weight, the higher is the priority of an action.</p>
-
 <table>
 <thead>
 <tr>
@@ -1248,7 +1106,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type</td>
@@ -1256,21 +1113,18 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>Fixed string &ldquo;EVENT&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>thingId</td>
 <td>The ID of the registered provisioning target</td>
 <td>String</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>topic</td>
 <td>Topic name identifying the event</td>
 <td>Fixed string &ldquo;MULTI_ACTION&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>tenant</td>
 <td>The tenant this provisioning target belongs to</td>
@@ -1279,7 +1133,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <table>
 <thead>
 <tr>
@@ -1289,7 +1142,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>content_type</td>
@@ -1299,79 +1151,74 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Payload Template (the Java representation is <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfMultiActionRequest.java">DmfMultiActionRequest</a>):</p>
-
-<pre><code class="language-json">[{
-&quot;topic&quot;: &quot;String&quot;,
-&quot;weight&quot;: long,
-&quot;action&quot;: {
-  &quot;actionId&quot;: long,
-  &quot;targetSecurityToken&quot;: &quot;String&quot;,
-  &quot;softwareModules&quot;:[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[{
+<span style="color:#f92672">&#34;topic&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>,
+<span style="color:#f92672">&#34;weight&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
+<span style="color:#f92672">&#34;action&#34;</span>: {
+  <span style="color:#f92672">&#34;actionId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
+  <span style="color:#f92672">&#34;targetSecurityToken&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>,
+  <span style="color:#f92672">&#34;softwareModules&#34;</span>:[
       {
-      &quot;moduleId&quot;: long,
-      &quot;moduleType&quot;:&quot;String&quot;,
-      &quot;moduleVersion&quot;:&quot;String&quot;,
-      &quot;artifacts&quot;:[
+      <span style="color:#f92672">&#34;moduleId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
+      <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+      <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+      <span style="color:#f92672">&#34;artifacts&#34;</span>:[
           {
-          &quot;filename&quot;:&quot;String&quot;,
-          &quot;urls&quot;:{
-              &quot;HTTP&quot;:&quot;String&quot;,
-              &quot;HTTPS&quot;:&quot;String&quot;
+          <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+          <span style="color:#f92672">&#34;urls&#34;</span>:{
+              <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+              <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
               },
-          &quot;hashes&quot;:{
-              &quot;md5&quot;:&quot;String&quot;,
-              &quot;sha1&quot;:&quot;String&quot;
+          <span style="color:#f92672">&#34;hashes&#34;</span>:{
+              <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+              <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
               },
-          &quot;size&quot;:long
+          <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#960050;background-color:#1e0010">long</span>
           }],
-      &quot;metadata&quot;:[
+      <span style="color:#f92672">&#34;metadata&#34;</span>:[
           {
-              &quot;key&quot;:&quot;String&quot;,
-              &quot;value&quot;:&quot;String&quot;
+              <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+              <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
           }
       ]
       }]
   }
 },
 {
-&quot;topic&quot;: &quot;String&quot;,
-&quot;weight&quot;: long,
-&quot;action&quot;: {
-  &quot;actionId&quot;: long,
-  &quot;targetSecurityToken&quot;: &quot;String&quot;,
-  &quot;softwareModules&quot;:[
+<span style="color:#f92672">&#34;topic&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>,
+<span style="color:#f92672">&#34;weight&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
+<span style="color:#f92672">&#34;action&#34;</span>: {
+  <span style="color:#f92672">&#34;actionId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
+  <span style="color:#f92672">&#34;targetSecurityToken&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>,
+  <span style="color:#f92672">&#34;softwareModules&#34;</span>:[
       {
-      &quot;moduleId&quot;: long,
-      &quot;moduleType&quot;:&quot;String&quot;,
-      &quot;moduleVersion&quot;:&quot;String&quot;,
-      &quot;artifacts&quot;:[
+      <span style="color:#f92672">&#34;moduleId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
+      <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+      <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+      <span style="color:#f92672">&#34;artifacts&#34;</span>:[
           {
-          &quot;filename&quot;:&quot;String&quot;,
-          &quot;urls&quot;:{
-              &quot;HTTP&quot;:&quot;String&quot;,
-              &quot;HTTPS&quot;:&quot;String&quot;
+          <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+          <span style="color:#f92672">&#34;urls&#34;</span>:{
+              <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+              <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
               },
-          &quot;hashes&quot;:{
-              &quot;md5&quot;:&quot;String&quot;,
-              &quot;sha1&quot;:&quot;String&quot;
+          <span style="color:#f92672">&#34;hashes&#34;</span>:{
+              <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+              <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
               },
-          &quot;size&quot;:long
+          <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#960050;background-color:#1e0010">long</span>
           }],
-      &quot;metadata&quot;:[
+      <span style="color:#f92672">&#34;metadata&#34;</span>:[
           {
-              &quot;key&quot;:&quot;String&quot;,
-              &quot;value&quot;:&quot;String&quot;
+              <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
+              <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
           }
       ]
       }]
   }
 }]
-</code></pre>
-
-<p>Example header and payload:</p>
-
+</code></pre></div><p>Example header and payload:</p>
 <table>
 <thead>
 <tr>
@@ -1379,87 +1226,81 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=EVENT  <br /> tenant=tenant123 <br /> thingId=abc  <br /> topic=MULTI_ACTION</td>
+<td>type=EVENT  <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc  <!-- raw HTML omitted --> topic=MULTI_ACTION</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
 </table>
-
-<pre><code class="language-json">[{
-&quot;topic&quot;: &quot;DOWNLOAD_AND_INSTALL&quot;,
-&quot;weight&quot;: 600,
-&quot;action&quot;: {
-  &quot;actionId&quot;:137,
-  &quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
-  &quot;softwareModules&quot;:[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[{
+<span style="color:#f92672">&#34;topic&#34;</span>: <span style="color:#e6db74">&#34;DOWNLOAD_AND_INSTALL&#34;</span>,
+<span style="color:#f92672">&#34;weight&#34;</span>: <span style="color:#ae81ff">600</span>,
+<span style="color:#f92672">&#34;action&#34;</span>: {
+  <span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>,
+  <span style="color:#f92672">&#34;targetSecurityToken&#34;</span>:<span style="color:#e6db74">&#34;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&#34;</span>,
+  <span style="color:#f92672">&#34;softwareModules&#34;</span>:[
       {
-      &quot;moduleId&quot;:7,
-      &quot;moduleType&quot;:&quot;firmware&quot;,
-      &quot;moduleVersion&quot;:&quot;7.7.7&quot;,
-      &quot;artifacts&quot;:[
+      <span style="color:#f92672">&#34;moduleId&#34;</span>:<span style="color:#ae81ff">7</span>,
+      <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;firmware&#34;</span>,
+      <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;7.7.7&#34;</span>,
+      <span style="color:#f92672">&#34;artifacts&#34;</span>:[
           {
-          &quot;filename&quot;:&quot;artifact.zip&quot;,
-          &quot;urls&quot;:{
-              &quot;HTTP&quot;:&quot;http://download-from-url.com&quot;,
-              &quot;HTTPS&quot;:&quot;https://download-from-url.com&quot;
+          <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;artifact.zip&#34;</span>,
+          <span style="color:#f92672">&#34;urls&#34;</span>:{
+              <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;http://download-from-url.com&#34;</span>,
+              <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;https://download-from-url.com&#34;</span>
               },
-          &quot;hashes&quot;:{
-              &quot;md5&quot;:&quot;md5hash&quot;,
-              &quot;sha1&quot;:&quot;sha1hash&quot;
+          <span style="color:#f92672">&#34;hashes&#34;</span>:{
+              <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;md5hash&#34;</span>,
+              <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;sha1hash&#34;</span>
               },
-          &quot;size&quot;:512
+          <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#ae81ff">512</span>
           }],
-      &quot;metadata&quot;:[
+      <span style="color:#f92672">&#34;metadata&#34;</span>:[
           {
-              &quot;key&quot;:&quot;installationType&quot;,
-              &quot;value&quot;:&quot;5784K#&quot;
+              <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;installationType&#34;</span>,
+              <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;5784K#&#34;</span>
           }
       ]
       }]
   }
 },
 {
-&quot;topic&quot;: &quot;DOWNLOAD&quot;,
-&quot;weight&quot;: 500,
-&quot;action&quot;: {
-  &quot;actionId&quot;:138,
-  &quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
-  &quot;softwareModules&quot;:[
+<span style="color:#f92672">&#34;topic&#34;</span>: <span style="color:#e6db74">&#34;DOWNLOAD&#34;</span>,
+<span style="color:#f92672">&#34;weight&#34;</span>: <span style="color:#ae81ff">500</span>,
+<span style="color:#f92672">&#34;action&#34;</span>: {
+  <span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">138</span>,
+  <span style="color:#f92672">&#34;targetSecurityToken&#34;</span>:<span style="color:#e6db74">&#34;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&#34;</span>,
+  <span style="color:#f92672">&#34;softwareModules&#34;</span>:[
       {
-      &quot;moduleId&quot;:4,
-      &quot;moduleType&quot;:&quot;firmware&quot;,
-      &quot;moduleVersion&quot;:&quot;7.7.9&quot;,
-      &quot;artifacts&quot;:[
+      <span style="color:#f92672">&#34;moduleId&#34;</span>:<span style="color:#ae81ff">4</span>,
+      <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;firmware&#34;</span>,
+      <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;7.7.9&#34;</span>,
+      <span style="color:#f92672">&#34;artifacts&#34;</span>:[
           {
-          &quot;filename&quot;:&quot;artifact.zip&quot;,
-          &quot;urls&quot;:{
-              &quot;HTTP&quot;:&quot;http://download-from-url.com&quot;,
-              &quot;HTTPS&quot;:&quot;https://download-from-url.com&quot;
+          <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;artifact.zip&#34;</span>,
+          <span style="color:#f92672">&#34;urls&#34;</span>:{
+              <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;http://download-from-url.com&#34;</span>,
+              <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;https://download-from-url.com&#34;</span>
               },
-          &quot;hashes&quot;:{
-              &quot;md5&quot;:&quot;md5hash&quot;,
-              &quot;sha1&quot;:&quot;sha1hash&quot;
+          <span style="color:#f92672">&#34;hashes&#34;</span>:{
+              <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;md5hash&#34;</span>,
+              <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;sha1hash&#34;</span>
               },
-          &quot;size&quot;:512
+          <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#ae81ff">512</span>
           }],
-      &quot;metadata&quot;:[
+      <span style="color:#f92672">&#34;metadata&#34;</span>:[
           {
-              &quot;key&quot;:&quot;installationType&quot;,
-              &quot;value&quot;:&quot;5784K#&quot;
+              <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;installationType&#34;</span>,
+              <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;5784K#&#34;</span>
           }
       ]
       }]
   }
 }]
-</code></pre>
-
-<h3 id="thing-deleted">THING_DELETED</h3>
-
+</code></pre></div><h3 id="thing_deleted">THING_DELETED</h3>
 <p>Message sent by hawkBit when a target has been deleted.</p>
-
 <table>
 <thead>
 <tr>
@@ -1469,7 +1310,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type</td>
@@ -1477,14 +1317,12 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>Fixed string &ldquo;THING_DELETED&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>thingId</td>
 <td>The ID of the registered provisioning target</td>
 <td>String</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>tenant</td>
 <td>The tenant this provisioning target belongs to</td>
@@ -1493,9 +1331,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Example header:</p>
-
 <table>
 <thead>
 <tr>
@@ -1503,19 +1339,15 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=THING_DELETED <br /> tenant=tenant123 <br /> thingId=abc</td>
+<td>type=THING_DELETED <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="request-attributes-update">REQUEST_ATTRIBUTES_UPDATE</h3>
-
+<h3 id="request_attributes_update">REQUEST_ATTRIBUTES_UPDATE</h3>
 <p>Message sent by Eclipse hawkBit when a re-transmission of target attributes is requested.</p>
-
 <table>
 <thead>
 <tr>
@@ -1525,7 +1357,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type</td>
@@ -1533,21 +1364,18 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>Fixed string &ldquo;EVENT&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>thingId</td>
 <td>The ID of the registered provisioning target</td>
 <td>String</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>topic</td>
 <td>Topic name identifying the event</td>
 <td>Fixed string &ldquo;REQUEST_ATTRIBUTES_UPDATE&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>tenant</td>
 <td>The tenant this provisioning target belongs to</td>
@@ -1556,9 +1384,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Example headers:</p>
-
 <table>
 <thead>
 <tr>
@@ -1566,19 +1392,15 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=EVENT <br /> tenant=tenant123 <br /> thingId=abc <br /> topic=REQUEST_ATTRIBUTES_UPDATE</td>
+<td>type=EVENT <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc <!-- raw HTML omitted --> topic=REQUEST_ATTRIBUTES_UPDATE</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="ping-response">PING_RESPONSE</h3>
-
+<h3 id="ping_response">PING_RESPONSE</h3>
 <p><em>hawkBit</em> will respond to the PING message with a PING_RESPONSE type message that has the same correlationId as the original PING message:</p>
-
 <table>
 <thead>
 <tr>
@@ -1588,7 +1410,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>type</td>
@@ -1596,7 +1417,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>Fixed string &ldquo;PING_RESPONSE&rdquo;</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>tenant</td>
 <td>The tenant the PING belongs to</td>
@@ -1605,7 +1425,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <table>
 <thead>
 <tr>
@@ -1615,7 +1434,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>Mandatory</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>correlationId</td>
@@ -1623,7 +1441,6 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <td>String</td>
 <td>true</td>
 </tr>
-
 <tr>
 <td>content_type</td>
 <td>The content type of the payload</td>
@@ -1632,9 +1449,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-
 <p>The PING_RESPONSE also contains a timestamp (i.e. the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC) as plain text. It is not guaranteed that this timestamp is completely accurate.</p>
-
 <table>
 <thead>
 <tr>
@@ -1642,17 +1457,15 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <th>MessageProperties</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>type=PING_RESPONSE  <br /> tenant=tenant123</td>
+<td>type=PING_RESPONSE  <!-- raw HTML omitted --> tenant=default</td>
 <td>content_type=text/plain</td>
 </tr>
 </tbody>
 </table>
-
-<pre><code class="language-text">1505215891247
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1505215891247
+</code></pre></div>
 
 			<aside class="copyright" role="note">
   <div class="logo">
