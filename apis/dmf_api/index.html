@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Device Management Federation API - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.70.0" />
+    <meta name="generator" content="Hugo 0.73.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -525,9 +525,12 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </table>
 
 <p>Payload Template (optional):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>
-}</code></pre></div>
+
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;String&quot;
+}
+</code></pre>
+
 <p>The &ldquo;name&rdquo; property specifies the name of the thing, which by default is the thing ID. This property is optional.</p>
 
 <h3 id="thing-removed">THING_REMOVED</h3>
@@ -690,13 +693,16 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </table>
 
 <p>Payload Template:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;attributes&#34;</span>: {
-        <span style="color:#f92672">&#34;exampleKey1&#34;</span> : <span style="color:#e6db74">&#34;exampleValue1&#34;</span>,
-        <span style="color:#f92672">&#34;exampleKey2&#34;</span> : <span style="color:#e6db74">&#34;exampleValue2&#34;</span>
+
+<pre><code class="language-json">{
+    &quot;attributes&quot;: {
+        &quot;exampleKey1&quot; : &quot;exampleValue1&quot;,
+        &quot;exampleKey2&quot; : &quot;exampleValue2&quot;
     },
-    <span style="color:#f92672">&#34;mode&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>
-}</code></pre></div>
+    &quot;mode&quot;: &quot;String&quot;
+}
+</code></pre>
+
 <p>The &ldquo;mode&rdquo; property specifies the update mode that should be applied. This property is optional. Possible <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfUpdateMode.java">mode</a> values:</p>
 
 <table>
@@ -784,12 +790,15 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </table>
 
 <p>Payload Template (the Java representation is <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfActionUpdateStatus.java">ActionUpdateStatus</a>):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;actionId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
-  <span style="color:#f92672">&#34;softwareModuleId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
-  <span style="color:#f92672">&#34;actionStatus&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-  <span style="color:#f92672">&#34;message&#34;</span>:[<span style="color:#e6db74">&#34;String&#34;</span>]
-}</code></pre></div>
+
+<pre><code class="language-json">{
+  &quot;actionId&quot;: long,
+  &quot;softwareModuleId&quot;: long,
+  &quot;actionStatus&quot;:&quot;String&quot;,
+  &quot;message&quot;:[&quot;String&quot;]
+}
+</code></pre>
+
 <p>Possible <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfActionStatus.java">actionStatus</a> values:</p>
 
 <table>
@@ -865,12 +874,15 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>,
-  <span style="color:#f92672">&#34;softwareModuleId&#34;</span>:<span style="color:#ae81ff">17</span>,
-  <span style="color:#f92672">&#34;actionStatus&#34;</span>:<span style="color:#e6db74">&#34;DOWNLOAD&#34;</span>,
-  <span style="color:#f92672">&#34;message&#34;</span>:[<span style="color:#e6db74">&#34;The download has started&#34;</span>]
-}</code></pre></div>
+
+<pre><code class="language-json">{
+  &quot;actionId&quot;:137,
+  &quot;softwareModuleId&quot;:17,
+  &quot;actionStatus&quot;:&quot;DOWNLOAD&quot;,
+  &quot;message&quot;:[&quot;The download has started&quot;]
+}
+</code></pre>
+
 <h3 id="ping">PING</h3>
 
 <p>hawkBit allows DMF clients to check the availability of the DMF service. For this scenario DMF specifies a PING message that can be sent by the client:</p>
@@ -990,9 +1002,12 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </table>
 
 <p>Payload template:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;actionId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>
-}</code></pre></div>
+
+<pre><code class="language-json">{
+    &quot;actionId&quot;: long
+}
+</code></pre>
+
 <p>Example Headers and Payload:</p>
 
 <table>
@@ -1010,9 +1025,12 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-<span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>
-}</code></pre></div>
+
+<pre><code class="language-json">{
+&quot;actionId&quot;:137
+}
+</code></pre>
+
 <p>After sending this message, an action status event with either actionStatus=CANCELED or actionStatus=CANCEL_REJECTED has to be returned.</p>
 
 <p>Example header and payload when cancellation is successful:</p>
@@ -1032,12 +1050,15 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>,
-  <span style="color:#f92672">&#34;softwareModuleId&#34;</span>:<span style="color:#ae81ff">17</span>,
-  <span style="color:#f92672">&#34;actionStatus&#34;</span>:<span style="color:#e6db74">&#34;CANCELED&#34;</span>,
-  <span style="color:#f92672">&#34;message&#34;</span>:[<span style="color:#e6db74">&#34;The update was canceled.&#34;</span>]
-}</code></pre></div>
+
+<pre><code class="language-json">{
+  &quot;actionId&quot;:137,
+  &quot;softwareModuleId&quot;:17,
+  &quot;actionStatus&quot;:&quot;CANCELED&quot;,
+  &quot;message&quot;:[&quot;The update was canceled.&quot;]
+}
+</code></pre>
+
 <p>Example header and payload when cancellation is rejected:</p>
 
 <table>
@@ -1055,12 +1076,15 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>,
-  <span style="color:#f92672">&#34;softwareModuleId&#34;</span>:<span style="color:#ae81ff">17</span>,
-  <span style="color:#f92672">&#34;actionStatus&#34;</span>:<span style="color:#e6db74">&#34;CANCEL_REJECTED&#34;</span>,
-  <span style="color:#f92672">&#34;message&#34;</span>:[<span style="color:#e6db74">&#34;The cancellation was not possible since the target sent an unexpected response.&#34;</span>]
-}</code></pre></div>
+
+<pre><code class="language-json">{
+  &quot;actionId&quot;:137,
+  &quot;softwareModuleId&quot;:17,
+  &quot;actionStatus&quot;:&quot;CANCEL_REJECTED&quot;,
+  &quot;message&quot;:[&quot;The cancellation was not possible since the target sent an unexpected response.&quot;]
+}
+</code></pre>
+
 <h3 id="download-and-install-or-download">DOWNLOAD_AND_INSTALL or DOWNLOAD</h3>
 
 <p>Message sent by hawkBit to initialize an update or download task. Note: in case of a maintenance window configured but not yet active the message will have the topic <em>DOWNLOAD</em> instead of _DOWNLOAD_AND<em>INSTALL</em>.</p>
@@ -1127,35 +1151,38 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </table>
 
 <p>Payload Template (the Java representation is <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfDownloadAndUpdateRequest.java">DmfDownloadAndUpdateRequest</a>):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-<span style="color:#f92672">&#34;actionId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
-<span style="color:#f92672">&#34;targetSecurityToken&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>,
-<span style="color:#f92672">&#34;softwareModules&#34;</span>:[
+
+<pre><code class="language-json">{
+&quot;actionId&quot;: long,
+&quot;targetSecurityToken&quot;: &quot;String&quot;,
+&quot;softwareModules&quot;:[
     {
-    <span style="color:#f92672">&#34;moduleId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
-    <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-    <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-    <span style="color:#f92672">&#34;artifacts&#34;</span>:[
+    &quot;moduleId&quot;: long,
+    &quot;moduleType&quot;:&quot;String&quot;,
+    &quot;moduleVersion&quot;:&quot;String&quot;,
+    &quot;artifacts&quot;:[
         {
-        <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-        <span style="color:#f92672">&#34;urls&#34;</span>:{
-            <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-            <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
+        &quot;filename&quot;:&quot;String&quot;,
+        &quot;urls&quot;:{
+            &quot;HTTP&quot;:&quot;String&quot;,
+            &quot;HTTPS&quot;:&quot;String&quot;
             },
-        <span style="color:#f92672">&#34;hashes&#34;</span>:{
-            <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-            <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
+        &quot;hashes&quot;:{
+            &quot;md5&quot;:&quot;String&quot;,
+            &quot;sha1&quot;:&quot;String&quot;
             },
-        <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#960050;background-color:#1e0010">long</span>
+        &quot;size&quot;:long
         }],
-    <span style="color:#f92672">&#34;metadata&#34;</span>:[
+    &quot;metadata&quot;:[
         {
-            <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-            <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
+            &quot;key&quot;:&quot;String&quot;,
+            &quot;value&quot;:&quot;String&quot;
         }
     ]
     }]
-}</code></pre></div>
+}
+</code></pre>
+
 <p>Example header and payload:</p>
 
 <table>
@@ -1173,35 +1200,38 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-<span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>,
-<span style="color:#f92672">&#34;targetSecurityToken&#34;</span>:<span style="color:#e6db74">&#34;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&#34;</span>,
-<span style="color:#f92672">&#34;softwareModules&#34;</span>:[
+
+<pre><code class="language-json">{
+&quot;actionId&quot;:137,
+&quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
+&quot;softwareModules&quot;:[
     {
-    <span style="color:#f92672">&#34;moduleId&#34;</span>:<span style="color:#ae81ff">7</span>,
-    <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;firmware&#34;</span>,
-    <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;7.7.7&#34;</span>,
-    <span style="color:#f92672">&#34;artifacts&#34;</span>:[
+    &quot;moduleId&quot;:7,
+    &quot;moduleType&quot;:&quot;firmware&quot;,
+    &quot;moduleVersion&quot;:&quot;7.7.7&quot;,
+    &quot;artifacts&quot;:[
         {
-        <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;artifact.zip&#34;</span>,
-        <span style="color:#f92672">&#34;urls&#34;</span>:{
-            <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;http://download-from-url.com&#34;</span>,
-            <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;https://download-from-url.com&#34;</span>
+        &quot;filename&quot;:&quot;artifact.zip&quot;,
+        &quot;urls&quot;:{
+            &quot;HTTP&quot;:&quot;http://download-from-url.com&quot;,
+            &quot;HTTPS&quot;:&quot;https://download-from-url.com&quot;
             },
-        <span style="color:#f92672">&#34;hashes&#34;</span>:{
-            <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;md5hash&#34;</span>,
-            <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;sha1hash&#34;</span>
+        &quot;hashes&quot;:{
+            &quot;md5&quot;:&quot;md5hash&quot;,
+            &quot;sha1&quot;:&quot;sha1hash&quot;
             },
-        <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#ae81ff">512</span>
+        &quot;size&quot;:512
         }],
-    <span style="color:#f92672">&#34;metadata&#34;</span>:[
+    &quot;metadata&quot;:[
         {
-            <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;installationType&#34;</span>,
-            <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;5784K#&#34;</span>
+            &quot;key&quot;:&quot;installationType&quot;,
+            &quot;value&quot;:&quot;5784K#&quot;
         }
     ]
     }]
-}</code></pre></div>
+}
+</code></pre>
+
 <h3 id="multi-action">MULTI_ACTION</h3>
 
 <p>If <code>multi.assignments.enabled</code> is enabled, this message is sent instead of DOWNLOAD_AND_INSTALL, DOWNLOAD, or CANCEL_DOWNLOAD
@@ -1271,72 +1301,75 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </table>
 
 <p>Payload Template (the Java representation is <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfMultiActionRequest.java">DmfMultiActionRequest</a>):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[{
-<span style="color:#f92672">&#34;topic&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>,
-<span style="color:#f92672">&#34;weight&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
-<span style="color:#f92672">&#34;action&#34;</span>: {
-  <span style="color:#f92672">&#34;actionId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
-  <span style="color:#f92672">&#34;targetSecurityToken&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>,
-  <span style="color:#f92672">&#34;softwareModules&#34;</span>:[
+
+<pre><code class="language-json">[{
+&quot;topic&quot;: &quot;String&quot;,
+&quot;weight&quot;: long,
+&quot;action&quot;: {
+  &quot;actionId&quot;: long,
+  &quot;targetSecurityToken&quot;: &quot;String&quot;,
+  &quot;softwareModules&quot;:[
       {
-      <span style="color:#f92672">&#34;moduleId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
-      <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-      <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-      <span style="color:#f92672">&#34;artifacts&#34;</span>:[
+      &quot;moduleId&quot;: long,
+      &quot;moduleType&quot;:&quot;String&quot;,
+      &quot;moduleVersion&quot;:&quot;String&quot;,
+      &quot;artifacts&quot;:[
           {
-          <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-          <span style="color:#f92672">&#34;urls&#34;</span>:{
-              <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-              <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
+          &quot;filename&quot;:&quot;String&quot;,
+          &quot;urls&quot;:{
+              &quot;HTTP&quot;:&quot;String&quot;,
+              &quot;HTTPS&quot;:&quot;String&quot;
               },
-          <span style="color:#f92672">&#34;hashes&#34;</span>:{
-              <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-              <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
+          &quot;hashes&quot;:{
+              &quot;md5&quot;:&quot;String&quot;,
+              &quot;sha1&quot;:&quot;String&quot;
               },
-          <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#960050;background-color:#1e0010">long</span>
+          &quot;size&quot;:long
           }],
-      <span style="color:#f92672">&#34;metadata&#34;</span>:[
+      &quot;metadata&quot;:[
           {
-              <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-              <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
+              &quot;key&quot;:&quot;String&quot;,
+              &quot;value&quot;:&quot;String&quot;
           }
       ]
       }]
   }
 },
 {
-<span style="color:#f92672">&#34;topic&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>,
-<span style="color:#f92672">&#34;weight&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
-<span style="color:#f92672">&#34;action&#34;</span>: {
-  <span style="color:#f92672">&#34;actionId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
-  <span style="color:#f92672">&#34;targetSecurityToken&#34;</span>: <span style="color:#e6db74">&#34;String&#34;</span>,
-  <span style="color:#f92672">&#34;softwareModules&#34;</span>:[
+&quot;topic&quot;: &quot;String&quot;,
+&quot;weight&quot;: long,
+&quot;action&quot;: {
+  &quot;actionId&quot;: long,
+  &quot;targetSecurityToken&quot;: &quot;String&quot;,
+  &quot;softwareModules&quot;:[
       {
-      <span style="color:#f92672">&#34;moduleId&#34;</span>: <span style="color:#960050;background-color:#1e0010">long</span>,
-      <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-      <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-      <span style="color:#f92672">&#34;artifacts&#34;</span>:[
+      &quot;moduleId&quot;: long,
+      &quot;moduleType&quot;:&quot;String&quot;,
+      &quot;moduleVersion&quot;:&quot;String&quot;,
+      &quot;artifacts&quot;:[
           {
-          <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-          <span style="color:#f92672">&#34;urls&#34;</span>:{
-              <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-              <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
+          &quot;filename&quot;:&quot;String&quot;,
+          &quot;urls&quot;:{
+              &quot;HTTP&quot;:&quot;String&quot;,
+              &quot;HTTPS&quot;:&quot;String&quot;
               },
-          <span style="color:#f92672">&#34;hashes&#34;</span>:{
-              <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-              <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
+          &quot;hashes&quot;:{
+              &quot;md5&quot;:&quot;String&quot;,
+              &quot;sha1&quot;:&quot;String&quot;
               },
-          <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#960050;background-color:#1e0010">long</span>
+          &quot;size&quot;:long
           }],
-      <span style="color:#f92672">&#34;metadata&#34;</span>:[
+      &quot;metadata&quot;:[
           {
-              <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>,
-              <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;String&#34;</span>
+              &quot;key&quot;:&quot;String&quot;,
+              &quot;value&quot;:&quot;String&quot;
           }
       ]
       }]
   }
-}]</code></pre></div>
+}]
+</code></pre>
+
 <p>Example header and payload:</p>
 
 <table>
@@ -1354,72 +1387,75 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[{
-<span style="color:#f92672">&#34;topic&#34;</span>: <span style="color:#e6db74">&#34;DOWNLOAD_AND_INSTALL&#34;</span>,
-<span style="color:#f92672">&#34;weight&#34;</span>: <span style="color:#ae81ff">600</span>,
-<span style="color:#f92672">&#34;action&#34;</span>: {
-  <span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">137</span>,
-  <span style="color:#f92672">&#34;targetSecurityToken&#34;</span>:<span style="color:#e6db74">&#34;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&#34;</span>,
-  <span style="color:#f92672">&#34;softwareModules&#34;</span>:[
+
+<pre><code class="language-json">[{
+&quot;topic&quot;: &quot;DOWNLOAD_AND_INSTALL&quot;,
+&quot;weight&quot;: 600,
+&quot;action&quot;: {
+  &quot;actionId&quot;:137,
+  &quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
+  &quot;softwareModules&quot;:[
       {
-      <span style="color:#f92672">&#34;moduleId&#34;</span>:<span style="color:#ae81ff">7</span>,
-      <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;firmware&#34;</span>,
-      <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;7.7.7&#34;</span>,
-      <span style="color:#f92672">&#34;artifacts&#34;</span>:[
+      &quot;moduleId&quot;:7,
+      &quot;moduleType&quot;:&quot;firmware&quot;,
+      &quot;moduleVersion&quot;:&quot;7.7.7&quot;,
+      &quot;artifacts&quot;:[
           {
-          <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;artifact.zip&#34;</span>,
-          <span style="color:#f92672">&#34;urls&#34;</span>:{
-              <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;http://download-from-url.com&#34;</span>,
-              <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;https://download-from-url.com&#34;</span>
+          &quot;filename&quot;:&quot;artifact.zip&quot;,
+          &quot;urls&quot;:{
+              &quot;HTTP&quot;:&quot;http://download-from-url.com&quot;,
+              &quot;HTTPS&quot;:&quot;https://download-from-url.com&quot;
               },
-          <span style="color:#f92672">&#34;hashes&#34;</span>:{
-              <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;md5hash&#34;</span>,
-              <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;sha1hash&#34;</span>
+          &quot;hashes&quot;:{
+              &quot;md5&quot;:&quot;md5hash&quot;,
+              &quot;sha1&quot;:&quot;sha1hash&quot;
               },
-          <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#ae81ff">512</span>
+          &quot;size&quot;:512
           }],
-      <span style="color:#f92672">&#34;metadata&#34;</span>:[
+      &quot;metadata&quot;:[
           {
-              <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;installationType&#34;</span>,
-              <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;5784K#&#34;</span>
+              &quot;key&quot;:&quot;installationType&quot;,
+              &quot;value&quot;:&quot;5784K#&quot;
           }
       ]
       }]
   }
 },
 {
-<span style="color:#f92672">&#34;topic&#34;</span>: <span style="color:#e6db74">&#34;DOWNLOAD&#34;</span>,
-<span style="color:#f92672">&#34;weight&#34;</span>: <span style="color:#ae81ff">500</span>,
-<span style="color:#f92672">&#34;action&#34;</span>: {
-  <span style="color:#f92672">&#34;actionId&#34;</span>:<span style="color:#ae81ff">138</span>,
-  <span style="color:#f92672">&#34;targetSecurityToken&#34;</span>:<span style="color:#e6db74">&#34;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&#34;</span>,
-  <span style="color:#f92672">&#34;softwareModules&#34;</span>:[
+&quot;topic&quot;: &quot;DOWNLOAD&quot;,
+&quot;weight&quot;: 500,
+&quot;action&quot;: {
+  &quot;actionId&quot;:138,
+  &quot;targetSecurityToken&quot;:&quot;bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY&quot;,
+  &quot;softwareModules&quot;:[
       {
-      <span style="color:#f92672">&#34;moduleId&#34;</span>:<span style="color:#ae81ff">4</span>,
-      <span style="color:#f92672">&#34;moduleType&#34;</span>:<span style="color:#e6db74">&#34;firmware&#34;</span>,
-      <span style="color:#f92672">&#34;moduleVersion&#34;</span>:<span style="color:#e6db74">&#34;7.7.9&#34;</span>,
-      <span style="color:#f92672">&#34;artifacts&#34;</span>:[
+      &quot;moduleId&quot;:4,
+      &quot;moduleType&quot;:&quot;firmware&quot;,
+      &quot;moduleVersion&quot;:&quot;7.7.9&quot;,
+      &quot;artifacts&quot;:[
           {
-          <span style="color:#f92672">&#34;filename&#34;</span>:<span style="color:#e6db74">&#34;artifact.zip&#34;</span>,
-          <span style="color:#f92672">&#34;urls&#34;</span>:{
-              <span style="color:#f92672">&#34;HTTP&#34;</span>:<span style="color:#e6db74">&#34;http://download-from-url.com&#34;</span>,
-              <span style="color:#f92672">&#34;HTTPS&#34;</span>:<span style="color:#e6db74">&#34;https://download-from-url.com&#34;</span>
+          &quot;filename&quot;:&quot;artifact.zip&quot;,
+          &quot;urls&quot;:{
+              &quot;HTTP&quot;:&quot;http://download-from-url.com&quot;,
+              &quot;HTTPS&quot;:&quot;https://download-from-url.com&quot;
               },
-          <span style="color:#f92672">&#34;hashes&#34;</span>:{
-              <span style="color:#f92672">&#34;md5&#34;</span>:<span style="color:#e6db74">&#34;md5hash&#34;</span>,
-              <span style="color:#f92672">&#34;sha1&#34;</span>:<span style="color:#e6db74">&#34;sha1hash&#34;</span>
+          &quot;hashes&quot;:{
+              &quot;md5&quot;:&quot;md5hash&quot;,
+              &quot;sha1&quot;:&quot;sha1hash&quot;
               },
-          <span style="color:#f92672">&#34;size&#34;</span>:<span style="color:#ae81ff">512</span>
+          &quot;size&quot;:512
           }],
-      <span style="color:#f92672">&#34;metadata&#34;</span>:[
+      &quot;metadata&quot;:[
           {
-              <span style="color:#f92672">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;installationType&#34;</span>,
-              <span style="color:#f92672">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;5784K#&#34;</span>
+              &quot;key&quot;:&quot;installationType&quot;,
+              &quot;value&quot;:&quot;5784K#&quot;
           }
       ]
       }]
   }
-}]</code></pre></div>
+}]
+</code></pre>
+
 <h3 id="thing-deleted">THING_DELETED</h3>
 
 <p>Message sent by hawkBit when a target has been deleted.</p>
@@ -1614,7 +1650,9 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1505215891247</code></pre></div>
+
+<pre><code class="language-text">1505215891247
+</code></pre>
 
 			<aside class="copyright" role="note">
   <div class="logo">
