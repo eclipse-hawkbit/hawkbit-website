@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Run hawkBit - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.77.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -420,7 +420,7 @@
 <li><a href="https://www.rabbitmq.com">RabbitMQ</a> for DMF communication.</li>
 <li>For testing and demonstration purposes we will also use:</li>
 <li><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-device-simulator">hawkBit Device Simulator</a>.</li>
-<li><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-mgmt-api-client">hawkBit Management API example client</a>.</li>
+<li><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-feign-client">hawkBit Management API example client</a>.</li>
 </ul>
 
 <h2 id="prerequisites">Prerequisites</h2>
@@ -453,6 +453,9 @@ spring.datasource.username=YOUR_USER
 spring.datasource.password=YOUR_PWD
 spring.datasource.driverClassName=org.mariadb.jdbc.Driver
 </code></pre>
+
+<p>Note: On Ubuntu 18.04 with MariaDB 10.1 installed from the default repository via apt install <em>COLLATE option</em> of database have to be changed manually to &ldquo;latin1&rdquo;.
+For recent versions of MariaDB running on Ubuntu this is not required (cf. <a href="https://mariadb.com/kb/en/differences-in-mariadb-in-debian-and-ubuntu">system variables</a>, <a href="https://github.com/eclipse/hawkbit/issues/963">issue</a>)</p>
 
 <h3 id="configure-rabbitmq-connection-settings-for-update-server-and-device-simulator-optional">Configure RabbitMQ connection settings for update server and device simulator (optional).</h3>
 
@@ -507,7 +510,7 @@ spring.rabbitmq.port=5672
   </div>
   <p class="notice">
     
-    &copy; 2020 The Eclipse hawkBit Project &ndash;
+    &copy; 2021 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>

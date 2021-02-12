@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Authorization - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.77.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -411,10 +411,13 @@
 
 <h2 id="ddi-api">DDI API</h2>
 
-<p>An authenticated target is permitted to:
-- retrieve commands from the server
-- provide feedback to the the server
-- download artifacts that are assigned to it</p>
+<p>An authenticated target is permitted to:</p>
+
+<ul>
+<li>retrieve commands from the server</li>
+<li>provide feedback to the the server</li>
+<li>download artifacts that are assigned to it</li>
+</ul>
 
 <p>A target might be permitted to download artifacts without authentication (if enabled, see above). Only the download can be permitted to disable the authentication. This can be used in scenarios where the artifacts itself are e.g. signed and secured.</p>
 
@@ -497,10 +500,10 @@ spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jw
 <li>Permission to administrate the tenant settings.</li>
 </ul></li>
 
-<li><p>ROLLOUT_MANAGEMENT</p>
+<li><p>READ<em>/UPDATE</em>/CREATE<em>/DELETE</em>/HANDLE_/APPROVE_ROLLOUT for:</p>
 
 <ul>
-<li>Permission to provision targets through rollouts.</li>
+<li>Managing rollouts and provision targets through a rollout.</li>
 </ul></li>
 </ul>
 
@@ -517,7 +520,7 @@ spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jw
 <tbody>
 <tr>
 <td>Search <em>targets</em> by installed or assigned <em>distribution set</em></td>
-<td>READ_TARGET, READ_REPOSITORY</td>
+<td>READ_REPOSITORY, READ_TARGET</td>
 </tr>
 
 <tr>
@@ -527,17 +530,17 @@ spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jw
 
 <tr>
 <td>Assign DS to target through a <em>Rollout</em>, i.e. <em>Rollout</em> creation and start</td>
-<td>READ_REPOSITORY, UPDATE_TARGET, ROLLOUT_MANAGEMENT</td>
+<td>READ_REPOSITORY, READ_TARGET, READ_ROLLOUT, CREATE_ROLLOUT, HANDLE_ROLLOUT</td>
 </tr>
 
 <tr>
 <td>Read <em>Rollout</em> status including its <em>deployment groups</em></td>
-<td>ROLLOUT_MANAGEMENT</td>
+<td>READ_REPOSITORY, READ_ROLLOUT</td>
 </tr>
 
 <tr>
 <td>Checks <em>targets</em> inside <em>Rollout deployment group</em></td>
-<td>READ_TARGET, ROLLOUT_MANAGEMENT</td>
+<td>READ_REPOSITORY, READ_TARGET, READ_ROLLOUT</td>
 </tr>
 </tbody>
 </table>
@@ -554,7 +557,7 @@ spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jw
   </div>
   <p class="notice">
     
-    &copy; 2020 The Eclipse hawkBit Project &ndash;
+    &copy; 2021 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>

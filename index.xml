@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eclipse hawkBit</title>
     <link>https://www.eclipse.org/hawkbit/</link>
     <description>Recent content on Eclipse hawkBit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://www.eclipse.org/hawkbit/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://www.eclipse.org/hawkbit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Eclipse hawkBit 0.2.0 - First Release</title>
       <link>https://www.eclipse.org/hawkbit/news/2018-07-26-first-release/</link>
@@ -129,7 +125,7 @@ Why Software Updates in IoT? Having software update capabilities ensures a secur
       <description>On Sandbox We offer a sandbox installation that is free for everyone to try out hawkBit&amp;rsquo;s Management UI, Management API, and Direct Device Integration API: &amp;nbsp; &amp;nbsp; https://hawkbit.eclipse.org
 The sandbox is a shared installation that will be reset from time to time. Therefore, it is not allowed to upload any personal data.
  In addition, the following vendors offer free trial accounts for their Eclipse hawkBit compatible products:
- Bosch IoT Rollouts (by Bosch Software Innovations GmbH)  From Docker Image Overview    Service / Container A B C     hawkBit Update Server &amp;#10003; &amp;#10003; &amp;#10003;   hawkBit Device Simulator   &amp;#10003;   MySQL  &amp;#10003; &amp;#10003;   RabbitMQ  &amp;#10003; &amp;#10003;    A: Run hawkBit Update Server as Docker Container Start the hawkBit Update Server as a single container</description>
+ Bosch IoT Rollouts (by Bosch.</description>
     </item>
     
     <item>
@@ -284,7 +280,7 @@ Currently, bodies of messages are based on JSON.&lt;/p&gt;</description>
       
       <guid>https://www.eclipse.org/hawkbit/community/</guid>
       <description>Presentations Here you can find links to arbitrary material covering Eclipse hawkBit which has been presented at events, conferences and meet-ups.
- 09/23/2015 - Eclipse IoT Working Group meeting - slides 04/11/2015 - EclipseCon Europe 2015 - slides 03/09/2016 - EclipseCon North America 2016 - slides 05/16/2016 - Eclipse Virtual IoT Meetup - video - slides 03/20/2017 - Eclipse IoT Day SanJose, CA - video - slides 09/12/2017 - Eclipse IoT Day ThingMonk 2017 - video 01/10/2018 - Eclipse Virtual IoT Meetup - video - slides 10/22/2018 - Community Day EclipseCon Europe 2018 - slides 10/21/2019 - Community Day EclipseCon Europe 2019 - slides  Articles  10/27/2015 - Why software provisioning goes open source - article 05/25/2016 - jaxenter: Eclipse hawkBit - english - german 09/27/2016 - Eclipse Newsletter - &amp;lsquo;IoT is the new black&amp;rsquo; - article  Ask a question Visit stackoverflow.</description>
+ 09/23/2015 - Eclipse IoT Working Group meeting - slides 04/11/2015 - EclipseCon Europe 2015 - slides 03/09/2016 - EclipseCon North America 2016 - slides 05/16/2016 - Eclipse Virtual IoT Meetup - video - slides 03/20/2017 - Eclipse IoT Day SanJose, CA - video - slides 09/12/2017 - Eclipse IoT Day ThingMonk 2017 - video 01/10/2018 - Eclipse Virtual IoT Meetup - video - slides 10/22/2018 - Community Day EclipseCon Europe 2018 - slides 10/21/2019 - Community Day EclipseCon Europe 2019 - slides 10/19/2020 - Community Day EclipseCon Europe 2020 - slides  Articles  10/27/2015 - Why software provisioning goes open source - article 05/25/2016 - jaxenter: Eclipse hawkBit - english - german 09/27/2016 - Eclipse Newsletter - &amp;lsquo;IoT is the new black&amp;rsquo; - article  Ask a question Visit stackoverflow.</description>
     </item>
     
     <item>
@@ -293,112 +289,13 @@ Currently, bodies of messages are based on JSON.&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/release-notes/</guid>
-      <description>0.3.0M6 Release Date: Friday, January 17, 2020 Tag / Release
+      <description>0.3.0M7 Release Date: Monday, February 15, 2021 Hawkbit: Tag / Release Extensions: Tag / Release
+0.3.0M6 Release Date: Friday, January 17, 2020 Tag / Release
 0.3.0M5 Release Date: Tuesday, July 29, 2019 Tag / Release
 0.3.0M4 Release Date: Thursday, June 6, 2019 Tag / Release
 0.3.0M3 Release Date: Tuesday, May 21, 2019 Tag / Release
 0.3.0M2 Release Date: Tuesday, April 2, 2019 Tag / Release
-0.3.0M1 Release Date: Saturday, February 2, 2019 Tag / Release
-0.2.5 Release Date: Friday, November 30, 2018 Tag / Release</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.eclipse.org/hawkbit/rest-api/distributionsets-api-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/rest-api/distributionsets-api-guide/</guid>
-      <description>Distributionsets  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.eclipse.org/hawkbit/rest-api/distributionsettag-api-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/rest-api/distributionsettag-api-guide/</guid>
-      <description>Distribution set Tag  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.eclipse.org/hawkbit/rest-api/distributionsettypes-api-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/rest-api/distributionsettypes-api-guide/</guid>
-      <description>Distribution Set Types  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.eclipse.org/hawkbit/rest-api/rollout-api-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/rest-api/rollout-api-guide/</guid>
-      <description>Rollouts  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.eclipse.org/hawkbit/rest-api/rootcontroller-api-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/rest-api/rootcontroller-api-guide/</guid>
-      <description>Root Controller  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.35em .</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.eclipse.org/hawkbit/rest-api/softwaremodules-api-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/rest-api/softwaremodules-api-guide/</guid>
-      <description>Software Modules  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.35em .</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.eclipse.org/hawkbit/rest-api/softwaremoduletypes-api-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/rest-api/softwaremoduletypes-api-guide/</guid>
-      <description>Software Module Types  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.eclipse.org/hawkbit/rest-api/targetfilters-api-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/rest-api/targetfilters-api-guide/</guid>
-      <description>Target filter queries  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.eclipse.org/hawkbit/rest-api/targets-api-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/rest-api/targets-api-guide/</guid>
-      <description>Targets  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.eclipse.org/hawkbit/rest-api/targettag-api-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/rest-api/targettag-api-guide/</guid>
-      <description>Target Tag  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.35em .</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.eclipse.org/hawkbit/rest-api/tenant-api-guide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.eclipse.org/hawkbit/rest-api/tenant-api-guide/</guid>
-      <description>System Configuration  /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */ /* Remove the comments around the @import statement below when using this as a custom stylesheet */ /*@import &#34;https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400&#34;;*/ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block} audio,canvas,video{display:inline-block} audio:not([controls]){display:none;height:0} [hidden],template{display:none} script{display:none!important} html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%} body{margin:0} a{background:transparent} a:focus{outline:thin dotted} a:active,a:hover{outline:0} h1{font-size:2em;margin:.67em 0} abbr[title]{border-bottom:1px dotted} b,strong{font-weight:bold} dfn{font-style:italic} hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0} mark{background:#ff0;color:#000} code,kbd,pre,samp{font-family:monospace;font-size:1em} pre{white-space:pre-wrap} q{quotes:&#34;\201C&#34; &#34;\201D&#34; &#34;\2018&#34; &#34;\2019&#34;} small{font-size:80%} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} sup{top:-.5em} sub{bottom:-.25em} img{border:0} svg:not(:root){overflow:hidden} figure{margin:0} fieldset{border:1px solid silver;margin:0 2px;padding:.35em .</description>
+0.3.0M1 Release Date: Saturday, February 2, 2019 Tag / Release</description>
     </item>
     
     <item>
