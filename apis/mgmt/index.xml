@@ -88,6 +88,15 @@
     </item>
     
     <item>
+      <title>Target Types API</title>
+      <link>https://www.eclipse.org/hawkbit/apis/mgmt/targettypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/targettypes/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
       <title>Targets API</title>
       <link>https://www.eclipse.org/hawkbit/apis/mgmt/targets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

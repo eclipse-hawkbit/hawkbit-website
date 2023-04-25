@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Concepts - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.111.3">
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -76,8 +76,8 @@
     <script src="//www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
 
     
-    <link href="https://www.eclipse.org/hawkbit/concepts/index.xml" rel="alternate" type="application/rss+xml" title="Eclipse hawkBit" />
-    <link href="https://www.eclipse.org/hawkbit/concepts/index.xml" rel="feed" type="application/rss+xml" title="Eclipse hawkBit" />
+    <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/hawkbit/concepts/index.xml%20https://www.eclipse.org/hawkbit/concepts/index.xml%7d" rel="alternate" type="application/rss+xml" title="Eclipse hawkBit" />
+    <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/hawkbit/concepts/index.xml%20https://www.eclipse.org/hawkbit/concepts/index.xml%7d" rel="feed" type="application/rss+xml" title="Eclipse hawkBit" />
     
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
@@ -175,7 +175,7 @@
       
         <ul class="repo">
           <li class="repo-download">
-            <a href="https://hawkbit.eclipse.org" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
+            <a href="https://hawkbit.eclipseprojects.io" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
               <i class="fas fa-desktop"></i> &nbsp; Sandbox
             </a>
           </li>
@@ -387,8 +387,8 @@
             </a>
           </li>
           <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -415,15 +415,7 @@
 			</a>
 
 			<br>
-			<p>A hawkBit update server can be accessed in four different ways:</p>
-
-<ul>
-<li><em>Direct Device Integration (DDI) API</em> by <strong>targets</strong>.</li>
-<li><em>Management API</em> by 3rd party <strong>applications</strong>.</li>
-<li><em>Device Management Federation (DMF) API</em> by 3rd party <strong>applications</strong> through AMQP.</li>
-<li><em>Management UI</em> by <strong>users</strong>.</li>
-</ul>
- <br><a href="https://www.eclipse.org/hawkbit/concepts/authentication/">[...]</a>
+			<!-- raw HTML omitted --> <br><a href="https://www.eclipse.org/hawkbit/concepts/authentication/">[...]</a>
 
 			<hr>
 			
@@ -432,7 +424,7 @@
 			</a>
 
 			<br>
-			Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF) API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on Spring security <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>. <br><a href="https://www.eclipse.org/hawkbit/concepts/authorization/">[...]</a>
+			<!-- raw HTML omitted --> <br><a href="https://www.eclipse.org/hawkbit/concepts/authorization/">[...]</a>
 
 			<hr>
 			
@@ -441,7 +433,7 @@
 			</a>
 
 			<br>
-			The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full blown configuration management on the other. <br><a href="https://www.eclipse.org/hawkbit/concepts/datamodel/">[...]</a>
+			<!-- raw HTML omitted --> <br><a href="https://www.eclipse.org/hawkbit/concepts/datamodel/">[...]</a>
 
 			<hr>
 			
@@ -450,7 +442,7 @@
 			</a>
 
 			<br>
-			Software update operations in large scale IoT scenarios with hundreds of thousands of devices require special handling. <br><a href="https://www.eclipse.org/hawkbit/concepts/rollout-management/">[...]</a>
+			<!-- raw HTML omitted --> <br><a href="https://www.eclipse.org/hawkbit/concepts/rollout-management/">[...]</a>
 
 			<hr>
 			
@@ -459,7 +451,7 @@
 			</a>
 
 			<br>
-			A target has a current state which reflects the provisioning status of the device at this point in time. State changes are driven either by the update server by means of starting an update or by the controller on the provisioning target that gives feedback to the update server, e.g. &ldquo;I am here&rdquo;, &ldquo;I am working on a provisioning&rdquo;, &ldquo;I have finished a provisioning&rdquo;. <br><a href="https://www.eclipse.org/hawkbit/concepts/targetstate/">[...]</a>
+			<!-- raw HTML omitted --> <br><a href="https://www.eclipse.org/hawkbit/concepts/targetstate/">[...]</a>
 
 			<hr>
 			
@@ -472,7 +464,7 @@
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2023 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
