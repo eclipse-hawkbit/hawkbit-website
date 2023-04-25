@@ -43,6 +43,15 @@
     </item>
     
     <item>
+      <title>Actions API</title>
+      <link>https://www.eclipse.org/hawkbit/apis/mgmt/actions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/actions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Target Tag API</title>
       <link>https://www.eclipse.org/hawkbit/apis/mgmt/targettag/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

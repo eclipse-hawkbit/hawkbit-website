@@ -12,6 +12,8 @@
   </url><url>
     <loc>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsettag/</loc>
   </url><url>
+    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/actions/</loc>
+  </url><url>
     <loc>https://www.eclipse.org/hawkbit/apis/mgmt/targettag/</loc>
   </url><url>
     <loc>https://www.eclipse.org/hawkbit/apis/mgmt/softwaremodules/</loc>
