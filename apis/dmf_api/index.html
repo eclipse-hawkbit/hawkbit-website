@@ -495,8 +495,8 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 </thead>
 <tbody>
 <tr>
-<td>type=THING_CREATED <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc  <!-- raw HTML omitted --> sender=myClient</td>
-<td>content_type=application/json <!-- raw HTML omitted --> reply_to=myExchangeToReplyTo</td>
+<td>type=THING_CREATED <br /> tenant=default <br /> thingId=abc  <br /> sender=myClient</td>
+<td>content_type=application/json <br /> reply_to=myExchangeToReplyTo</td>
 </tr>
 </tbody>
 </table>
@@ -512,7 +512,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
     }
 }
 </code></pre>
-<p>The &ldquo;name&rdquo; property specifies the name of the thing, which by default is the thing ID. This property is optional.<!-- raw HTML omitted -->
+<p>The &ldquo;name&rdquo; property specifies the name of the thing, which by default is the thing ID. This property is optional.<br />
 The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing, for details see UPDATE_ATTRIBUTES message. This property is optional.</p>
 <h3 id="thing_removed">THING_REMOVED</h3>
 <p>Message to request the deletion of a provisioning target.</p>
@@ -574,7 +574,7 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 </thead>
 <tbody>
 <tr>
-<td>type=THING_REMOVED <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc</td>
+<td>type=THING_REMOVED <br /> tenant=default <br /> thingId=abc</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
@@ -645,8 +645,8 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 </thead>
 <tbody>
 <tr>
-<td>type=EVENT <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc  <!-- raw HTML omitted --> topic=UPDATE_ATTRIBUTES</td>
-<td>content_type=application/json <!-- raw HTML omitted --></td>
+<td>type=EVENT <br /> tenant=default <br /> thingId=abc  <br /> topic=UPDATE_ATTRIBUTES</td>
+<td>content_type=application/json <br /></td>
 </tr>
 </tbody>
 </table>
@@ -797,7 +797,7 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 </thead>
 <tbody>
 <tr>
-<td>type=EVENT  <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT  <br /> tenant=default <br /> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
@@ -925,7 +925,7 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 </thead>
 <tbody>
 <tr>
-<td>type=EVENT <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc  <!-- raw HTML omitted --> topic=CANCEL_DOWNLOAD</td>
+<td>type=EVENT <br /> tenant=default <br /> thingId=abc  <br /> topic=CANCEL_DOWNLOAD</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
@@ -945,7 +945,7 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 </thead>
 <tbody>
 <tr>
-<td>type=EVENT  <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT  <br /> tenant=default <br /> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
@@ -967,7 +967,7 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 </thead>
 <tbody>
 <tr>
-<td>type=EVENT  <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> topic=UPDATE_ACTION_STATUS</td>
+<td>type=EVENT  <br /> tenant=default <br /> topic=UPDATE_ACTION_STATUS</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
@@ -1076,7 +1076,7 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 </thead>
 <tbody>
 <tr>
-<td>type=EVENT  <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc  <!-- raw HTML omitted --> topic=DOWNLOAD_AND_INSTALL</td>
+<td>type=EVENT  <br /> tenant=default <br /> thingId=abc  <br /> topic=DOWNLOAD_AND_INSTALL</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
@@ -1247,7 +1247,7 @@ by hawkBit to initialize update, download, or cancel task(s).</p>
 </thead>
 <tbody>
 <tr>
-<td>type=EVENT  <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc  <!-- raw HTML omitted --> topic=MULTI_ACTION</td>
+<td>type=EVENT  <br /> tenant=default <br /> thingId=abc  <br /> topic=MULTI_ACTION</td>
 <td>content_type=application/json</td>
 </tr>
 </tbody>
@@ -1361,7 +1361,7 @@ by hawkBit to initialize update, download, or cancel task(s).</p>
 </thead>
 <tbody>
 <tr>
-<td>type=THING_DELETED <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc</td>
+<td>type=THING_DELETED <br /> tenant=default <br /> thingId=abc</td>
 <td></td>
 </tr>
 </tbody>
@@ -1414,7 +1414,7 @@ by hawkBit to initialize update, download, or cancel task(s).</p>
 </thead>
 <tbody>
 <tr>
-<td>type=EVENT <!-- raw HTML omitted --> tenant=default <!-- raw HTML omitted --> thingId=abc <!-- raw HTML omitted --> topic=REQUEST_ATTRIBUTES_UPDATE</td>
+<td>type=EVENT <br /> tenant=default <br /> thingId=abc <br /> topic=REQUEST_ATTRIBUTES_UPDATE</td>
 <td></td>
 </tr>
 </tbody>
@@ -1479,7 +1479,7 @@ by hawkBit to initialize update, download, or cancel task(s).</p>
 </thead>
 <tbody>
 <tr>
-<td>type=PING_RESPONSE  <!-- raw HTML omitted --> tenant=default</td>
+<td>type=PING_RESPONSE  <br /> tenant=default</td>
 <td>content_type=text/plain</td>
 </tr>
 </tbody>

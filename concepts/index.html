@@ -415,7 +415,13 @@
 			</a>
 
 			<br>
-			<!-- raw HTML omitted --> <br><a href="https://www.eclipse.org/hawkbit/concepts/authentication/">[...]</a>
+			<p>A hawkBit update server can be accessed in four different ways:</p>
+<ul>
+<li><em>Direct Device Integration (DDI) API</em> by <strong>targets</strong>.</li>
+<li><em>Management API</em> by 3rd party <strong>applications</strong>.</li>
+<li><em>Device Management Federation (DMF) API</em> by 3rd party <strong>applications</strong> through AMQP.</li>
+<li><em>Management UI</em> by <strong>users</strong>.</li>
+</ul> <br><a href="https://www.eclipse.org/hawkbit/concepts/authentication/">[...]</a>
 
 			<hr>
 			
@@ -424,7 +430,7 @@
 			</a>
 
 			<br>
-			<!-- raw HTML omitted --> <br><a href="https://www.eclipse.org/hawkbit/concepts/authorization/">[...]</a>
+			Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF) API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on Spring security <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>. <br><a href="https://www.eclipse.org/hawkbit/concepts/authorization/">[...]</a>
 
 			<hr>
 			
@@ -433,7 +439,7 @@
 			</a>
 
 			<br>
-			<!-- raw HTML omitted --> <br><a href="https://www.eclipse.org/hawkbit/concepts/datamodel/">[...]</a>
+			The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full blown configuration management on the other. <br><a href="https://www.eclipse.org/hawkbit/concepts/datamodel/">[...]</a>
 
 			<hr>
 			
@@ -442,7 +448,7 @@
 			</a>
 
 			<br>
-			<!-- raw HTML omitted --> <br><a href="https://www.eclipse.org/hawkbit/concepts/rollout-management/">[...]</a>
+			Software update operations in large scale IoT scenarios with hundreds of thousands of devices require special handling. <br><a href="https://www.eclipse.org/hawkbit/concepts/rollout-management/">[...]</a>
 
 			<hr>
 			
@@ -451,7 +457,7 @@
 			</a>
 
 			<br>
-			<!-- raw HTML omitted --> <br><a href="https://www.eclipse.org/hawkbit/concepts/targetstate/">[...]</a>
+			A target has a current state which reflects the provisioning status of the device at this point in time. State changes are driven either by the update server by means of starting an update or by the controller on the provisioning target that gives feedback to the update server, e.g. &ldquo;I am here&rdquo;, &ldquo;I am working on a provisioning&rdquo;, &ldquo;I have finished a provisioning&rdquo;. <br><a href="https://www.eclipse.org/hawkbit/concepts/targetstate/">[...]</a>
 
 			<hr>
 			
