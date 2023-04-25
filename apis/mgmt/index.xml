@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/mgmt/tenant/</guid>
-      <description> </description>
+      <description></description>
     </item>
     
     <item>
@@ -21,7 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/mgmt/targetfilters/</guid>
-      <description> </description>
+      <description></description>
     </item>
     
     <item>
@@ -30,7 +30,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/mgmt/rollouts/</guid>
-      <description> </description>
+      <description></description>
     </item>
     
     <item>
@@ -39,7 +39,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsettag/</guid>
-      <description> </description>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Actions API</title>
+      <link>https://www.eclipse.org/hawkbit/apis/mgmt/actions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/actions/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -48,7 +57,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/mgmt/targettag/</guid>
-      <description> </description>
+      <description></description>
     </item>
     
     <item>
@@ -57,7 +66,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/mgmt/softwaremodules/</guid>
-      <description> </description>
+      <description></description>
     </item>
     
     <item>
@@ -66,7 +75,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsettypes/</guid>
-      <description> </description>
+      <description></description>
     </item>
     
     <item>
@@ -75,7 +84,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsets/</guid>
-      <description> </description>
+      <description></description>
     </item>
     
     <item>
@@ -84,7 +93,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/mgmt/softwaremoduletypes/</guid>
-      <description> </description>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Target Types API</title>
+      <link>https://www.eclipse.org/hawkbit/apis/mgmt/targettypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/targettypes/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -93,7 +111,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hawkbit/apis/mgmt/targets/</guid>
-      <description> </description>
+      <description></description>
     </item>
     
   </channel>

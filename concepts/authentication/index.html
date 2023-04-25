@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Authentication - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.111.3">
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -75,7 +75,6 @@
     <script src="https://www.eclipse.org/hawkbit/javascripts/modernizr.js"></script>
     <script src="//www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
 
-    
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   </head>
@@ -172,7 +171,7 @@
       
         <ul class="repo">
           <li class="repo-download">
-            <a href="https://hawkbit.eclipse.org" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
+            <a href="https://hawkbit.eclipseprojects.io" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
               <i class="fas fa-desktop"></i> &nbsp; Sandbox
             </a>
           </li>
@@ -381,8 +380,8 @@
             </a>
           </li>
           <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -404,76 +403,47 @@
 			<h1>Authentication </h1>
 
 			<p>A hawkBit update server can be accessed in four different ways:</p>
-
 <ul>
 <li><em>Direct Device Integration (DDI) API</em> by <strong>targets</strong>.</li>
 <li><em>Management API</em> by 3rd party <strong>applications</strong>.</li>
 <li><em>Device Management Federation (DMF) API</em> by 3rd party <strong>applications</strong> through AMQP.</li>
 <li><em>Management UI</em> by <strong>users</strong>.</li>
 </ul>
-
 <h2 id="ddi-api-authentication-modes">DDI API Authentication Modes</h2>
-
 <h3 id="security-token">Security Token</h3>
-
 <p>hawkBit supports multiple ways to authenticate a target against the server. The different authentication modes can be individual enabled and disabled within hawkBit. Both on system level (with Spring Boot properties) as per individual tenant.</p>
-
 <h4 id="target-security-token-authentication">Target Security Token Authentication</h4>
-
 <p>There is a 32 alphanumeric character security-token for each created target within IoT hawkBit. This token can be used to authenticate the target at hawkBit through the HTTP-Authorization header with the custom scheme <em>TargetToken</em>.</p>
-
 <pre><code>GET /SPDEMO/controller/v1/0e945f95-9117-4500-9b0a-9c6d72fa6c07 HTTP/1.1
 Host: your.hawkBit.server
 Authorization: TargetToken bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY
 </code></pre>
-
 <p>The target security token is provided in <a href="../../apis/dmf_api/">DMF API</a> as part of the update message in order to allow DMF clients to leverage the feature or can it be manually retrieved per target by <a href="../../apis/management_api/">Management API</a> or in the <a href="../../ui">Management UI</a> in the target details.</p>
-
 <p>Note: needs to be enabled in your hawkBit installation <strong>and</strong> in the tenant configuration. That allows both the operator as well as the individual customer (if run in a multi-tenant setup) to enable this access method. See <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a> for system wide enablement.</p>
-
 <p>The additional activation for the individual tenant:</p>
-
-<p><img src="../../images/security/targetToken.png" alt="Enable Target Token" /></p>
-
+<p><img src="../../images/security/targetToken.png" alt="Enable Target Token"></p>
 <h4 id="gateway-security-token-authentication">Gateway Security Token Authentication</h4>
-
 <p>Often the targets are connected through a gateway which manages the targets directly and as a result are indirectly connected to the hawkBit update server.</p>
-
 <p>To authenticate this gateway and allow it to manage all target instances under its tenant there is a <em>GatewayToken</em> to authenticate this gateway through the HTTP-Authorization header with a custom scheme <em>GatewayToken</em>. This is of course also handy during development or for testing purposes. However, we generally recommend to use this token with care as it allows to act <em>in the name of</em> any device.</p>
-
 <pre><code>GET /SPDEMO/controller/v1/0e945f95-9117-4500-9b0a-9c6d72fa6c07 HTTP/1.1
 Host: your.hawkBit.server
 Authorization: GatewayToken 3nkswAZhX81oDtktq0FF9Pn0Tc0UGXPW
 </code></pre>
-
 <p>Note: needs to be enabled in your hawkBit installation <strong>and</strong> in the tenant configuration. That allows both the operator as well as the individual customer (if run in a multi-tenant setup) to enable this access method. See <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a> for system wide enablement.</p>
-
 <p>The additional activation for the individual tenant:</p>
-
-<p><img src="../../images/security/gatewayToken.png" alt="Enable Gateway Token" /></p>
-
+<p><img src="../../images/security/gatewayToken.png" alt="Enable Gateway Token"></p>
 <h4 id="anonymous-access">Anonymous access</h4>
-
 <p>Here we offer general anonymous access for all targets (see <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a>) which we consider not really sufficient for a production system but it might come in handy to get a project started in the beginning.</p>
-
 <p>However, anonymous download on the other side might be interesting even in production for scenarios where the artifact itself is already encrypted.</p>
-
 <p>The activation for the individual tenant:</p>
-
-<p><img src="../../images/security/anonymousDownload.png" alt="Enable Anonymous Download" /></p>
-
+<p><img src="../../images/security/anonymousDownload.png" alt="Enable Anonymous Download"></p>
 <h2 id="dmf-api">DMF API</h2>
-
 <p>Authentication is provided by <em>RabbitMQ</em> <a href="https://www.rabbitmq.com/access-control.html">vhost and user credentials</a> that is used for the integration.</p>
-
 <h2 id="management-api">Management API</h2>
-
 <ul>
 <li>Basic Auth</li>
 </ul>
-
 <h2 id="management-ui">Management UI</h2>
-
 <ul>
 <li>Login Dialog</li>
 <li>OpenID Connect</li>
@@ -487,7 +457,7 @@ Authorization: GatewayToken 3nkswAZhX81oDtktq0FF9Pn0Tc0UGXPW
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2023 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
