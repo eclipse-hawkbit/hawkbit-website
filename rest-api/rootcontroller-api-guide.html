@@ -939,7 +939,7 @@ Content-Length: 63
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/TENANT_ID/controller/v1/CONTROLLER_ID/cancelAction/16/feedback' -i -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -d '{
-  "time" : "2023-04-25T07:43:05.505567Z",
+  "time" : "2023-07-11T07:33:02.680858Z",
   "status" : {
     "execution" : "closed",
     "result" : {
@@ -966,7 +966,7 @@ Content-Length: 266
 Host: management-api.host.com
 
 {
-  "time" : "2023-04-25T07:43:05.505567Z",
+  "time" : "2023-07-11T07:33:02.680858Z",
   "status" : {
     "execution" : "closed",
     "result" : {
@@ -1613,16 +1613,16 @@ Content-Length: 7227
     "maintenanceWindow" : "available",
     "chunks" : [ {
       "part" : "jvm",
-      "version" : "1.0.75",
+      "version" : "1.0.22",
       "name" : "oneapp runtime",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "986a1ade8b8a2f758ce951340cc5e21335cc2a00",
-          "md5" : "d04440e6533863247655ac5fd4345bcc",
-          "sha256" : "b3a04740a19e36057ccf258701922f3cd2f1a880536be53a3ca8d50f6b615975"
+          "sha1" : "47693281f004fad5ae22156fe8f953989101bf4c",
+          "md5" : "2648cee791652367759766243a3222c3",
+          "sha256" : "cb74f4c42aa60cfc16875fd20cabbd074c6c1cb61c389cf3fe4a683e6dfb391e"
         },
-        "size" : 13,
+        "size" : 11,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/23/filename/binary.tgz"
@@ -1640,11 +1640,11 @@ Content-Length: 7227
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "986a1ade8b8a2f758ce951340cc5e21335cc2a00",
-          "md5" : "d04440e6533863247655ac5fd4345bcc",
-          "sha256" : "b3a04740a19e36057ccf258701922f3cd2f1a880536be53a3ca8d50f6b615975"
+          "sha1" : "47693281f004fad5ae22156fe8f953989101bf4c",
+          "md5" : "2648cee791652367759766243a3222c3",
+          "sha256" : "cb74f4c42aa60cfc16875fd20cabbd074c6c1cb61c389cf3fe4a683e6dfb391e"
         },
-        "size" : 13,
+        "size" : 11,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/23/filename/file.signature"
@@ -1662,14 +1662,14 @@ Content-Length: 7227
       } ]
     }, {
       "part" : "os",
-      "version" : "1.0.79",
+      "version" : "1.0.93",
       "name" : "one Firmware",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "574cd34be20f75d101ed23518339cc38c5157bdb",
-          "md5" : "a0637c1ccb9fd53e2ba6f45712516989",
-          "sha256" : "498014801aab66be1d7fbea56b1aa5959651b6fd710308e196a8c414029e7291"
+          "sha1" : "f88e95905891989fb331af6cf8dc51a53dd7df04",
+          "md5" : "cb649128adce0c5d0e60ed883d870983",
+          "sha256" : "a81c48f6c48bdb663e208b216376492b66e1788fbc34784af96bb8f10657889b"
         },
         "size" : 13,
         "_links" : {
@@ -1689,9 +1689,9 @@ Content-Length: 7227
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "574cd34be20f75d101ed23518339cc38c5157bdb",
-          "md5" : "a0637c1ccb9fd53e2ba6f45712516989",
-          "sha256" : "498014801aab66be1d7fbea56b1aa5959651b6fd710308e196a8c414029e7291"
+          "sha1" : "f88e95905891989fb331af6cf8dc51a53dd7df04",
+          "md5" : "cb649128adce0c5d0e60ed883d870983",
+          "sha256" : "a81c48f6c48bdb663e208b216376492b66e1788fbc34784af96bb8f10657889b"
         },
         "size" : 13,
         "_links" : {
@@ -1711,14 +1711,14 @@ Content-Length: 7227
       } ]
     }, {
       "part" : "bApp",
-      "version" : "1.0.91",
+      "version" : "1.0.46",
       "name" : "oneapplication",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "e3ba7ff5839c210c98e254dde655147ffc49f5c9",
-          "md5" : "020017c498e6b0b8f76168fd55fa6fd1",
-          "sha256" : "80406288820379a82bbcbfbf7e8690146e46256f505de1c6d430c0168a74f6dd"
+          "sha1" : "952a2fd65de34dbaef232d9f8149f0b4dea62a53",
+          "md5" : "e6947ddac0a43f3f9602bf499b17baa0",
+          "sha256" : "424fff8dd7b96bdef8419f33f60c4665beb60d455682f31bc17790380e076b91"
         },
         "size" : 11,
         "_links" : {
@@ -1738,9 +1738,9 @@ Content-Length: 7227
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "e3ba7ff5839c210c98e254dde655147ffc49f5c9",
-          "md5" : "020017c498e6b0b8f76168fd55fa6fd1",
-          "sha256" : "80406288820379a82bbcbfbf7e8690146e46256f505de1c6d430c0168a74f6dd"
+          "sha1" : "952a2fd65de34dbaef232d9f8149f0b4dea62a53",
+          "md5" : "e6947ddac0a43f3f9602bf499b17baa0",
+          "sha256" : "424fff8dd7b96bdef8419f33f60c4665beb60d455682f31bc17790380e076b91"
         },
         "size" : 11,
         "_links" : {
@@ -1790,7 +1790,7 @@ Content-Length: 7227
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json
-Content-Length: 617
+Content-Length: 616
 
 {
   "id" : "12",
@@ -1800,17 +1800,17 @@ Content-Length: 617
     "maintenanceWindow" : "unavailable",
     "chunks" : [ {
       "part" : "bApp",
-      "version" : "1.0.85",
+      "version" : "1.0.50",
       "name" : "oneapplication",
       "artifacts" : [ ]
     }, {
       "part" : "jvm",
-      "version" : "1.0.66",
+      "version" : "1.0.4",
       "name" : "oneapp runtime",
       "artifacts" : [ ]
     }, {
       "part" : "os",
-      "version" : "1.0.20",
+      "version" : "1.0.23",
       "name" : "one Firmware",
       "artifacts" : [ ]
     } ]
@@ -1894,7 +1894,7 @@ Content-Length: 617
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/hal+json' \
     -d '{
-  "time" : "2023-04-25T07:43:05.187287Z",
+  "time" : "2023-07-11T07:33:01.715394Z",
   "status" : {
     "execution" : "closed",
     "result" : {
@@ -1922,7 +1922,7 @@ Content-Length: 268
 Host: management-api.host.com
 
 {
-  "time" : "2023-04-25T07:43:05.187287Z",
+  "time" : "2023-07-11T07:33:01.715394Z",
   "status" : {
     "execution" : "closed",
     "result" : {
@@ -2196,7 +2196,7 @@ Content-Length: 333
     "active" : true,
     "initiator" : "exampleUserId",
     "remark" : "exampleRemark",
-    "activatedAt" : 1682408585090
+    "activatedAt" : 1689060781385
   },
   "_links" : {
     "deactivateAutoConfirm" : {
@@ -2883,16 +2883,16 @@ Content-Length: 7216
     "maintenanceWindow" : "available",
     "chunks" : [ {
       "part" : "jvm",
-      "version" : "1.0.62",
+      "version" : "1.0.42",
       "name" : "oneapp runtime",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "3dceccec02e7626184bdbba12b247b67ff04c363",
-          "md5" : "a9a7df0aa4c72b3b03b654c42d29744b",
-          "sha256" : "971d8db88fef8e7a3e6d5bbf501d69b07d0c300d9be948aff8b52960ef039358"
+          "sha1" : "5125b5427c6f8c1990e86a8581a62fd6b0435632",
+          "md5" : "126f6612ddd3f84761f72e139a3f2270",
+          "sha256" : "cdf849c2778cd6de2126a113943be4cdb2f028d41c332d1c95969c40ef63ebd9"
         },
-        "size" : 11,
+        "size" : 13,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/17/filename/binary.tgz"
@@ -2910,11 +2910,11 @@ Content-Length: 7216
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "3dceccec02e7626184bdbba12b247b67ff04c363",
-          "md5" : "a9a7df0aa4c72b3b03b654c42d29744b",
-          "sha256" : "971d8db88fef8e7a3e6d5bbf501d69b07d0c300d9be948aff8b52960ef039358"
+          "sha1" : "5125b5427c6f8c1990e86a8581a62fd6b0435632",
+          "md5" : "126f6612ddd3f84761f72e139a3f2270",
+          "sha256" : "cdf849c2778cd6de2126a113943be4cdb2f028d41c332d1c95969c40ef63ebd9"
         },
-        "size" : 11,
+        "size" : 13,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/17/filename/file.signature"
@@ -2932,16 +2932,16 @@ Content-Length: 7216
       } ]
     }, {
       "part" : "bApp",
-      "version" : "1.0.96",
+      "version" : "1.0.51",
       "name" : "oneapplication",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "701c0c0fcbee5e96fa5c5b819cb519686940ade3",
-          "md5" : "f0f6a34c4c9e79d07c2d92c3c3d88560",
-          "sha256" : "cff472a07c3143741fb03ac6c577acabef72a186a8bfaab00bbb47ca5ebbe554"
+          "sha1" : "343b37818c9d44df53b73c55001eb8d0e4b41a70",
+          "md5" : "530e830aa009b05bc53434eb4b2b302b",
+          "sha256" : "60e9f18b8a6dbffb3cc7cf7147c42223810a1d639d419998247b4c7030eccd22"
         },
-        "size" : 11,
+        "size" : 13,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/16/filename/binary.tgz"
@@ -2959,11 +2959,11 @@ Content-Length: 7216
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "701c0c0fcbee5e96fa5c5b819cb519686940ade3",
-          "md5" : "f0f6a34c4c9e79d07c2d92c3c3d88560",
-          "sha256" : "cff472a07c3143741fb03ac6c577acabef72a186a8bfaab00bbb47ca5ebbe554"
+          "sha1" : "343b37818c9d44df53b73c55001eb8d0e4b41a70",
+          "md5" : "530e830aa009b05bc53434eb4b2b302b",
+          "sha256" : "60e9f18b8a6dbffb3cc7cf7147c42223810a1d639d419998247b4c7030eccd22"
         },
-        "size" : 11,
+        "size" : 13,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/16/filename/file.signature"
@@ -2981,16 +2981,16 @@ Content-Length: 7216
       } ]
     }, {
       "part" : "os",
-      "version" : "1.0.44",
+      "version" : "1.0.75",
       "name" : "one Firmware",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "2b09765e953cd138b7da8f4725e48183dab62aec",
-          "md5" : "9b0aa2f51379cb4a5e0b7d026c2605c9",
-          "sha256" : "618faa741070b3f8148bad06f088e537a8f7913e734df4dde61fb163725cb4ee"
+          "sha1" : "067e7bf7dbf2a87803dc8d95cfbc5c3327a41c7c",
+          "md5" : "3fc6dcdb51012bec0d76b0f2331bdf33",
+          "sha256" : "333773dca5c09df55aec8bf6dfdbc323a88cad0389df1bccaa6a61171e369cb6"
         },
-        "size" : 15,
+        "size" : 10,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/18/filename/binary.tgz"
@@ -3008,11 +3008,11 @@ Content-Length: 7216
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "2b09765e953cd138b7da8f4725e48183dab62aec",
-          "md5" : "9b0aa2f51379cb4a5e0b7d026c2605c9",
-          "sha256" : "618faa741070b3f8148bad06f088e537a8f7913e734df4dde61fb163725cb4ee"
+          "sha1" : "067e7bf7dbf2a87803dc8d95cfbc5c3327a41c7c",
+          "md5" : "3fc6dcdb51012bec0d76b0f2331bdf33",
+          "sha256" : "333773dca5c09df55aec8bf6dfdbc323a88cad0389df1bccaa6a61171e369cb6"
         },
-        "size" : 15,
+        "size" : 10,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/18/filename/file.signature"
@@ -3576,14 +3576,14 @@ Content-Length: 7245
     "maintenanceWindow" : "available",
     "chunks" : [ {
       "part" : "jvm",
-      "version" : "1.0.91",
+      "version" : "1.0.88",
       "name" : "zeroapp runtime",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "71ee1b59088b8afc470cbbeaa610a36a033bcbe1",
-          "md5" : "69e09e3812ed143c4f0c2bf70d6c0cd3",
-          "sha256" : "02966527015a7ec4bb2b3fa0718ab106f43c5f93d6c61edd8ced470580d09bf0"
+          "sha1" : "3097aa0efa52fd27217fa72328df2fe9684d0168",
+          "md5" : "c42aef24ae56c758023c6a2441eb3e2a",
+          "sha256" : "9177974a91e449a9846e818b65de267667e2b800b11a4576c7786d22ff9bbeb4"
         },
         "size" : 11,
         "_links" : {
@@ -3603,9 +3603,9 @@ Content-Length: 7245
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "71ee1b59088b8afc470cbbeaa610a36a033bcbe1",
-          "md5" : "69e09e3812ed143c4f0c2bf70d6c0cd3",
-          "sha256" : "02966527015a7ec4bb2b3fa0718ab106f43c5f93d6c61edd8ced470580d09bf0"
+          "sha1" : "3097aa0efa52fd27217fa72328df2fe9684d0168",
+          "md5" : "c42aef24ae56c758023c6a2441eb3e2a",
+          "sha256" : "9177974a91e449a9846e818b65de267667e2b800b11a4576c7786d22ff9bbeb4"
         },
         "size" : 11,
         "_links" : {
@@ -3625,14 +3625,14 @@ Content-Length: 7245
       } ]
     }, {
       "part" : "os",
-      "version" : "1.0.23",
+      "version" : "1.0.29",
       "name" : "zero Firmware",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "6aec23d2827bd16b6d3d565b1f4e61d5e43dc945",
-          "md5" : "ab06236772518c7282c5139711de505e",
-          "sha256" : "e501e62391e0c46a6b5cd1dbdb4e20b8c26f8ca4ac83466d40a005508ddd03c3"
+          "sha1" : "4c320d455afa8d0589774501b1664d32f913b89b",
+          "md5" : "db44beece987b62a284d6cbafeb18dd2",
+          "sha256" : "16676d254a414153ceabd1caac9352f1e53893d253c4d87ea6eea3c68445d56d"
         },
         "size" : 11,
         "_links" : {
@@ -3652,9 +3652,9 @@ Content-Length: 7245
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "6aec23d2827bd16b6d3d565b1f4e61d5e43dc945",
-          "md5" : "ab06236772518c7282c5139711de505e",
-          "sha256" : "e501e62391e0c46a6b5cd1dbdb4e20b8c26f8ca4ac83466d40a005508ddd03c3"
+          "sha1" : "4c320d455afa8d0589774501b1664d32f913b89b",
+          "md5" : "db44beece987b62a284d6cbafeb18dd2",
+          "sha256" : "16676d254a414153ceabd1caac9352f1e53893d253c4d87ea6eea3c68445d56d"
         },
         "size" : 11,
         "_links" : {
@@ -3674,16 +3674,16 @@ Content-Length: 7245
       } ]
     }, {
       "part" : "bApp",
-      "version" : "1.0.34",
+      "version" : "1.0.84",
       "name" : "zeroapplication",
       "artifacts" : [ {
         "filename" : "binary.tgz",
         "hashes" : {
-          "sha1" : "879dc26fc3752c43436946be9a07adf20b1763b6",
-          "md5" : "c9c189654e2e2b9a1f53531406939c83",
-          "sha256" : "f0921d31ddfbce01c3c19167d71d4591b558a5c07b47caba4d9074f40d08b9b6"
+          "sha1" : "761b9e591564732d7c4e16fdd4e4abfce3289d4d",
+          "md5" : "813094c2006a18595e444f23ad4eec0b",
+          "sha256" : "da1b507bb37bd5e8bd5417204c51cd1a0fd7908431167788c4400bda13765302"
         },
-        "size" : 12,
+        "size" : 13,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/43/filename/binary.tgz"
@@ -3701,11 +3701,11 @@ Content-Length: 7245
       }, {
         "filename" : "file.signature",
         "hashes" : {
-          "sha1" : "879dc26fc3752c43436946be9a07adf20b1763b6",
-          "md5" : "c9c189654e2e2b9a1f53531406939c83",
-          "sha256" : "f0921d31ddfbce01c3c19167d71d4591b558a5c07b47caba4d9074f40d08b9b6"
+          "sha1" : "761b9e591564732d7c4e16fdd4e4abfce3289d4d",
+          "md5" : "813094c2006a18595e444f23ad4eec0b",
+          "sha256" : "da1b507bb37bd5e8bd5417204c51cd1a0fd7908431167788c4400bda13765302"
         },
-        "size" : 12,
+        "size" : 13,
         "_links" : {
           "download" : {
             "href" : "https://link-to-cdn.com/api/v1/TENANT_ID/download/controller/CONTROLLER_ID/softwaremodules/43/filename/file.signature"
@@ -3729,7 +3729,7 @@ Content-Length: 7245
   },
   "actionHistory" : {
     "status" : "FINISHED",
-    "messages" : [ "Installed", "Write firmware", "Reboot", "Download failed. ErrorCode #5876745. Retry", "Download done", "Started download", "Assignment initiated by user 'TestPrincipal'" ]
+    "messages" : [ "Installed", "Reboot", "Write firmware", "Download done", "Download failed. ErrorCode #5876745. Retry", "Started download", "Assignment initiated by user 'TestPrincipal'" ]
   }
 }</code></pre>
 </div>
@@ -3941,9 +3941,9 @@ Content-Length: 922
 [ {
   "filename" : "binaryFile",
   "hashes" : {
-    "sha1" : "e4e667b70ff652cb9d9c8a49f141bd68e06cec6f",
-    "md5" : "13793b0e3a7830ed685d3ede7ff93048",
-    "sha256" : "c51368bf045803b429a67bdf04539a373d9fb8caa310fe0431265e6871b4f07a"
+    "sha1" : "5bd02fdaf6ecb220de013c0b74f07b7d7478578f",
+    "md5" : "b487e364c6ed06ac7682758bd817fb06",
+    "sha256" : "15f7851b14e27c28054907c152cf9836542755e2e57fc350d89f43d6bc315b29"
   },
   "size" : 11,
   "_links" : {
@@ -4070,7 +4070,7 @@ Content-Length: 922
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-21 07:57:53 +0200
+Last updated 2023-02-01 11:02:05 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">

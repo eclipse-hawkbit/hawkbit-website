@@ -639,9 +639,9 @@ Content-Length: 1772
 {
   "content" : [ {
     "createdBy" : "system",
-    "createdAt" : 1682408579471,
+    "createdAt" : 1689060768630,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1682408579471,
+    "lastModifiedAt" : 1689060768630,
     "name" : "OS only",
     "description" : "Default type with Firmware/OS only.",
     "key" : "os",
@@ -654,12 +654,12 @@ Content-Length: 1772
     "id" : 15
   }, {
     "createdBy" : "system",
-    "createdAt" : 1682408579472,
+    "createdAt" : 1689060768630,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1682408579472,
-    "name" : "OS with app(s)",
-    "description" : "Default type with Firmware/OS and optional app(s).",
-    "key" : "os_app",
+    "lastModifiedAt" : 1689060768630,
+    "name" : "App(s) only",
+    "description" : "Default type with app(s) only.",
+    "key" : "app",
     "deleted" : false,
     "_links" : {
       "self" : {
@@ -669,12 +669,12 @@ Content-Length: 1772
     "id" : 16
   }, {
     "createdBy" : "system",
-    "createdAt" : 1682408579472,
+    "createdAt" : 1689060768630,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1682408579472,
-    "name" : "App(s) only",
-    "description" : "Default type with app(s) only.",
-    "key" : "app",
+    "lastModifiedAt" : 1689060768630,
+    "name" : "OS with app(s)",
+    "description" : "Default type with Firmware/OS and optional app(s).",
+    "key" : "os_app",
     "deleted" : false,
     "_links" : {
       "self" : {
@@ -684,9 +684,9 @@ Content-Length: 1772
     "id" : 17
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1682408579478,
+    "createdAt" : 1689060768648,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1682408579485,
+    "lastModifiedAt" : 1689060768671,
     "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
     "description" : "Desc1234",
     "key" : "test_default_ds_type",
@@ -783,7 +783,7 @@ Content-Length: 1772
   "name" : "TestName1",
   "description" : "Desc1",
   "mandatorymodules" : [ {
-    "id" : 2
+    "id" : 1
   } ],
   "key" : "test1"
 } ]'</code></pre>
@@ -808,7 +808,7 @@ Host: management-api.host.com
   "name" : "TestName1",
   "description" : "Desc1",
   "mandatorymodules" : [ {
-    "id" : 2
+    "id" : 1
   } ],
   "key" : "test1"
 } ]</code></pre>
@@ -974,9 +974,9 @@ Content-Length: 396
 
 [ {
   "createdBy" : "uploadTester",
-  "createdAt" : 1682408579373,
+  "createdAt" : 1689060768432,
   "lastModifiedBy" : "uploadTester",
-  "lastModifiedAt" : 1682408579373,
+  "lastModifiedAt" : 1689060768432,
   "name" : "TestName1",
   "description" : "Desc1",
   "key" : "test1",
@@ -1333,9 +1333,9 @@ Content-Length: 714
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1682408579418,
+  "createdAt" : 1689060768530,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1682408579459,
+  "lastModifiedAt" : 1689060768610,
   "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
   "description" : "Desc1234",
   "key" : "test_default_ds_type",
@@ -1618,9 +1618,9 @@ Content-Length: 730
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1682408579620,
+  "createdAt" : 1689060768975,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1682408579631,
+  "lastModifiedAt" : 1689060769002,
   "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
   "description" : "an updated description",
   "key" : "test_default_ds_type",
@@ -1854,9 +1854,9 @@ Content-Length: 384
 
 [ {
   "createdBy" : "system",
-  "createdAt" : 1682408579545,
+  "createdAt" : 1689060768797,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1682408579548,
+  "lastModifiedAt" : 1689060768807,
   "name" : "OS",
   "description" : "Updated description.",
   "key" : "os",
@@ -2371,9 +2371,9 @@ Content-Length: 380
 
 {
   "createdBy" : "system",
-  "createdAt" : 1682408579641,
+  "createdAt" : 1689060769021,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1682408579643,
+  "lastModifiedAt" : 1689060769027,
   "name" : "OS",
   "description" : "Updated description.",
   "key" : "os",
@@ -2597,9 +2597,9 @@ Content-Length: 418
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1682408579571,
+  "createdAt" : 1689060768859,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1682408579572,
+  "lastModifiedAt" : 1689060768862,
   "name" : "runtime",
   "description" : "Updated description.",
   "key" : "runtime",
@@ -2855,7 +2855,7 @@ Host: management-api.host.com
 <h4 id="_curl_12"><a class="link" href="#_curl_12">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/69/optionalmoduletypes/44' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/69/optionalmoduletypes/43' -i -X DELETE \
     -H 'Content-Type: application/json'</code></pre>
 </div>
 </div>
@@ -2864,7 +2864,7 @@ Host: management-api.host.com
 <h4 id="_request_url_12"><a class="link" href="#_request_url_12">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /rest/v1/distributionsettypes/69/optionalmoduletypes/44 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /rest/v1/distributionsettypes/69/optionalmoduletypes/43 HTTP/1.1
 Content-Type: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -3108,9 +3108,9 @@ Content-Length: 405
 
 {
   "createdBy" : "system",
-  "createdAt" : 1682408579390,
+  "createdAt" : 1689060768462,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1682408579394,
+  "lastModifiedAt" : 1689060768471,
   "name" : "Application",
   "description" : "Updated description.",
   "key" : "application",
@@ -3237,7 +3237,7 @@ Content-Length: 405
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-21 07:57:53 +0200
+Last updated 2022-09-28 12:28:26 +0300
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
