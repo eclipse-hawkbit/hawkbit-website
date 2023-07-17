@@ -675,16 +675,16 @@ Content-Length: 631
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060746033,
+    "createdAt" : 1689592754520,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060746115,
+    "lastModifiedAt" : 1689592755241,
     "name" : "exampleRollout",
     "description" : "exampleDescription",
     "targetFilterQuery" : "controllerId==exampleTarget*",
     "distributionSetId" : 16,
     "status" : "ready",
     "totalTargets" : 20,
-    "forcetime" : 1689060758372,
+    "forcetime" : 1689592766827,
     "deleted" : false,
     "type" : "forced",
     "weight" : 400,
@@ -981,6 +981,18 @@ Host: management-api.host.com</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The link to the distribution set.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">approveDecidedBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Who Approved/Denied the rollout. Not present if the rollout is missing approval.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">approvalRemark</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A user remark of the approve/denied decision. Not present if the rollout is missing approval.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -990,13 +1002,13 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json
-Content-Length: 1639
+Content-Length: 1722
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1689060742254,
+  "createdAt" : 1689592704550,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060742354,
+  "lastModifiedAt" : 1689592705513,
   "name" : "exampleRollout",
   "description" : "exampleDescription",
   "targetFilterQuery" : "controllerId==exampleTarget*",
@@ -1012,11 +1024,13 @@ Content-Length: 1639
     "error" : 0
   },
   "totalGroups" : 5,
-  "startAt" : 1689060743352,
-  "forcetime" : 1689060754593,
+  "startAt" : 1689592706451,
+  "forcetime" : 1689592716795,
   "deleted" : false,
   "type" : "forced",
   "weight" : 400,
+  "approvalRemark" : "Approved remark.",
+  "approveDecidedBy" : "exampleUsername",
   "_links" : {
     "start" : {
       "href" : "https://management-api.host.com/rest/v1/rollouts/2/start"
@@ -1041,7 +1055,7 @@ Content-Length: 1639
     },
     "distributionset" : {
       "href" : "https://management-api.host.com/rest/v1/distributionsets/2",
-      "name" : "0464d9fc-1f9f-4bf8-8c83-3124e9d8f599:1.0"
+      "name" : "b2e17eaf-6a2b-468f-a348-644dcd89d380:1.0"
     },
     "self" : {
       "href" : "https://management-api.host.com/rest/v1/rollouts/2"
@@ -1142,7 +1156,7 @@ Content-Length: 1639
     "action" : "NEXTGROUP"
   },
   "name" : "exampleRollout",
-  "forcetime" : 1689060746714,
+  "forcetime" : 1689592726012,
   "errorAction" : {
     "expression" : "",
     "action" : "PAUSE"
@@ -1152,7 +1166,7 @@ Content-Length: 1639
     "condition" : "THRESHOLD",
     "expression" : "80"
   },
-  "startAt" : 1689060745714
+  "startAt" : 1689592725012
 }'</code></pre>
 </div>
 </div>
@@ -1182,7 +1196,7 @@ Host: management-api.host.com
     "action" : "NEXTGROUP"
   },
   "name" : "exampleRollout",
-  "forcetime" : 1689060746714,
+  "forcetime" : 1689592726012,
   "errorAction" : {
     "expression" : "",
     "action" : "PAUSE"
@@ -1192,7 +1206,7 @@ Host: management-api.host.com
     "condition" : "THRESHOLD",
     "expression" : "80"
   },
-  "startAt" : 1689060745714
+  "startAt" : 1689592725012
 }</code></pre>
 </div>
 </div>
@@ -1571,9 +1585,9 @@ Content-Length: 1620
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1689060743753,
+  "createdAt" : 1689592723935,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060743753,
+  "lastModifiedAt" : 1689592723935,
   "name" : "exampleRollout",
   "description" : "Rollout for all named targets",
   "targetFilterQuery" : "id==targets-*",
@@ -1589,8 +1603,8 @@ Content-Length: 1620
     "error" : 0
   },
   "totalGroups" : 5,
-  "startAt" : 1689060745714,
-  "forcetime" : 1689060746714,
+  "startAt" : 1689592725012,
+  "forcetime" : 1689592726012,
   "deleted" : false,
   "type" : "forced",
   "_links" : {
@@ -1617,7 +1631,7 @@ Content-Length: 1620
     },
     "distributionset" : {
       "href" : "https://management-api.host.com/rest/v1/distributionsets/6",
-      "name" : "28930caa-3555-4ea3-bcba-82c4e8f21d01:1.0"
+      "name" : "a2f8c1bc-26bd-4935-b55e-a562cb7cecac:1.0"
     },
     "self" : {
       "href" : "https://management-api.host.com/rest/v1/rollouts/6"
@@ -1694,7 +1708,7 @@ Content-Length: 1620
     "condition" : "THRESHOLD",
     "expression" : "80"
   },
-  "startAt" : 1689060744119
+  "startAt" : 1689592728640
 }'</code></pre>
 </div>
 </div>
@@ -1765,7 +1779,7 @@ Host: management-api.host.com
     "condition" : "THRESHOLD",
     "expression" : "80"
   },
-  "startAt" : 1689060744119
+  "startAt" : 1689592728640
 }</code></pre>
 </div>
 </div>
@@ -2242,9 +2256,9 @@ Content-Length: 1625
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1689060744133,
+  "createdAt" : 1689592728787,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060744133,
+  "lastModifiedAt" : 1689592728787,
   "name" : "exampleRolloutWithDefinedGroups",
   "description" : "Rollout for all named targets",
   "targetFilterQuery" : "id==targets-*",
@@ -2260,7 +2274,7 @@ Content-Length: 1625
     "error" : 0
   },
   "totalGroups" : 2,
-  "startAt" : 1689060744119,
+  "startAt" : 1689592728640,
   "forcetime" : 0,
   "deleted" : false,
   "type" : "forced",
@@ -2288,7 +2302,7 @@ Content-Length: 1625
     },
     "distributionset" : {
       "href" : "https://management-api.host.com/rest/v1/distributionsets/8",
-      "name" : "24c28883-683b-448b-b9f1-5b12ca6c5de4:1.0"
+      "name" : "48ae48a3-cc13-4a44-9aa4-4055c3d84ba9:1.0"
     },
     "self" : {
       "href" : "https://management-api.host.com/rest/v1/rollouts/8"
@@ -3305,14 +3319,14 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json
-Content-Length: 4240
+Content-Length: 4238
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060745535,
+    "createdAt" : 1689592748633,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060745601,
+    "lastModifiedAt" : 1689592749600,
     "name" : "group-1",
     "description" : "group-1",
     "successCondition" : {
@@ -3344,9 +3358,9 @@ Content-Length: 4240
     "id" : 63
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060745536,
+    "createdAt" : 1689592748637,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060745601,
+    "lastModifiedAt" : 1689592749602,
     "name" : "group-2",
     "description" : "group-2",
     "successCondition" : {
@@ -3378,9 +3392,9 @@ Content-Length: 4240
     "id" : 64
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060745536,
+    "createdAt" : 1689592748640,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060745601,
+    "lastModifiedAt" : 1689592749603,
     "name" : "group-3",
     "description" : "group-3",
     "successCondition" : {
@@ -3400,7 +3414,7 @@ Content-Length: 4240
       "expression" : ""
     },
     "targetFilterQuery" : "",
-    "targetPercentage" : 33.333336,
+    "targetPercentage" : 33.3333,
     "confirmationRequired" : false,
     "status" : "ready",
     "totalTargets" : 4,
@@ -3412,9 +3426,9 @@ Content-Length: 4240
     "id" : 65
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060745537,
+    "createdAt" : 1689592748643,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060745601,
+    "lastModifiedAt" : 1689592749604,
     "name" : "group-4",
     "description" : "group-4",
     "successCondition" : {
@@ -3446,9 +3460,9 @@ Content-Length: 4240
     "id" : 66
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060745537,
+    "createdAt" : 1689592748647,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060745602,
+    "lastModifiedAt" : 1689592749605,
     "name" : "group-5",
     "description" : "group-5",
     "successCondition" : {
@@ -3781,9 +3795,9 @@ Content-Length: 921
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1689060746238,
+  "createdAt" : 1689592756806,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060746308,
+  "lastModifiedAt" : 1689592757413,
   "name" : "group-1",
   "description" : "group-1",
   "successCondition" : {
@@ -4106,19 +4120,19 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json
-Content-Length: 2105
+Content-Length: 2107
 
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060745703,
+    "createdAt" : 1689592750952,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060745703,
+    "lastModifiedAt" : 1689592750952,
     "name" : "exampleTarget-00000",
     "description" : "exampleTarget0",
     "controllerId" : "exampleTarget-00000",
     "updateStatus" : "unknown",
-    "securityToken" : "5ad436a21dfecd6e6fe87d1339de6a7f",
+    "securityToken" : "e95a308d0ddce71a1a4d2b597938ca92",
     "requestAttributes" : true,
     "_links" : {
       "self" : {
@@ -4127,50 +4141,50 @@ Content-Length: 2105
     }
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060745704,
+    "createdAt" : 1689592751020,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060745704,
-    "name" : "exampleTarget-00001",
-    "description" : "exampleTarget1",
-    "controllerId" : "exampleTarget-00001",
+    "lastModifiedAt" : 1689592751020,
+    "name" : "exampleTarget-00008",
+    "description" : "exampleTarget8",
+    "controllerId" : "exampleTarget-00008",
     "updateStatus" : "unknown",
-    "securityToken" : "eba1190b1b41bb48b0200b8e0767df18",
+    "securityToken" : "61b8ecc2736b894b0acd9e5aeab4f066",
     "requestAttributes" : true,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/targets/exampleTarget-00001"
+        "href" : "https://management-api.host.com/rest/v1/targets/exampleTarget-00008"
       }
     }
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060745705,
+    "createdAt" : 1689592751027,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060745705,
-    "name" : "exampleTarget-00002",
-    "description" : "exampleTarget2",
-    "controllerId" : "exampleTarget-00002",
+    "lastModifiedAt" : 1689592751027,
+    "name" : "exampleTarget-00010",
+    "description" : "exampleTarget10",
+    "controllerId" : "exampleTarget-00010",
     "updateStatus" : "unknown",
-    "securityToken" : "233cbeae7d4ae6be685319c8be562999",
+    "securityToken" : "2fbc348d4b78bceb3d72e9320eb95668",
     "requestAttributes" : true,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/targets/exampleTarget-00002"
+        "href" : "https://management-api.host.com/rest/v1/targets/exampleTarget-00010"
       }
     }
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060745706,
+    "createdAt" : 1689592751077,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060745706,
-    "name" : "exampleTarget-00003",
-    "description" : "exampleTarget3",
-    "controllerId" : "exampleTarget-00003",
+    "lastModifiedAt" : 1689592751077,
+    "name" : "exampleTarget-00019",
+    "description" : "exampleTarget19",
+    "controllerId" : "exampleTarget-00019",
     "updateStatus" : "unknown",
-    "securityToken" : "6ea72903d942521fe0e8d1cf588afef3",
+    "securityToken" : "2c19989ceba14c5a751ac1220a6d6ded",
     "requestAttributes" : true,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/targets/exampleTarget-00003"
+        "href" : "https://management-api.host.com/rest/v1/targets/exampleTarget-00019"
       }
     }
   } ],
@@ -4291,7 +4305,7 @@ Content-Length: 2105
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-01-25 11:07:39 +0200
+Last updated 2023-07-17 10:51:19 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">

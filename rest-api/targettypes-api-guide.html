@@ -627,9 +627,9 @@ Content-Length: 801
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060733332,
+    "createdAt" : 1689592740707,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060733332,
+    "lastModifiedAt" : 1689592740707,
     "name" : "targetType1",
     "description" : "targetType1 description",
     "colour" : "#000000",
@@ -641,9 +641,9 @@ Content-Length: 801
     "id" : 9
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060733336,
+    "createdAt" : 1689592740747,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060733336,
+    "lastModifiedAt" : 1689592740747,
     "name" : "targetType2",
     "description" : "targetType2 description",
     "colour" : "#000000",
@@ -736,7 +736,7 @@ Content-Length: 801
   "description" : "targetType1 description"
 }, {
   "compatibledistributionsettypes" : [ {
-    "id" : 12
+    "id" : 28
   } ],
   "colour" : "#000000",
   "name" : "targetType2",
@@ -761,7 +761,7 @@ Host: management-api.host.com
   "description" : "targetType1 description"
 }, {
   "compatibledistributionsettypes" : [ {
-    "id" : 12
+    "id" : 28
   } ],
   "colour" : "#000000",
   "name" : "targetType2",
@@ -903,32 +903,32 @@ Content-Length: 696
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1689060732687,
+  "createdAt" : 1689592734440,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060732687,
+  "lastModifiedAt" : 1689592734440,
   "name" : "targetType1",
   "description" : "targetType1 description",
   "colour" : "#ffffff",
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/targettypes/4"
-    }
-  },
-  "id" : 4
-}, {
-  "createdBy" : "bumlux",
-  "createdAt" : 1689060732689,
-  "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060732689,
-  "name" : "targetType2",
-  "description" : "targetType2 description",
-  "colour" : "#000000",
   "_links" : {
     "self" : {
       "href" : "https://management-api.host.com/rest/v1/targettypes/3"
     }
   },
   "id" : 3
+}, {
+  "createdBy" : "bumlux",
+  "createdAt" : 1689592734516,
+  "lastModifiedBy" : "bumlux",
+  "lastModifiedAt" : 1689592734516,
+  "name" : "targetType2",
+  "description" : "targetType2 description",
+  "colour" : "#000000",
+  "_links" : {
+    "self" : {
+      "href" : "https://management-api.host.com/rest/v1/targettypes/4"
+    }
+  },
+  "id" : 4
 } ]</code></pre>
 </div>
 </div>
@@ -1256,9 +1256,9 @@ Content-Length: 493
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1689060733215,
+  "createdAt" : 1689592739579,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060733215,
+  "lastModifiedAt" : 1689592739579,
   "name" : "TargetType",
   "description" : "TargetType description",
   "colour" : "#000000",
@@ -1527,9 +1527,9 @@ Content-Length: 498
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1689060733010,
+  "createdAt" : 1689592738224,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060733030,
+  "lastModifiedAt" : 1689592738334,
   "name" : "updatedTypeName",
   "description" : "an updated description",
   "colour" : "#aaafff",
@@ -1754,24 +1754,24 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 530
+Content-Length: 532
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1689060732388,
+  "createdAt" : 1689592730108,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060732388,
+  "lastModifiedAt" : 1689592730108,
   "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
-  "description" : "2KZsxbKfEJLug6uiBfWox9mZLOXuIWr0QesHRxNDVCDWIMK68vNrdAUAg0qSqib5GSYgMRrKdvYUfgEPQcCW2wtoURd2qQhqW7GT",
+  "description" : "Rm3TJNEvWflI2GR2sBnJ2iIYchB3r4ec7gAVTzEqG34HTjSXAyih2cRICf6jYpeB9blgu8B0fagYvPcPqh0uWT8TJQS1imIOeKlS",
   "key" : "test_default_ds_type",
   "deleted" : false,
   "colour" : "black",
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/4"
+      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/20"
     }
   },
-  "id" : 4
+  "id" : 20
 } ]</code></pre>
 </div>
 </div>
@@ -1851,9 +1851,9 @@ Content-Length: 530
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettypes/5/compatibledistributionsettypes' -i -X POST \
     -H 'Content-Type: application/json' \
     -d '[ {
-  "id" : 17
+  "id" : 33
 }, {
-  "id" : 18
+  "id" : 34
 } ]'</code></pre>
 </div>
 </div>
@@ -1868,9 +1868,9 @@ Content-Length: 36
 Host: management-api.host.com
 
 [ {
-  "id" : 17
+  "id" : 33
 }, {
-  "id" : 18
+  "id" : 34
 } ]</code></pre>
 </div>
 </div>
@@ -2019,7 +2019,7 @@ Host: management-api.host.com
 <h4 id="_curl_8"><a class="link" href="#_curl_8">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettypes/6/compatibledistributionsettypes/23' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/targettypes/6/compatibledistributionsettypes/39' -i -X DELETE \
     -H 'Content-Type: application/json'</code></pre>
 </div>
 </div>
@@ -2028,7 +2028,7 @@ Host: management-api.host.com
 <h4 id="_request_url_8"><a class="link" href="#_request_url_8">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /rest/v1/targettypes/6/compatibledistributionsettypes/23 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /rest/v1/targettypes/6/compatibledistributionsettypes/39 HTTP/1.1
 Content-Type: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -2130,7 +2130,7 @@ Host: management-api.host.com</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-28 12:28:26 +0300
+Last updated 2023-07-17 10:51:19 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">

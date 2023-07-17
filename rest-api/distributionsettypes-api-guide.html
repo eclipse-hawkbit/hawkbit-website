@@ -639,54 +639,54 @@ Content-Length: 1772
 {
   "content" : [ {
     "createdBy" : "system",
-    "createdAt" : 1689060768630,
+    "createdAt" : 1689592757349,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1689060768630,
-    "name" : "OS only",
-    "description" : "Default type with Firmware/OS only.",
-    "key" : "os",
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/15"
-      }
-    },
-    "id" : 15
-  }, {
-    "createdBy" : "system",
-    "createdAt" : 1689060768630,
-    "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1689060768630,
+    "lastModifiedAt" : 1689592757349,
     "name" : "App(s) only",
     "description" : "Default type with app(s) only.",
     "key" : "app",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/16"
+        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/55"
       }
     },
-    "id" : 16
+    "id" : 55
   }, {
     "createdBy" : "system",
-    "createdAt" : 1689060768630,
+    "createdAt" : 1689592757347,
     "lastModifiedBy" : "system",
-    "lastModifiedAt" : 1689060768630,
+    "lastModifiedAt" : 1689592757347,
+    "name" : "OS only",
+    "description" : "Default type with Firmware/OS only.",
+    "key" : "os",
+    "deleted" : false,
+    "_links" : {
+      "self" : {
+        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/56"
+      }
+    },
+    "id" : 56
+  }, {
+    "createdBy" : "system",
+    "createdAt" : 1689592757351,
+    "lastModifiedBy" : "system",
+    "lastModifiedAt" : 1689592757351,
     "name" : "OS with app(s)",
     "description" : "Default type with Firmware/OS and optional app(s).",
     "key" : "os_app",
     "deleted" : false,
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/17"
+        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/57"
       }
     },
-    "id" : 17
+    "id" : 57
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1689060768648,
+    "createdAt" : 1689592757804,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689060768671,
+    "lastModifiedAt" : 1689592758204,
     "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
     "description" : "Desc1234",
     "key" : "test_default_ds_type",
@@ -694,10 +694,10 @@ Content-Length: 1772
     "colour" : "black",
     "_links" : {
       "self" : {
-        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/18"
+        "href" : "https://management-api.host.com/rest/v1/distributionsettypes/58"
       }
     },
-    "id" : 18
+    "id" : 58
   } ],
   "total" : 4,
   "size" : 4
@@ -778,12 +778,12 @@ Content-Length: 1772
     -d '[ {
   "colour" : "rgb(86,37,99)",
   "optionalmodules" : [ {
-    "id" : 3
+    "id" : 33
   } ],
   "name" : "TestName1",
   "description" : "Desc1",
   "mandatorymodules" : [ {
-    "id" : 1
+    "id" : 32
   } ],
   "key" : "test1"
 } ]'</code></pre>
@@ -797,18 +797,18 @@ Content-Length: 1772
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /rest/v1/distributionsettypes HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Content-Length: 199
+Content-Length: 201
 Host: management-api.host.com
 
 [ {
   "colour" : "rgb(86,37,99)",
   "optionalmodules" : [ {
-    "id" : 3
+    "id" : 33
   } ],
   "name" : "TestName1",
   "description" : "Desc1",
   "mandatorymodules" : [ {
-    "id" : 1
+    "id" : 32
   } ],
   "key" : "test1"
 } ]</code></pre>
@@ -970,13 +970,13 @@ Host: management-api.host.com
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 201 Created
 Content-Type: application/json
-Content-Length: 396
+Content-Length: 398
 
 [ {
   "createdBy" : "uploadTester",
-  "createdAt" : 1689060768432,
+  "createdAt" : 1689592753800,
   "lastModifiedBy" : "uploadTester",
-  "lastModifiedAt" : 1689060768432,
+  "lastModifiedAt" : 1689592753800,
   "name" : "TestName1",
   "description" : "Desc1",
   "key" : "test1",
@@ -984,10 +984,10 @@ Content-Length: 396
   "colour" : "rgb(86,37,99)",
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/5"
+      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/45"
     }
   },
-  "id" : 5
+  "id" : 45
 } ]</code></pre>
 </div>
 </div>
@@ -1074,7 +1074,7 @@ Content-Length: 396
 <h4 id="_curl_3"><a class="link" href="#_curl_3">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/41' -i -X DELETE</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/81' -i -X DELETE</code></pre>
 </div>
 </div>
 </div>
@@ -1082,7 +1082,7 @@ Content-Length: 396
 <h4 id="_request_url_3"><a class="link" href="#_request_url_3">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /rest/v1/distributionsettypes/41 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /rest/v1/distributionsettypes/81 HTTP/1.1
 Host: management-api.host.com</code></pre>
 </div>
 </div>
@@ -1191,7 +1191,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_4"><a class="link" href="#_curl_4">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/14' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/54' -i -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
@@ -1200,7 +1200,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_url_4"><a class="link" href="#_request_url_4">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/distributionsettypes/14 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/distributionsettypes/54 HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -1333,9 +1333,9 @@ Content-Length: 714
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1689060768530,
+  "createdAt" : 1689592755940,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060768610,
+  "lastModifiedAt" : 1689592757137,
   "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
   "description" : "Desc1234",
   "key" : "test_default_ds_type",
@@ -1343,16 +1343,16 @@ Content-Length: 714
   "colour" : "rgb(86,37,99)",
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/14"
+      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/54"
     },
     "mandatorymodules" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/14/mandatorymoduletypes"
+      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/54/mandatorymoduletypes"
     },
     "optionalmodules" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/14/optionalmoduletypes"
+      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/54/optionalmoduletypes"
     }
   },
-  "id" : 14
+  "id" : 54
 }</code></pre>
 </div>
 </div>
@@ -1429,7 +1429,7 @@ Content-Length: 714
 <h4 id="_curl_5"><a class="link" href="#_curl_5">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/45' -i -X PUT \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/85' -i -X PUT \
     -H 'Content-Type: application/json' \
     -d '{
   "colour" : "rgb(106,178,83)",
@@ -1442,7 +1442,7 @@ Content-Length: 714
 <h4 id="_request_url_5"><a class="link" href="#_request_url_5">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /rest/v1/distributionsettypes/45 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /rest/v1/distributionsettypes/85 HTTP/1.1
 Content-Type: application/json
 Content-Length: 78
 Host: management-api.host.com
@@ -1618,9 +1618,9 @@ Content-Length: 730
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1689060768975,
+  "createdAt" : 1689592764239,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060769002,
+  "lastModifiedAt" : 1689592764682,
   "name" : "OS (FW) mandatory, runtime (FW) and app (SW) optional",
   "description" : "an updated description",
   "key" : "test_default_ds_type",
@@ -1628,16 +1628,16 @@ Content-Length: 730
   "colour" : "rgb(106,178,83)",
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/45"
+      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/85"
     },
     "mandatorymodules" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/45/mandatorymoduletypes"
+      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/85/mandatorymoduletypes"
     },
     "optionalmodules" : {
-      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/45/optionalmoduletypes"
+      "href" : "https://management-api.host.com/rest/v1/distributionsettypes/85/optionalmoduletypes"
     }
   },
-  "id" : 45
+  "id" : 85
 }</code></pre>
 </div>
 </div>
@@ -1724,7 +1724,7 @@ Content-Length: 730
 <h4 id="_curl_6"><a class="link" href="#_curl_6">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/32/mandatorymoduletypes' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/72/mandatorymoduletypes' -i -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
@@ -1733,7 +1733,7 @@ Content-Length: 730
 <h4 id="_request_url_6"><a class="link" href="#_request_url_6">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/distributionsettypes/32/mandatorymoduletypes HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/distributionsettypes/72/mandatorymoduletypes HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -1854,9 +1854,9 @@ Content-Length: 384
 
 [ {
   "createdBy" : "system",
-  "createdAt" : 1689060768797,
+  "createdAt" : 1689592760646,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060768807,
+  "lastModifiedAt" : 1689592760733,
   "name" : "OS",
   "description" : "Updated description.",
   "key" : "os",
@@ -1864,10 +1864,10 @@ Content-Length: 384
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/20"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/49"
     }
   },
-  "id" : 20
+  "id" : 49
 } ]</code></pre>
 </div>
 </div>
@@ -1944,10 +1944,10 @@ Content-Length: 384
 <h4 id="_curl_7"><a class="link" href="#_curl_7">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/27/mandatorymoduletypes' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/67/mandatorymoduletypes' -i -X POST \
     -H 'Content-Type: application/json' \
     -d '{
-  "id" : 16
+  "id" : 46
 }'</code></pre>
 </div>
 </div>
@@ -1956,13 +1956,13 @@ Content-Length: 384
 <h4 id="_request_url_7"><a class="link" href="#_request_url_7">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /rest/v1/distributionsettypes/27/mandatorymoduletypes HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /rest/v1/distributionsettypes/67/mandatorymoduletypes HTTP/1.1
 Content-Type: application/json
 Content-Length: 15
 Host: management-api.host.com
 
 {
-  "id" : 16
+  "id" : 46
 }</code></pre>
 </div>
 </div>
@@ -2114,7 +2114,7 @@ Host: management-api.host.com
 <h4 id="_curl_8"><a class="link" href="#_curl_8">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/59/mandatorymoduletypes/38' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/99/mandatorymoduletypes/68' -i -X DELETE \
     -H 'Content-Type: application/json'</code></pre>
 </div>
 </div>
@@ -2123,7 +2123,7 @@ Host: management-api.host.com
 <h4 id="_request_url_8"><a class="link" href="#_request_url_8">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /rest/v1/distributionsettypes/59/mandatorymoduletypes/38 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /rest/v1/distributionsettypes/99/mandatorymoduletypes/68 HTTP/1.1
 Content-Type: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -2237,7 +2237,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_9"><a class="link" href="#_curl_9">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/50/mandatorymoduletypes/31' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/90/mandatorymoduletypes/62' -i -X GET \
     -H 'Content-Type: application/json'</code></pre>
 </div>
 </div>
@@ -2246,7 +2246,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_url_9"><a class="link" href="#_request_url_9">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/distributionsettypes/50/mandatorymoduletypes/31 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/distributionsettypes/90/mandatorymoduletypes/62 HTTP/1.1
 Content-Type: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -2371,9 +2371,9 @@ Content-Length: 380
 
 {
   "createdBy" : "system",
-  "createdAt" : 1689060769021,
+  "createdAt" : 1689592764932,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060769027,
+  "lastModifiedAt" : 1689592765045,
   "name" : "OS",
   "description" : "Updated description.",
   "key" : "os",
@@ -2381,10 +2381,10 @@ Content-Length: 380
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/31"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/62"
     }
   },
-  "id" : 31
+  "id" : 62
 }</code></pre>
 </div>
 </div>
@@ -2461,7 +2461,7 @@ Content-Length: 380
 <h4 id="_curl_10"><a class="link" href="#_curl_10">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/37/optionalmoduletypes' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/77/optionalmoduletypes' -i -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
@@ -2470,7 +2470,7 @@ Content-Length: 380
 <h4 id="_request_url_10"><a class="link" href="#_request_url_10">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/distributionsettypes/37/optionalmoduletypes HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/distributionsettypes/77/optionalmoduletypes HTTP/1.1
 Accept: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -2597,9 +2597,9 @@ Content-Length: 418
 
 [ {
   "createdBy" : "bumlux",
-  "createdAt" : 1689060768859,
+  "createdAt" : 1689592761953,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060768862,
+  "lastModifiedAt" : 1689592762025,
   "name" : "runtime",
   "description" : "Updated description.",
   "key" : "runtime",
@@ -2608,10 +2608,10 @@ Content-Length: 418
   "colour" : "#ffffff",
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/24"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/54"
     }
   },
-  "id" : 24
+  "id" : 54
 } ]</code></pre>
 </div>
 </div>
@@ -2688,10 +2688,10 @@ Content-Length: 418
 <h4 id="_curl_11"><a class="link" href="#_curl_11">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/64/optionalmoduletypes' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/104/optionalmoduletypes' -i -X POST \
     -H 'Content-Type: application/json' \
     -d '{
-  "id" : 40
+  "id" : 70
 }'</code></pre>
 </div>
 </div>
@@ -2700,13 +2700,13 @@ Content-Length: 418
 <h4 id="_request_url_11"><a class="link" href="#_request_url_11">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /rest/v1/distributionsettypes/64/optionalmoduletypes HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /rest/v1/distributionsettypes/104/optionalmoduletypes HTTP/1.1
 Content-Type: application/json
 Content-Length: 15
 Host: management-api.host.com
 
 {
-  "id" : 40
+  "id" : 70
 }</code></pre>
 </div>
 </div>
@@ -2855,7 +2855,7 @@ Host: management-api.host.com
 <h4 id="_curl_12"><a class="link" href="#_curl_12">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/69/optionalmoduletypes/43' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/109/optionalmoduletypes/73' -i -X DELETE \
     -H 'Content-Type: application/json'</code></pre>
 </div>
 </div>
@@ -2864,7 +2864,7 @@ Host: management-api.host.com
 <h4 id="_request_url_12"><a class="link" href="#_request_url_12">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /rest/v1/distributionsettypes/69/optionalmoduletypes/43 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /rest/v1/distributionsettypes/109/optionalmoduletypes/73 HTTP/1.1
 Content-Type: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -2978,7 +2978,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_curl_13"><a class="link" href="#_curl_13">CURL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/10/optionalmoduletypes/4' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/distributionsettypes/50/optionalmoduletypes/34' -i -X GET \
     -H 'Content-Type: application/json'</code></pre>
 </div>
 </div>
@@ -2987,7 +2987,7 @@ Host: management-api.host.com</code></pre>
 <h4 id="_request_url_13"><a class="link" href="#_request_url_13">Request URL</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/distributionsettypes/10/optionalmoduletypes/4 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/distributionsettypes/50/optionalmoduletypes/34 HTTP/1.1
 Content-Type: application/json
 Host: management-api.host.com</code></pre>
 </div>
@@ -3104,13 +3104,13 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json
-Content-Length: 405
+Content-Length: 407
 
 {
   "createdBy" : "system",
-  "createdAt" : 1689060768462,
+  "createdAt" : 1689592754516,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689060768471,
+  "lastModifiedAt" : 1689592754801,
   "name" : "Application",
   "description" : "Updated description.",
   "key" : "application",
@@ -3118,10 +3118,10 @@ Content-Length: 405
   "deleted" : false,
   "_links" : {
     "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/4"
+      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/34"
     }
   },
-  "id" : 4
+  "id" : 34
 }</code></pre>
 </div>
 </div>
@@ -3237,7 +3237,7 @@ Content-Length: 405
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-28 12:28:26 +0300
+Last updated 2023-07-17 10:51:19 UTC
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
