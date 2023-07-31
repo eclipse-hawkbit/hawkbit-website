@@ -464,64 +464,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="_get_software_module_types"><a class="link" href="#_get_software_module_types">Get software module types</a></h3>
 <div class="sect3">
 <h4 id="_curl"><a class="link" href="#_curl">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes' -i -X GET \
-    -H 'Accept: application/json'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/get-software-module-types/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url"><a class="link" href="#_request_url">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/softwaremoduletypes HTTP/1.1
-Accept: application/json
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/get-software-module-types/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_query_parameter"><a class="link" href="#_request_query_parameter">Request query parameter</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>limit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of entries in a page (default is 50).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sort</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The query parameter sort allows to define the sort order for the result of a query. A sort criteria consists of the name of a field and the sort direction (ASC for ascending and DESC descending). The sequence of the sort criteria (multiple can be used) defines the sort order of the entities in the result.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offset</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The paging offset (default is 0).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>q</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Query fields based on the Feed Item Query Language (FIQL). See Entity Definitions for available fields.</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/get-software-module-types-with-parameters/request-parameters.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_request_parameter_example"><a class="link" href="#_request_parameter_example">Request parameter example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/softwaremoduletypes?limit=10&amp;sort=name:ASC&amp;offset=0&amp;q=name%3D%3Da HTTP/1.1
-Accept: application/json
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/get-software-module-types-with-parameters/http-request.adoc[]</p>
 </div>
 </div>
 </div>
@@ -529,171 +491,14 @@ Host: management-api.host.com</code></pre>
 <h3 id="_response_status_200"><a class="link" href="#_response_status_200">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields"><a class="link" href="#_response_fields">Response fields</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Current page size</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">total</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Total number of elements</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Array</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List of provisioning targets.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by (User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by (User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content[].deleted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/get-software-module-types/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example"><a class="link" href="#_response_example">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 1812
-
-{
-  "content" : [ {
-    "createdBy" : "system",
-    "createdAt" : 1689592767103,
-    "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689592767212,
-    "name" : "OS",
-    "description" : "Updated description.",
-    "key" : "os",
-    "maxAssignments" : 1,
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/56"
-      }
-    },
-    "id" : 56
-  }, {
-    "createdBy" : "system",
-    "createdAt" : 1689592767101,
-    "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689592767285,
-    "name" : "Application",
-    "description" : "Updated description.",
-    "key" : "application",
-    "maxAssignments" : 2147483647,
-    "deleted" : false,
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/57"
-      }
-    },
-    "id" : 57
-  }, {
-    "createdBy" : "bumlux",
-    "createdAt" : 1689592767316,
-    "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1689592767354,
-    "name" : "runtime",
-    "description" : "Updated description.",
-    "key" : "runtime",
-    "maxAssignments" : 1,
-    "deleted" : false,
-    "colour" : "#ffffff",
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/58"
-      }
-    },
-    "id" : 58
-  }, {
-    "createdBy" : "uploadTester",
-    "createdAt" : 1689592767479,
-    "lastModifiedBy" : "uploadTester",
-    "lastModifiedAt" : 1689592767512,
-    "name" : "test123",
-    "description" : "Desc1234",
-    "key" : "test123",
-    "maxAssignments" : 1,
-    "deleted" : false,
-    "colour" : "rgb(106,178,83)",
-    "_links" : {
-      "self" : {
-        "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/59"
-      }
-    },
-    "id" : 59
-  } ],
-  "total" : 4,
-  "size" : 4
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/get-software-module-types/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -761,216 +566,35 @@ Content-Length: 1812
 <h3 id="_creating_software_module_types"><a class="link" href="#_creating_software_module_types">Creating software module types</a></h3>
 <div class="sect3">
 <h4 id="_curl_2"><a class="link" href="#_curl_2">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes' -i -X POST \
-    -H 'Content-Type: application/json' \
-    -H 'Accept: application/json' \
-    -d '[ {
-  "colour" : "rgb(106,178,83)",
-  "name" : "TestName1",
-  "description" : "Desc1",
-  "maxAssignments" : 1,
-  "key" : "test1"
-} ]'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/post-software-module-types/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_2"><a class="link" href="#_request_url_2">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /rest/v1/softwaremoduletypes HTTP/1.1
-Content-Type: application/json
-Accept: application/json
-Content-Length: 132
-Host: management-api.host.com
-
-[ {
-  "colour" : "rgb(106,178,83)",
-  "name" : "TestName1",
-  "description" : "Desc1",
-  "maxAssignments" : 1,
-  "key" : "test1"
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/post-software-module-types/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_fields"><a class="link" href="#_request_fields">Request fields</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-<th class="tableblock halign-left valign-top">Mandatory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The key of the software module type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]maxAssignments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of assignments to a distribution set/target, e.g. only one firmware but multiple applications.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]colour</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The colour  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/post-software-module-types/request-fields.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_201"><a class="link" href="#_response_status_201">Response (Status 201)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_2"><a class="link" href="#_response_fields_2">Response fields</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The key of the software module type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]maxAssignments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Software modules of that type can be assigned at this maximum number (e.g. operating system only once).</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by (User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]colour</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The colour  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]deleted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by (User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[]name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/post-software-module-types/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_2"><a class="link" href="#_response_example_2">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 201 Created
-Content-Type: application/json
-Content-Length: 423
-
-[ {
-  "createdBy" : "uploadTester",
-  "createdAt" : 1689592768419,
-  "lastModifiedBy" : "uploadTester",
-  "lastModifiedAt" : 1689592768419,
-  "name" : "TestName1",
-  "description" : "Desc1",
-  "key" : "test1",
-  "maxAssignments" : 1,
-  "deleted" : false,
-  "colour" : "rgb(106,178,83)",
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/63"
-    }
-  },
-  "id" : 63
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/post-software-module-types/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1053,51 +677,29 @@ Content-Length: 423
 <h3 id="_delete_software_module_type"><a class="link" href="#_delete_software_module_type">Delete software module type</a></h3>
 <div class="sect3">
 <h4 id="_curl_3"><a class="link" href="#_curl_3">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes/47' -i -X DELETE</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/delete-software-module-type/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_3"><a class="link" href="#_request_url_3">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /rest/v1/softwaremoduletypes/47 HTTP/1.1
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/delete-software-module-type/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter"><a class="link" href="#_request_path_parameter">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">softwareModuleTypeID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/delete-software-module-type/path-parameters.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_2"><a class="link" href="#_response_status_200_2">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_example_3"><a class="link" href="#_response_example_3">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/delete-software-module-type/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1170,161 +772,35 @@ Host: management-api.host.com</code></pre>
 <h3 id="_accessing_a_software_module_type"><a class="link" href="#_accessing_a_software_module_type">Accessing a software module type</a></h3>
 <div class="sect3">
 <h4 id="_curl_4"><a class="link" href="#_curl_4">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes/55' -i -X GET \
-    -H 'Accept: application/json'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/get-software-module-type/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_4"><a class="link" href="#_request_url_4">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /rest/v1/softwaremoduletypes/55 HTTP/1.1
-Accept: application/json
-Host: management-api.host.com</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/get-software-module-type/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_2"><a class="link" href="#_request_path_parameter_2">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">softwareModuleTypeID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/get-software-module-type/path-parameters.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_3"><a class="link" href="#_response_status_200_3">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_3"><a class="link" href="#_response_fields_3">Response fields</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The key of the software module type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">maxAssignments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Software modules of that type can be assigned at this maximum number (e.g. operating system only once).</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by (User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">colour</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The colour  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deleted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by (User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/get-software-module-type/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_4"><a class="link" href="#_response_example_4">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 422
-
-{
-  "createdBy" : "uploadTester",
-  "createdAt" : 1689592766888,
-  "lastModifiedBy" : "uploadTester",
-  "lastModifiedAt" : 1689592766920,
-  "name" : "test123",
-  "description" : "Desc1234",
-  "key" : "test123",
-  "maxAssignments" : 1,
-  "deleted" : false,
-  "colour" : "rgb(106,178,83)",
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/55"
-    }
-  },
-  "id" : 55
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/get-software-module-type/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1392,208 +868,41 @@ Content-Length: 422
 <h3 id="_updating_a_software_module_types"><a class="link" href="#_updating_a_software_module_types">Updating a software module types</a></h3>
 <div class="sect3">
 <h4 id="_curl_5"><a class="link" href="#_curl_5">CURL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'https://management-api.host.com/rest/v1/softwaremoduletypes/51' -i -X PUT \
-    -H 'Content-Type: application/json' \
-    -d '{
-  "colour" : "rgb(86,37,99)",
-  "description" : "a new description"
-}'</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/put-software-module-type/curl-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_url_5"><a class="link" href="#_request_url_5">Request URL</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /rest/v1/softwaremoduletypes/51 HTTP/1.1
-Content-Type: application/json
-Content-Length: 71
-Host: management-api.host.com
-
-{
-  "colour" : "rgb(86,37,99)",
-  "description" : "a new description"
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/put-software-module-type/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_request_path_parameter_3"><a class="link" href="#_request_path_parameter_3">Request path parameter</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">softwareModuleTypeID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/put-software-module-type/path-parameters.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_request_fields_2"><a class="link" href="#_request_fields_2">Request fields</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-<th class="tableblock halign-left valign-top">Mandatory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">colour</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The colour  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/put-software-module-type/request-fields.adoc[]</p>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_response_status_200_4"><a class="link" href="#_response_status_200_4">Response (Status 200)</a></h3>
 <div class="sect3">
 <h4 id="_response_fields_4"><a class="link" href="#_response_fields_4">Response fields</a></h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The key of the software module type.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">maxAssignments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Software modules of that type can be assigned at this maximum number (e.g. operating system only once).</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created by (User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">createdAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was originally created at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The description  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">colour</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The colour  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deleted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted flag, used for soft deleted entities</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The technical identifier   of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedAt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified at (timestamp UTC in milliseconds)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastModifiedBy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity was last modified by (User, AMQP-Controller, anonymous etc.)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name  of the entity</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/put-software-module-type/response-fields.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_response_example_5"><a class="link" href="#_response_example_5">Response example</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Content-Type: application/hal+json
-Content-Length: 417
-
-{
-  "createdBy" : "bumlux",
-  "createdAt" : 1689592765932,
-  "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1689592765999,
-  "name" : "test123",
-  "description" : "a new description",
-  "key" : "test123",
-  "maxAssignments" : 1,
-  "deleted" : false,
-  "colour" : "rgb(86,37,99)",
-  "_links" : {
-    "self" : {
-      "href" : "https://management-api.host.com/rest/v1/softwaremoduletypes/51"
-    }
-  },
-  "id" : 51
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in softwaremoduletypes-api-guide.adoc - include::/Users/stanislavtrailov/develop/rollouts/hawkbit/hawkbit-rest/hawkbit-rest-docs/target/generated-snippets/softwaremoduletypes/put-software-module-type/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1717,7 +1026,7 @@ Content-Length: 417
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-07-17 10:51:19 UTC
+Last updated 2022-09-28 12:28:26 +0300
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
