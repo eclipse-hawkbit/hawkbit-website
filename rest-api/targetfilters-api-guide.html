@@ -646,9 +646,9 @@ Content-Length: 516
 {
   "content" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1692770156456,
+    "createdAt" : 1694686091322,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1692770156466,
+    "lastModifiedAt" : 1694686091326,
     "name" : "filter1",
     "query" : "name==*",
     "autoAssignDistributionSet" : 2,
@@ -903,9 +903,9 @@ Content-Length: 546
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1692770156568,
+  "createdAt" : 1694686091372,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1692770156568,
+  "lastModifiedAt" : 1694686091372,
   "name" : "filter1",
   "query" : "name==*",
   "autoAssignDistributionSet" : null,
@@ -1255,13 +1255,13 @@ Host: management-api.host.com</code></pre>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/hal+json
-Content-Length: 547
+Content-Length: 693
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1692770156808,
+  "createdAt" : 1694686091446,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1692770156818,
+  "lastModifiedAt" : 1694686091449,
   "name" : "filter1",
   "query" : "name==*",
   "autoAssignDistributionSet" : 3,
@@ -1271,6 +1271,9 @@ Content-Length: 547
   "_links" : {
     "self" : {
       "href" : "https://management-api.host.com/rest/v1/targetfilters/5"
+    },
+    "DS" : {
+      "href" : "https://management-api.host.com/rest/v1/distributionsets?offset=0&amp;limit=50&amp;q=name%3D%3DDS%3Bversion%3D%3D1.0"
     },
     "autoAssignDS" : {
       "href" : "https://management-api.host.com/rest/v1/targetfilters/5/autoAssignDS"
@@ -1542,9 +1545,9 @@ Content-Length: 568
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1692770156653,
+  "createdAt" : 1694686091398,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1692770156662,
+  "lastModifiedAt" : 1694686091402,
   "name" : "newFilterName",
   "query" : "attribute.hwRevision==2",
   "autoAssignDistributionSet" : null,
@@ -1816,20 +1819,20 @@ Content-Length: 2550
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1692770157201,
+  "createdAt" : 1694686091584,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1692770157204,
+  "lastModifiedAt" : 1694686091586,
   "name" : "DS",
   "description" : "The descption of the distribution set.",
   "version" : "1.0",
   "modules" : [ {
     "createdBy" : "bumlux",
-    "createdAt" : 1692770157176,
+    "createdAt" : 1694686091578,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1692770157215,
+    "lastModifiedAt" : 1694686091593,
     "name" : "application",
     "description" : "Description of the software module",
-    "version" : "1.0.91",
+    "version" : "1.0.52",
     "type" : "application",
     "typeName" : "Application",
     "vendor" : "vendor Limited, California",
@@ -1843,12 +1846,12 @@ Content-Length: 2550
     "id" : 13
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1692770157181,
+    "createdAt" : 1694686091579,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1692770157225,
+    "lastModifiedAt" : 1694686091597,
     "name" : "app runtime",
     "description" : "Description of the software module",
-    "version" : "1.0.27",
+    "version" : "1.0.88",
     "type" : "runtime",
     "typeName" : "runtime",
     "vendor" : "vendor GmbH, Stuttgart, Germany",
@@ -1862,12 +1865,12 @@ Content-Length: 2550
     "id" : 14
   }, {
     "createdBy" : "bumlux",
-    "createdAt" : 1692770157189,
+    "createdAt" : 1694686091580,
     "lastModifiedBy" : "bumlux",
-    "lastModifiedAt" : 1692770157235,
+    "lastModifiedAt" : 1694686091603,
     "name" : "Firmware",
     "description" : "Description of the software module",
-    "version" : "1.0.25",
+    "version" : "1.0.80",
     "type" : "os",
     "typeName" : "OS",
     "vendor" : "vendor Limited Inc, California",
@@ -2178,9 +2181,9 @@ Content-Length: 544
 
 {
   "createdBy" : "bumlux",
-  "createdAt" : 1692770157006,
+  "createdAt" : 1694686091522,
   "lastModifiedBy" : "bumlux",
-  "lastModifiedAt" : 1692770157092,
+  "lastModifiedAt" : 1694686091549,
   "name" : "filter1",
   "query" : "name==*",
   "autoAssignDistributionSet" : 4,
@@ -2433,7 +2436,7 @@ Host: management-api.host.com</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-28 12:28:26 +0300
+Last updated 2023-06-14 15:52:33 +0300
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
