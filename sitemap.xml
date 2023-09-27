@@ -4,29 +4,7 @@
   <url>
     <loc>https://eclipse.dev/hawkbit/news/2018-07-26-first-release/</loc>
   </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/tenant/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/targetfilters/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/rollouts/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/distributionsettag/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/targettag/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/softwaremodules/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/distributionsettypes/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/distributionsets/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/actions/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/softwaremoduletypes/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/targettypes/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/targets/</loc>
+    <loc>https://eclipse.dev/hawkbit/news/2023-09-21-epl2.0/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/whatishawkbit/</loc>
   </url><url>
@@ -65,8 +43,6 @@
     <loc>https://eclipse.dev/hawkbit/community/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/release-notes/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/apis/mgmt/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/news/</loc>
   </url><url>

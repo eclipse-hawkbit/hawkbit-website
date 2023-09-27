@@ -17,111 +17,14 @@ In this article, we want to give an overview of the latest highlights of hawkBit
     </item>
     
     <item>
-      <title>System Configuration API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/tenant/</link>
+      <title>Eclipse hawkBit upgrade to Eclipse Public License - v 2.0</title>
+      <link>https://eclipse.dev/hawkbit/news/2023-09-21-epl2.0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/tenant/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Target Filters API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/targetfilters/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/targetfilters/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rollouts API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/rollouts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/rollouts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Distribution Set Tag API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/distributionsettag/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/distributionsettag/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Target Tag API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/targettag/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/targettag/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software Modules API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/softwaremodules/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/softwaremodules/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Distribution Set Types API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/distributionsettypes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/distributionsettypes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Distribution Sets API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/distributionsets/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/distributionsets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Actions API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/actions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/actions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software Module Types API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/softwaremoduletypes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/softwaremoduletypes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Target Types API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/targettypes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/targettypes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Targets API</title>
-      <link>https://eclipse.dev/hawkbit/apis/mgmt/targets/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.dev/hawkbit/apis/mgmt/targets/</guid>
-      <description></description>
+      <guid>https://eclipse.dev/hawkbit/news/2023-09-21-epl2.0/</guid>
+      <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015.
+In this article, we want to give an overview of the latest highlights of hawkBit license changes.
+hawkBit license upgraded to Eclipse Public License - v 2.0 Based on the issues Switch to EPL 2.</description>
     </item>
     
     <item>
