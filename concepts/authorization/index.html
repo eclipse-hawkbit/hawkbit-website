@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Authorization - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.119.0">
+    <meta name="generator" content="Hugo 0.120.4">
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -437,13 +437,10 @@ hawkbit.server.im.users[1].permissions=READ_TARGET,UPDATE_TARGET,CREATE_TARGET,D
 <p>hawkbit supports authentication providers which use the OpenID Connect standard, an authentication layer built on top of the OAuth 2.0 protocol.
 An example configuration is given below.</p>
 <pre><code>spring.security.oauth2.client.registration.oidc.client-id=clientID
-spring.security.oauth2.client.registration.oidc.client-secret=oidc-client-secret
 spring.security.oauth2.client.provider.oidc.issuer-uri=https://oidc-provider/issuer-uri
-spring.security.oauth2.client.provider.oidc.authorization-uri=https://oidc-provider/authorization-uri
-spring.security.oauth2.client.provider.oidc.token-uri=https://oidc-provider/token-uri
-spring.security.oauth2.client.provider.oidc.user-info-uri=https://oidc-provider/user-info-uri
 spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jwk-set-uri
 </code></pre>
+<p>Note: at the moment only DEFAULT tenant is supported. By default the resource_access/<client id>/roles claim is mapped to hawkBit permissions. However, by registering a Spring bean <em>org.eclipse.hawkbit.autoconfigure.security.OidcUserManagementAutoConfiguration.JwtAuthoritiesExtractor</em> a custom extractor permission mapper could be registered.</p>
 <h3 id="delivered-permissions">Delivered Permissions</h3>
 <ul>
 <li>

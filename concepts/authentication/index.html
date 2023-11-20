@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Authentication - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.119.0">
+    <meta name="generator" content="Hugo 0.120.4">
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -473,14 +473,10 @@ Authorization: GatewayToken 3nkswAZhX81oDtktq0FF9Pn0Tc0UGXPW
 <li>
 <p>Hawkbit Configurations</p>
 <p>There are also some configurations that you need update when you deployed your hawkbit service.</p>
-<p>You need to add the given download settings to your hawkBit configurations so that hawkBit can generate the URLs according to the https that the client will use to download. If you&rsquo;re deploying hawkBit as a Docker container, add these configurations as environmental values in the docker-compose.yml file. Don&rsquo;t forget to replace &ldquo;hostname&rdquo; with your actual hostname.</p>
+<p>You need to add the given setting to your hawkBit configurations so that hawkBit can generate the URLs according to the https that the client will use to download. If you&rsquo;re deploying hawkBit as a Docker container, add these configurations as environmental values in the docker-compose.yml file.</p>
 </li>
 </ol>
-<pre><code>hawkbit.artifact.url.protocols.download-http.rel=download-http
-hawkbit.artifact.url.protocols.download-http.hostname=hawkbit.dev.example
-hawkbit.artifact.url.protocols.download-http.protocol=https
-hawkbit.artifact.url.protocols.download-http.supports=DMF,DDI
-hawkbit.artifact.url.protocols.download-http.ref={protocol}://{hostnameRequest}/{tenant}/controller/v1/{controllerId}/softwaremodules/{softwareModuleId}/artifacts/{artifactFileName}
+<pre><code>server.forward-headers-strategy=NATIVE
 </code></pre>
 <ol start="2">
 <li>
