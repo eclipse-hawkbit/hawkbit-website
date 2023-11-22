@@ -8,23 +8,6 @@
     <language>en-us</language>
     <atom:link href="https://eclipse.dev/hawkbit/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Eclipse hawkBit 0.2.0 - First Release</title>
-      <link>https://eclipse.dev/hawkbit/news/2018-07-26-first-release/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eclipse.dev/hawkbit/news/2018-07-26-first-release/</guid>
-      <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015 and with version 0.2.0 a first release is available.
-In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get started in seconds.</description>
-    </item>
-    <item>
-      <title>Eclipse hawkBit upgrade to Eclipse Public License - v 2.0</title>
-      <link>https://eclipse.dev/hawkbit/news/2023-09-21-epl2.0/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eclipse.dev/hawkbit/news/2023-09-21-epl2.0/</guid>
-      <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015.
-In this article, we want to give an overview of the latest highlights of hawkBit license changes.
-hawkBit license upgraded to Eclipse Public License - v 2.0 Based on the issues Switch to EPL 2.</description>
-    </item>
-    <item>
       <title>What is hawkBit?</title>
       <link>https://eclipse.dev/hawkbit/whatishawkbit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -165,16 +148,41 @@ Currently, bodies of messages are based on JSON.&lt;/p&gt;</description>
 09/23/2015 - Eclipse IoT Working Group meeting - slides 04/11/2015 - EclipseCon Europe 2015 - slides 03/09/2016 - EclipseCon North America 2016 - slides 05/16/2016 - Eclipse Virtual IoT Meetup - video - slides 03/20/2017 - Eclipse IoT Day SanJose, CA - video - slides 09/12/2017 - Eclipse IoT Day ThingMonk 2017 - video 01/10/2018 - Eclipse Virtual IoT Meetup - video - slides 10/22/2018 - Community Day EclipseCon Europe 2018 - slides 10/21/2019 - Community Day EclipseCon Europe 2019 - slides 10/19/2020 - Community Day EclipseCon Europe 2020 - slides Articles 10/27/2015 - Why software provisioning goes open source - article 05/25/2016 - jaxenter: Eclipse hawkBit - english - german 09/27/2016 - Eclipse Newsletter - &amp;lsquo;IoT is the new black&amp;rsquo; - article Ask a question Visit stackoverflow.</description>
     </item>
     <item>
+      <title>Vaadin 8 UI discontinuation</title>
+      <link>https://eclipse.dev/hawkbit/blog/2023-10-22-vaadin8_ui_discontinuation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://eclipse.dev/hawkbit/blog/2023-10-22-vaadin8_ui_discontinuation/</guid>
+      <description>In this article, we want to give an overview of the future of the hawkBit UI
+hawkBit Vaadin 8 UI discontinuation The hawkBit UI uses Vaadin as a web UI framework. It uses Vaadin 8 (8.14.3). This major version, according Vaadin Roadmap, has no free support since 21st Feb 2022. There are some version releases after that date (8.15.0 - 8.16.0) that are Apache 2.0 licensed. However, since 8.16.1 (see here) the license is Commercial Vaadin Developer License 4.</description>
+    </item>
+    <item>
+      <title>Eclipse hawkBit upgrade to Eclipse Public License - v 2.0</title>
+      <link>https://eclipse.dev/hawkbit/blog/2023-09-21-epl2.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://eclipse.dev/hawkbit/blog/2023-09-21-epl2.0/</guid>
+      <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015.
+In this article, we want to give an overview of the latest highlights of hawkBit license changes.
+hawkBit license upgraded to Eclipse Public License - v 2.0 Based on the issues Switch to EPL 2.</description>
+    </item>
+    <item>
       <title>Release notes</title>
       <link>https://eclipse.dev/hawkbit/release-notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hawkbit/release-notes/</guid>
-      <description>0.3.0M9 Release Date: Thursday, August 24, 2023 Hawkbit: Tag / Release Extensions: Tag
+      <description>0.3.0 Release Date: Friday, November 17, 2023 Hawkbit: Tag / Release Extensions: Tag
+0.3.0M9 Release Date: Thursday, August 24, 2023 Hawkbit: Tag / Release Extensions: Tag
 0.3.0M8 Release Date: Friday, April 21, 2023 Hawkbit: Tag / Release Extensions: Tag / Release
 0.3.0M7 Release Date: Monday, February 15, 2021 Hawkbit: Tag / Release Extensions: Tag / Release
 0.3.0M6 Release Date: Friday, January 17, 2020 Tag / Release
-0.3.0M5 Release Date: Tuesday, July 29, 2019 Tag / Release
-0.3.0M4 Release Date: Thursday, June 6, 2019 Tag / Release</description>
+0.3.0M5 Release Date: Tuesday, July 29, 2019 Tag / Release</description>
+    </item>
+    <item>
+      <title>Eclipse hawkBit 0.2.0 - First Release</title>
+      <link>https://eclipse.dev/hawkbit/blog/2018-07-26-first-release/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://eclipse.dev/hawkbit/blog/2018-07-26-first-release/</guid>
+      <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015 and with version 0.2.0 a first release is available.
+In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get started in seconds.</description>
     </item>
     <item>
       <title>Sandbox</title>

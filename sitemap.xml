@@ -2,10 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://eclipse.dev/hawkbit/news/2018-07-26-first-release/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/news/2023-09-21-epl2.0/</loc>
-  </url><url>
     <loc>https://eclipse.dev/hawkbit/whatishawkbit/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/gettingstarted/</loc>
@@ -42,13 +38,19 @@
   </url><url>
     <loc>https://eclipse.dev/hawkbit/community/</loc>
   </url><url>
+    <loc>https://eclipse.dev/hawkbit/blog/2023-10-22-vaadin8_ui_discontinuation/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/hawkbit/blog/2023-09-21-epl2.0/</loc>
+  </url><url>
     <loc>https://eclipse.dev/hawkbit/release-notes/</loc>
   </url><url>
-    <loc>https://eclipse.dev/hawkbit/news/</loc>
+    <loc>https://eclipse.dev/hawkbit/blog/2018-07-26-first-release/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/rest-api/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/apis/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/hawkbit/blog/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/categories/</loc>
   </url><url>
