@@ -149,9 +149,9 @@ Currently, bodies of messages are based on JSON.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Vaadin 8 UI discontinuation</title>
-      <link>https://eclipse.dev/hawkbit/blog/2023-10-22-vaadin8_ui_discontinuation/</link>
+      <link>https://eclipse.dev/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eclipse.dev/hawkbit/blog/2023-10-22-vaadin8_ui_discontinuation/</guid>
+      <guid>https://eclipse.dev/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/</guid>
       <description>In this article, we want to give an overview of the future of the hawkBit UI
 hawkBit Vaadin 8 UI discontinuation The hawkBit UI uses Vaadin as a web UI framework. It uses Vaadin 8 (8.14.3). This major version, according Vaadin Roadmap, has no free support since 21st Feb 2022. There are some version releases after that date (8.15.0 - 8.16.0) that are Apache 2.0 licensed. However, since 8.16.1 (see here) the license is Commercial Vaadin Developer License 4.</description>
     </item>
