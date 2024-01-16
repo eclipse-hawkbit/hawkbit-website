@@ -6,7 +6,7 @@
     "version" : "v1"
   },
   "servers" : [ {
-    "url" : "http://localhost:64709",
+    "url" : "http://localhost:49696",
     "description" : "Generated server url"
   } ],
   "tags" : [ {
@@ -69,16 +69,6 @@
               "application/json" : { }
             }
           },
-          "400" : {
-            "description" : "Bad Request - e.g. invalid parameters",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ExceptionInfo"
-                }
-              }
-            }
-          },
           "409" : {
             "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
             "content" : {
@@ -95,6 +85,16 @@
             "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request - e.g. invalid parameters",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExceptionInfo"
+                }
+              }
             }
           },
           "406" : {
@@ -166,8 +166,8 @@
               "application/json" : { }
             }
           },
-          "410" : {
-            "description" : "Action is not active anymore.",
+          "404" : {
+            "description" : "Target not found",
             "content" : {
               "application/json" : { }
             }
@@ -178,14 +178,10 @@
               "application/json" : { }
             }
           },
-          "400" : {
-            "description" : "Bad Request - e.g. invalid parameters",
+          "410" : {
+            "description" : "Action is not active anymore.",
             "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ExceptionInfo"
-                }
-              }
+              "application/json" : { }
             }
           },
           "409" : {
@@ -206,6 +202,16 @@
               "application/json" : { }
             }
           },
+          "400" : {
+            "description" : "Bad Request - e.g. invalid parameters",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExceptionInfo"
+                }
+              }
+            }
+          },
           "406" : {
             "description" : "In case accept header is specified and not application/json.",
             "content" : {
@@ -214,12 +220,6 @@
           },
           "200" : {
             "description" : "Successfully retrieved"
-          },
-          "404" : {
-            "description" : "Target not found",
-            "content" : {
-              "application/json" : { }
-            }
           }
         }
       }
@@ -281,26 +281,16 @@
               "application/json" : { }
             }
           },
-          "410" : {
-            "description" : "Action is not active anymore.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
           },
-          "400" : {
-            "description" : "Bad Request - e.g. invalid parameters",
+          "410" : {
+            "description" : "Action is not active anymore.",
             "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ExceptionInfo"
-                }
-              }
+              "application/json" : { }
             }
           },
           "409" : {
@@ -319,6 +309,16 @@
             "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request - e.g. invalid parameters",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExceptionInfo"
+                }
+              }
             }
           },
           "406" : {
@@ -373,20 +373,16 @@
               "application/json" : { }
             }
           },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "404" : {
+            "description" : "Target not found",
             "content" : {
               "application/json" : { }
             }
           },
-          "400" : {
-            "description" : "Bad Request - e.g. invalid parameters",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ExceptionInfo"
-                }
-              }
+              "application/json" : { }
             }
           },
           "409" : {
@@ -407,6 +403,16 @@
               "application/json" : { }
             }
           },
+          "400" : {
+            "description" : "Bad Request - e.g. invalid parameters",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExceptionInfo"
+                }
+              }
+            }
+          },
           "406" : {
             "description" : "In case accept header is specified and not application/json.",
             "content" : {
@@ -415,12 +421,6 @@
           },
           "200" : {
             "description" : "Successfully retrieved"
-          },
-          "404" : {
-            "description" : "Target not found",
-            "content" : {
-              "application/json" : { }
-            }
           }
         }
       }
@@ -473,20 +473,16 @@
               "application/json" : { }
             }
           },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "404" : {
+            "description" : "Target not found",
             "content" : {
               "application/json" : { }
             }
           },
-          "400" : {
-            "description" : "Bad Request - e.g. invalid parameters",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ExceptionInfo"
-                }
-              }
+              "application/json" : { }
             }
           },
           "409" : {
@@ -507,6 +503,16 @@
               "application/json" : { }
             }
           },
+          "400" : {
+            "description" : "Bad Request - e.g. invalid parameters",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExceptionInfo"
+                }
+              }
+            }
+          },
           "406" : {
             "description" : "In case accept header is specified and not application/json.",
             "content" : {
@@ -515,12 +521,6 @@
           },
           "200" : {
             "description" : "Successfully retrieved"
-          },
-          "404" : {
-            "description" : "Target not found",
-            "content" : {
-              "application/json" : { }
-            }
           }
         }
       }
@@ -588,16 +588,6 @@
               "application/json" : { }
             }
           },
-          "400" : {
-            "description" : "Bad Request - e.g. invalid parameters",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ExceptionInfo"
-                }
-              }
-            }
-          },
           "409" : {
             "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
             "content" : {
@@ -614,6 +604,16 @@
             "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request - e.g. invalid parameters",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExceptionInfo"
+                }
+              }
             }
           },
           "406" : {
@@ -688,6 +688,12 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "400" : {
             "description" : "Bad Request - e.g. invalid parameters",
             "content" : {
@@ -696,12 +702,6 @@
                   "$ref" : "#/components/schemas/ExceptionInfo"
                 }
               }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
             }
           },
           "406" : {
@@ -761,6 +761,12 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "400" : {
             "description" : "Bad Request - e.g. invalid parameters",
             "content" : {
@@ -769,12 +775,6 @@
                   "$ref" : "#/components/schemas/ExceptionInfo"
                 }
               }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
             }
           },
           "406" : {
@@ -876,6 +876,12 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "400" : {
             "description" : "Bad Request - e.g. invalid parameters",
             "content" : {
@@ -884,12 +890,6 @@
                   "$ref" : "#/components/schemas/ExceptionInfo"
                 }
               }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
             }
           },
           "406" : {
@@ -972,6 +972,12 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "400" : {
             "description" : "Bad Request - e.g. invalid parameters",
             "content" : {
@@ -980,12 +986,6 @@
                   "$ref" : "#/components/schemas/ExceptionInfo"
                 }
               }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
             }
           },
           "406" : {
@@ -1077,6 +1077,12 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "400" : {
             "description" : "Bad Request - e.g. invalid parameters",
             "content" : {
@@ -1085,12 +1091,6 @@
                   "$ref" : "#/components/schemas/ExceptionInfo"
                 }
               }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
             }
           },
           "406" : {
@@ -1168,6 +1168,12 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "400" : {
             "description" : "Bad Request - e.g. invalid parameters",
             "content" : {
@@ -1176,12 +1182,6 @@
                   "$ref" : "#/components/schemas/ExceptionInfo"
                 }
               }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
             }
           },
           "406" : {
@@ -1273,6 +1273,12 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "400" : {
             "description" : "Bad Request - e.g. invalid parameters",
             "content" : {
@@ -1281,12 +1287,6 @@
                   "$ref" : "#/components/schemas/ExceptionInfo"
                 }
               }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
             }
           },
           "406" : {
@@ -1358,8 +1358,20 @@
               "application/json" : { }
             }
           },
+          "404" : {
+            "description" : "Target not found",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -1372,12 +1384,6 @@
                   "$ref" : "#/components/schemas/ExceptionInfo"
                 }
               }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
             }
           },
           "406" : {
@@ -1404,12 +1410,6 @@
                   "$ref" : "#/components/schemas/DdiConfirmationBaseAction"
                 }
               }
-            }
-          },
-          "404" : {
-            "description" : "Target not found",
-            "content" : {
-              "application/json" : { }
             }
           }
         }
@@ -1463,6 +1463,12 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "400" : {
             "description" : "Bad Request - e.g. invalid parameters",
             "content" : {
@@ -1471,12 +1477,6 @@
                   "$ref" : "#/components/schemas/ExceptionInfo"
                 }
               }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
             }
           },
           "406" : {

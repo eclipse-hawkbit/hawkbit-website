@@ -7,7 +7,7 @@ info:
     \ and gateways connected to IP based networking infrastructure.\n"
   version: "v1"
 servers:
-- url: "http://localhost:64709"
+- url: "http://localhost:49696"
   description: "Generated server url"
 tags:
 - name: "Distribution Sets"
@@ -65,12 +65,13 @@ paths:
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "404":
-          description: "Target type not found."
-          content:
-            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -79,9 +80,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
+        "404":
+          description: "Target type not found."
           content:
             application/json: {}
         "406":
@@ -130,20 +130,10 @@ paths:
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "404":
-          description: "Target type not found."
-          content:
-            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -158,6 +148,16 @@ paths:
         "429":
           description: "Too many requests. The server will refuse further attempts\
             \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
+        "404":
+          description: "Target type not found."
           content:
             application/json: {}
         "406":
@@ -197,12 +197,13 @@ paths:
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "404":
-          description: "Target type not found."
-          content:
-            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -211,9 +212,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
+        "404":
+          description: "Target type not found."
           content:
             application/json: {}
         "406":
@@ -237,13 +237,23 @@ paths:
           type: "integer"
           format: "int64"
       responses:
+        "403":
+          description: "Insufficient permissions, entity is not allowed to be changed\
+            \ (i.e. read-only) or data volume restriction applies."
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/MgmtTag"
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MgmtTag"
         "404":
           description: "Target tag not found."
           content:
             application/json: {}
-        "403":
-          description: "Insufficient permissions, entity is not allowed to be changed\
-            \ (i.e. read-only) or data volume restriction applies."
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/hal+json:
               schema:
@@ -257,16 +267,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/hal+json:
-              schema:
-                $ref: "#/components/schemas/MgmtTag"
-            application/json:
-              schema:
-                $ref: "#/components/schemas/MgmtTag"
         "401":
           description: "The request requires user authentication."
           content:
@@ -326,10 +326,6 @@ paths:
               $ref: "#/components/schemas/MgmtTagRequestBodyPut"
         required: true
       responses:
-        "404":
-          description: "Target tag not found."
-          content:
-            application/json: {}
         "415":
           description: "The request was attempt with a media-type which is not supported\
             \ by the server for this resource."
@@ -350,12 +346,10 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/MgmtTag"
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
+        "404":
+          description: "Target tag not found."
           content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
+            application/json: {}
         "429":
           description: "Too many requests. The server will refuse further attempts\
             \ and the client has to wait another second."
@@ -366,6 +360,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/MgmtTag"
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "401":
           description: "The request requires user authentication."
           content:
@@ -427,22 +427,22 @@ paths:
           type: "integer"
           format: "int64"
       responses:
+        "403":
+          description: "Insufficient permissions, entity is not allowed to be changed\
+            \ (i.e. read-only) or data volume restriction applies."
         "404":
           description: "Target tag not found."
           content:
             application/json: {}
-        "403":
-          description: "Insufficient permissions, entity is not allowed to be changed\
-            \ (i.e. read-only) or data volume restriction applies."
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
         "401":
           description: "The request requires user authentication."
         "406":
@@ -479,12 +479,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -494,6 +488,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -543,12 +543,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -569,6 +563,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -609,12 +609,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -624,6 +618,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -663,12 +663,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -678,6 +672,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -726,12 +726,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -752,6 +746,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -796,12 +796,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -811,6 +805,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -851,12 +851,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -866,6 +860,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -921,12 +921,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -947,6 +941,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -999,12 +999,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -1014,6 +1008,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1049,17 +1049,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1114,12 +1114,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -1136,6 +1130,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1181,17 +1181,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1224,17 +1224,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1286,12 +1286,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -1308,6 +1302,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1353,17 +1353,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1417,12 +1417,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -1439,6 +1433,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1484,17 +1484,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1522,16 +1522,21 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Software Module Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Software Module Type not found."
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -1540,11 +1545,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1587,24 +1587,18 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Software Module Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
+          content:
+            application/json: {}
+        "404":
+          description: "Software Module Type not found."
           content:
             application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -1621,6 +1615,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1654,16 +1654,21 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Software Module Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Software Module Type not found."
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -1672,11 +1677,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1712,17 +1712,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "404":
           description: "Software Module not found "
           content:
@@ -1781,12 +1781,6 @@ paths:
           description: "Software Module not found."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -1803,6 +1797,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1848,17 +1848,17 @@ paths:
           description: "Software Module not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -1899,17 +1899,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "404":
           description: "Software Module not found "
           content:
@@ -1970,17 +1970,17 @@ paths:
           description: "Software Module not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2030,17 +2030,17 @@ paths:
           description: "Software Module not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2068,16 +2068,21 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Distribution Set Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Distribution Set Type not found."
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -2086,11 +2091,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2133,24 +2133,18 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Distribution Set Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
+          content:
+            application/json: {}
+        "404":
+          description: "Distribution Set Type not found."
           content:
             application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -2167,6 +2161,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2200,16 +2200,21 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Distribution Set Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Distribution Set Type not found."
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -2218,11 +2223,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2262,17 +2262,17 @@ paths:
           description: "Distribution Set Tag not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2326,12 +2326,6 @@ paths:
           description: "Distribution Set Tag not found."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -2348,6 +2342,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2393,12 +2393,6 @@ paths:
           description: "Distribution Set Tag not found."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -2415,6 +2409,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2450,17 +2450,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2515,12 +2515,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -2537,6 +2531,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2582,17 +2582,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2638,17 +2638,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2702,12 +2702,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -2724,6 +2718,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2773,17 +2773,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2840,17 +2840,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -2894,20 +2894,10 @@ paths:
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "404":
-          description: "Target type not found."
-          content:
-            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -2922,6 +2912,16 @@ paths:
         "429":
           description: "Too many requests. The server will refuse further attempts\
             \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
+        "404":
+          description: "Target type not found."
           content:
             application/json: {}
         "406":
@@ -2974,17 +2974,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -3047,12 +3047,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -3069,6 +3063,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -3118,12 +3118,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/PagedListMgmtTag"
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "429":
           description: "Too many requests. The server will refuse further attempts\
             \ and the client has to wait another second."
@@ -3134,6 +3128,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/PagedListMgmtTag"
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "401":
           description: "The request requires user authentication."
           content:
@@ -3219,12 +3219,6 @@ paths:
                 type: "array"
                 items:
                   $ref: "#/components/schemas/MgmtTag"
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "429":
           description: "Too many requests. The server will refuse further attempts\
             \ and the client has to wait another second."
@@ -3239,6 +3233,12 @@ paths:
                 type: "array"
                 items:
                   $ref: "#/components/schemas/MgmtTag"
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "401":
           description: "The request requires user authentication."
           content:
@@ -3359,12 +3359,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/PagedListMgmtTarget"
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "429":
           description: "Too many requests. The server will refuse further attempts\
             \ and the client has to wait another second."
@@ -3375,6 +3369,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/PagedListMgmtTarget"
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "401":
           description: "The request requires user authentication."
           content:
@@ -3467,12 +3467,6 @@ paths:
                 type: "array"
                 items:
                   $ref: "#/components/schemas/MgmtTarget"
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "429":
           description: "Too many requests. The server will refuse further attempts\
             \ and the client has to wait another second."
@@ -3487,6 +3481,12 @@ paths:
                 type: "array"
                 items:
                   $ref: "#/components/schemas/MgmtTarget"
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "401":
           description: "The request requires user authentication."
           content:
@@ -3603,12 +3603,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/MgmtTargetTagAssigmentResult"
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "429":
           description: "Too many requests. The server will refuse further attempts\
             \ and the client has to wait another second."
@@ -3619,6 +3613,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/MgmtTargetTagAssigmentResult"
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "401":
           description: "The request requires user authentication."
           content:
@@ -3713,17 +3713,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -3771,12 +3771,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -3793,6 +3787,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -3847,17 +3847,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "200":
           description: "Successfully retrieved"
     delete:
@@ -3887,17 +3887,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "200":
           description: "Successfully retrieved"
   /rest/v1/targets/{targetId}/metadata:
@@ -3952,12 +3952,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -3967,6 +3961,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4016,16 +4016,14 @@ paths:
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Target not found"
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -4042,6 +4040,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4059,10 +4063,6 @@ paths:
                 type: "array"
                 items:
                   $ref: "#/components/schemas/MgmtMetadata"
-        "404":
-          description: "Target not found"
-          content:
-            application/json: {}
   /rest/v1/targets/{targetId}/autoConfirm/deactivate:
     post:
       tags:
@@ -4089,16 +4089,14 @@ paths:
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Target not found"
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -4115,16 +4113,18 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
             application/json: {}
         "200":
           description: "Successfully retrieved"
-        "404":
-          description: "Target not found"
-          content:
-            application/json: {}
   /rest/v1/targets/{targetId}/autoConfirm/activate:
     post:
       tags:
@@ -4157,16 +4157,14 @@ paths:
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Target not found"
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -4183,16 +4181,18 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
             application/json: {}
         "200":
           description: "Successfully retrieved"
-        "404":
-          description: "Target not found"
-          content:
-            application/json: {}
   /rest/v1/targets/{targetId}/assignedDS:
     get:
       tags:
@@ -4221,12 +4221,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -4236,6 +4230,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4286,16 +4286,14 @@ paths:
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Target not found"
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -4312,6 +4310,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4325,10 +4329,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/MgmtTargetAssignmentResponseBody"
-        "404":
-          description: "Target not found"
-          content:
-            application/json: {}
   /rest/v1/targetfilters:
     get:
       tags:
@@ -4382,17 +4382,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4436,12 +4436,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -4458,6 +4452,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4500,17 +4500,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4565,12 +4565,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -4587,6 +4581,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4628,17 +4628,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4696,17 +4696,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4759,12 +4759,6 @@ paths:
           description: "Software Module not found"
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -4781,6 +4775,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4845,17 +4845,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4903,12 +4903,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "415":
           description: "The request was attempt with a media-type which is not supported\
             \ by the server for this resource."
@@ -4919,6 +4913,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -4989,17 +4989,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "404":
           description: "Software Module not found "
           content:
@@ -5061,12 +5061,6 @@ paths:
           description: "Software Module not found"
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -5083,6 +5077,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5140,17 +5140,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "404":
           description: "Software Module not found "
           content:
@@ -5235,12 +5235,6 @@ paths:
           description: "Software Module not found"
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "415":
           description: "The request was attempt with a media-type which is not supported\
             \ by the server for this resource."
@@ -5251,6 +5245,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5317,17 +5317,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5371,12 +5371,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -5393,6 +5387,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5435,17 +5435,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5481,17 +5481,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5531,17 +5531,17 @@ paths:
           description: "Rollout not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5584,17 +5584,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5630,17 +5630,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5682,17 +5682,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5734,17 +5734,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5798,17 +5798,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5856,12 +5856,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -5878,6 +5872,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5916,16 +5916,21 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Distribution Set Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Distribution Set Type not found."
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -5934,11 +5939,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -5986,24 +5986,18 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Distribution Set Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
+          content:
+            application/json: {}
+        "404":
+          description: "Distribution Set Type not found."
           content:
             application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -6020,6 +6014,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6047,16 +6047,21 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Distribution Set Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Distribution Set Type not found."
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -6065,11 +6070,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6117,24 +6117,18 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Distribution Set Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
+          content:
+            application/json: {}
+        "404":
+          description: "Distribution Set Type not found."
           content:
             application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -6151,6 +6145,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6203,17 +6203,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6261,12 +6261,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -6283,6 +6277,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6348,12 +6348,17 @@ paths:
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "405":
+          description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
         "404":
           description: "Distribution Set Tag not found"
           content:
             application/json: {}
-        "405":
-          description: "The http request method is not allowed on the resource."
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -6362,11 +6367,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6421,12 +6421,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -6443,6 +6437,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6497,12 +6497,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -6519,6 +6513,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6576,17 +6576,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6635,12 +6635,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -6657,6 +6651,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6727,17 +6727,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6796,12 +6796,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -6818,6 +6812,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6881,12 +6881,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Distribution Set not found"
           content:
@@ -6907,6 +6901,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -6966,17 +6966,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7042,12 +7042,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -7064,6 +7058,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7125,17 +7125,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7195,12 +7195,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "409":
           description: "E.g. in case an entity is created or modified by another user\
             \ in another request at the same time. You may retry your modification\
@@ -7217,6 +7211,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7270,12 +7270,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -7285,6 +7279,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7326,12 +7326,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -7341,6 +7335,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7382,12 +7382,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -7397,6 +7391,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7462,12 +7462,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -7477,6 +7471,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7543,12 +7543,6 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -7558,6 +7552,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7615,17 +7615,17 @@ paths:
           description: "Software Module not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7677,17 +7677,17 @@ paths:
           description: "Software Module not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7752,17 +7752,17 @@ paths:
           description: "Rollout not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7808,17 +7808,17 @@ paths:
           description: "Rollout not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7888,17 +7888,17 @@ paths:
           description: "Rollout not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -7951,17 +7951,17 @@ paths:
           description: "Rollout not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8039,17 +8039,17 @@ paths:
           description: "Rollout not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8091,16 +8091,21 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Distribution Set Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Distribution Set Type not found."
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -8109,11 +8114,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8154,16 +8154,21 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Distribution Set Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Distribution Set Type not found."
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -8172,11 +8177,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8211,16 +8211,21 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Distribution Set Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Distribution Set Type not found."
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -8229,11 +8234,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8273,16 +8273,21 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "404":
-          description: "Distribution Set Type not found."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
+        "404":
+          description: "Distribution Set Type not found."
+          content:
+            application/json: {}
         "405":
           description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
           content:
             application/json: {}
         "400":
@@ -8291,11 +8296,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8332,17 +8332,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8389,17 +8389,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8446,17 +8446,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8503,17 +8503,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8584,17 +8584,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8667,17 +8667,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8747,17 +8747,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8790,12 +8790,6 @@ paths:
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "404":
           description: "Target not found."
           content:
@@ -8805,6 +8799,12 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8880,17 +8880,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -8920,12 +8920,6 @@ paths:
         "403":
           description: "Insufficient permissions, entity is not allowed to be changed\
             \ (i.e. read-only) or data volume restriction applies."
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
         "429":
           description: "Too many requests. The server will refuse further attempts\
             \ and the client has to wait another second."
@@ -8933,6 +8927,12 @@ paths:
           description: "Target not found."
           content:
             application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
         "401":
           description: "The request requires user authentication."
         "406":
@@ -8979,17 +8979,17 @@ paths:
           description: "Distribution Set Tag not found."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
@@ -9031,17 +9031,17 @@ paths:
           description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "406":
           description: "In case accept header is specified and not application/json."
           content:
