@@ -12,8 +12,6 @@
   </url><url>
     <loc>https://eclipse.dev/hawkbit/guides/clustering/</loc>
   </url><url>
-    <loc>https://eclipse.dev/hawkbit/guides/customtheme/</loc>
-  </url><url>
     <loc>https://eclipse.dev/hawkbit/features/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/concepts/authentication/</loc>
@@ -48,6 +46,10 @@
   </url><url>
     <loc>https://eclipse.dev/hawkbit/blog/2018-07-26-first-release/</loc>
   </url><url>
+    <loc>https://eclipse.dev/hawkbit/rest-api/ddi/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/hawkbit/rest-api/mgmt/</loc>
+  </url><url>
     <loc>https://eclipse.dev/hawkbit/apis/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/blog/</loc>
@@ -59,6 +61,8 @@
     <loc>https://eclipse.dev/hawkbit/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/guides/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/hawkbit/rest-api/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/sandbox/</loc>
   </url><url>
