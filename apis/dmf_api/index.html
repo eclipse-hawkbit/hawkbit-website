@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Device Management Federation API - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.120.4">
+    <meta name="generator" content="Hugo 0.124.1">
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -35,14 +35,14 @@
     <style>
       @font-face {
         font-family: 'Icon';
-        src: url('https://eclipse.dev/hawkbit/fonts/icon.eot');
-        src: url('https://eclipse.dev/hawkbit/fonts/icon.eot')
+        src: url('https://eclipse.dev/hawkbit/fonts/icon.eot?52m981');
+        src: url('https://eclipse.dev/hawkbit/fonts/icon.eot#iefix52m981')
                format('embedded-opentype'),
-             url('https://eclipse.dev/hawkbit/fonts/icon.woff')
+             url('https://eclipse.dev/hawkbit/fonts/icon.woff?52m981')
                format('woff'),
-             url('https://eclipse.dev/hawkbit/fonts/icon.ttf')
+             url('https://eclipse.dev/hawkbit/fonts/icon.ttf?52m981')
                format('truetype'),
-             url('https://eclipse.dev/hawkbit/fonts/icon.svg')
+             url('https://eclipse.dev/hawkbit/fonts/icon.svg?52m981#icon')
                format('svg');
         font-weight: normal;
         font-style: normal;
@@ -520,6 +520,7 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 <p>Payload Template (optional):</p>
 <pre><code class="language-json">{
     &quot;name&quot;: &quot;String&quot;,
+    &quot;type&quot;: &quot;String&quot;,
     &quot;attributeUpdate&quot;: {
         &quot;attributes&quot;: {
             &quot;exampleKey1&quot; : &quot;exampleValue1&quot;,
@@ -530,6 +531,19 @@ The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
 }
 </code></pre>
 <p>The &ldquo;name&rdquo; property specifies the name of the thing, which by default is the thing ID. This property is optional.<br />
+<br />
+The &ldquo;type&rdquo; property specifies name of a target type which should be assigned to the created/updated target. The
+target type with the specified name should be created in advance, otherwise it can&rsquo;t be assigned to the target,
+resulting in:</p>
+<ul>
+<li>error is logged</li>
+<li>if the target does not exist then it is created without any target type assigned</li>
+<li>if it exists already then no changes to its target type assignment are made.</li>
+</ul>
+<p>If the &ldquo;type&rdquo; property is set to a blank string while updating an existing target then any eventual target type
+assignment is removed from the target. This property is optional and if omitted then no changes to the target type
+assignment are made.<br />
+<br />
 The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing, for details see UPDATE_ATTRIBUTES message. This property is optional.</p>
 <h3 id="thing_removed">THING_REMOVED</h3>
 <p>Message to request the deletion of a provisioning target.</p>
