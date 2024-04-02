@@ -6,7 +6,7 @@
     "version" : "v1"
   },
   "servers" : [ {
-    "url" : "http://localhost:64311",
+    "url" : "http://localhost:56246",
     "description" : "Generated server url"
   } ],
   "tags" : [ {
@@ -51,20 +51,8 @@
           "required" : true
         },
         "responses" : {
-          "415" : {
-            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -79,20 +67,26 @@
               }
             }
           },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "403" : {
             "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
             "content" : {
               "application/json" : { }
             }
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
+          "415" : {
+            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
               "application/json" : { }
             }
           },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -100,8 +94,14 @@
           "200" : {
             "description" : "Successfully retrieved"
           },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -154,26 +154,14 @@
           "required" : true
         },
         "responses" : {
-          "415" : {
-            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
           },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "404" : {
-            "description" : "Target not found",
+          "410" : {
+            "description" : "Action is not active anymore.",
             "content" : {
               "application/json" : { }
             }
@@ -188,26 +176,26 @@
               }
             }
           },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "403" : {
             "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
             "content" : {
               "application/json" : { }
             }
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
+          "415" : {
+            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
               "application/json" : { }
             }
           },
-          "410" : {
-            "description" : "Action is not active anymore.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -215,8 +203,20 @@
           "200" : {
             "description" : "Successfully retrieved"
           },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "404" : {
+            "description" : "Target not found",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -269,20 +269,14 @@
           "required" : true
         },
         "responses" : {
-          "415" : {
-            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
           },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "410" : {
+            "description" : "Action is not active anymore.",
             "content" : {
               "application/json" : { }
             }
@@ -303,26 +297,26 @@
               "application/json" : { }
             }
           },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "403" : {
             "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
             "content" : {
               "application/json" : { }
             }
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
+          "415" : {
+            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
               "application/json" : { }
             }
           },
-          "410" : {
-            "description" : "Action is not active anymore.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -330,8 +324,14 @@
           "200" : {
             "description" : "Successfully retrieved"
           },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -361,26 +361,8 @@
           }
         } ],
         "responses" : {
-          "415" : {
-            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "404" : {
-            "description" : "Target not found",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -395,20 +377,26 @@
               }
             }
           },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "403" : {
             "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
             "content" : {
               "application/json" : { }
             }
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
+          "415" : {
+            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
               "application/json" : { }
             }
           },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -416,8 +404,20 @@
           "200" : {
             "description" : "Successfully retrieved"
           },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "404" : {
+            "description" : "Target not found",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -461,26 +461,8 @@
           }
         },
         "responses" : {
-          "415" : {
-            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "404" : {
-            "description" : "Target not found",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -495,20 +477,26 @@
               }
             }
           },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "403" : {
             "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
             "content" : {
               "application/json" : { }
             }
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
+          "415" : {
+            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
               "application/json" : { }
             }
           },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -516,8 +504,20 @@
           "200" : {
             "description" : "Successfully retrieved"
           },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "404" : {
+            "description" : "Target not found",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -570,20 +570,8 @@
           "required" : true
         },
         "responses" : {
-          "415" : {
-            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -598,20 +586,26 @@
               }
             }
           },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "403" : {
             "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
             "content" : {
               "application/json" : { }
             }
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
+          "415" : {
+            "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
               "application/json" : { }
             }
           },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -619,8 +613,14 @@
           "200" : {
             "description" : "Successfully retrieved"
           },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -650,14 +650,8 @@
           }
         } ],
         "responses" : {
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -678,14 +672,8 @@
               "application/json" : { }
             }
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -708,6 +696,18 @@
                   "$ref" : "#/components/schemas/DdiControllerBase"
                 }
               }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
+            "content" : {
+              "application/json" : { }
             }
           }
         }
@@ -743,14 +743,8 @@
           }
         } ],
         "responses" : {
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -771,14 +765,8 @@
               "application/json" : { }
             }
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -810,6 +798,18 @@
                   }
                 }
               }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
+            "content" : {
+              "application/json" : { }
             }
           }
         }
@@ -852,14 +852,8 @@
           }
         } ],
         "responses" : {
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -880,20 +874,14 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "404" : {
             "description" : "Target or Module not found",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -906,6 +894,18 @@
                   "type" : "object"
                 }
               }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
+            "content" : {
+              "application/json" : { }
             }
           }
         }
@@ -948,14 +948,8 @@
           }
         } ],
         "responses" : {
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -976,11 +970,20 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "404" : {
             "description" : "Target or Module not found",
             "content" : {
               "application/json" : { }
             }
+          },
+          "200" : {
+            "description" : "Successfully retrieved"
           },
           "401" : {
             "description" : "The request requires user authentication.",
@@ -988,14 +991,11 @@
               "application/json" : { }
             }
           },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
-          },
-          "200" : {
-            "description" : "Successfully retrieved"
           }
         }
       }
@@ -1039,10 +1039,20 @@
           }
         } ],
         "responses" : {
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request - e.g. invalid parameters",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExceptionInfo"
+                }
+              }
             }
           },
           "200" : {
@@ -1065,24 +1075,14 @@
               }
             }
           },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
             "content" : {
               "application/json" : { }
             }
           },
-          "400" : {
-            "description" : "Bad Request - e.g. invalid parameters",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ExceptionInfo"
-                }
-              }
-            }
-          },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -1093,8 +1093,8 @@
               "application/json" : { }
             }
           },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -1150,14 +1150,8 @@
           }
         } ],
         "responses" : {
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -1170,6 +1164,18 @@
                   "$ref" : "#/components/schemas/ExceptionInfo"
                 }
               }
+            }
+          },
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
             }
           },
           "200" : {
@@ -1192,20 +1198,14 @@
               }
             }
           },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "401" : {
             "description" : "The request requires user authentication.",
             "content" : {
               "application/json" : { }
             }
           },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -1235,6 +1235,12 @@
           }
         } ],
         "responses" : {
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "200" : {
             "description" : "The response body in case auto-confirmation is active is richer - it contains additional information\nsuch as initiator, remark and when the auto-confirmation had been activated.\n",
             "content" : {
@@ -1255,18 +1261,6 @@
               }
             }
           },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "400" : {
             "description" : "Bad Request - e.g. invalid parameters",
             "content" : {
@@ -1283,14 +1277,20 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "401" : {
             "description" : "The request requires user authentication.",
             "content" : {
               "application/json" : { }
             }
           },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -1346,20 +1346,8 @@
           }
         } ],
         "responses" : {
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "404" : {
-            "description" : "Target not found",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -1380,14 +1368,20 @@
               "application/json" : { }
             }
           },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "401" : {
             "description" : "The request requires user authentication.",
             "content" : {
               "application/json" : { }
             }
           },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "404" : {
+            "description" : "Target not found",
             "content" : {
               "application/json" : { }
             }
@@ -1410,6 +1404,12 @@
                   "$ref" : "#/components/schemas/DdiConfirmationBaseAction"
                 }
               }
+            }
+          },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
+            "content" : {
+              "application/json" : { }
             }
           }
         }
@@ -1445,14 +1445,8 @@
           }
         } ],
         "responses" : {
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -1473,14 +1467,8 @@
               "application/json" : { }
             }
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -1503,6 +1491,18 @@
                   "$ref" : "#/components/schemas/DdiCancel"
                 }
               }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
+            "content" : {
+              "application/json" : { }
             }
           }
         }
