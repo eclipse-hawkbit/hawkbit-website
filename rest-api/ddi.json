@@ -6,7 +6,7 @@
     "version" : "v1"
   },
   "servers" : [ {
-    "url" : "http://localhost:56246",
+    "url" : "http://localhost:59115",
     "description" : "Generated server url"
   } ],
   "tags" : [ {
@@ -51,8 +51,26 @@
           "required" : true
         },
         "responses" : {
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
             "content" : {
               "application/json" : { }
             }
@@ -67,18 +85,6 @@
               }
             }
           },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "415" : {
             "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
@@ -91,20 +97,14 @@
               "application/json" : { }
             }
           },
-          "200" : {
-            "description" : "Successfully retrieved"
-          },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "406" : {
             "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
+          },
+          "200" : {
+            "description" : "Successfully retrieved"
           }
         }
       }
@@ -154,14 +154,32 @@
           "required" : true
         },
         "responses" : {
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
             "content" : {
               "application/json" : { }
             }
           },
           "410" : {
             "description" : "Action is not active anymore.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
             "content" : {
               "application/json" : { }
             }
@@ -176,18 +194,6 @@
               }
             }
           },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "415" : {
             "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
@@ -200,23 +206,17 @@
               "application/json" : { }
             }
           },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "200" : {
             "description" : "Successfully retrieved"
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "404" : {
             "description" : "Target not found",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -269,14 +269,32 @@
           "required" : true
         },
         "responses" : {
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
             "content" : {
               "application/json" : { }
             }
           },
           "410" : {
             "description" : "Action is not active anymore.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
             "content" : {
               "application/json" : { }
             }
@@ -291,24 +309,6 @@
               }
             }
           },
-          "404" : {
-            "description" : "Target or Action not found",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "415" : {
             "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
@@ -321,17 +321,17 @@
               "application/json" : { }
             }
           },
-          "200" : {
-            "description" : "Successfully retrieved"
-          },
-          "401" : {
-            "description" : "The request requires user authentication.",
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
           },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "200" : {
+            "description" : "Successfully retrieved"
+          },
+          "404" : {
+            "description" : "Target or Action not found",
             "content" : {
               "application/json" : { }
             }
@@ -361,8 +361,26 @@
           }
         } ],
         "responses" : {
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
             "content" : {
               "application/json" : { }
             }
@@ -377,18 +395,6 @@
               }
             }
           },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "415" : {
             "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
@@ -401,23 +407,17 @@
               "application/json" : { }
             }
           },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "200" : {
             "description" : "Successfully retrieved"
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "404" : {
             "description" : "Target not found",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -461,8 +461,26 @@
           }
         },
         "responses" : {
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
             "content" : {
               "application/json" : { }
             }
@@ -477,18 +495,6 @@
               }
             }
           },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "415" : {
             "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
@@ -501,23 +507,17 @@
               "application/json" : { }
             }
           },
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "200" : {
             "description" : "Successfully retrieved"
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "404" : {
             "description" : "Target not found",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -570,8 +570,26 @@
           "required" : true
         },
         "responses" : {
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "409" : {
+            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
             "content" : {
               "application/json" : { }
             }
@@ -586,18 +604,6 @@
               }
             }
           },
-          "409" : {
-            "description" : "E.g. in case an entity is created or modified by another user in another request at the same time. You may retry your modification request.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "415" : {
             "description" : "The request was attempt with a media-type which is not supported by the server for this resource.",
             "content" : {
@@ -610,20 +616,14 @@
               "application/json" : { }
             }
           },
-          "200" : {
-            "description" : "Successfully retrieved"
-          },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "406" : {
             "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
+          },
+          "200" : {
+            "description" : "Successfully retrieved"
           }
         }
       }
@@ -650,6 +650,18 @@
           }
         } ],
         "responses" : {
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
             "content" : {
@@ -666,14 +678,14 @@
               }
             }
           },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
           },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -696,18 +708,6 @@
                   "$ref" : "#/components/schemas/DdiControllerBase"
                 }
               }
-            }
-          },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
-            "content" : {
-              "application/json" : { }
             }
           }
         }
@@ -743,6 +743,18 @@
           }
         } ],
         "responses" : {
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
             "content" : {
@@ -759,14 +771,14 @@
               }
             }
           },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
           },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -798,18 +810,6 @@
                   }
                 }
               }
-            }
-          },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
-            "content" : {
-              "application/json" : { }
             }
           }
         }
@@ -852,6 +852,24 @@
           }
         } ],
         "responses" : {
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "404" : {
+            "description" : "Target or Module not found",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
             "content" : {
@@ -868,20 +886,14 @@
               }
             }
           },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "429" : {
             "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
           },
-          "404" : {
-            "description" : "Target or Module not found",
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -894,18 +906,6 @@
                   "type" : "object"
                 }
               }
-            }
-          },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
-            "content" : {
-              "application/json" : { }
             }
           }
         }
@@ -948,6 +948,24 @@
           }
         } ],
         "responses" : {
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "404" : {
+            "description" : "Target or Module not found",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
             "content" : {
@@ -964,29 +982,8 @@
               }
             }
           },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "429" : {
             "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "404" : {
-            "description" : "Target or Module not found",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "200" : {
-            "description" : "Successfully retrieved"
-          },
-          "401" : {
-            "description" : "The request requires user authentication.",
             "content" : {
               "application/json" : { }
             }
@@ -996,6 +993,9 @@
             "content" : {
               "application/json" : { }
             }
+          },
+          "200" : {
+            "description" : "Successfully retrieved"
           }
         }
       }
@@ -1039,20 +1039,16 @@
           }
         } ],
         "responses" : {
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
             "content" : {
               "application/json" : { }
             }
           },
-          "400" : {
-            "description" : "Bad Request - e.g. invalid parameters",
+          "401" : {
+            "description" : "The request requires user authentication.",
             "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ExceptionInfo"
-                }
-              }
+              "application/json" : { }
             }
           },
           "200" : {
@@ -1075,20 +1071,24 @@
               }
             }
           },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request - e.g. invalid parameters",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExceptionInfo"
+                }
+              }
             }
           },
           "429" : {
             "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "401" : {
-            "description" : "The request requires user authentication.",
             "content" : {
               "application/json" : { }
             }
@@ -1150,30 +1150,20 @@
           }
         } ],
         "responses" : {
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "400" : {
-            "description" : "Bad Request - e.g. invalid parameters",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/ExceptionInfo"
-                }
-              }
-            }
-          },
           "403" : {
             "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
             "content" : {
               "application/json" : { }
             }
           },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
             "content" : {
               "application/json" : { }
             }
@@ -1198,8 +1188,18 @@
               }
             }
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
+          "400" : {
+            "description" : "Bad Request - e.g. invalid parameters",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExceptionInfo"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
@@ -1235,8 +1235,8 @@
           }
         } ],
         "responses" : {
-          "405" : {
-            "description" : "The http request method is not allowed on the resource.",
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
             "content" : {
               "application/json" : { }
             }
@@ -1261,6 +1261,18 @@
               }
             }
           },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "405" : {
+            "description" : "The http request method is not allowed on the resource.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "400" : {
             "description" : "Bad Request - e.g. invalid parameters",
             "content" : {
@@ -1271,20 +1283,8 @@
               }
             }
           },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "429" : {
             "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "401" : {
-            "description" : "The request requires user authentication.",
             "content" : {
               "application/json" : { }
             }
@@ -1346,6 +1346,18 @@
           }
         } ],
         "responses" : {
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
             "content" : {
@@ -1362,26 +1374,14 @@
               }
             }
           },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
           "429" : {
             "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
           },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "404" : {
-            "description" : "Target not found",
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -1406,8 +1406,8 @@
               }
             }
           },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
+          "404" : {
+            "description" : "Target not found",
             "content" : {
               "application/json" : { }
             }
@@ -1445,6 +1445,18 @@
           }
         } ],
         "responses" : {
+          "403" : {
+            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
+          "401" : {
+            "description" : "The request requires user authentication.",
+            "content" : {
+              "application/json" : { }
+            }
+          },
           "405" : {
             "description" : "The http request method is not allowed on the resource.",
             "content" : {
@@ -1461,14 +1473,14 @@
               }
             }
           },
-          "403" : {
-            "description" : "Insufficient permissions, entity is not allowed to be changed (i.e. read-only) or data volume restriction applies.",
+          "429" : {
+            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
             "content" : {
               "application/json" : { }
             }
           },
-          "429" : {
-            "description" : "Too many requests. The server will refuse further attempts and the client has to wait another second.",
+          "406" : {
+            "description" : "In case accept header is specified and not application/json.",
             "content" : {
               "application/json" : { }
             }
@@ -1491,18 +1503,6 @@
                   "$ref" : "#/components/schemas/DdiCancel"
                 }
               }
-            }
-          },
-          "401" : {
-            "description" : "The request requires user authentication.",
-            "content" : {
-              "application/json" : { }
-            }
-          },
-          "406" : {
-            "description" : "In case accept header is specified and not application/json.",
-            "content" : {
-              "application/json" : { }
             }
           }
         }
