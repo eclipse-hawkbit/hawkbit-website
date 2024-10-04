@@ -7,12 +7,90 @@ info:
     \ and gateways connected to IP based networking infrastructure.\n"
   version: "v1"
 servers:
-- url: "http://localhost:60824"
+- url: "http://localhost:51440"
   description: "Generated server url"
 tags:
 - name: "DDI Root Controller"
   description: "REST resource handling for root controller CRUD operations"
 paths:
+  /{tenant}/controller/v1/{controllerId}/installedBase:
+    put:
+      tags:
+      - "DDI Root Controller"
+      summary: "Set offline assigned version"
+      description: "Allow to set current running version.\nThis method is EXPERIMENTAL\
+        \ and may change in future releases.\n"
+      operationId: "setAsssignedOfflineVersion"
+      parameters:
+      - name: "tenant"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      - name: "controllerId"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DdiAssignedVersion"
+          application/cbor:
+            schema:
+              $ref: "#/components/schemas/DdiAssignedVersion"
+        required: true
+      responses:
+        "415":
+          description: "The request was attempt with a media-type which is not supported\
+            \ by the server for this resource."
+          content:
+            application/json: {}
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
+          content:
+            application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
+        "403":
+          description: "Insufficient permissions, entity is not allowed to be changed\
+            \ (i.e. read-only) or data volume restriction applies."
+          content:
+            application/json: {}
+        "401":
+          description: "The request requires user authentication."
+          content:
+            application/json: {}
+        "410":
+          description: "Action is not active anymore."
+          content:
+            application/json: {}
+        "404":
+          description: "Target or Distribution not found"
+          content:
+            application/json: {}
+        "405":
+          description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "200":
+          description: "Successfully retrieved"
+        "409":
+          description: "E.g. in case an entity is created or modified by another user\
+            \ in another request at the same time. You may retry your modification\
+            \ request."
+          content:
+            application/json: {}
   /{tenant}/controller/v1/{controllerId}/configData:
     put:
       tags:
@@ -44,27 +122,6 @@ paths:
               $ref: "#/components/schemas/DdiConfigData"
         required: true
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
-          content:
-            application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
-        "409":
-          description: "E.g. in case an entity is created or modified by another user\
-            \ in another request at the same time. You may retry your modification\
-            \ request."
-          content:
-            application/json: {}
-        "403":
-          description: "Insufficient permissions, entity is not allowed to be changed\
-            \ (i.e. read-only) or data volume restriction applies."
-          content:
-            application/json: {}
         "415":
           description: "The request was attempt with a media-type which is not supported\
             \ by the server for this resource."
@@ -75,14 +132,35 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
-        "200":
-          description: "Successfully retrieved"
+        "406":
+          description: "In case accept header is specified and not application/json."
+          content:
+            application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
+        "403":
+          description: "Insufficient permissions, entity is not allowed to be changed\
+            \ (i.e. read-only) or data volume restriction applies."
+          content:
+            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
+        "405":
+          description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "200":
+          description: "Successfully retrieved"
+        "409":
+          description: "E.g. in case an entity is created or modified by another user\
+            \ in another request at the same time. You may retry your modification\
+            \ request."
           content:
             application/json: {}
   /{tenant}/controller/v1/{controllerId}/deploymentBase/{actionId}/feedback:
@@ -121,31 +199,6 @@ paths:
               $ref: "#/components/schemas/DdiActionFeedback"
         required: true
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
-          content:
-            application/json: {}
-        "410":
-          description: "Action is not active anymore."
-          content:
-            application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
-        "409":
-          description: "E.g. in case an entity is created or modified by another user\
-            \ in another request at the same time. You may retry your modification\
-            \ request."
-          content:
-            application/json: {}
-        "403":
-          description: "Insufficient permissions, entity is not allowed to be changed\
-            \ (i.e. read-only) or data volume restriction applies."
-          content:
-            application/json: {}
         "415":
           description: "The request was attempt with a media-type which is not supported\
             \ by the server for this resource."
@@ -156,18 +209,43 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
+          content:
+            application/json: {}
         "404":
           description: "Target not found"
           content:
             application/json: {}
-        "200":
-          description: "Successfully retrieved"
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
+        "403":
+          description: "Insufficient permissions, entity is not allowed to be changed\
+            \ (i.e. read-only) or data volume restriction applies."
+          content:
+            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
+        "410":
+          description: "Action is not active anymore."
+          content:
+            application/json: {}
+        "405":
+          description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "200":
+          description: "Successfully retrieved"
+        "409":
+          description: "E.g. in case an entity is created or modified by another user\
+            \ in another request at the same time. You may retry your modification\
+            \ request."
           content:
             application/json: {}
   /{tenant}/controller/v1/{controllerId}/confirmationBase/{actionId}/feedback:
@@ -207,35 +285,6 @@ paths:
               $ref: "#/components/schemas/DdiConfirmationFeedback"
         required: true
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
-          content:
-            application/json: {}
-        "410":
-          description: "Action is not active anymore."
-          content:
-            application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
-        "409":
-          description: "E.g. in case an entity is created or modified by another user\
-            \ in another request at the same time. You may retry your modification\
-            \ request."
-          content:
-            application/json: {}
-        "404":
-          description: "Target or Action not found"
-          content:
-            application/json: {}
-        "403":
-          description: "Insufficient permissions, entity is not allowed to be changed\
-            \ (i.e. read-only) or data volume restriction applies."
-          content:
-            application/json: {}
         "415":
           description: "The request was attempt with a media-type which is not supported\
             \ by the server for this resource."
@@ -246,14 +295,43 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
-        "200":
-          description: "Successfully retrieved"
+        "406":
+          description: "In case accept header is specified and not application/json."
+          content:
+            application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
+        "404":
+          description: "Target or Action not found"
+          content:
+            application/json: {}
+        "403":
+          description: "Insufficient permissions, entity is not allowed to be changed\
+            \ (i.e. read-only) or data volume restriction applies."
+          content:
+            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
+        "410":
+          description: "Action is not active anymore."
+          content:
+            application/json: {}
+        "405":
+          description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "200":
+          description: "Successfully retrieved"
+        "409":
+          description: "E.g. in case an entity is created or modified by another user\
+            \ in another request at the same time. You may retry your modification\
+            \ request."
           content:
             application/json: {}
   /{tenant}/controller/v1/{controllerId}/confirmationBase/deactivateAutoConfirm:
@@ -277,27 +355,6 @@ paths:
         schema:
           type: "string"
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
-          content:
-            application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
-        "409":
-          description: "E.g. in case an entity is created or modified by another user\
-            \ in another request at the same time. You may retry your modification\
-            \ request."
-          content:
-            application/json: {}
-        "403":
-          description: "Insufficient permissions, entity is not allowed to be changed\
-            \ (i.e. read-only) or data volume restriction applies."
-          content:
-            application/json: {}
         "415":
           description: "The request was attempt with a media-type which is not supported\
             \ by the server for this resource."
@@ -308,18 +365,39 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
+          content:
+            application/json: {}
         "404":
           description: "Target not found"
           content:
             application/json: {}
-        "200":
-          description: "Successfully retrieved"
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
+        "403":
+          description: "Insufficient permissions, entity is not allowed to be changed\
+            \ (i.e. read-only) or data volume restriction applies."
+          content:
+            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
+        "405":
+          description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "200":
+          description: "Successfully retrieved"
+        "409":
+          description: "E.g. in case an entity is created or modified by another user\
+            \ in another request at the same time. You may retry your modification\
+            \ request."
           content:
             application/json: {}
   /{tenant}/controller/v1/{controllerId}/confirmationBase/activateAutoConfirm:
@@ -352,27 +430,6 @@ paths:
             schema:
               $ref: "#/components/schemas/DdiActivateAutoConfirmation"
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
-          content:
-            application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
-        "409":
-          description: "E.g. in case an entity is created or modified by another user\
-            \ in another request at the same time. You may retry your modification\
-            \ request."
-          content:
-            application/json: {}
-        "403":
-          description: "Insufficient permissions, entity is not allowed to be changed\
-            \ (i.e. read-only) or data volume restriction applies."
-          content:
-            application/json: {}
         "415":
           description: "The request was attempt with a media-type which is not supported\
             \ by the server for this resource."
@@ -383,18 +440,39 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
+          content:
+            application/json: {}
         "404":
           description: "Target not found"
           content:
             application/json: {}
-        "200":
-          description: "Successfully retrieved"
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
+        "403":
+          description: "Insufficient permissions, entity is not allowed to be changed\
+            \ (i.e. read-only) or data volume restriction applies."
+          content:
+            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
+        "405":
+          description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "200":
+          description: "Successfully retrieved"
+        "409":
+          description: "E.g. in case an entity is created or modified by another user\
+            \ in another request at the same time. You may retry your modification\
+            \ request."
           content:
             application/json: {}
   /{tenant}/controller/v1/{controllerId}/cancelAction/{actionId}/feedback:
@@ -434,27 +512,6 @@ paths:
               $ref: "#/components/schemas/DdiActionFeedback"
         required: true
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
-          content:
-            application/json: {}
-        "400":
-          description: "Bad Request - e.g. invalid parameters"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ExceptionInfo"
-        "409":
-          description: "E.g. in case an entity is created or modified by another user\
-            \ in another request at the same time. You may retry your modification\
-            \ request."
-          content:
-            application/json: {}
-        "403":
-          description: "Insufficient permissions, entity is not allowed to be changed\
-            \ (i.e. read-only) or data volume restriction applies."
-          content:
-            application/json: {}
         "415":
           description: "The request was attempt with a media-type which is not supported\
             \ by the server for this resource."
@@ -465,14 +522,35 @@ paths:
             \ and the client has to wait another second."
           content:
             application/json: {}
-        "200":
-          description: "Successfully retrieved"
+        "406":
+          description: "In case accept header is specified and not application/json."
+          content:
+            application/json: {}
+        "400":
+          description: "Bad Request - e.g. invalid parameters"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExceptionInfo"
+        "403":
+          description: "Insufficient permissions, entity is not allowed to be changed\
+            \ (i.e. read-only) or data volume restriction applies."
+          content:
+            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
+        "405":
+          description: "The http request method is not allowed on the resource."
+          content:
+            application/json: {}
+        "200":
+          description: "Successfully retrieved"
+        "409":
+          description: "E.g. in case an entity is created or modified by another user\
+            \ in another request at the same time. You may retry your modification\
+            \ request."
           content:
             application/json: {}
   /{tenant}/controller/v1/{controllerId}:
@@ -501,8 +579,13 @@ paths:
         schema:
           type: "string"
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
           content:
             application/json: {}
         "400":
@@ -516,31 +599,26 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
+        "401":
+          description: "The request requires user authentication."
+          content:
+            application/json: {}
+        "405":
+          description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
         "200":
           description: "Successfully retrieved"
           content:
-            application/hal+json:
+            application/json:
               schema:
                 $ref: "#/components/schemas/DdiControllerBase"
-            application/json:
+            application/hal+json:
               schema:
                 $ref: "#/components/schemas/DdiControllerBase"
             application/cbor:
               schema:
                 $ref: "#/components/schemas/DdiControllerBase"
-        "401":
-          description: "The request requires user authentication."
-          content:
-            application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
-          content:
-            application/json: {}
   /{tenant}/controller/v1/{controllerId}/softwaremodules/{softwareModuleId}/artifacts:
     get:
       tags:
@@ -566,8 +644,13 @@ paths:
           type: "integer"
           format: "int64"
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
           content:
             application/json: {}
         "400":
@@ -581,20 +664,23 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
+        "401":
+          description: "The request requires user authentication."
+          content:
+            application/json: {}
+        "405":
+          description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
         "200":
           description: "Successfully retrieved"
           content:
-            application/hal+json:
+            application/json:
               schema:
                 type: "array"
                 items:
                   $ref: "#/components/schemas/DdiArtifact"
-            application/json:
+            application/hal+json:
               schema:
                 type: "array"
                 items:
@@ -604,14 +690,6 @@ paths:
                 type: "array"
                 items:
                   $ref: "#/components/schemas/DdiArtifact"
-        "401":
-          description: "The request requires user authentication."
-          content:
-            application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
-          content:
-            application/json: {}
   /{tenant}/controller/v1/{controllerId}/softwaremodules/{softwareModuleId}/artifacts/{fileName}:
     get:
       tags:
@@ -643,8 +721,13 @@ paths:
         schema:
           type: "string"
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
           content:
             application/json: {}
         "400":
@@ -658,13 +741,16 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "404":
           description: "Target or Module not found"
+          content:
+            application/json: {}
+        "401":
+          description: "The request requires user authentication."
+          content:
+            application/json: {}
+        "405":
+          description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
         "200":
@@ -673,14 +759,6 @@ paths:
             '*/*':
               schema:
                 type: "object"
-        "401":
-          description: "The request requires user authentication."
-          content:
-            application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
-          content:
-            application/json: {}
   /{tenant}/controller/v1/{controllerId}/softwaremodules/{softwareModuleId}/artifacts/{fileName}.MD5SUM:
     get:
       tags:
@@ -711,8 +789,13 @@ paths:
         schema:
           type: "string"
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
           content:
             application/json: {}
         "400":
@@ -726,25 +809,20 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "404":
           description: "Target or Module not found"
           content:
             application/json: {}
-        "200":
-          description: "Successfully retrieved"
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
+        "405":
+          description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
+        "200":
+          description: "Successfully retrieved"
   /{tenant}/controller/v1/{controllerId}/installedBase/{actionId}:
     get:
       tags:
@@ -785,8 +863,28 @@ paths:
           format: "int32"
           default: 0
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "200":
+          description: "The response body includes the detailed operation for the\
+            \ already finished action in the same format as\nfor the deploymentBase\
+            \ operation.\n\nIn this case the (optional) query for the last 10 messages,\
+            \ previously provided by the device, are included.\n"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DdiDeploymentBase"
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/DdiDeploymentBase"
+            application/cbor:
+              schema:
+                $ref: "#/components/schemas/DdiDeploymentBase"
+        "406":
+          description: "In case accept header is specified and not application/json."
           content:
             application/json: {}
         "400":
@@ -795,37 +893,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "200":
-          description: "The response body includes the detailed operation for the\
-            \ already finished action in the same format as\nfor the deploymentBase\
-            \ operation.\n\nIn this case the (optional) query for the last 10 messages,\
-            \ previously provided by the device, are included.\n"
-          content:
-            application/hal+json:
-              schema:
-                $ref: "#/components/schemas/DdiDeploymentBase"
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DdiDeploymentBase"
-            application/cbor:
-              schema:
-                $ref: "#/components/schemas/DdiDeploymentBase"
         "403":
           description: "Insufficient permissions, entity is not allowed to be changed\
             \ (i.e. read-only) or data volume restriction applies."
-          content:
-            application/json: {}
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
           content:
             application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
+        "405":
+          description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
   /{tenant}/controller/v1/{controllerId}/deploymentBase/{actionId}:
@@ -876,8 +954,13 @@ paths:
             \ sent state information to the feedback channel and never stored them\n\
             locally."
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
           content:
             application/json: {}
         "400":
@@ -886,16 +969,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExceptionInfo"
-        "403":
-          description: "Insufficient permissions, entity is not allowed to be changed\
-            \ (i.e. read-only) or data volume restriction applies."
-          content:
-            application/json: {}
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "200":
           description: "Successfully retrieved\n\nIn case a device provides state\
             \ information on the feedback channel and won’t store it locally,\na query\
@@ -908,21 +981,26 @@ paths:
             \ first\nand then when it enters a defined (maintenance) window the installation\
             \ triggers follows as usual.\n"
           content:
-            application/hal+json:
+            application/json:
               schema:
                 $ref: "#/components/schemas/DdiDeploymentBase"
-            application/json:
+            application/hal+json:
               schema:
                 $ref: "#/components/schemas/DdiDeploymentBase"
             application/cbor:
               schema:
                 $ref: "#/components/schemas/DdiDeploymentBase"
+        "403":
+          description: "Insufficient permissions, entity is not allowed to be changed\
+            \ (i.e. read-only) or data volume restriction applies."
+          content:
+            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
+        "405":
+          description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
   /{tenant}/controller/v1/{controllerId}/confirmationBase:
@@ -949,24 +1027,29 @@ paths:
         schema:
           type: "string"
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
-          content:
-            application/json: {}
         "200":
           description: "The response body in case auto-confirmation is active is richer\
             \ - it contains additional information\nsuch as initiator, remark and\
             \ when the auto-confirmation had been activated.\n"
           content:
-            application/hal+json:
+            application/json:
               schema:
                 $ref: "#/components/schemas/DdiConfirmationBase"
-            application/json:
+            application/hal+json:
               schema:
                 $ref: "#/components/schemas/DdiConfirmationBase"
             application/cbor:
               schema:
                 $ref: "#/components/schemas/DdiConfirmationBase"
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
+          content:
+            application/json: {}
         "400":
           description: "Bad Request - e.g. invalid parameters"
           content:
@@ -978,17 +1061,12 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
           content:
             application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
+        "405":
+          description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
   /{tenant}/controller/v1/{controllerId}/confirmationBase/{actionId}:
@@ -1036,8 +1114,17 @@ paths:
           format: "int32"
           default: 0
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
+          content:
+            application/json: {}
+        "404":
+          description: "Target not found"
           content:
             application/json: {}
         "400":
@@ -1051,17 +1138,12 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
-          content:
-            application/json: {}
-        "404":
-          description: "Target not found"
-          content:
-            application/json: {}
         "401":
           description: "The request requires user authentication."
+          content:
+            application/json: {}
+        "405":
+          description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
         "200":
@@ -1069,19 +1151,15 @@ paths:
             \ the action awaiting confirmation in the same format as for the deploymentBase\
             \ operation."
           content:
-            application/hal+json:
+            application/json:
               schema:
                 $ref: "#/components/schemas/DdiConfirmationBaseAction"
-            application/json:
+            application/hal+json:
               schema:
                 $ref: "#/components/schemas/DdiConfirmationBaseAction"
             application/cbor:
               schema:
                 $ref: "#/components/schemas/DdiConfirmationBaseAction"
-        "406":
-          description: "In case accept header is specified and not application/json."
-          content:
-            application/json: {}
   /{tenant}/controller/v1/{controllerId}/cancelAction/{actionId}:
     get:
       tags:
@@ -1109,8 +1187,13 @@ paths:
           type: "integer"
           format: "int64"
       responses:
-        "405":
-          description: "The http request method is not allowed on the resource."
+        "429":
+          description: "Too many requests. The server will refuse further attempts\
+            \ and the client has to wait another second."
+          content:
+            application/json: {}
+        "406":
+          description: "In case accept header is specified and not application/json."
           content:
             application/json: {}
         "400":
@@ -1124,33 +1207,55 @@ paths:
             \ (i.e. read-only) or data volume restriction applies."
           content:
             application/json: {}
-        "429":
-          description: "Too many requests. The server will refuse further attempts\
-            \ and the client has to wait another second."
+        "401":
+          description: "The request requires user authentication."
+          content:
+            application/json: {}
+        "405":
+          description: "The http request method is not allowed on the resource."
           content:
             application/json: {}
         "200":
           description: "Successfully retrieved"
           content:
-            application/hal+json:
+            application/json:
               schema:
                 $ref: "#/components/schemas/DdiCancel"
-            application/json:
+            application/hal+json:
               schema:
                 $ref: "#/components/schemas/DdiCancel"
             application/cbor:
               schema:
                 $ref: "#/components/schemas/DdiCancel"
-        "401":
-          description: "The request requires user authentication."
-          content:
-            application/json: {}
-        "406":
-          description: "In case accept header is specified and not application/json."
-          content:
-            application/json: {}
 components:
   schemas:
+    DdiAssignedVersion:
+      required:
+      - "name"
+      - "version"
+      type: "object"
+      properties:
+        name:
+          type: "string"
+          description: "Distribution Set name"
+          example: "linux"
+        version:
+          type: "string"
+          description: "Distribution set version"
+          example: "1.2.3"
+    ExceptionInfo:
+      type: "object"
+      properties:
+        exceptionClass:
+          type: "string"
+        errorCode:
+          type: "string"
+        message:
+          type: "string"
+        parameters:
+          type: "array"
+          items:
+            type: "string"
     DdiConfigData:
       required:
       - "data"
@@ -1184,19 +1289,6 @@ components:
         data:
           VIN: "JH4TB2H26CC000000"
           hwRevision: "2"
-    ExceptionInfo:
-      type: "object"
-      properties:
-        exceptionClass:
-          type: "string"
-        errorCode:
-          type: "string"
-        message:
-          type: "string"
-        parameters:
-          type: "array"
-          items:
-            type: "string"
     Links:
       type: "object"
       additionalProperties:

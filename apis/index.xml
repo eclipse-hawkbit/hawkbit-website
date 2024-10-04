@@ -19,7 +19,7 @@
       <link>https://eclipse.dev/hawkbit/apis/ddi_api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hawkbit/apis/ddi_api/</guid>
-      <description>&lt;p&gt;The hawkBit &lt;a href=&#34;https://github.com/eclipse/hawkbit&#34;&gt;update server&lt;/a&gt; provides REST resources which are consumed by the device to retrieve software update tasks.&#xA;This API is based on HTTP standards and a polling mechanism.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The hawkBit &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit&#34;&gt;update server&lt;/a&gt; provides REST resources which are consumed by the device to retrieve software update tasks.&#xA;This API is based on HTTP standards and a polling mechanism.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Device Management Federation API</title>

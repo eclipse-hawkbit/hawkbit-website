@@ -40,7 +40,7 @@
       <link>https://eclipse.dev/hawkbit/guides/clustering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hawkbit/guides/clustering/</guid>
-      <description>&lt;p&gt;hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to setup your own cluster. You can find additional information in the &lt;a href=&#34;https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/README.md&#34;&gt;hawkBit runtimes&amp;rsquo;s README&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to setup your own cluster. You can find additional information in the &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/README.md&#34;&gt;hawkBit runtimes&amp;rsquo;s README&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Features</title>
@@ -61,7 +61,7 @@
       <link>https://eclipse.dev/hawkbit/concepts/authorization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hawkbit/concepts/authorization/</guid>
-      <description>&lt;p&gt;Authorization is handled separately for &lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; and &lt;em&gt;Device Management Federation (DMF) API&lt;/em&gt; (where successful authentication includes full authorization) and &lt;em&gt;Management API&lt;/em&gt; and &lt;em&gt;UI&lt;/em&gt; which is based on Spring security &lt;a href=&#34;https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java&#34;&gt;authorities&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Authorization is handled separately for &lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; and &lt;em&gt;Device Management Federation (DMF) API&lt;/em&gt; (where successful authentication includes full authorization) and &lt;em&gt;Management API&lt;/em&gt; and &lt;em&gt;UI&lt;/em&gt; which is based on Spring security &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java&#34;&gt;authorities&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Data Model</title>
@@ -110,7 +110,7 @@
       <link>https://eclipse.dev/hawkbit/apis/ddi_api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hawkbit/apis/ddi_api/</guid>
-      <description>&lt;p&gt;The hawkBit &lt;a href=&#34;https://github.com/eclipse/hawkbit&#34;&gt;update server&lt;/a&gt; provides REST resources which are consumed by the device to retrieve software update tasks.&#xA;This API is based on HTTP standards and a polling mechanism.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The hawkBit &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit&#34;&gt;update server&lt;/a&gt; provides REST resources which are consumed by the device to retrieve software update tasks.&#xA;This API is based on HTTP standards and a polling mechanism.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Device Management Federation API</title>
@@ -166,7 +166,7 @@
       <link>https://eclipse.dev/hawkbit/rest-api/ddi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hawkbit/rest-api/ddi/</guid>
-      <description>&lt;!DOCTYPE html&gt; hawkBit REST APIs DDI Root ControllerputFeedback channel for the config data actionpostFeedback channel for the DeploymentBase actionpostFeedback channel for actions waiting for confirmationpostInterface to deactivate auto-confirmation for a specific controllerpostInterface to activate auto-confirmation for a specific devicepostFeedback channel for cancel actionsgetRoot resource for an individual TargetgetReturn all artifacts of a given software module and targetgetArtifact downloadgetMD5 checksum downloadgetPreviously installed actiongetResource for software module (Deployment Base)getResource to request confirmation specific information for the controllergetConfirmation status of an actiongetCancel an actionAPI docs by RedoclyhawkBit REST APIs (v1)Download OpenAPI specification:Download</description>
+      <description>&lt;!DOCTYPE html&gt; hawkBit REST APIs DDI Root ControllerputSet offline assigned versionputFeedback channel for the config data actionpostFeedback channel for the DeploymentBase actionpostFeedback channel for actions waiting for confirmationpostInterface to deactivate auto-confirmation for a specific controllerpostInterface to activate auto-confirmation for a specific devicepostFeedback channel for cancel actionsgetRoot resource for an individual TargetgetReturn all artifacts of a given software module and targetgetArtifact downloadgetMD5 checksum downloadgetPreviously installed actiongetResource for software module (Deployment Base)getResource to request confirmation specific information for the controllergetConfirmation status of an actiongetCancel an actionAPI docs by RedoclyhawkBit REST APIs (v1)Download OpenAPI specification:Download</description>
     </item>
     <item>
       <title></title>
