@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          eclipse-hawkbit/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/eclipse-hawkbit/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -437,7 +437,7 @@ Host: your.hawkBit.server
 Authorization: TargetToken bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY
 </code></pre>
 <p>The target security token is provided in <a href="../../apis/dmf_api/">DMF API</a> as part of the update message in order to allow DMF clients to leverage the feature or can it be manually retrieved per target by <a href="../../apis/management_api/">Management API</a> or in the <a href="../../ui">Management UI</a> in the target details.</p>
-<p>Note: needs to be enabled in your hawkBit installation <strong>and</strong> in the tenant configuration. That allows both the operator as well as the individual customer (if run in a multi-tenant setup) to enable this access method. See <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a> for system wide enablement.</p>
+<p>Note: needs to be enabled in your hawkBit installation <strong>and</strong> in the tenant configuration. That allows both the operator as well as the individual customer (if run in a multi-tenant setup) to enable this access method. See <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a> for system wide enablement.</p>
 <p>The additional activation for the individual tenant:</p>
 <p><img src="../../images/security/targetToken.png" alt="Enable Target Token"></p>
 <h4 id="gateway-security-token-authentication">Gateway Security Token Authentication</h4>
@@ -447,11 +447,11 @@ Authorization: TargetToken bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY
 Host: your.hawkBit.server
 Authorization: GatewayToken 3nkswAZhX81oDtktq0FF9Pn0Tc0UGXPW
 </code></pre>
-<p>Note: needs to be enabled in your hawkBit installation <strong>and</strong> in the tenant configuration. That allows both the operator as well as the individual customer (if run in a multi-tenant setup) to enable this access method. See <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a> for system wide enablement.</p>
+<p>Note: needs to be enabled in your hawkBit installation <strong>and</strong> in the tenant configuration. That allows both the operator as well as the individual customer (if run in a multi-tenant setup) to enable this access method. See <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a> for system wide enablement.</p>
 <p>The additional activation for the individual tenant:</p>
 <p><img src="../../images/security/gatewayToken.png" alt="Enable Gateway Token"></p>
 <h4 id="anonymous-access">Anonymous access</h4>
-<p>Here we offer general anonymous access for all targets (see <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a>) which we consider not really sufficient for a production system but it might come in handy to get a project started in the beginning.</p>
+<p>Here we offer general anonymous access for all targets (see <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a>) which we consider not really sufficient for a production system but it might come in handy to get a project started in the beginning.</p>
 <p>However, anonymous download on the other side might be interesting even in production for scenarios where the artifact itself is already encrypted.</p>
 <p>The activation for the individual tenant:</p>
 <p><img src="../../images/security/anonymousDownload.png" alt="Enable Anonymous Download"></p>
@@ -743,7 +743,7 @@ sslcert = &quot;/etc/ssl/certs/client.crt&quot;;
     <script>
     
       var base_url = 'https:\/\/eclipse.dev\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var repo_id  = 'eclipse-hawkbit\/hawkbit';
     
     </script>
 

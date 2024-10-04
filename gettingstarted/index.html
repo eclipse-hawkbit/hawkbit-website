@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          eclipse-hawkbit/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/eclipse-hawkbit/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -451,34 +451,34 @@ any personal data.</p>
 </code></pre>
 <h3 id="b-run-hawkbit-update-server-monolith-with-services-as-docker-compose">B: Run hawkBit Update Server (Monolith) with services as Docker Compose</h3>
 <p>Start the hawkBit Update Server together with an MySQL and RabbitMQ instance as containers</p>
-<pre><code class="language-bash">$ git clone https://github.com/eclipse/hawkbit.git
+<pre><code class="language-bash">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
 $ cd hawkbit/hawkbit-runtime/docker
 $ docker-compose -f docker-compose-monolith-mysql.yml up -d
 </code></pre>
 <h3 id="c-run-hawkbit-update-server-micro-service-with-services-as-docker-compose">C: Run hawkBit Update Server (Micro-Service) with services as Docker Compose</h3>
 <p>Start the hawkBit Update Server together with an MySQL and RabbitMQ instance as containers</p>
-<pre><code class="language-bash">$ git clone https://github.com/eclipse/hawkbit.git
+<pre><code class="language-bash">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
 $ cd hawkbit/hawkbit-runtime/docker
 $ docker-compose -f docker-compose-micro-service-mysql.yml up -d
 </code></pre>
 <h2 id="from-sources">From Sources</h2>
 <h3 id="1-clone-and-build-hawkbit">1: Clone and build hawkBit</h3>
-<pre><code class="language-sh">$ git clone https://github.com/eclipse/hawkbit.git
+<pre><code class="language-sh">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
 $ cd hawkbit
 $ mvn clean install
 </code></pre>
-<h3 id="2-start-hawkbit-update-serverhttpsgithubcomeclipsehawkbittreemasterhawkbit-runtimehawkbit-update-server-monolith">2: Start hawkBit <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">update server</a> (Monolith)</h3>
+<h3 id="2-start-hawkbit-update-serverhttpsgithubcomeclipse-hawkbithawkbittreemasterhawkbit-runtimehawkbit-update-server-monolith">2: Start hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">update server</a> (Monolith)</h3>
 <pre><code class="language-sh">$ java -jar ./hawkbit-runtime/hawkbit-update-server/target/hawkbit-update-server-#version#-SNAPSHOT.jar
 </code></pre>
 <h3 id="3-build-hawkbit-examples">3: Build hawkBit examples</h3>
-<pre><code class="language-sh">$ git clone https://github.com/eclipse/hawkbit-examples.git
+<pre><code class="language-sh">$ git clone https://github.com/eclipse-hawkbit/hawkbit-examples.git
 $ cd hawkbit-examples
 $ mvn clean install
 </code></pre>
-<h3 id="4-start-hawkbit-device-simulatorhttpsgithubcomeclipsehawkbit-examplestreemasterhawkbit-device-simulator">4: Start hawkBit <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-device-simulator">Device Simulator</a></h3>
+<h3 id="4-start-hawkbit-device-simulatorhttpsgithubcomeclipse-hawkbithawkbit-examplestreemasterhawkbit-device-simulator">4: Start hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit-examples/tree/master/hawkbit-device-simulator">Device Simulator</a></h3>
 <pre><code class="language-sh">$ java -jar ./hawkbit-device-simulator/target/hawkbit-device-simulator-#version#.jar
 </code></pre>
-<h3 id="5-generate-getting-started-data-with-example-management-api-clienthttpsgithubcomeclipsehawkbit-examplestreemasterhawkbit-example-mgmt-simulator">5: Generate Getting Started data with <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">Example Management API Client</a></h3>
+<h3 id="5-generate-getting-started-data-with-example-management-api-clienthttpsgithubcomeclipse-hawkbithawkbit-examplestreemasterhawkbit-example-mgmt-simulator">5: Generate Getting Started data with <a href="https://github.com/eclipse-hawkbit/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">Example Management API Client</a></h3>
 <pre><code class="language-sh">$ java -jar ./hawkbit-example-mgmt-simulator/target/hawkbit-example-mgmt-simulator-#version#.jar
 </code></pre>
 
@@ -584,7 +584,7 @@ $ mvn clean install
     <script>
     
       var base_url = 'https:\/\/eclipse.dev\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var repo_id  = 'eclipse-hawkbit\/hawkbit';
     
     </script>
 

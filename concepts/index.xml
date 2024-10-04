@@ -19,7 +19,7 @@
       <link>https://eclipse.dev/hawkbit/concepts/authorization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hawkbit/concepts/authorization/</guid>
-      <description>&lt;p&gt;Authorization is handled separately for &lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; and &lt;em&gt;Device Management Federation (DMF) API&lt;/em&gt; (where successful authentication includes full authorization) and &lt;em&gt;Management API&lt;/em&gt; and &lt;em&gt;UI&lt;/em&gt; which is based on Spring security &lt;a href=&#34;https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java&#34;&gt;authorities&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Authorization is handled separately for &lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; and &lt;em&gt;Device Management Federation (DMF) API&lt;/em&gt; (where successful authentication includes full authorization) and &lt;em&gt;Management API&lt;/em&gt; and &lt;em&gt;UI&lt;/em&gt; which is based on Spring security &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java&#34;&gt;authorities&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Data Model</title>
