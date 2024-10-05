@@ -2,70 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/hawkbit/whatishawkbit/</loc>
+    <loc>https://eclipse.dev/hawkbit/whatishawkbit/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/gettingstarted/</loc>
+    <loc>https://eclipse.dev/hawkbit/gettingstarted/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/guides/runhawkbit/</loc>
+    <loc>https://eclipse.dev/hawkbit/guides/runhawkbit/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/guides/feignclient/</loc>
+    <loc>https://eclipse.dev/hawkbit/guides/feignclient/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/guides/clustering/</loc>
+    <loc>https://eclipse.dev/hawkbit/guides/clustering/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/features/</loc>
+    <loc>https://eclipse.dev/hawkbit/features/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/concepts/authentication/</loc>
+    <loc>https://eclipse.dev/hawkbit/concepts/authentication/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/concepts/authorization/</loc>
+    <loc>https://eclipse.dev/hawkbit/concepts/authorization/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/concepts/datamodel/</loc>
+    <loc>https://eclipse.dev/hawkbit/concepts/datamodel/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/concepts/rollout-management/</loc>
+    <loc>https://eclipse.dev/hawkbit/concepts/rollout-management/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/concepts/targetstate/</loc>
+    <loc>https://eclipse.dev/hawkbit/concepts/targetstate/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/architecture/</loc>
+    <loc>https://eclipse.dev/hawkbit/architecture/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/ui/</loc>
+    <loc>https://eclipse.dev/hawkbit/ui/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/apis/management_api/</loc>
+    <loc>https://eclipse.dev/hawkbit/apis/management_api/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/apis/ddi_api/</loc>
+    <loc>https://eclipse.dev/hawkbit/apis/ddi_api/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/apis/dmf_api/</loc>
+    <loc>https://eclipse.dev/hawkbit/apis/dmf_api/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/community/</loc>
+    <loc>https://eclipse.dev/hawkbit/community/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/blog/2024-01-16-0.4.1-release/</loc>
+    <loc>https://eclipse.dev/hawkbit/blog/2024-01-16-0.4.1-release/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/</loc>
+    <loc>https://eclipse.dev/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/blog/2023-09-21-epl2.0/</loc>
+    <loc>https://eclipse.dev/hawkbit/blog/2023-09-21-epl2.0/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/release-notes/</loc>
+    <loc>https://eclipse.dev/hawkbit/release-notes/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/blog/2018-07-26-first-release/</loc>
+    <loc>https://eclipse.dev/hawkbit/blog/2018-07-26-first-release/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/rest-api/ddi/</loc>
+    <loc>https://eclipse.dev/hawkbit/rest-api/ddi/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/rest-api/mgmt/</loc>
+    <loc>https://eclipse.dev/hawkbit/rest-api/mgmt/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/apis/</loc>
+    <loc>https://eclipse.dev/hawkbit/apis/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/blog/</loc>
+    <loc>https://eclipse.dev/hawkbit/blog/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/categories/</loc>
+    <loc>https://eclipse.dev/hawkbit/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/concepts/</loc>
+    <loc>https://eclipse.dev/hawkbit/concepts/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/</loc>
+    <loc>https://eclipse.dev/hawkbit/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/guides/</loc>
+    <loc>https://eclipse.dev/hawkbit/guides/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/rest-api/</loc>
+    <loc>https://eclipse.dev/hawkbit/rest-api/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/sandbox/</loc>
+    <loc>https://eclipse.dev/hawkbit/sandbox/</loc>
   </url><url>
-    <loc>http://localhost:1313/hawkbit/tags/</loc>
+    <loc>https://eclipse.dev/hawkbit/tags/</loc>
   </url>
 </urlset>
