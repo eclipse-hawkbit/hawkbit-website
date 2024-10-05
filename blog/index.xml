@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Eclipse hawkBit</title>
-    <link>https://eclipse.dev/hawkbit/blog/</link>
+    <link>http://localhost:1313/hawkbit/blog/</link>
     <description>Recent content in Blogs on Eclipse hawkBit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://eclipse.dev/hawkbit/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/hawkbit/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>0.4.1 Release</title>
-      <link>https://eclipse.dev/hawkbit/blog/2024-01-16-0.4.1-release/</link>
+      <link>http://localhost:1313/hawkbit/blog/2024-01-16-0.4.1-release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eclipse.dev/hawkbit/blog/2024-01-16-0.4.1-release/</guid>
+      <guid>http://localhost:1313/hawkbit/blog/2024-01-16-0.4.1-release/</guid>
       <description>In this article, we want to give an overview of the 0.4.1 hawkBit release (Friday, January 12, 2024)&#xA;hawkBit 0.4.1 release Steps towards removal of the legacy Vaadin8-based UI As announced at Vaadin 8 UI discontinuation the current Vaadin 8 based UI will be removed. This release will likely be the last one including it. Some steps are taken to mitigate this.&#xA;First of all, this release introduces Simple UI - a demo/PoC level UI.</description>
     </item>
     <item>
       <title>Vaadin 8 UI discontinuation</title>
-      <link>https://eclipse.dev/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/</link>
+      <link>http://localhost:1313/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eclipse.dev/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/</guid>
+      <guid>http://localhost:1313/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/</guid>
       <description>In this article, we want to give an overview of the future of the hawkBit UI&#xA;hawkBit Vaadin 8 UI discontinuation The hawkBit UI uses Vaadin as a web UI framework. It uses Vaadin 8 (8.14.3). This major version, according Vaadin Roadmap, has no free support since 21st Feb 2022. There are some version releases after that date (8.15.0 - 8.16.0) that are Apache 2.0 licensed. However, since 8.16.1 (see here) the license is Commercial Vaadin Developer License 4.</description>
     </item>
     <item>
       <title>Eclipse hawkBit upgrade to Eclipse Public License - v 2.0</title>
-      <link>https://eclipse.dev/hawkbit/blog/2023-09-21-epl2.0/</link>
+      <link>http://localhost:1313/hawkbit/blog/2023-09-21-epl2.0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eclipse.dev/hawkbit/blog/2023-09-21-epl2.0/</guid>
+      <guid>http://localhost:1313/hawkbit/blog/2023-09-21-epl2.0/</guid>
       <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015.&#xA;In this article, we want to give an overview of the latest highlights of hawkBit license changes.&#xA;hawkBit license upgraded to Eclipse Public License - v 2.0 Based on the issues Switch to EPL 2.</description>
     </item>
     <item>
       <title>Eclipse hawkBit 0.2.0 - First Release</title>
-      <link>https://eclipse.dev/hawkbit/blog/2018-07-26-first-release/</link>
+      <link>http://localhost:1313/hawkbit/blog/2018-07-26-first-release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eclipse.dev/hawkbit/blog/2018-07-26-first-release/</guid>
+      <guid>http://localhost:1313/hawkbit/blog/2018-07-26-first-release/</guid>
       <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015 and with version 0.2.0 a first release is available.&#xA;In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get started in seconds.</description>
     </item>
   </channel>
