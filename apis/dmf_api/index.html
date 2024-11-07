@@ -302,23 +302,6 @@
 
 
 
-<a  title="Management UI" href="/hawkbit/ui/">
-	
-	Management UI
-</a>
-
-
-  
-</li>
-
-
-
-<li>
-  
-    
-
-
-
 <a  title="APIs" href="/hawkbit/apis/">
 	
 	APIs
@@ -388,20 +371,28 @@
 
         <ul>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
+            <a href="https://opensource.org/licenses/EPL-2.0" title="License" target="_blank">
+              <img src="https://img.shields.io/badge/License-EPL%202.0-green.svg" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml" title="License" target="_blank">
+              <img src="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml/badge.svg?branch=master" />
             </a>
           </li>
           <li>
-            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
-              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
+            <a href="https://sonarcloud.io/summary/new_code?id=eclipse-hawkbit_hawkbit" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=eclipse-hawkbit_hawkbit&metric=alert_status" />
             </a>
           </li>
+
           <li>
-            <a href="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent" title="Maven Central Status" target="_blank">
-              <img src="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent/badge.svg" />
+            <a href="https://search.maven.org/search?q=g:org.eclipse.hawkbit" title="Maven Central Status" target="_blank">
+              <img src="https://img.shields.io/maven-central/v/org.eclipse.hawkbit/hawkbit-parent?label=maven-central&color=blue" />
             </a>
           </li>
+
           <li>
             <a href="https://gitter.im/eclipse/hawkbit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title="Chat on Gitter" target="_blank">
               <img src="https://badges.gitter.im/eclipse/hawkbit.svg" />
@@ -420,7 +411,8 @@
 		<div class="wrapper">
 			<h1>Device Management Federation API </h1>
 
-			<p>The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object. Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.
+			<p>The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object.
+Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.
 Currently, bodies of messages are based on JSON.</p>
 <h2 id="basics">Basics</h2>
 <p>There are three basic concepts of AMQP:</p>
@@ -433,12 +425,15 @@ Currently, bodies of messages are based on JSON.</p>
 Bindings determine how messages get put in this place
 Queues can also be bound to multiple exchanges.</p>
 <p><strong>Exchanges</strong> are just publish messages.
-The user decides who can produce on an exchange and who can create bindings on that exchange for delivery to a specific queue.</p>
+The user decides who can produce on an exchange and who can create bindings on that exchange for delivery to a specific
+queue.</p>
 <p>hawkBit will create all necessary queues, exchanges and bindings for the user, making it easy to get started.
 The exchange name for outgoing messages is <strong>dmf.exchange</strong>.</p>
-<p>The user has to set a <code>reply_to</code> header (see chapter below), in order to specify the exchange to which hawkBit should reply to.</p>
+<p>The user has to set a <code>reply_to</code> header (see chapter below), in order to specify the exchange to which hawkBit should
+reply to.</p>
 <p>The following chapter describes the message body, header and properties.</p>
-<p>Note: the DMF protocol was intended to be compatible to other use cases by design. As a result, DMF uses the term <strong>thing</strong> and not <strong>target</strong> but they are actually synonyms in this case.</p>
+<p>Note: the DMF protocol was intended to be compatible to other use cases by design. As a result, DMF uses the term *
+<em>thing</em>* and not <strong>target</strong> but they are actually synonyms in this case.</p>
 <h2 id="messages-sent-to-hawkbit-client---hawkbit">Messages sent to hawkBit (Client -&gt; hawkBit)</h2>
 <h3 id="thing_created">THING_CREATED</h3>
 <p>Message to register and update a provisioning target.</p>
@@ -544,7 +539,8 @@ resulting in:</p>
 assignment is removed from the target. This property is optional and if omitted then no changes to the target type
 assignment are made.<br />
 <br />
-The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing, for details see UPDATE_ATTRIBUTES message. This property is optional.</p>
+The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing, for details see UPDATE_ATTRIBUTES message. This
+property is optional.</p>
 <h3 id="thing_removed">THING_REMOVED</h3>
 <p>Message to request the deletion of a provisioning target.</p>
 <table>
@@ -611,7 +607,8 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 </tbody>
 </table>
 <h3 id="update_attributes">UPDATE_ATTRIBUTES</h3>
-<p>Message to update target attributes. This message can be send in response to a REQUEST_ATTRIBUTES_UPDATE event, sent by hawkBit.</p>
+<p>Message to update target attributes. This message can be send in response to a REQUEST_ATTRIBUTES_UPDATE event, sent by
+hawkBit.</p>
 <table>
 <thead>
 <tr>
@@ -690,7 +687,9 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
     &quot;mode&quot;: &quot;String&quot;
 }
 </code></pre>
-<p>The &ldquo;mode&rdquo; property specifies the update mode that should be applied. This property is optional. Possible <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfUpdateMode.java">mode</a> values:</p>
+<p>The &ldquo;mode&rdquo; property specifies the update mode that should be applied. This property is optional.
+Possible <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfUpdateMode.java">mode</a>
+values:</p>
 <table>
 <thead>
 <tr>
@@ -763,7 +762,8 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 </tr>
 </tbody>
 </table>
-<p>Payload Template (the Java representation is <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfActionUpdateStatus.java">ActionUpdateStatus</a>):</p>
+<p>Payload Template (the Java representation
+is <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfActionUpdateStatus.java">ActionUpdateStatus</a>):</p>
 <pre><code class="language-json">{
   &quot;actionId&quot;: long,
   &quot;softwareModuleId&quot;: long,
@@ -771,7 +771,8 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
   &quot;message&quot;:[&quot;String&quot;]
 }
 </code></pre>
-<p>Possible <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfActionStatus.java">actionStatus</a> values:</p>
+<p>Possible <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfActionStatus.java">actionStatus</a>
+values:</p>
 <table>
 <thead>
 <tr>
@@ -841,7 +842,8 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 }
 </code></pre>
 <h3 id="ping">PING</h3>
-<p>hawkBit allows DMF clients to check the availability of the DMF service. For this scenario DMF specifies a PING message that can be sent by the client:</p>
+<p>hawkBit allows DMF clients to check the availability of the DMF service. For this scenario DMF specifies a PING message
+that can be sent by the client:</p>
 <table>
 <thead>
 <tr>
@@ -965,7 +967,8 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 &quot;actionId&quot;:137
 }
 </code></pre>
-<p>After sending this message, an action status event with either actionStatus=CANCELED or actionStatus=CANCEL_REJECTED has to be returned.</p>
+<p>After sending this message, an action status event with either actionStatus=CANCELED or actionStatus=CANCEL_REJECTED has
+to be returned.</p>
 <p>Example header and payload when cancellation is successful:</p>
 <table>
 <thead>
@@ -1011,7 +1014,8 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 }
 </code></pre>
 <h3 id="download_and_install-or-download">DOWNLOAD_AND_INSTALL or DOWNLOAD</h3>
-<p>Message sent by hawkBit to initialize an update or download task. Note: in case of a maintenance window configured but not yet active the message will have the topic <em>DOWNLOAD</em> instead of <em>DOWNLOAD_AND_INSTALL</em>.</p>
+<p>Message sent by hawkBit to initialize an update or download task. Note: in case of a maintenance window configured but
+not yet active the message will have the topic <em>DOWNLOAD</em> instead of <em>DOWNLOAD_AND_INSTALL</em>.</p>
 <table>
 <thead>
 <tr>
@@ -1066,7 +1070,8 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 </tr>
 </tbody>
 </table>
-<p>Payload Template (the Java representation is <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfDownloadAndUpdateRequest.java">DmfDownloadAndUpdateRequest</a>):</p>
+<p>Payload Template (the Java representation
+is <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfDownloadAndUpdateRequest.java">DmfDownloadAndUpdateRequest</a>):</p>
 <pre><code class="language-json">{
 &quot;actionId&quot;: long,
 &quot;targetSecurityToken&quot;: &quot;String&quot;,
@@ -1143,7 +1148,8 @@ The &ldquo;attributeUpdate&rdquo; property provides the attributes of the thing,
 }
 </code></pre>
 <h3 id="multi_action">MULTI_ACTION</h3>
-<p>If <code>multi.assignments.enabled</code> is enabled, this message is sent instead of DOWNLOAD_AND_INSTALL, DOWNLOAD, or CANCEL_DOWNLOAD
+<p>If <code>multi.assignments.enabled</code> is enabled, this message is sent instead of DOWNLOAD_AND_INSTALL, DOWNLOAD, or
+CANCEL_DOWNLOAD
 by hawkBit to initialize update, download, or cancel task(s).</p>
 <p>With weight, one can set the priority to the action. The higher the weight, the higher is the priority of an action.</p>
 <table>
@@ -1200,7 +1206,8 @@ by hawkBit to initialize update, download, or cancel task(s).</p>
 </tr>
 </tbody>
 </table>
-<p>Payload Template (the Java representation is <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfMultiActionRequest.java">DmfMultiActionRequest</a>):</p>
+<p>Payload Template (the Java representation
+is <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-dmf/hawkbit-dmf-api/src/main/java/org/eclipse/hawkbit/dmf/json/model/DmfMultiActionRequest.java">DmfMultiActionRequest</a>):</p>
 <pre><code class="language-json">[{
 &quot;topic&quot;: &quot;String&quot;,
 &quot;weight&quot;: long,
@@ -1451,7 +1458,8 @@ by hawkBit to initialize update, download, or cancel task(s).</p>
 </tbody>
 </table>
 <h3 id="ping_response">PING_RESPONSE</h3>
-<p><em>hawkBit</em> will respond to the PING message with a PING_RESPONSE type message that has the same correlationId as the original PING message:</p>
+<p><em>hawkBit</em> will respond to the PING message with a PING_RESPONSE type message that has the same correlationId as the
+original PING message:</p>
 <table>
 <thead>
 <tr>
@@ -1500,7 +1508,8 @@ by hawkBit to initialize update, download, or cancel task(s).</p>
 </tr>
 </tbody>
 </table>
-<p>The PING_RESPONSE also contains a timestamp (i.e. the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC) as plain text. It is not guaranteed that this timestamp is completely accurate.</p>
+<p>The PING_RESPONSE also contains a timestamp (i.e. the difference, measured in milliseconds, between the current time and
+midnight, January 1, 1970 UTC) as plain text. It is not guaranteed that this timestamp is completely accurate.</p>
 <table>
 <thead>
 <tr>

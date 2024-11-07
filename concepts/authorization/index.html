@@ -302,23 +302,6 @@
 
 
 
-<a  title="Management UI" href="/hawkbit/ui/">
-	
-	Management UI
-</a>
-
-
-  
-</li>
-
-
-
-<li>
-  
-    
-
-
-
 <a  title="APIs" href="/hawkbit/apis/">
 	
 	APIs
@@ -388,20 +371,28 @@
 
         <ul>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
+            <a href="https://opensource.org/licenses/EPL-2.0" title="License" target="_blank">
+              <img src="https://img.shields.io/badge/License-EPL%202.0-green.svg" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml" title="License" target="_blank">
+              <img src="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml/badge.svg?branch=master" />
             </a>
           </li>
           <li>
-            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
-              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
+            <a href="https://sonarcloud.io/summary/new_code?id=eclipse-hawkbit_hawkbit" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=eclipse-hawkbit_hawkbit&metric=alert_status" />
             </a>
           </li>
+
           <li>
-            <a href="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent" title="Maven Central Status" target="_blank">
-              <img src="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent/badge.svg" />
+            <a href="https://search.maven.org/search?q=g:org.eclipse.hawkbit" title="Maven Central Status" target="_blank">
+              <img src="https://img.shields.io/maven-central/v/org.eclipse.hawkbit/hawkbit-parent?label=maven-central&color=blue" />
             </a>
           </li>
+
           <li>
             <a href="https://gitter.im/eclipse/hawkbit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title="Chat on Gitter" target="_blank">
               <img src="https://badges.gitter.im/eclipse/hawkbit.svg" />
@@ -420,9 +411,19 @@
 		<div class="wrapper">
 			<h1>Authorization </h1>
 
-			<p>Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF) API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on Spring security <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>.</p>
-<p>However, keep in mind that hawkBit does not offer an off the shelf authentication provider to leverage these permissions and the underlying multi user/tenant capabilities of hawkBit but it supports authentication providers offering an OpenID Connect interface. Check out <a href="http://projects.spring.io/spring-security/">Spring security documentation</a> for further information. In hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-autoconfigure/src/main/java/org/eclipse/hawkbit/autoconfigure/security/SecurityAutoConfiguration.java">SecurityAutoConfiguration</a> is a good starting point for integration.</p>
-<p>The default implementation is single user/tenant with basic auth and the logged in user is provided with all permissions. Additionally, the application properties may be configured for multiple static users; see <a href="#multiple-users">Multiple Users</a> for details.</p>
+			<p>Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF)
+API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on
+Spring
+security <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>.</p>
+<p>However, keep in mind that hawkBit does not offer an off the shelf authentication provider to leverage these permissions
+and the underlying multi user/tenant capabilities of hawkBit but it supports authentication providers offering an OpenID
+Connect interface. Check out <a href="http://projects.spring.io/spring-security/">Spring security documentation</a> for further
+information. In
+hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-autoconfigure/src/main/java/org/eclipse/hawkbit/autoconfigure/security/SecurityAutoConfiguration.java">SecurityAutoConfiguration</a>
+is a good starting point for integration.</p>
+<p>The default implementation is single user/tenant with basic auth and the logged in user is provided with all
+permissions. Additionally, the application properties may be configured for multiple static users;
+see <a href="#multiple-users">Multiple Users</a> for details.</p>
 <h2 id="ddi-api">DDI API</h2>
 <p>An authenticated target is permitted to:</p>
 <ul>
@@ -430,10 +431,13 @@
 <li>provide feedback to the the server</li>
 <li>download artifacts that are assigned to it</li>
 </ul>
-<p>A target might be permitted to download artifacts without authentication (if enabled, see above). Only the download can be permitted to disable the authentication. This can be used in scenarios where the artifacts itself are e.g. signed and secured.</p>
+<p>A target might be permitted to download artifacts without authentication (if enabled, see above). Only the download can
+be permitted to disable the authentication. This can be used in scenarios where the artifacts itself are e.g. signed and
+secured.</p>
 <h2 id="management-api-and-ui">Management API and UI</h2>
 <h3 id="multiple-users">Multiple Users</h3>
-<p>hawkBit optionally supports configuring multiple static users through the application properties. In this case, the user and password Spring security properties are ignored.
+<p>hawkBit optionally supports configuring multiple static users through the application properties. In this case, the user
+and password Spring security properties are ignored.
 An example configuration is given below.</p>
 <pre><code>hawkbit.server.im.users[0].username=admin
 hawkbit.server.im.users[0].password={noop}admin
@@ -449,15 +453,23 @@ hawkbit.server.im.users[1].lastname=Tester
 hawkbit.server.im.users[1].email=test@tester.com
 hawkbit.server.im.users[1].permissions=READ_TARGET,UPDATE_TARGET,CREATE_TARGET,DELETE_TARGET
 </code></pre>
-<p>A permissions value of <code>ALL</code> will provide that user with all possible permissions. Passwords need to be specified with the used password encoder in brackets. In this example, <code>noop</code> is used as the plaintext encoder. For production use, it is recommended to use a hash function designed for passwords such as <em>bcrypt</em>. See this <a href="https://spring.io/blog/2017/11/01/spring-security-5-0-0-rc1-released#password-storage-format">blog post</a> for more information on password encoders in Spring Security.</p>
+<p>A permissions value of <code>ALL</code> will provide that user with all possible permissions. Passwords need to be specified with
+the used password encoder in brackets. In this example, <code>noop</code> is used as the plaintext encoder. For production use, it
+is recommended to use a hash function designed for passwords such as <em>bcrypt</em>. See
+this <a href="https://spring.io/blog/2017/11/01/spring-security-5-0-0-rc1-released#password-storage-format">blog post</a> for more
+information on password encoders in Spring Security.</p>
 <h3 id="openid-connect">OpenID Connect</h3>
-<p>hawkbit supports authentication providers which use the OpenID Connect standard, an authentication layer built on top of the OAuth 2.0 protocol.
+<p>hawkbit supports authentication providers which use the OpenID Connect standard, an authentication layer built on top of
+the OAuth 2.0 protocol.
 An example configuration is given below.</p>
 <pre><code>spring.security.oauth2.client.registration.oidc.client-id=clientID
 spring.security.oauth2.client.provider.oidc.issuer-uri=https://oidc-provider/issuer-uri
 spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jwk-set-uri
 </code></pre>
-<p>Note: at the moment only DEFAULT tenant is supported. By default the resource_access/<client id>/roles claim is mapped to hawkBit permissions. However, by registering a Spring bean <em>org.eclipse.hawkbit.autoconfigure.security.OidcUserManagementAutoConfiguration.JwtAuthoritiesExtractor</em> a custom extractor permission mapper could be registered.</p>
+<p>Note: at the moment only DEFAULT tenant is supported. By default the resource_access/<client id>/roles claim is mapped
+to hawkBit permissions. However, by registering a Spring bean
+<em>org.eclipse.hawkbit.autoconfigure.security.OidcUserManagementAutoConfiguration.JwtAuthoritiesExtractor</em> a custom
+extractor permission mapper could be registered.</p>
 <h3 id="delivered-permissions">Delivered Permissions</h3>
 <ul>
 <li>
@@ -537,7 +549,9 @@ spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jw
 </tbody>
 </table>
 <h2 id="device-management-federation-api">Device Management Federation API</h2>
-<p>The provided <em>RabbitMQ</em> <a href="https://www.rabbitmq.com/access-control.html">vhost and user</a> should be provided with the necessary permissions to send messages to hawkBit through the exchange and receive messages from it through the specified queue.</p>
+<p>The provided <em>RabbitMQ</em> <a href="https://www.rabbitmq.com/access-control.html">vhost and user</a> should be provided with the
+necessary permissions to send messages to hawkBit through the exchange and receive messages from it through the
+specified queue.</p>
 
 			<aside class="copyright" role="note">
   <div class="logo">

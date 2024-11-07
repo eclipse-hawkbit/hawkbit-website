@@ -26,8 +26,6 @@
   </url><url>
     <loc>https://eclipse.dev/hawkbit/architecture/</loc>
   </url><url>
-    <loc>https://eclipse.dev/hawkbit/ui/</loc>
-  </url><url>
     <loc>https://eclipse.dev/hawkbit/apis/management_api/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/apis/ddi_api/</loc>
@@ -46,10 +44,6 @@
   </url><url>
     <loc>https://eclipse.dev/hawkbit/blog/2018-07-26-first-release/</loc>
   </url><url>
-    <loc>https://eclipse.dev/hawkbit/rest-api/ddi/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/rest-api/mgmt/</loc>
-  </url><url>
     <loc>https://eclipse.dev/hawkbit/apis/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/blog/</loc>
@@ -61,8 +55,6 @@
     <loc>https://eclipse.dev/hawkbit/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/guides/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/hawkbit/rest-api/</loc>
   </url><url>
     <loc>https://eclipse.dev/hawkbit/sandbox/</loc>
   </url><url>

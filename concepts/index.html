@@ -308,23 +308,6 @@
 
 
 
-<a  title="Management UI" href="/hawkbit/ui/">
-	
-	Management UI
-</a>
-
-
-  
-</li>
-
-
-
-<li>
-  
-    
-
-
-
 <a  title="APIs" href="/hawkbit/apis/">
 	
 	APIs
@@ -394,20 +377,28 @@
 
         <ul>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
+            <a href="https://opensource.org/licenses/EPL-2.0" title="License" target="_blank">
+              <img src="https://img.shields.io/badge/License-EPL%202.0-green.svg" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml" title="License" target="_blank">
+              <img src="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml/badge.svg?branch=master" />
             </a>
           </li>
           <li>
-            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
-              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
+            <a href="https://sonarcloud.io/summary/new_code?id=eclipse-hawkbit_hawkbit" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=eclipse-hawkbit_hawkbit&metric=alert_status" />
             </a>
           </li>
+
           <li>
-            <a href="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent" title="Maven Central Status" target="_blank">
-              <img src="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent/badge.svg" />
+            <a href="https://search.maven.org/search?q=g:org.eclipse.hawkbit" title="Maven Central Status" target="_blank">
+              <img src="https://img.shields.io/maven-central/v/org.eclipse.hawkbit/hawkbit-parent?label=maven-central&color=blue" />
             </a>
           </li>
+
           <li>
             <a href="https://gitter.im/eclipse/hawkbit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title="Chat on Gitter" target="_blank">
               <img src="https://badges.gitter.im/eclipse/hawkbit.svg" />
@@ -437,7 +428,6 @@
 <li><em>Direct Device Integration (DDI) API</em> by <strong>targets</strong>.</li>
 <li><em>Management API</em> by 3rd party <strong>applications</strong>.</li>
 <li><em>Device Management Federation (DMF) API</em> by 3rd party <strong>applications</strong> through AMQP.</li>
-<li><em>Management UI</em> by <strong>users</strong>.</li>
 </ul> <br><a href="https://eclipse.dev/hawkbit/concepts/authentication/">[...]</a>
 
 			<hr>
@@ -447,7 +437,10 @@
 			</a>
 
 			<br>
-			Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF) API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on Spring security <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>. <br><a href="https://eclipse.dev/hawkbit/concepts/authorization/">[...]</a>
+			Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF)
+API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on
+Spring
+security <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>. <br><a href="https://eclipse.dev/hawkbit/concepts/authorization/">[...]</a>
 
 			<hr>
 			
@@ -456,7 +449,9 @@
 			</a>
 
 			<br>
-			The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full blown configuration management on the other. <br><a href="https://eclipse.dev/hawkbit/concepts/datamodel/">[...]</a>
+			The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating
+system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full
+blown configuration management on the other. <br><a href="https://eclipse.dev/hawkbit/concepts/datamodel/">[...]</a>
 
 			<hr>
 			
@@ -474,7 +469,10 @@
 			</a>
 
 			<br>
-			A target has a current state which reflects the provisioning status of the device at this point in time. State changes are driven either by the update server by means of starting an update or by the controller on the provisioning target that gives feedback to the update server, e.g. &ldquo;I am here&rdquo;, &ldquo;I am working on a provisioning&rdquo;, &ldquo;I have finished a provisioning&rdquo;. <br><a href="https://eclipse.dev/hawkbit/concepts/targetstate/">[...]</a>
+			A target has a current state which reflects the provisioning status of the device at this point in time. State changes
+are driven either by the update server by means of starting an update or by the controller on the provisioning target
+that gives feedback to the update server, e.g. &ldquo;I am here&rdquo;, &ldquo;I am working on a provisioning&rdquo;, &ldquo;I have finished a
+provisioning&rdquo;. <br><a href="https://eclipse.dev/hawkbit/concepts/targetstate/">[...]</a>
 
 			<hr>
 			
