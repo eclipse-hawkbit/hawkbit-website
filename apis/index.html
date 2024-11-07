@@ -305,23 +305,6 @@
 
 
 
-<a  title="Management UI" href="/hawkbit/ui/">
-	
-	Management UI
-</a>
-
-
-  
-</li>
-
-
-
-<li>
-  
-    
-
-
-
 <a class="current" title="APIs" href="/hawkbit/apis/">
 	
 	APIs
@@ -394,20 +377,28 @@
 
         <ul>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
+            <a href="https://opensource.org/licenses/EPL-2.0" title="License" target="_blank">
+              <img src="https://img.shields.io/badge/License-EPL%202.0-green.svg" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml" title="License" target="_blank">
+              <img src="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml/badge.svg?branch=master" />
             </a>
           </li>
           <li>
-            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
-              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
+            <a href="https://sonarcloud.io/summary/new_code?id=eclipse-hawkbit_hawkbit" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=eclipse-hawkbit_hawkbit&metric=alert_status" />
             </a>
           </li>
+
           <li>
-            <a href="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent" title="Maven Central Status" target="_blank">
-              <img src="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent/badge.svg" />
+            <a href="https://search.maven.org/search?q=g:org.eclipse.hawkbit" title="Maven Central Status" target="_blank">
+              <img src="https://img.shields.io/maven-central/v/org.eclipse.hawkbit/hawkbit-parent?label=maven-central&color=blue" />
             </a>
           </li>
+
           <li>
             <a href="https://gitter.im/eclipse/hawkbit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title="Chat on Gitter" target="_blank">
               <img src="https://badges.gitter.im/eclipse/hawkbit.svg" />
@@ -432,7 +423,8 @@
 			</a>
 
 			<br>
-			The Management API is a RESTful API that enables to perform Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software). <br><a href="https://eclipse.dev/hawkbit/apis/management_api/">[...]</a>
+			The Management API is a RESTful API that enables to perform Create/Read/Update/Delete operations for provisioning
+targets (i.e. devices) and repository content (i.e. software). <br><a href="https://eclipse.dev/hawkbit/apis/management_api/">[...]</a>
 
 			<hr>
 			
@@ -441,7 +433,8 @@
 			</a>
 
 			<br>
-			The hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit">update server</a> provides REST resources which are consumed by the device to retrieve software update tasks.
+			The hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit">update server</a> provides REST resources which are consumed by
+the device to retrieve software update tasks.
 This API is based on HTTP standards and a polling mechanism. <br><a href="https://eclipse.dev/hawkbit/apis/ddi_api/">[...]</a>
 
 			<hr>
@@ -451,7 +444,8 @@ This API is based on HTTP standards and a polling mechanism. <br><a href="https:
 			</a>
 
 			<br>
-			The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object. Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.
+			The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object.
+Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.
 Currently, bodies of messages are based on JSON. <br><a href="https://eclipse.dev/hawkbit/apis/dmf_api/">[...]</a>
 
 			<hr>

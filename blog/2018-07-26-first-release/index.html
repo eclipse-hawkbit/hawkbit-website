@@ -302,23 +302,6 @@
 
 
 
-<a  title="Management UI" href="/hawkbit/ui/">
-	
-	Management UI
-</a>
-
-
-  
-</li>
-
-
-
-<li>
-  
-    
-
-
-
 <a  title="APIs" href="/hawkbit/apis/">
 	
 	APIs
@@ -388,20 +371,28 @@
 
         <ul>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
+            <a href="https://opensource.org/licenses/EPL-2.0" title="License" target="_blank">
+              <img src="https://img.shields.io/badge/License-EPL%202.0-green.svg" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml" title="License" target="_blank">
+              <img src="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml/badge.svg?branch=master" />
             </a>
           </li>
           <li>
-            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
-              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
+            <a href="https://sonarcloud.io/summary/new_code?id=eclipse-hawkbit_hawkbit" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=eclipse-hawkbit_hawkbit&metric=alert_status" />
             </a>
           </li>
+
           <li>
-            <a href="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent" title="Maven Central Status" target="_blank">
-              <img src="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent/badge.svg" />
+            <a href="https://search.maven.org/search?q=g:org.eclipse.hawkbit" title="Maven Central Status" target="_blank">
+              <img src="https://img.shields.io/maven-central/v/org.eclipse.hawkbit/hawkbit-parent?label=maven-central&color=blue" />
             </a>
           </li>
+
           <li>
             <a href="https://gitter.im/eclipse/hawkbit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title="Chat on Gitter" target="_blank">
               <img src="https://badges.gitter.im/eclipse/hawkbit.svg" />
@@ -426,8 +417,10 @@ since 2015 and with version <em>0.2.0</em> a first release is available.</p>
 <p>In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get
 started in seconds.</p>
 <h2 id="finally-it-is-here">Finally, it is here!</h2>
-<p>After being around in the Eclipse IoT realm for quite some time now, we are more than happy to announce our first release:
-<a href="https://projects.eclipse.org/projects/iot.hawkbit/releases/0.2.0"><em>Eclipse hawkBit 0.2.0</em></a>. The release can be found on <a href="https://mvnrepository.com/artifact/org.eclipse.hawkbit">Maven Central</a>
+<p>After being around in the Eclipse IoT realm for quite some time now, we are more than happy to announce our first
+release:
+<a href="https://projects.eclipse.org/projects/iot.hawkbit/releases/0.2.0"><em>Eclipse hawkBit 0.2.0</em></a>. The release can be found
+on <a href="https://mvnrepository.com/artifact/org.eclipse.hawkbit">Maven Central</a>
 and <a href="https://hub.docker.com/r/hawkbit/hawkbit-update-server/">Docker Hub</a>. It includes the following core features:</p>
 <ul>
 <li>Device and Software Repository</li>
@@ -453,22 +446,29 @@ do not want to leave unmentioned:</p>
 bottom of the <em>Deployment</em>, <em>Distributions</em>, and <em>Upload</em> view. This is a major usability improvement! For example,
 deleting an item required (1) dragging an item onto the delete button, (2) opening the delete pop-up, and (3) confirming
 the deletion. Now, an item can be easily removed by clicking on its remove icon and confirming the action. Moreover,
-multiple (or all <code>CTRL</code> + <code>A</code>) items can be selected and removed at once using the same mechanism. This is not  only
-faster and more intuitive, it also saves a lot of display real estate which can now be used to focus on what is important.
+multiple (or all <code>CTRL</code> + <code>A</code>) items can be selected and removed at once using the same mechanism. This is not only
+faster and more intuitive, it also saves a lot of display real estate which can now be used to focus on what is
+important.
 We hope you like this change as much as we do! <em>(Requires: hawkBit &gt; 0.2.2)</em></p>
 <p><img src="../../images/hawkbit_ui.png" alt="Screenshot of improved UI"></p>
 <h3 id="ms-sql-server">MS SQL Server</h3>
-<p>Eclipse hawkBit supports a range of different SQL databases. Up to now, these have been the internal H2 database (which can be
+<p>Eclipse hawkBit supports a range of different SQL databases. Up to now, these have been the internal H2 database (which
+can be
 used for testing, development, or trial) and MySQL/MariaDB for production-grade usage. This list is now extended by
 Microsoft&rsquo;s SQL Server which is also available in production grade, as well as, IBM&rsquo;s DB2 for testing and development.</p>
 <h3 id="open-sourced-rest-docs">Open Sourced REST docs</h3>
-<p>A huge benefit for the community is the recently open sourced REST docs of hawkBit. This has been an <a href="https://github.com/eclipse-hawkbit/hawkbit/issues/480">open request</a>
-for some time, which we were happy to meet. The documentation is generated using <a href="https://spring.io/projects/spring-restdocs">Spring REST docs</a>, based on unit-tests. These tests, with the respective documentation, are now available in the <a href="https://github.com/eclipse-hawkbit/hawkbit/pull/688">code base</a>.
+<p>A huge benefit for the community is the recently open sourced REST docs of hawkBit. This has been
+an <a href="https://github.com/eclipse-hawkbit/hawkbit/issues/480">open request</a>
+for some time, which we were happy to meet. The documentation is generated
+using <a href="https://spring.io/projects/spring-restdocs">Spring REST docs</a>, based on unit-tests. These tests, with the
+respective documentation, are now available in the <a href="https://github.com/eclipse-hawkbit/hawkbit/pull/688">code base</a>.
 Furthermore, the API documentation will be hosted on our new <a href="https://www.eclipse.org/hawkbit/">website</a> (coming soon).</p>
 <h3 id="docker-images">Docker Images</h3>
 <p>In order to enable interested parties to get started with hawkBit conveniently, we decided to provide the
-<a href="https://hub.docker.com/r/hawkbit/hawkbit-update-server/">Update Server as a Docker image</a> on Docker Hub. The image comes
-in two flavors: The default image uses the internal H2 database, while the images with a <code>-mysql</code> suffix contain the MySQL
+<a href="https://hub.docker.com/r/hawkbit/hawkbit-update-server/">Update Server as a Docker image</a> on Docker Hub. The image
+comes
+in two flavors: The default image uses the internal H2 database, while the images with a <code>-mysql</code> suffix contain the
+MySQL
 driver to allow connecting a MySQL database. In addition to the Docker image, the hawkBit repository contains a
 <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/docker/docker-compose.yml">docker-compose.yml</a>
 that not only starts the Update Server, but further includes a MySQL database and a RabbitMQ message broker so you&rsquo;re
@@ -495,11 +495,14 @@ the community. As of July 2018, there have been:</p>
 <p>We are happy to announce that the hawkBit project got a new project lead. In addition to
 <a href="https://projects.eclipse.org/user/6364">Kai Zimmermann</a>, project lead from the first hour,
 <a href="https://projects.eclipse.org/user/10982">Jeroen Laverman</a> joined the lead to support him in this responsibility.
-Moreover, with <a href="https://projects.eclipse.org/user/10842">Stefan Behl</a> and Jeroen Laverman, two new committers are aboard.</p>
+Moreover, with <a href="https://projects.eclipse.org/user/10842">Stefan Behl</a> and Jeroen Laverman, two new committers are
+aboard.</p>
 <h2 id="whats-next">What&rsquo;s next?</h2>
-<p>Looking ahead, there are two major topics that we want to tackle next: First, there is the migration of our UI from Vaadin
+<p>Looking ahead, there are two major topics that we want to tackle next: First, there is the migration of our UI from
+Vaadin
 7 to Vaadin 8, since Vaadin announced the end-of-life for our current version. Another big topic will be the update
-to Spring Boot 2. On the community side, we are in the final stage of updating our <a href="https://www.eclipse.org/hawkbit/">website</a>
+to Spring Boot 2. On the community side, we are in the final stage of updating
+our <a href="https://www.eclipse.org/hawkbit/">website</a>
 with a new design, so make sure you stop by in a couple of days to check it out. Finally, the hawkBit team will be
 present at EclipseCon Europe 2018, so if you are interested in meeting us, that is the place to be.</p>
 
@@ -545,7 +548,7 @@ present at EclipseCon Europe 2018, so if you are interested in meeting us, that 
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://eclipse.dev/hawkbit/rest-api/ddi/" title="">
+      <a href="https://eclipse.dev/hawkbit/sandbox/" title="Sandbox">
         <span class="direction">
           Previous
         </span>
@@ -555,7 +558,7 @@ present at EclipseCon Europe 2018, so if you are interested in meeting us, that 
           </div>
           <div class="stretch">
             <div class="title">
-              
+              Sandbox
             </div>
           </div>
         </div>

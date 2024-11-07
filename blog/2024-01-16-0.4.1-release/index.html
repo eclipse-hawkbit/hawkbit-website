@@ -302,23 +302,6 @@
 
 
 
-<a  title="Management UI" href="/hawkbit/ui/">
-	
-	Management UI
-</a>
-
-
-  
-</li>
-
-
-
-<li>
-  
-    
-
-
-
 <a  title="APIs" href="/hawkbit/apis/">
 	
 	APIs
@@ -388,20 +371,28 @@
 
         <ul>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
+            <a href="https://opensource.org/licenses/EPL-2.0" title="License" target="_blank">
+              <img src="https://img.shields.io/badge/License-EPL%202.0-green.svg" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml" title="License" target="_blank">
+              <img src="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml/badge.svg?branch=master" />
             </a>
           </li>
           <li>
-            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
-              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
+            <a href="https://sonarcloud.io/summary/new_code?id=eclipse-hawkbit_hawkbit" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=eclipse-hawkbit_hawkbit&metric=alert_status" />
             </a>
           </li>
+
           <li>
-            <a href="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent" title="Maven Central Status" target="_blank">
-              <img src="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent/badge.svg" />
+            <a href="https://search.maven.org/search?q=g:org.eclipse.hawkbit" title="Maven Central Status" target="_blank">
+              <img src="https://img.shields.io/maven-central/v/org.eclipse.hawkbit/hawkbit-parent?label=maven-central&color=blue" />
             </a>
           </li>
+
           <li>
             <a href="https://gitter.im/eclipse/hawkbit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title="Chat on Gitter" target="_blank">
               <img src="https://badges.gitter.im/eclipse/hawkbit.svg" />
@@ -423,20 +414,33 @@
 			<p>In this article, we want to give an overview of the 0.4.1 hawkBit release (Friday, January 12, 2024)</p>
 <h2 id="hawkbit-041httpsgithubcomeclipse-hawkbithawkbitreleasestag041-release">hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit/releases/tag/0.4.1">0.4.1</a> release</h2>
 <h3 id="steps-towards-removal-of-the-legacy-vaadin8-based-ui">Steps towards removal of the legacy Vaadin8-based UI</h3>
-<p>As announced at <a href="2023-11-22-vaadin8_ui_discontinuation.md">Vaadin 8 UI discontinuation</a> the current Vaadin 8 based UI will be removed. This release will likely be the last one including it. Some steps are taken to mitigate this.</p>
+<p>As announced at <a href="2023-11-22-vaadin8_ui_discontinuation.md">Vaadin 8 UI discontinuation</a> the current Vaadin 8 based UI
+will be removed. This release will likely be the last one including it. Some steps are taken to mitigate this.</p>
 <ul>
-<li>First of all, this release introduces <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/0.4.1/hawkbit-runtime/hawkbit-simple-ui">Simple UI</a> - a demo/PoC level UI. It includes the most essential functionality allowing you to play around with hawkBit. It could not be compared to legacy UI in features and maturity in any case. Some notes for it:
+<li>First of all, this release
+introduces <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/0.4.1/hawkbit-runtime/hawkbit-simple-ui">Simple UI</a> - a
+demo/PoC level UI. It includes the most essential functionality allowing you to play around with hawkBit. It could not
+be compared to legacy UI in features and maturity in any case. Some notes for it:
 <ul>
 <li><em>Status</em> - as already said - low maturity and very feature-limited, <em>EXPERIMENTAL</em></li>
-<li>Intended for demo/play-around purposes. It could become an initial version of a new hawkBit UI but currently, there are no resources for further development. Any contribution to this UI in the direction of making it a full-fledged mature UI is welcome!</li>
+<li>Intended for demo/play-around purposes. It could become an initial version of a new hawkBit UI but currently,
+there are no resources for further development. Any contribution to this UI in the direction of making it a
+full-fledged mature UI is welcome!</li>
 <li>It provides features like - create software modules &amp; distribution sets, targets, and rollouts</li>
-<li>In contrast with legacy UI the new UI is a standalone application and uses only REST API to provide functionality to the user.</li>
+<li>In contrast with legacy UI the new UI is a standalone application and uses only REST API to provide functionality
+to the user.</li>
 </ul>
 </li>
-<li>To the legacy monolith update server application there is added a new microservice-based application. As part of this effort, there was introduced an example of <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/0.4.1/hawkbit-runtime/hawkbit-vv8-ui">legacy Vaadin 8 UI standalone application</a>.  This legacy UI standalone application could be used together with future hawkBit update server versions as long as it is compatible and on the user&rsquo;s responsibility. Some notes for it:
+<li>To the legacy monolith update server application there is added a new microservice-based application. As part of this
+effort, there was introduced an example
+of <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/0.4.1/hawkbit-runtime/hawkbit-vv8-ui">legacy Vaadin 8 UI standalone application</a>.
+This legacy UI standalone application could be used together with future hawkBit update server versions as long as it
+is compatible and on the user&rsquo;s responsibility. Some notes for it:
 <ul>
-<li><em>NOT RECOMMENDED</em> - it might contain security vulnerabilities and bugs. It could be hard to verify its compatibility with the new hawkBit versions.</li>
-<li><em>ON USER&rsquo;s RESPONSIBILITY</em> - no guarantees of any kind are provided for that application. It is entirely the user&rsquo;s responsibility to test, scan for vulnerabilities, and use it.</li>
+<li><em>NOT RECOMMENDED</em> - it might contain security vulnerabilities and bugs. It could be hard to verify its
+compatibility with the new hawkBit versions.</li>
+<li><em>ON USER&rsquo;s RESPONSIBILITY</em> - no guarantees of any kind are provided for that application. It is entirely the
+user&rsquo;s responsibility to test, scan for vulnerabilities, and use it.</li>
 <li>Provides an option to use the legacy Vaadin 8 UI with the new hawkBit versions under the conditions above</li>
 <li>It uses directly the database and legacy update server code</li>
 <li>It includes the outdated Spring Boot 2.7 which is after its end of support</li>
@@ -446,7 +450,13 @@
 </li>
 </ul>
 <h3 id="extended-access-control-management---entity-based">Extended access control management - entity-based</h3>
-<p>There is a new feature implemented in access control management. Up until now, permissions (e.g. CREATE_TARGET) were assigned to the users, and based on that users were able to execute some action or not. Now there is added a pluggable mechanism via <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/0.4.1/hawkbit-repository/hawkbit-repository-jpa/src/main/java/org/eclipse/hawkbit/repository/jpa/acm/AccessController.java">AccessController</a> that allows to further restrict the access based on the entity. For instance, a developer could implement its custom access controller for targets that, depending on the user, could grant or reject permissions for accessing targets of certain target types.</p>
+<p>There is a new feature implemented in access control management. Up until now, permissions (e.g. CREATE_TARGET) were
+assigned to the users, and based on that users were able to execute some action or not. Now there is added a pluggable
+mechanism
+via <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/0.4.1/hawkbit-repository/hawkbit-repository-jpa/src/main/java/org/eclipse/hawkbit/repository/jpa/acm/AccessController.java">AccessController</a>
+that allows to further restrict the access based on the entity. For instance, a developer could implement its custom
+access controller for targets that, depending on the user, could grant or reject permissions for accessing targets of
+certain target types.</p>
 
 
 			<aside class="copyright" role="note">

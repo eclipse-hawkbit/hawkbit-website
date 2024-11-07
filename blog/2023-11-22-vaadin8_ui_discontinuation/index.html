@@ -302,23 +302,6 @@
 
 
 
-<a  title="Management UI" href="/hawkbit/ui/">
-	
-	Management UI
-</a>
-
-
-  
-</li>
-
-
-
-<li>
-  
-    
-
-
-
 <a  title="APIs" href="/hawkbit/apis/">
 	
 	APIs
@@ -388,20 +371,28 @@
 
         <ul>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
+            <a href="https://opensource.org/licenses/EPL-2.0" title="License" target="_blank">
+              <img src="https://img.shields.io/badge/License-EPL%202.0-green.svg" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml" title="License" target="_blank">
+              <img src="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml/badge.svg?branch=master" />
             </a>
           </li>
           <li>
-            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
-              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
+            <a href="https://sonarcloud.io/summary/new_code?id=eclipse-hawkbit_hawkbit" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=eclipse-hawkbit_hawkbit&metric=alert_status" />
             </a>
           </li>
+
           <li>
-            <a href="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent" title="Maven Central Status" target="_blank">
-              <img src="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent/badge.svg" />
+            <a href="https://search.maven.org/search?q=g:org.eclipse.hawkbit" title="Maven Central Status" target="_blank">
+              <img src="https://img.shields.io/maven-central/v/org.eclipse.hawkbit/hawkbit-parent?label=maven-central&color=blue" />
             </a>
           </li>
+
           <li>
             <a href="https://gitter.im/eclipse/hawkbit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title="Chat on Gitter" target="_blank">
               <img src="https://badges.gitter.im/eclipse/hawkbit.svg" />
@@ -422,12 +413,27 @@
 
 			<p>In this article, we want to give an overview of the future of the hawkBit UI</p>
 <h2 id="hawkbit-vaadin-8-ui-discontinuation">hawkBit Vaadin 8 UI discontinuation</h2>
-<p>The hawkBit UI uses Vaadin as a web UI framework. It uses Vaadin 8 (8.14.3). This major version, according <a href="https://vaadin.com/roadmap">Vaadin Roadmap</a>, has no free support since 21st Feb 2022. There are some version releases after that date (8.15.0 - 8.16.0) that are Apache 2.0 licensed. However, since 8.16.1 (<a href="https://mvnrepository.com/artifact/com.vaadin/vaadin-server">see here</a>) the license is <a href="https://vaadin.com/license/cvdl-4.0">Commercial Vaadin Developer License 4.0</a>, so they could not be used in hawkBit.</p>
-<p>We believe it is not a good practice to keep an out of free support library in an open source project like hawkBit. And moreover, even if we keep it, if a security vulnerability is discovered - all users shall opt for commercial support or to drop UI.</p>
-<p>There is another critical obstacle with keeping Vaadin 8 UI. At the moment hawkBit uses Spring Boot 2.7. According to <a href="https://endoflife.date/spring-boot">Spring Boot EOL</a> Spring Boot 2.7 stream will reach end of support 24th Nov 2023. So, hawkBit shall be migrated to Spring Boot 3.0+. Since Vaadin 8 seem to be incompatible with Spring Boot 3 (they added support for Spring Boot 3 in Vaadin 24 (<a href="https://vaadin.com/blog/vaadin-24-pre-release-available-for-spring-boot-3.0">Vaadin 24 pre release</a>) we shall drop Vaadin UI 8 anyway.</p>
-<p>Many months ago we asked for community help to migrate hawkBit UI to newer Vaadin versions - <a href="https://github.com/eclipse-hawkbit/hawkbit/issues/1376">Urgent migration needed to a newer Vaadin version
-</a> and gitter channel. However, there was no volunteer found to do the migration.</p>
-<p>All this being said, unfortunately, we&rsquo;ve come to the decision to drop the Vaadin 8 UI from the Eclipse hawkBit and the latest hawkBit release 0.3.0 is the last version of hawkBit that includes it. For the next 0.4.0 release we plan to remove this Vaadin 8 UI. Thus the hawkBit may become an UI-less project.</p>
+<p>The hawkBit UI uses Vaadin as a web UI framework. It uses Vaadin 8 (8.14.3). This major version,
+according <a href="https://vaadin.com/roadmap">Vaadin Roadmap</a>, has no free support since 21st Feb 2022. There are some version
+releases after that date (8.15.0 - 8.16.0) that are Apache 2.0 licensed. However, since
+8.16.1 (<a href="https://mvnrepository.com/artifact/com.vaadin/vaadin-server">see here</a>) the license
+is <a href="https://vaadin.com/license/cvdl-4.0">Commercial Vaadin Developer License 4.0</a>, so they could not be used in hawkBit.</p>
+<p>We believe it is not a good practice to keep an out of free support library in an open source project like hawkBit. And
+moreover, even if we keep it, if a security vulnerability is discovered - all users shall opt for commercial support or
+to drop UI.</p>
+<p>There is another critical obstacle with keeping Vaadin 8 UI. At the moment hawkBit uses Spring Boot 2.7. According
+to <a href="https://endoflife.date/spring-boot">Spring Boot EOL</a> Spring Boot 2.7 stream will reach end of support 24th Nov 2023.
+So, hawkBit shall be migrated to Spring Boot 3.0+. Since Vaadin 8 seem to be incompatible with Spring Boot 3 (they added
+support for Spring Boot 3 in Vaadin
+24 (<a href="https://vaadin.com/blog/vaadin-24-pre-release-available-for-spring-boot-3.0">Vaadin 24 pre release</a>) we shall drop
+Vaadin UI 8 anyway.</p>
+<p>Many months ago we asked for community help to migrate hawkBit UI to newer Vaadin
+versions - <a href="https://github.com/eclipse-hawkbit/hawkbit/issues/1376">Urgent migration needed to a newer Vaadin version
+</a> and gitter channel. However, there was no volunteer found to
+do the migration.</p>
+<p>All this being said, unfortunately, we&rsquo;ve come to the decision to drop the Vaadin 8 UI from the Eclipse hawkBit and the
+latest hawkBit release 0.3.0 is the last version of hawkBit that includes it. For the next 0.4.0 release we plan to
+remove this Vaadin 8 UI. Thus the hawkBit may become an UI-less project.</p>
 <p>There were steps taken to mitigate the problem:</p>
 <ul>
 <li>extending the REST API</li>

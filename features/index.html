@@ -305,23 +305,6 @@
 
 
 
-<a  title="Management UI" href="/hawkbit/ui/">
-	
-	Management UI
-</a>
-
-
-  
-</li>
-
-
-
-<li>
-  
-    
-
-
-
 <a  title="APIs" href="/hawkbit/apis/">
 	
 	APIs
@@ -391,20 +374,28 @@
 
         <ul>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
+            <a href="https://opensource.org/licenses/EPL-2.0" title="License" target="_blank">
+              <img src="https://img.shields.io/badge/License-EPL%202.0-green.svg" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml" title="License" target="_blank">
+              <img src="https://github.com/eclipse-hawkbit/hawkbit/actions/workflows/verify.yml/badge.svg?branch=master" />
             </a>
           </li>
           <li>
-            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
-              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
+            <a href="https://sonarcloud.io/summary/new_code?id=eclipse-hawkbit_hawkbit" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=eclipse-hawkbit_hawkbit&metric=alert_status" />
             </a>
           </li>
+
           <li>
-            <a href="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent" title="Maven Central Status" target="_blank">
-              <img src="https://maven-badges.herokuapp.com/maven-central/org.eclipse.hawkbit/hawkbit-parent/badge.svg" />
+            <a href="https://search.maven.org/search?q=g:org.eclipse.hawkbit" title="Maven Central Status" target="_blank">
+              <img src="https://img.shields.io/maven-central/v/org.eclipse.hawkbit/hawkbit-parent?label=maven-central&color=blue" />
             </a>
           </li>
+
           <li>
             <a href="https://gitter.im/eclipse/hawkbit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title="Chat on Gitter" target="_blank">
               <img src="https://badges.gitter.im/eclipse/hawkbit.svg" />
@@ -428,35 +419,24 @@
 <li>Repository that holds the provisioning targets and assignable software distributions.</li>
 <li>Targets to be logically grouped by Target Types.</li>
 <li>That includes a full software update history for every device.</li>
-<li>Support for pre-commission devices in the repository and plug and play, i.e. device is created if it is authenticated for the first time.</li>
+<li>Support for pre-commission devices in the repository and plug and play, i.e. device is created if it is authenticated
+for the first time.</li>
 </ul>
 <h2 id="update-management">Update Management</h2>
 <ul>
-<li>Directly deploy a defined software distribution to a device (by Management UI or API).</li>
+<li>Directly deploy a defined software distribution to a device (by Management API).</li>
 <li>Update handling is independent of the device type, integration approach or connectivity.</li>
 <li>Optional user consent flow, download and install updates only after respective end user has confirmed it.</li>
 <li>Mass cancel the distribution of an update by invalidating the distribution set.</li>
 <li>Use action status codes for easier analysis.</li>
-</ul>
-<h2 id="management-ui">Management UI</h2>
-<ul>
-<li>Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software).</li>
-<li>Manage and monitor software update operations.</li>
-<li>Optimized for professional users, e.g. administrators, developers and 2nd/3rd level support staff.</li>
-<li>Ease of use drag-and-drop paradigm.</li>
-<li>Flexible grouping of data.</li>
-<li>Flexible filters for data browsing.</li>
-<li>Responsive to resolution.</li>
-<li>Lazy loading of data.</li>
-<li>All information on one page.</li>
-<li>Deep-linking for Targets to improve navigation.</li>
 </ul>
 <h2 id="artifact-content-delivery">Artifact Content Delivery</h2>
 <ul>
 <li>Partial downloads supported.</li>
 <li>Download resume supported (RFC7233).</li>
 <li>Content management by RESTful API and UI (see above).</li>
-<li>Authorization based on software assignment, i.e. a device can only download what has been assigned to it in the first place.</li>
+<li>Authorization based on software assignment, i.e. a device can only download what has been assigned to it in the first
+place.</li>
 <li>Delta artifact hosting supported.</li>
 <li>Artifact signature hosting supported.</li>
 <li>Plug-point for artifact encryption allowing to encrypt artifacts on upload.</li>
@@ -493,7 +473,8 @@
 <h3 id="device-management-federation-api">Device Management Federation API</h3>
 <ul>
 <li>Indirect device integration through a device management service or application into hawkBit.</li>
-<li>Optimized for high service to service throughput with <a href="https://www.rabbitmq.com/amqp-0-9-1-reference.html">AMQP</a> messaging interface.</li>
+<li>Optimized for high service to service throughput with <a href="https://www.rabbitmq.com/amqp-0-9-1-reference.html">AMQP</a>
+messaging interface.</li>
 <li>Separate AMQP vHost per tenant for maximum security.</li>
 </ul>
 
