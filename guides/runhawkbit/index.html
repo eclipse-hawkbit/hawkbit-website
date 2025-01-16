@@ -170,12 +170,7 @@
   <div class="scrollable">
     <div class="wrapper">
       
-        <ul class="repo">
-          <li class="repo-download">
-            <a href="https://hawkbit.eclipseprojects.io" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
-              <i class="fas fa-desktop"></i> &nbsp; Sandbox
-            </a>
-          </li>
+        <ul class="repo" style="text-align: left; ; padding-left: 2em;">
           <li class="repo-stars">
             <a href="https://github.com/eclipse-hawkbit/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
@@ -421,7 +416,7 @@ and no artifact storage.</p>
 <h2 id="system-architecture">System Architecture</h2>
 <p>This guide describes a target architecture that is more like one that you will expect in a production system.</p>
 <ul>
-<li>hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">Update Server</a>.</li>
+<li>hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-monolith/hawkbit-update-server">Update Server</a>.</li>
 <li><a href="https://mariadb.org">MariaDB</a> for the repository.</li>
 <li><a href="https://www.rabbitmq.com">RabbitMQ</a> for DMF communication.</li>
 <li>For testing and demonstration purposes we will also use:</li>
@@ -436,13 +431,6 @@ and no artifact storage.</p>
 <h2 id="adapt-hawkbit-update-server-and-device-simulator-to-your-environment">Adapt hawkBit Update Server and Device Simulator to your environment.</h2>
 <p>As mentioned you can create your own application with hawkBit inside or adapt the existing example app. The second
 option will be shown here.</p>
-<h3 id="set-mariadb-dependency-to-compile-in-the-update-server-pomhttpsgithubcomeclipse-hawkbithawkbitblobmasterhawkbit-runtimehawkbit-update-serverpomxml">Set MariaDB dependency to compile in the <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/pom.xml">update server POM</a></h3>
-<pre><code class="language-xml">&lt;dependency&gt;
-  &lt;groupId&gt;org.mariadb.jdbc&lt;/groupId&gt;
-  &lt;artifactId&gt;mariadb-java-client&lt;/artifactId&gt;
-  &lt;scope&gt;compile&lt;/scope&gt;
-&lt;/dependency&gt;
-</code></pre>
 <h3 id="configure-mariadbmysql-connection-settings">Configure MariaDB/MySQL connection settings.</h3>
 <p>For this you can either edit the existing <em>application.properties</em> or create
 a <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config-profile-specific-properties">new profile</a>.</p>
@@ -475,7 +463,7 @@ spring.rabbitmq.port=5672
 </code></pre>
 <h2 id="compile--run">Compile &amp; Run</h2>
 <h3 id="compile--run-your-_production-ready_-app">Compile &amp; Run your <em>&ldquo;production ready&rdquo;</em> app</h3>
-<p>see <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">update server</a></p>
+<p>see <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-monolith/hawkbit-update-server">update server</a></p>
 <h3 id="compile--run-example-scenario-creation-scripthttpsgithubcomeclipse-hawkbithawkbit-examplestreemasterhawkbit-example-mgmt-simulator-optional">Compile &amp; Run example scenario <a href="https://github.com/eclipse-hawkbit/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">creation script</a> (optional)</h3>
 <p>This has to be done before the device simulator is started. hawkBit creates the mandatory tenant metadata with first
 login into either Management API (which is done by this client).</p>
@@ -493,7 +481,7 @@ first hawkBit would drop all <em>DMF</em> messages as the tenant is unknown.</p>
   </div>
   <p class="notice">
     
-    &copy; 2024 The Eclipse hawkBit Project &ndash;
+    &copy; 2025 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>

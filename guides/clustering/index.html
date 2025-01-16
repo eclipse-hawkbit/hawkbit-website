@@ -170,12 +170,7 @@
   <div class="scrollable">
     <div class="wrapper">
       
-        <ul class="repo">
-          <li class="repo-download">
-            <a href="https://hawkbit.eclipseprojects.io" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
-              <i class="fas fa-desktop"></i> &nbsp; Sandbox
-            </a>
-          </li>
+        <ul class="repo" style="text-align: left; ; padding-left: 2em;">
           <li class="repo-stars">
             <a href="https://github.com/eclipse-hawkbit/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
@@ -413,7 +408,7 @@
 
 			<p>hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to
 setup your own cluster. You can find additional information in
-the <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/README.md">hawkBit runtimes&rsquo;s README</a>.</p>
+the <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-monolith/hawkbit-update-server/README.md">hawkBit runtimes&rsquo;s README</a>.</p>
 <h2 id="big-picture">Big picture</h2>
 <p><img src="../../images/overall_cluster.png" alt=""></p>
 <h2 id="events">Events</h2>
@@ -439,7 +434,7 @@ This has to be kept in mind e.g. if the scheduler executes critical code which h
 <h2 id="known-constraints">Known constraints</h2>
 <h3 id="denial-of-service-dos-filter">Denial-of-Service (DoS) filter</h3>
 <p>hawkBit owns the feature of guarding itself from DoS attacks,
-a <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-http-security/src/main/java/org/eclipse/hawkbit/security/DosFilter.java">DoS filter</a>.
+a <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-rest-core/src/main/java/org/eclipse/hawkbit/rest/security/DosFilter.java">DoS filter</a>.
 It reduces the maximum number of requests per seconds which can be configured for read and write requests.
 This mechanism is only working for every node separately, i.e. in a cluster environment the worst-case behaviour would
 be that the maximum number of requests per seconds will be increased to its product if every request is handled by a
@@ -454,7 +449,7 @@ The same constraint exists with the validator to check if a user tried too many 
   </div>
   <p class="notice">
     
-    &copy; 2024 The Eclipse hawkBit Project &ndash;
+    &copy; 2025 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>

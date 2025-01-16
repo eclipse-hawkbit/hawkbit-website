@@ -170,12 +170,7 @@
   <div class="scrollable">
     <div class="wrapper">
       
-        <ul class="repo">
-          <li class="repo-download">
-            <a href="https://hawkbit.eclipseprojects.io" target="_blank" title="hawkBit Sandbox" data-action="sandbox">
-              <i class="fas fa-desktop"></i> &nbsp; Sandbox
-            </a>
-          </li>
+        <ul class="repo" style="text-align: left; ; padding-left: 2em;">
           <li class="repo-stars">
             <a href="https://github.com/eclipse-hawkbit/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
@@ -414,26 +409,9 @@
 		<div class="wrapper">
 			<h1>Getting Started </h1>
 
-			<h2 id="on-sandbox">On Sandbox</h2>
-<p>We offer a sandbox installation that is free for everyone to try out hawkBit&rsquo;s <a href="/hawkbit/ui/">Management UI</a>,
-<a href="/hawkbit/apis/management_api/">Management API</a>, and <a href="/hawkbit/apis/ddi_api/">Direct Device Integration API</a>:  
-<strong><a href="https://hawkbit.eclipseprojects.io"><i class="fas fa-desktop"> </i> https://hawkbit.eclipseprojects.io</a></strong></p>
-<div class="admonition warning">
-<p class="admonition-title"></p>
-<p>The sandbox is a shared installation that will be reset from time to time. Therefore, it is not allowed to upload
-any personal data.</p>
-</div>
-<p>In addition, the following vendors offer free trial accounts for their Eclipse hawkBit compatible products:</p>
-<ul>
-<li><a href="https://bosch-iot-suite.com/service/rollouts/">Bosch IoT Rollouts</a> (
-by <a href="https://www.bosch-digital.com">Bosch Digital</a>)</li>
-<li><a href="https://www.kynetics.com/update-factory">Kynetics Update Factory</a> (by <a href="https://www.kynetics.com/">Kynetics LLC</a>)</li>
-</ul>
-<h2 id="from-docker-image">From Docker Image</h2>
+			<h2 id="from-docker-image">From Docker Image</h2>
 <h3 id="overview">Overview</h3>
-<p>HawkBit Update Server username/password -&gt; admin/admin as default login credentials. They can be overridden by the
-environment variables spring.security.user.name and spring.security.user.password which are defined in the corresponding
-default <a href="hawkbit-runtime/hawkbit-update-server/src/main/resources/application.properties">application.properties</a>.</p>
+<p>HawkBit Update Server default user has <em>admin/admin</em> as default credentials. See below how the user can be changed.</p>
 <p>It supports two configurations:</p>
 <ul>
 <li>monolith - hawkbit-update-server</li>
@@ -443,38 +421,85 @@ default <a href="hawkbit-runtime/hawkbit-update-server/src/main/resources/applic
 <p>Start the hawkBit Update Server as a single container</p>
 <pre><code class="language-bash">$ docker run -p 8080:8080 hawkbit/hawkbit-update-server:latest
 </code></pre>
+<p>This will start hawkBit update server with embedded H2 database for evaluation purposes.</p>
 <h3 id="b-run-hawkbit-update-server-monolith-with-services-as-docker-compose">B: Run hawkBit Update Server (Monolith) with services as Docker Compose</h3>
-<p>Start the hawkBit Update Server together with an MySQL and RabbitMQ instance as containers</p>
+<p>Start the hawkBit Update Server together with an PostgreSQL and RabbitMQ instance as containers</p>
 <pre><code class="language-bash">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
-$ cd hawkbit/hawkbit-runtime/docker
+$ cd hawkbit/docker
+$ docker-compose -f docker-compose-monolith-postgres.yml up -d
+</code></pre>
+<p>or with MySQL</p>
+<pre><code class="language-bash">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
+$ cd hawkbit/docker
 $ docker-compose -f docker-compose-monolith-mysql.yml up -d
 </code></pre>
-<h3 id="c-run-hawkbit-update-server-micro-service-with-services-as-docker-compose">C: Run hawkBit Update Server (Micro-Service) with services as Docker Compose</h3>
-<p>Start the hawkBit Update Server together with an MySQL and RabbitMQ instance as containers</p>
+<p>If you want to start also the Simple UI, you can use, for PostgreSQL:</p>
 <pre><code class="language-bash">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
-$ cd hawkbit/hawkbit-runtime/docker
-$ docker-compose -f docker-compose-micro-service-mysql.yml up -d
+$ cd hawkbit/docker
+$ docker-compose -f docker-compose-monolith-with-simple-ui-postgres.yml up -d
 </code></pre>
+<p>or with MySQL</p>
+<pre><code class="language-bash">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
+$ cd hawkbit/docker
+$ docker-compose -f docker-compose-monolith-simple-ui-mysql.yml up -d
+</code></pre>
+<p>Note: <em>-d</em> flag is used to run the containers in detached mode. If you want to see the logs, you can remove the flag.</p>
+<h3 id="c-run-hawkbit-update-server-micro-service-with-services-as-docker-compose">C: Run hawkBit Update Server (Micro-Service) with services as Docker Compose</h3>
+<p>Start the hawkBit Update Server together with an PostgreSQL and RabbitMQ instance as containers</p>
+<pre><code class="language-bash">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
+$ cd hawkbit/docker
+$ docker-compose -f docker-compose-micro-services-postgres.yml up -d
+</code></pre>
+<p>or with MySQL</p>
+<pre><code class="language-bash">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
+$ cd hawkbit/docker
+$ docker-compose -f docker-compose-micro-services-mysql.yml up -d
+</code></pre>
+<p>If you want to start also the Simple UI, you can use, for PostgreSQL:</p>
+<pre><code class="language-bash">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
+$ cd hawkbit/docker
+$ docker-compose -f docker-compose-micro-services-with-simple-ui-postgres.yml up -d
+</code></pre>
+<p>or with MySQL</p>
+<pre><code class="language-bash">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
+$ cd hawkbit/docker
+$ docker-compose -f docker-compose-micro-services-simple-ui-mysql.yml up -d
+</code></pre>
+<p>Note: <em>-d</em> flag is used to run the containers in detached mode. If you want to see the logs, you can remove the flag.</p>
 <h2 id="from-sources">From Sources</h2>
 <h3 id="1-clone-and-build-hawkbit">1: Clone and build hawkBit</h3>
 <pre><code class="language-sh">$ git clone https://github.com/eclipse-hawkbit/hawkbit.git
 $ cd hawkbit
-$ mvn clean install
+$ mvn clean install -DskipTests
 </code></pre>
-<h3 id="2-start-hawkbit-update-serverhttpsgithubcomeclipse-hawkbithawkbittreemasterhawkbit-runtimehawkbit-update-server-monolith">2: Start hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">update server</a> (Monolith)</h3>
-<pre><code class="language-sh">$ java -jar ./hawkbit-runtime/hawkbit-update-server/target/hawkbit-update-server-#version#-SNAPSHOT.jar
+<h3 id="2-start-hawkbit-update-serverhttpsgithubcomeclipse-hawkbithawkbittreemasterhawkbit-monolithhawkbit-update-server-monolith">2: Start hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/master/hawkbit-monolith/hawkbit-update-server">update server</a> (Monolith)</h3>
+<pre><code class="language-sh">$ java -jar ./hawkbit-monolith/hawkbit-update-server/target/hawkbit-update-server-0-SNAPSHOT.jar
 </code></pre>
-<h3 id="3-build-hawkbit-examples">3: Build hawkBit examples</h3>
-<pre><code class="language-sh">$ git clone https://github.com/eclipse-hawkbit/hawkbit-examples.git
-$ cd hawkbit-examples
-$ mvn clean install
+<p>Note: you could start it also in microservices mode by:</p>
+<pre><code class="language-sh">$ java -jar ./hawkbit-mgmt/hawkbit-mgmt-server/target/hawkbit-mgmt-server-0-SNAPSHOT.jar
 </code></pre>
-<h3 id="4-start-hawkbit-device-simulatorhttpsgithubcomeclipse-hawkbithawkbit-examplestreemasterhawkbit-device-simulator">4: Start hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit-examples/tree/master/hawkbit-device-simulator">Device Simulator</a></h3>
-<pre><code class="language-sh">$ java -jar ./hawkbit-device-simulator/target/hawkbit-device-simulator-#version#.jar
+<pre><code class="language-sh">$ java -jar ./hawkbit-ddi/hawkbit-ddi-server/target/hawkbit-ddi-server-0-SNAPSHOT.jar
 </code></pre>
-<h3 id="5-generate-getting-started-data-with-example-management-api-clienthttpsgithubcomeclipse-hawkbithawkbit-examplestreemasterhawkbit-example-mgmt-simulator">5: Generate Getting Started data with <a href="https://github.com/eclipse-hawkbit/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">Example Management API Client</a></h3>
-<pre><code class="language-sh">$ java -jar ./hawkbit-example-mgmt-simulator/target/hawkbit-example-mgmt-simulator-#version#.jar
+<p>and (only if you want to use the DMF feature):</p>
+<pre><code class="language-sh">$ java -jar ./hawkbit-dmf/hawkbit-dmf-server/target/hawkbit-dmf-server-0-SNAPSHOT.jar
 </code></pre>
+<p>Note: you could starte the Simple UI by:</p>
+<pre><code class="language-sh">$ java -jar ./hawkbit-simple-ui/target/hawkbit-simple-ui-0-SNAPSHOT.jar
+</code></pre>
+<h2 id="configuration">Configuration</h2>
+<h3 id="change-credentials">Change credentials</h3>
+<p>As stated before the default user is <em>admin/admin</em>. It could be overridden by changing the <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-core/src/main/java/org/eclipse/hawkbit/tenancy/TenantAwareUserProperties.java">TenantAwareUserProperties</a> configuration using Spring ways. For instance, using a properties file like:</p>
+<pre><code class="language-properties"># should remove the admin/admin user
+hawkbit.security.user.admin.tenant=#{null}
+hawkbit.security.user.admin.password=#{null}
+hawkbit.security.user.admin.roles=#{null}
+# should add a hawkbit/isAwesome! user
+hawkbit.security.user.hawkbit.tenant=DEFAULT
+hawkbit.security.user.hawkbit.password={noop}isAwesome!
+hawkbit.security.user.hawkbit.roles=TENANT_ADMIN
+</code></pre>
+<p>which should remove the default <em>admin/admin</em> user and add a hawkbit user <em>hawkbit</em> with password <em>isAwesome!</em> and a role <em>TENANT_ADMIN</em>.</p>
+<p>You could create multiple users with specified roles.</p>
 
 
 			<aside class="copyright" role="note">
@@ -485,7 +510,7 @@ $ mvn clean install
   </div>
   <p class="notice">
     
-    &copy; 2024 The Eclipse hawkBit Project &ndash;
+    &copy; 2025 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
