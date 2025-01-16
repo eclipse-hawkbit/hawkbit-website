@@ -19,7 +19,7 @@
       <link>https://eclipse.dev/hawkbit/gettingstarted/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hawkbit/gettingstarted/</guid>
-      <description>On Sandbox We offer a sandbox installation that is free for everyone to try out hawkBit&amp;rsquo;s Management UI, Management API, and Direct Device Integration API: https://hawkbit.eclipseprojects.io&#xA;The sandbox is a shared installation that will be reset from time to time. Therefore, it is not allowed to upload any personal data.&#xA;In addition, the following vendors offer free trial accounts for their Eclipse hawkBit compatible products:&#xA;Bosch IoT Rollouts ( by Bosch Digital) Kynetics Update Factory (by Kynetics LLC) From Docker Image Overview HawkBit Update Server username/password -&amp;gt; admin/admin as default login credentials.</description>
+      <description>From Docker Image Overview HawkBit Update Server default user has admin/admin as default credentials. See below how the user can be changed.&#xA;It supports two configurations:&#xA;monolith - hawkbit-update-server micro-service - hawkbit-mgmt-server, hawkbit-ddi-server, hawkbit-dmf-server. A: Run hawkBit Update Server (Monolith) as Docker Container Start the hawkBit Update Server as a single container&#xA;$ docker run -p 8080:8080 hawkbit/hawkbit-update-server:latest This will start hawkBit update server with embedded H2 database for evaluation purposes.</description>
     </item>
     <item>
       <title>Run hawkBit</title>
@@ -40,7 +40,7 @@
       <link>https://eclipse.dev/hawkbit/guides/clustering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hawkbit/guides/clustering/</guid>
-      <description>&lt;p&gt;hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to&#xA;setup your own cluster. You can find additional information in&#xA;the &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/README.md&#34;&gt;hawkBit runtimes&amp;rsquo;s README&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to&#xA;setup your own cluster. You can find additional information in&#xA;the &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-monolith/hawkbit-update-server/README.md&#34;&gt;hawkBit runtimes&amp;rsquo;s README&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Features</title>
@@ -145,7 +145,7 @@
       <link>https://eclipse.dev/hawkbit/release-notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hawkbit/release-notes/</guid>
-      <description>0.6.1 Release Date: Wednesday, October 30, 2024 Hawkbit: Tag / Release 0.5.0 Release Date: Friday, March 22, 2024 Hawkbit: Tag / Release Extensions: Tag&#xA;0.4.1 Release Date: Friday, January 12, 2024 Hawkbit: Tag / Release Extensions: Tag&#xA;0.3.0 Release Date: Friday, November 17, 2023 Hawkbit: Tag / Release Extensions: Tag&#xA;0.3.0M9 Release Date: Thursday, August 24, 2023 Hawkbit: Tag / Release Extensions: Tag&#xA;0.3.0M8 Release Date: Friday, April 21, 2023 Hawkbit: Tag / Release Extensions: Tag / Release</description>
+      <description>0.7.0 Release Date: Thursday, January 16, 2025 Hawkbit: Tag / Release 0.6.1 Release Date: Wednesday, October 30, 2024 Hawkbit: Tag / Release 0.5.0 Release Date: Friday, March 22, 2024 Hawkbit: Tag / Release Extensions: Tag&#xA;0.4.1 Release Date: Friday, January 12, 2024 Hawkbit: Tag / Release Extensions: Tag&#xA;0.3.0 Release Date: Friday, November 17, 2023 Hawkbit: Tag / Release Extensions: Tag&#xA;0.3.0M9 Release Date: Thursday, August 24, 2023 Hawkbit: Tag / Release Extensions: Tag</description>
     </item>
     <item>
       <title>Eclipse hawkBit 0.2.0 - First Release</title>
@@ -153,13 +153,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hawkbit/blog/2018-07-26-first-release/</guid>
       <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015 and with version 0.2.0 a first release is available.&#xA;In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get started in seconds.</description>
-    </item>
-    <item>
-      <title>Sandbox</title>
-      <link>https://eclipse.dev/hawkbit/sandbox/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://eclipse.dev/hawkbit/sandbox/</guid>
-      <description></description>
     </item>
   </channel>
 </rss>
